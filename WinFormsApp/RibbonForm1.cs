@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,14 +25,14 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
         }
-        private productLabelUserMessageSuccess(string labelInput)
+        public void labelUserMessageSuccess(string labelInput)
         {
             labelUserMessage.Text = (labelInput);
             labelUserMessage.ForeColor = Color.Black;
             labelUserMessage.Visible = true;
         }
 
-        private productLabelUserMessageFailure(string labelInput)
+        public void labelUserMessageFailure(string labelInput)
         {
             labelUserMessage.Text = (labelInput);
             labelUserMessage.ForeColor = Color.Red;
@@ -56,11 +57,21 @@ namespace WinFormsApp
                 _layer.InsertProduct(productId, ProductName, stock, price);
 
                 //Note: labelUserMessage is a placeholder.
-                productLabelUserMessageSuccess("Product added");
+                labelUserMessageSuccess("Product added");
 
             } catch(FormatException ex)
             {
-                productLabelUserMessageFailure("Stock/price cannot contain letters or special characters");
+                labelUserMessageFailure("Stock/price cannot contain letters or special characters");
+            } catch(SqlException ex)
+            {
+                if(ex.Number == 2627)
+                {
+                    labelUserMessageFailure("A product with that ID already exists");
+                }
+                else
+                {
+                    labelUserMessageFailure("System Error. Please try again. If the error persists, please contact Spongebob");
+                }
             }
 
         }
