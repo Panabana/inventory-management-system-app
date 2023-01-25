@@ -28,120 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabHome = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabProducts = new System.Windows.Forms.TabPage();
+            this.tabSuppliers = new System.Windows.Forms.TabPage();
+            this.tabOrders = new System.Windows.Forms.TabPage();
+            this.tabCustomers = new System.Windows.Forms.TabPage();
+            this.tabEmployees = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
+            this.tabHome.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // tabControl1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(430, 220);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.tabControl1.Controls.Add(this.tabHome);
+            this.tabControl1.Controls.Add(this.tabProducts);
+            this.tabControl1.Controls.Add(this.tabSuppliers);
+            this.tabControl1.Controls.Add(this.tabOrders);
+            this.tabControl1.Controls.Add(this.tabCustomers);
+            this.tabControl1.Controls.Add(this.tabEmployees);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.ItemSize = new System.Drawing.Size(100, 50);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(40, 3);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1079, 681);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // button1
+            // tabHome
             // 
-            this.button1.Location = new System.Drawing.Point(434, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.tabHome.Controls.Add(this.panel1);
+            this.tabHome.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabHome.Location = new System.Drawing.Point(4, 54);
+            this.tabHome.Name = "tabHome";
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHome.Size = new System.Drawing.Size(1071, 623);
+            this.tabHome.TabIndex = 0;
+            this.tabHome.Text = "Home";
+            this.tabHome.Click += new System.EventHandler(this.tabPage1_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(100, 100);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(651, 443);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(430, 248);
+            this.textBox1.Location = new System.Drawing.Point(208, 186);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.Size = new System.Drawing.Size(125, 32);
+            this.textBox1.TabIndex = 1;
             // 
-            // menuStrip1
+            // button1
             // 
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productsToolStripMenuItem,
-            this.suppliersToolStripMenuItem,
-            this.ordersToolStripMenuItem,
-            this.customersToolStripMenuItem,
-            this.employeesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.button1.Location = new System.Drawing.Point(192, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // productsToolStripMenuItem
+            // tabProducts
             // 
-            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.productsToolStripMenuItem.Text = "Products";
+            this.tabProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.tabProducts.Location = new System.Drawing.Point(4, 54);
+            this.tabProducts.Name = "tabProducts";
+            this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProducts.Size = new System.Drawing.Size(1071, 623);
+            this.tabProducts.TabIndex = 1;
+            this.tabProducts.Text = "Products";
             // 
-            // suppliersToolStripMenuItem
+            // tabSuppliers
             // 
-            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
-            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.suppliersToolStripMenuItem.Text = "Suppliers";
+            this.tabSuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.tabSuppliers.Location = new System.Drawing.Point(4, 54);
+            this.tabSuppliers.Name = "tabSuppliers";
+            this.tabSuppliers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSuppliers.Size = new System.Drawing.Size(1071, 623);
+            this.tabSuppliers.TabIndex = 2;
+            this.tabSuppliers.Text = "Suppliers";
             // 
-            // ordersToolStripMenuItem
+            // tabOrders
             // 
-            this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
-            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.ordersToolStripMenuItem.Text = "Orders";
+            this.tabOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.tabOrders.Location = new System.Drawing.Point(4, 54);
+            this.tabOrders.Name = "tabOrders";
+            this.tabOrders.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOrders.Size = new System.Drawing.Size(1071, 623);
+            this.tabOrders.TabIndex = 3;
+            this.tabOrders.Text = "Orders";
             // 
-            // customersToolStripMenuItem
+            // tabCustomers
             // 
-            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.customersToolStripMenuItem.Text = "Customers";
+            this.tabCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.tabCustomers.Location = new System.Drawing.Point(4, 54);
+            this.tabCustomers.Name = "tabCustomers";
+            this.tabCustomers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCustomers.Size = new System.Drawing.Size(1071, 623);
+            this.tabCustomers.TabIndex = 4;
+            this.tabCustomers.Text = "Customers";
             // 
-            // employeesToolStripMenuItem
+            // tabEmployees
             // 
-            this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.employeesToolStripMenuItem.Text = "Employees";
+            this.tabEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.tabEmployees.Location = new System.Drawing.Point(4, 54);
+            this.tabEmployees.Name = "tabEmployees";
+            this.tabEmployees.Size = new System.Drawing.Size(1071, 623);
+            this.tabEmployees.TabIndex = 5;
+            this.tabEmployees.Text = "Employees";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 511);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.ClientSize = new System.Drawing.Size(1079, 681);
+            this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Inventory Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabHome.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Label label1;
-        private Button button1;
+        private TabControl tabControl1;
+        private TabPage tabHome;
+        private TabPage tabProducts;
+        private TabPage tabSuppliers;
+        private TabPage tabOrders;
+        private TabPage tabCustomers;
+        private TabPage tabEmployees;
+        private Panel panel1;
         private TextBox textBox1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem productsToolStripMenuItem;
-        private ToolStripMenuItem suppliersToolStripMenuItem;
-        private ToolStripMenuItem ordersToolStripMenuItem;
-        private ToolStripMenuItem customersToolStripMenuItem;
-        private ToolStripMenuItem employeesToolStripMenuItem;
+        private Button button1;
     }
 }
