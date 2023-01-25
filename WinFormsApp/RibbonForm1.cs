@@ -27,16 +27,16 @@ namespace WinFormsApp
         }
         public void labelUserMessageSuccess(string labelInput)
         {
-            labelUserMessage.Text = (labelInput);
-            labelUserMessage.ForeColor = Color.Black;
-            labelUserMessage.Visible = true;
+            //labelUserMessage.Text = (labelInput);
+            //labelUserMessage.ForeColor = Color.Black;
+            //labelUserMessage.Visible = true;
         }
 
         public void labelUserMessageFailure(string labelInput)
         {
-            labelUserMessage.Text = (labelInput);
-            labelUserMessage.ForeColor = Color.Red;
-            labelUserMessage.Visible = true;
+            //labelUserMessage.Text = (labelInput);
+            //labelUserMessage.ForeColor = Color.Red;
+            //labelUserMessage.Visible = true;
         }
 
         private void buttonProductsAdd_Click(object sender, EventArgs e)
@@ -51,10 +51,10 @@ namespace WinFormsApp
   
             try
             {
-                int stock = Int32.Parse(stockString);
-                int price = Int32.Parse(priceString);
+                //int stock = Int32.Parse(stockString);
+                //int price = Int32.Parse(priceString);
 
-                _layer.InsertProduct(productId, ProductName, stock, price);
+                //_layer.InsertProduct(productId, ProductName, stock, price);
 
                 //Note: labelUserMessage is a placeholder.
                 labelUserMessageSuccess("Product added");
