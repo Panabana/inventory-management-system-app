@@ -17,7 +17,7 @@ namespace WinFormsApp
      *First batch of code, copied from Bjorn's tutorial on MVC, translated variable names as well as we can at this stage.
      */
     public partial class RibbonForm1 : DevExpress.XtraBars.Ribbon.RibbonForm
-    {
+    {/*
         private readonly DataAccessLayer _layer;
         public RibbonForm1()
         {
@@ -63,6 +63,6 @@ namespace WinFormsApp
                 productLabelUserMessageFailure("Stock/price cannot contain letters or special characters");
             }
 
-        }
+        }*/
     }
 }
