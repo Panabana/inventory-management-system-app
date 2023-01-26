@@ -13,8 +13,10 @@ namespace WinFormsApp
 {
     public partial class FormManageCustomers : DevExpress.XtraEditors.XtraForm
     {
+        private readonly DataAccessLayer _layer;
         public FormManageCustomers()
         {
+            _layer = new();
             InitializeComponent();
         }
     }

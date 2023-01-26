@@ -9,12 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*CONTROLLER
+ Added read only DAL object.
+ */
+
 namespace WinFormsApp
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private readonly DataAccessLayer _layer;
         public FormMain()
         {
+            _layer = new();
             InitializeComponent();
         }
 

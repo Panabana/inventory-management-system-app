@@ -44,10 +44,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonAddProduct = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonEditProduct = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonRemoveProduct = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonExitProduct = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageProductsMessage = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -125,7 +125,6 @@
             this.label2.Size = new System.Drawing.Size(97, 14);
             this.label2.TabIndex = 2;
             this.label2.Text = "Product name:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
@@ -187,51 +186,55 @@
             this.label8.Size = new System.Drawing.Size(78, 14);
             this.label8.TabIndex = 0;
             this.label8.Text = "Product ID:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // simpleButton2
+            // buttonAddProduct
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(110, 277);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "Add";
+            this.buttonAddProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddProduct.Appearance.Options.UseFont = true;
+            this.buttonAddProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddProduct.ImageOptions.Image")));
+            this.buttonAddProduct.Location = new System.Drawing.Point(110, 277);
+            this.buttonAddProduct.Name = "buttonAddProduct";
+            this.buttonAddProduct.Size = new System.Drawing.Size(106, 44);
+            this.buttonAddProduct.TabIndex = 7;
+            this.buttonAddProduct.Tag = "<Null>";
+            this.buttonAddProduct.Text = "Add";
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
-            // simpleButton3
+            // buttonEditProduct
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(233, 277);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton3.TabIndex = 9;
-            this.simpleButton3.Text = "Edit";
+            this.buttonEditProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditProduct.Appearance.Options.UseFont = true;
+            this.buttonEditProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditProduct.ImageOptions.Image")));
+            this.buttonEditProduct.Location = new System.Drawing.Point(233, 277);
+            this.buttonEditProduct.Name = "buttonEditProduct";
+            this.buttonEditProduct.Size = new System.Drawing.Size(106, 44);
+            this.buttonEditProduct.TabIndex = 9;
+            this.buttonEditProduct.Text = "Edit";
+            this.buttonEditProduct.Click += new System.EventHandler(this.buttonEditProduct_Click);
             // 
-            // simpleButton4
+            // buttonRemoveProduct
             // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(356, 277);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton4.TabIndex = 10;
-            this.simpleButton4.Text = "Remove";
+            this.buttonRemoveProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRemoveProduct.Appearance.Options.UseFont = true;
+            this.buttonRemoveProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveProduct.ImageOptions.Image")));
+            this.buttonRemoveProduct.Location = new System.Drawing.Point(356, 277);
+            this.buttonRemoveProduct.Name = "buttonRemoveProduct";
+            this.buttonRemoveProduct.Size = new System.Drawing.Size(106, 44);
+            this.buttonRemoveProduct.TabIndex = 10;
+            this.buttonRemoveProduct.Text = "Remove";
+            this.buttonRemoveProduct.Click += new System.EventHandler(this.buttonRemoveProduct_Click);
             // 
-            // simpleButton5
+            // buttonExitProduct
             // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(482, 277);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton5.TabIndex = 11;
-            this.simpleButton5.Text = "Exit";
+            this.buttonExitProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExitProduct.Appearance.Options.UseFont = true;
+            this.buttonExitProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitProduct.ImageOptions.Image")));
+            this.buttonExitProduct.Location = new System.Drawing.Point(482, 277);
+            this.buttonExitProduct.Name = "buttonExitProduct";
+            this.buttonExitProduct.Size = new System.Drawing.Size(106, 44);
+            this.buttonExitProduct.TabIndex = 11;
+            this.buttonExitProduct.Text = "Exit";
+            this.buttonExitProduct.Click += new System.EventHandler(this.buttonExitProduct_Click);
             // 
             // labelManageProductsMessage
             // 
@@ -243,6 +246,7 @@
             this.labelManageProductsMessage.Size = new System.Drawing.Size(48, 18);
             this.labelManageProductsMessage.TabIndex = 12;
             this.labelManageProductsMessage.Text = "****";
+            this.labelManageProductsMessage.Visible = false;
             // 
             // FormManageProducts
             // 
@@ -250,10 +254,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 368);
             this.Controls.Add(this.labelManageProductsMessage);
-            this.Controls.Add(this.simpleButton5);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.buttonExitProduct);
+            this.Controls.Add(this.buttonRemoveProduct);
+            this.Controls.Add(this.buttonEditProduct);
+            this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -286,10 +290,10 @@
         private TextBox textBox6;
         private Label label8;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton buttonAddProduct;
+        private DevExpress.XtraEditors.SimpleButton buttonEditProduct;
+        private DevExpress.XtraEditors.SimpleButton buttonRemoveProduct;
+        private DevExpress.XtraEditors.SimpleButton buttonExitProduct;
         private Label labelManageProductsMessage;
     }
 }
