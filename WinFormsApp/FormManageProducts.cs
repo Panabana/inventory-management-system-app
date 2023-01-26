@@ -30,17 +30,20 @@ namespace WinFormsApp
 
         private void buttonEditProduct_Click(object sender, EventArgs e)
         {
-
+            labelManageProductsMessage.Text = "test edit button";
+            labelManageProductsMessage.Visible = true;
         }
 
         private void buttonRemoveProduct_Click(object sender, EventArgs e)
         {
-
+            labelManageProductsMessage.Text = "test remove button";
+            labelManageProductsMessage.Visible = true;
         }
 
         private void buttonExitProduct_Click(object sender, EventArgs e)
         {
-
+            labelManageProductsMessage.Text = "test exit button";
+            labelManageProductsMessage.Visible = true;
         }
     }
 }
