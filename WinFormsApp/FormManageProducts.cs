@@ -41,5 +41,10 @@ namespace WinFormsApp
         {
             Utility.LabelMessageSuccess(labelManageProductsMessage, "test exit button");
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
