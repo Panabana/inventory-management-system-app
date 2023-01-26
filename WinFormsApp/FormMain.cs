@@ -29,7 +29,7 @@ namespace WinFormsApp
 
         }
 
-        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonManageProducts_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormManageProducts form = new FormManageProducts();
             form.ShowDialog();

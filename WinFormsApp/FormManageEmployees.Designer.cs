@@ -160,7 +160,7 @@
             // 
             this.buttonFindEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindEmployee.Appearance.Options.UseFont = true;
-            this.buttonFindEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonFindEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindEmployee.ImageOptions.Image")));
             this.buttonFindEmployee.Location = new System.Drawing.Point(440, 35);
             this.buttonFindEmployee.Name = "buttonFindEmployee";
             this.buttonFindEmployee.Size = new System.Drawing.Size(95, 35);
@@ -189,7 +189,7 @@
             // 
             this.buttonExitEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExitEmployee.Appearance.Options.UseFont = true;
-            this.buttonExitEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.buttonExitEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitEmployee.ImageOptions.Image")));
             this.buttonExitEmployee.Location = new System.Drawing.Point(482, 282);
             this.buttonExitEmployee.Name = "buttonExitEmployee";
             this.buttonExitEmployee.Size = new System.Drawing.Size(106, 44);
@@ -200,7 +200,7 @@
             // 
             this.buttonRemoveEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveEmployee.Appearance.Options.UseFont = true;
-            this.buttonRemoveEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.buttonRemoveEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveEmployee.ImageOptions.Image")));
             this.buttonRemoveEmployee.Location = new System.Drawing.Point(356, 282);
             this.buttonRemoveEmployee.Name = "buttonRemoveEmployee";
             this.buttonRemoveEmployee.Size = new System.Drawing.Size(106, 44);
@@ -211,7 +211,7 @@
             // 
             this.buttonEditEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEditEmployee.Appearance.Options.UseFont = true;
-            this.buttonEditEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.buttonEditEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditEmployee.ImageOptions.Image")));
             this.buttonEditEmployee.Location = new System.Drawing.Point(233, 282);
             this.buttonEditEmployee.Name = "buttonEditEmployee";
             this.buttonEditEmployee.Size = new System.Drawing.Size(106, 44);
@@ -222,7 +222,7 @@
             // 
             this.buttonAddEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAddEmployee.Appearance.Options.UseFont = true;
-            this.buttonAddEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.buttonAddEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddEmployee.ImageOptions.Image")));
             this.buttonAddEmployee.Location = new System.Drawing.Point(110, 282);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(106, 44);
