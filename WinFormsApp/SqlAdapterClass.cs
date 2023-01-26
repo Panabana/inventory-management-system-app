@@ -42,5 +42,16 @@ namespace WinFormsApp
             }
 
         }
+
+        public void UpdateEmployee(DataSet ds)
+        {
+            using (SqlConnection connection = ConnectionHandler.GetDatabaseConnection())
+            {
+                string query = "SELECT * FROM Employee";
+                SqlDataAdapter employeeAdapter = new SqlDataAdapter(query, connection);
+                employeeAdapter.Update(ds);
+            }
+
+        }
     }
 }
