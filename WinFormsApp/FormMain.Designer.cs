@@ -31,28 +31,28 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonAbout = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonManageProducts = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonManageSuppliers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonManageOrders = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonManageCustomers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonManageEmployees = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
@@ -102,28 +102,28 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
-            this.barButtonItem1,
-            this.barButtonItem2,
+            this.barButtonAbout,
+            this.barButtonManageProducts,
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
             this.barButtonItem6,
-            this.barButtonItem7,
+            this.barButtonManageSuppliers,
             this.barButtonItem8,
             this.barButtonItem9,
             this.barButtonItem10,
             this.barButtonItem11,
-            this.barButtonItem12,
+            this.barButtonManageOrders,
             this.barButtonItem13,
             this.barButtonItem14,
             this.barButtonItem15,
             this.barButtonItem16,
-            this.barButtonItem17,
+            this.barButtonManageCustomers,
             this.barButtonItem18,
             this.barButtonItem19,
             this.barButtonItem20,
             this.barButtonItem21,
-            this.barButtonItem22,
+            this.barButtonManageEmployees,
             this.barButtonItem23,
             this.barButtonItem24,
             this.barButtonItem25,
@@ -143,46 +143,46 @@
             this.ribbon.Size = new System.Drawing.Size(959, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
-            // barButtonItem1
+            // barButtonAbout
             // 
-            this.barButtonItem1.Caption = "About the program";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem1.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem1.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonItem1.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem1.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem1.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem1.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem1.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonItem1.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonAbout.Caption = "About the program";
+            this.barButtonAbout.Id = 3;
+            this.barButtonAbout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonAbout.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonAbout.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonAbout.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonAbout.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonAbout.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonAbout.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonAbout.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonAbout.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonAbout.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonAbout.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonAbout.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonAbout.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonAbout.Name = "barButtonAbout";
+            this.barButtonAbout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem2
+            // barButtonManageProducts
             // 
-            this.barButtonItem2.Caption = "Manage products";
-            this.barButtonItem2.Id = 4;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem2.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem2.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonItem2.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem2.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem2.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem2.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem2.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonItem2.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.barButtonManageProducts.Caption = "Manage products";
+            this.barButtonManageProducts.Id = 4;
+            this.barButtonManageProducts.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonManageProducts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonManageProducts.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageProducts.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonManageProducts.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonManageProducts.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageProducts.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageProducts.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonManageProducts.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonManageProducts.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageProducts.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageProducts.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonManageProducts.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonManageProducts.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageProducts.Name = "barButtonManageProducts";
+            this.barButtonManageProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -261,25 +261,25 @@
             this.barButtonItem6.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // barButtonItem7
+            // barButtonManageSuppliers
             // 
-            this.barButtonItem7.Caption = "Manage Suppliers";
-            this.barButtonItem7.Id = 9;
-            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem7.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem7.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonItem7.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem7.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem7.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem7.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem7.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem7.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem7.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonItem7.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonManageSuppliers.Caption = "Manage Suppliers";
+            this.barButtonManageSuppliers.Id = 9;
+            this.barButtonManageSuppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonManageSuppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonManageSuppliers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageSuppliers.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonManageSuppliers.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonManageSuppliers.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageSuppliers.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageSuppliers.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonManageSuppliers.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonManageSuppliers.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageSuppliers.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageSuppliers.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonManageSuppliers.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonManageSuppliers.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageSuppliers.Name = "barButtonManageSuppliers";
             // 
             // barButtonItem8
             // 
@@ -360,24 +360,24 @@
             this.barButtonItem11.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem11.Name = "barButtonItem11";
             // 
-            // barButtonItem12
+            // barButtonManageOrders
             // 
-            this.barButtonItem12.Caption = "Manage Orders";
-            this.barButtonItem12.Id = 14;
-            this.barButtonItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
-            this.barButtonItem12.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem12.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem12.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonItem12.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem12.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem12.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem12.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem12.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem12.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem12.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem12.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonItem12.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonManageOrders.Caption = "Manage Orders";
+            this.barButtonManageOrders.Id = 14;
+            this.barButtonManageOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
+            this.barButtonManageOrders.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonManageOrders.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageOrders.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageOrders.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonManageOrders.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonManageOrders.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageOrders.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageOrders.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonManageOrders.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonManageOrders.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageOrders.Name = "barButtonManageOrders";
             // 
             // barButtonItem13
             // 
@@ -458,25 +458,25 @@
             this.barButtonItem16.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem16.Name = "barButtonItem16";
             // 
-            // barButtonItem17
+            // barButtonManageCustomers
             // 
-            this.barButtonItem17.Caption = "Manage Customers";
-            this.barButtonItem17.Id = 19;
-            this.barButtonItem17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
-            this.barButtonItem17.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
-            this.barButtonItem17.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem17.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem17.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonItem17.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem17.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem17.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem17.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem17.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem17.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem17.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem17.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonItem17.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonManageCustomers.Caption = "Manage Customers";
+            this.barButtonManageCustomers.Id = 19;
+            this.barButtonManageCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
+            this.barButtonManageCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
+            this.barButtonManageCustomers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageCustomers.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonManageCustomers.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonManageCustomers.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageCustomers.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageCustomers.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonManageCustomers.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonManageCustomers.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageCustomers.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageCustomers.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonManageCustomers.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonManageCustomers.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageCustomers.Name = "barButtonManageCustomers";
             // 
             // barButtonItem18
             // 
@@ -558,25 +558,25 @@
             this.barButtonItem21.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem21.Name = "barButtonItem21";
             // 
-            // barButtonItem22
+            // barButtonManageEmployees
             // 
-            this.barButtonItem22.Caption = "Manage Employees";
-            this.barButtonItem22.Id = 24;
-            this.barButtonItem22.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.Image")));
-            this.barButtonItem22.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.LargeImage")));
-            this.barButtonItem22.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem22.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem22.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonItem22.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem22.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem22.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem22.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem22.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem22.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonItem22.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem22.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonItem22.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem22.Name = "barButtonItem22";
+            this.barButtonManageEmployees.Caption = "Manage Employees";
+            this.barButtonManageEmployees.Id = 24;
+            this.barButtonManageEmployees.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.Image")));
+            this.barButtonManageEmployees.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.LargeImage")));
+            this.barButtonManageEmployees.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageEmployees.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonManageEmployees.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonManageEmployees.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageEmployees.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageEmployees.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonManageEmployees.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonManageEmployees.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageEmployees.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManageEmployees.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonManageEmployees.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonManageEmployees.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManageEmployees.Name = "barButtonManageEmployees";
             // 
             // barButtonItem23
             // 
@@ -689,41 +689,41 @@
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
             this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonManageProducts);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonManageSuppliers);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.AllowTextClipping = false;
             this.ribbonPageGroup4.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonManageOrders);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.AllowTextClipping = false;
             this.ribbonPageGroup5.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonManageCustomers);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.AllowTextClipping = false;
             this.ribbonPageGroup6.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem22);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonManageEmployees);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonAbout);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPage2
@@ -1023,8 +1023,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonAbout;
+        private DevExpress.XtraBars.BarButtonItem barButtonManageProducts;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
@@ -1033,7 +1033,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonManageSuppliers;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
@@ -1042,7 +1042,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem barButtonManageOrders;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
@@ -1051,12 +1051,12 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonManageCustomers;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
         private DevExpress.XtraBars.BarButtonItem barButtonItem20;
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem22;
+        private DevExpress.XtraBars.BarButtonItem barButtonManageEmployees;
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
