@@ -54,7 +54,7 @@ namespace WinFormsApp
 
         }
 
-        //Hur löser vi user input?
+        //Hur löser vi user input? Kolla på sida 90!
         public void InsertCustomer(DataSet ds)
         {
             DataSet dataSet = new DataSet("Customer");
@@ -86,5 +86,28 @@ namespace WinFormsApp
                 customerAdapter.Update(customerDataTable);
             }
         }
+        //Detta är en alternativ lösning! Fill() är som en listener för förändring
+        //kolla o jämför commandBuilder o adapter
+        public void AlternateInsertCustomer(DataSet ds)
+        {
+            DataSet dataSet = new DataSet("Customer");
+            string customerSelectQuery = "SELECT * FROM Customer";
+
+            using(SqlConnection connection = ConnectionHandler.GetDatabaseConnection())
+            {
+                SqlCommand customerSelectCommand = connection.CreateCommand();
+                customerSelectCommand.CommandText= customerSelectQuery;
+
+                SqlDataAdapter customerAdapter = new(customerSelectCommand);
+
+                SqlCommandBuilder customerCommandBuilder = new(customerAdapter);
+
+                customerAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+                customerAdapter.Fill(dataSet,"Employee");
+                customerAdapter.Update(dataSet, "Employee");
+            }
+        }
+
     }
 }
