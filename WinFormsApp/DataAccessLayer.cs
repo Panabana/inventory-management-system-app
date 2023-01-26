@@ -14,15 +14,14 @@ namespace WinFormsApp
         public SqlConnection GetDatabaseConnection()
         {
             string connectionString = ConfigurationManager.ConnectionStrings
-                ["Test"].ConnectionString;
+                ["insertDetailsHere"].ConnectionString;
 
             SqlConnectionStringBuilder builder = new(connectionString);
 
             SqlConnection connection = new(builder.ConnectionString);
 
             return connection;
-        }
-        
-        }
+        }  
+     }
 }
 
