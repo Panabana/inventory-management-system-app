@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit.Layout.Engine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,10 @@ namespace WinFormsApp
 {
     public partial class FormManageProducts : DevExpress.XtraEditors.XtraForm
     {
+        private readonly DataAccessLayer _layer;
         public FormManageProducts()
         {
+            _layer = new();
             InitializeComponent();
         }
 
