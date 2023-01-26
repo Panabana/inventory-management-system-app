@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp
 {
-    public partial class RibbonForm2 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public RibbonForm2()
+        public FormMain()
         {
             InitializeComponent();
         }
