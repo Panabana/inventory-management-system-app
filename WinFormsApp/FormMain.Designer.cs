@@ -147,7 +147,7 @@
             // 
             this.barButtonAbout.Caption = "About the program";
             this.barButtonAbout.Id = 3;
-            this.barButtonAbout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonAbout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonAbout.ImageOptions.SvgImage")));
             this.barButtonAbout.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonAbout.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonAbout.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -167,8 +167,8 @@
             // 
             this.barButtonManageProducts.Caption = "Manage products";
             this.barButtonManageProducts.Id = 4;
-            this.barButtonManageProducts.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonManageProducts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonManageProducts.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageProducts.ImageOptions.Image")));
+            this.barButtonManageProducts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageProducts.ImageOptions.LargeImage")));
             this.barButtonManageProducts.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageProducts.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageProducts.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -265,8 +265,8 @@
             // 
             this.barButtonManageSuppliers.Caption = "Manage Suppliers";
             this.barButtonManageSuppliers.Id = 9;
-            this.barButtonManageSuppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonManageSuppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonManageSuppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageSuppliers.ImageOptions.Image")));
+            this.barButtonManageSuppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageSuppliers.ImageOptions.LargeImage")));
             this.barButtonManageSuppliers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageSuppliers.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageSuppliers.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -364,7 +364,7 @@
             // 
             this.barButtonManageOrders.Caption = "Manage Orders";
             this.barButtonManageOrders.Id = 14;
-            this.barButtonManageOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
+            this.barButtonManageOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonManageOrders.ImageOptions.SvgImage")));
             this.barButtonManageOrders.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -462,8 +462,8 @@
             // 
             this.barButtonManageCustomers.Caption = "Manage Customers";
             this.barButtonManageCustomers.Id = 19;
-            this.barButtonManageCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
-            this.barButtonManageCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
+            this.barButtonManageCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageCustomers.ImageOptions.Image")));
+            this.barButtonManageCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageCustomers.ImageOptions.LargeImage")));
             this.barButtonManageCustomers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageCustomers.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageCustomers.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -562,8 +562,8 @@
             // 
             this.barButtonManageEmployees.Caption = "Manage Employees";
             this.barButtonManageEmployees.Id = 24;
-            this.barButtonManageEmployees.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.Image")));
-            this.barButtonManageEmployees.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.LargeImage")));
+            this.barButtonManageEmployees.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageEmployees.ImageOptions.Image")));
+            this.barButtonManageEmployees.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageEmployees.ImageOptions.LargeImage")));
             this.barButtonManageEmployees.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageEmployees.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageEmployees.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -577,6 +577,7 @@
             this.barButtonManageEmployees.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonManageEmployees.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonManageEmployees.Name = "barButtonManageEmployees";
+            this.barButtonManageEmployees.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageEmployees_ItemClick_1);
             // 
             // barButtonItem23
             // 

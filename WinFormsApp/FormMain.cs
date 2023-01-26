@@ -34,5 +34,17 @@ namespace WinFormsApp
             FormManageProducts form = new FormManageProducts();
             form.ShowDialog();
         }
+
+        private void barButtonManageEmployees_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            FormManageEmployees form = new FormManageEmployees();
+            form.ShowDialog();
+        }
+
+        private void barButtonManageCustomers_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            FormManageCustomers form = new FormManageCustomers();
+            form.ShowDialog();
+        }
     }
 }
