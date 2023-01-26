@@ -53,5 +53,38 @@ namespace WinFormsApp
             }
 
         }
+
+        //Hur löser vi user input?
+        public void InsertCustomer(DataSet ds)
+        {
+            DataSet dataSet = new DataSet("Customer");
+            string customerQuery = "SELECT * FROM Customer";
+
+            using (SqlConnection connection = ConnectionHandler.GetDatabaseConnection())
+            {
+                SqlCommand customerSelectCommand = connection.CreateCommand();
+                customerSelectCommand.CommandText = customerQuery;
+
+                SqlDataAdapter customerAdapter = new();
+                customerAdapter.SelectCommand = customerSelectCommand;
+
+                SqlCommandBuilder commandBuilder = new();
+                commandBuilder.DataAdapter = customerAdapter;
+
+                customerAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                customerAdapter.Fill(dataSet, "Customer");
+
+                DataTable customerDataTable = dataSet.Tables["Employee"];
+
+                DataRow newCustomer = customerDataTable.NewRow();
+                newCustomer["CustomerId"] = "User Input";
+                newCustomer["CustomerName"] = "-II-";
+                newCustomer["CustomerAddress"] = "-II-";
+                newCustomer["PhoneNumber"] = "-II-";
+
+                customerDataTable.Rows.Add(newCustomer);
+                customerAdapter.Update(customerDataTable);
+            }
+        }
     }
 }
