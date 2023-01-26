@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageCustomers));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.buttonCustomerIdFind = new DevExpress.XtraEditors.SimpleButton();
+            this.textBoxCustomerIdFind = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonExitCustomer = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonRemoveCustomer = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonEditCustomer = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonAddCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageCustomersMessage = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -53,13 +53,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBoxCustomerAddress);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBoxCustomerPhone);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBoxCustomerName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxCustomerId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
@@ -70,12 +70,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New customer details";
             // 
-            // textBox4
+            // textBoxCustomerAddress
             // 
-            this.textBox4.Location = new System.Drawing.Point(454, 83);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 26);
-            this.textBox4.TabIndex = 7;
+            this.textBoxCustomerAddress.Location = new System.Drawing.Point(454, 83);
+            this.textBoxCustomerAddress.Name = "textBoxCustomerAddress";
+            this.textBoxCustomerAddress.Size = new System.Drawing.Size(200, 26);
+            this.textBoxCustomerAddress.TabIndex = 7;
             // 
             // label4
             // 
@@ -88,12 +88,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Address:";
             // 
-            // textBox3
+            // textBoxCustomerPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 26);
-            this.textBox3.TabIndex = 5;
+            this.textBoxCustomerPhone.Location = new System.Drawing.Point(110, 83);
+            this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
+            this.textBoxCustomerPhone.Size = new System.Drawing.Size(200, 26);
+            this.textBoxCustomerPhone.TabIndex = 5;
             // 
             // label3
             // 
@@ -106,12 +106,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Phone number:";
             // 
-            // textBox2
+            // textBoxCustomerName
             // 
-            this.textBox2.Location = new System.Drawing.Point(454, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 26);
-            this.textBox2.TabIndex = 3;
+            this.textBoxCustomerName.Location = new System.Drawing.Point(454, 34);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(200, 26);
+            this.textBoxCustomerName.TabIndex = 3;
             // 
             // label2
             // 
@@ -124,12 +124,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Customer name:";
             // 
-            // textBox1
+            // textBoxCustomerId
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 26);
-            this.textBox1.TabIndex = 1;
+            this.textBoxCustomerId.Location = new System.Drawing.Point(110, 34);
+            this.textBoxCustomerId.Name = "textBoxCustomerId";
+            this.textBoxCustomerId.Size = new System.Drawing.Size(200, 26);
+            this.textBoxCustomerId.TabIndex = 1;
             // 
             // label1
             // 
@@ -144,8 +144,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.simpleButton1);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.buttonCustomerIdFind);
+            this.groupBox2.Controls.Add(this.textBoxCustomerIdFind);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
@@ -156,23 +156,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find a customer:";
             // 
-            // simpleButton1
+            // buttonCustomerIdFind
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(440, 35);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(95, 35);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Find";
+            this.buttonCustomerIdFind.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCustomerIdFind.Appearance.Options.UseFont = true;
+            this.buttonCustomerIdFind.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonCustomerIdFind.Location = new System.Drawing.Point(440, 35);
+            this.buttonCustomerIdFind.Name = "buttonCustomerIdFind";
+            this.buttonCustomerIdFind.Size = new System.Drawing.Size(95, 35);
+            this.buttonCustomerIdFind.TabIndex = 6;
+            this.buttonCustomerIdFind.Text = "Find";
             // 
-            // textBox6
+            // textBoxCustomerIdFind
             // 
-            this.textBox6.Location = new System.Drawing.Point(217, 39);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(212, 26);
-            this.textBox6.TabIndex = 5;
+            this.textBoxCustomerIdFind.Location = new System.Drawing.Point(217, 39);
+            this.textBoxCustomerIdFind.Name = "textBoxCustomerIdFind";
+            this.textBoxCustomerIdFind.Size = new System.Drawing.Size(212, 26);
+            this.textBoxCustomerIdFind.TabIndex = 5;
             // 
             // label8
             // 
@@ -185,49 +185,49 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Customer ID:";
             // 
-            // simpleButton5
+            // buttonExitCustomer
             // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(482, 282);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton5.TabIndex = 19;
-            this.simpleButton5.Text = "Exit";
+            this.buttonExitCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExitCustomer.Appearance.Options.UseFont = true;
+            this.buttonExitCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.buttonExitCustomer.Location = new System.Drawing.Point(482, 282);
+            this.buttonExitCustomer.Name = "buttonExitCustomer";
+            this.buttonExitCustomer.Size = new System.Drawing.Size(106, 44);
+            this.buttonExitCustomer.TabIndex = 19;
+            this.buttonExitCustomer.Text = "Exit";
             // 
-            // simpleButton4
+            // buttonRemoveCustomer
             // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(356, 282);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton4.TabIndex = 18;
-            this.simpleButton4.Text = "Remove";
+            this.buttonRemoveCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRemoveCustomer.Appearance.Options.UseFont = true;
+            this.buttonRemoveCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.buttonRemoveCustomer.Location = new System.Drawing.Point(356, 282);
+            this.buttonRemoveCustomer.Name = "buttonRemoveCustomer";
+            this.buttonRemoveCustomer.Size = new System.Drawing.Size(106, 44);
+            this.buttonRemoveCustomer.TabIndex = 18;
+            this.buttonRemoveCustomer.Text = "Remove";
             // 
-            // simpleButton3
+            // buttonEditCustomer
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(233, 282);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton3.TabIndex = 17;
-            this.simpleButton3.Text = "Edit";
+            this.buttonEditCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditCustomer.Appearance.Options.UseFont = true;
+            this.buttonEditCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.buttonEditCustomer.Location = new System.Drawing.Point(233, 282);
+            this.buttonEditCustomer.Name = "buttonEditCustomer";
+            this.buttonEditCustomer.Size = new System.Drawing.Size(106, 44);
+            this.buttonEditCustomer.TabIndex = 17;
+            this.buttonEditCustomer.Text = "Edit";
             // 
-            // simpleButton2
+            // buttonAddCustomer
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(110, 282);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(106, 44);
-            this.simpleButton2.TabIndex = 16;
-            this.simpleButton2.Text = "Add";
+            this.buttonAddCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddCustomer.Appearance.Options.UseFont = true;
+            this.buttonAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.buttonAddCustomer.Location = new System.Drawing.Point(110, 282);
+            this.buttonAddCustomer.Name = "buttonAddCustomer";
+            this.buttonAddCustomer.Size = new System.Drawing.Size(106, 44);
+            this.buttonAddCustomer.TabIndex = 16;
+            this.buttonAddCustomer.Text = "Add";
             // 
             // labelManageCustomersMessage
             // 
@@ -246,10 +246,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 368);
             this.Controls.Add(this.labelManageCustomersMessage);
-            this.Controls.Add(this.simpleButton5);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.buttonExitCustomer);
+            this.Controls.Add(this.buttonRemoveCustomer);
+            this.Controls.Add(this.buttonEditCustomer);
+            this.Controls.Add(this.buttonAddCustomer);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -269,22 +269,22 @@
         #endregion
 
         private GroupBox groupBox1;
-        private TextBox textBox4;
+        private TextBox textBoxCustomerAddress;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox textBoxCustomerPhone;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox textBoxCustomerName;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox textBoxCustomerId;
         private Label label1;
         private GroupBox groupBox2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private TextBox textBox6;
+        private DevExpress.XtraEditors.SimpleButton buttonCustomerIdFind;
+        private TextBox textBoxCustomerIdFind;
         private Label label8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton buttonExitCustomer;
+        private DevExpress.XtraEditors.SimpleButton buttonRemoveCustomer;
+        private DevExpress.XtraEditors.SimpleButton buttonEditCustomer;
+        private DevExpress.XtraEditors.SimpleButton buttonAddCustomer;
         private Label labelManageCustomersMessage;
     }
 }
