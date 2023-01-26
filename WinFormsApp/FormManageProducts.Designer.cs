@@ -243,6 +243,7 @@
             this.labelManageProductsMessage.Size = new System.Drawing.Size(48, 18);
             this.labelManageProductsMessage.TabIndex = 12;
             this.labelManageProductsMessage.Text = "****";
+            this.labelManageProductsMessage.Visible = false;
             // 
             // FormManageProducts
             // 
