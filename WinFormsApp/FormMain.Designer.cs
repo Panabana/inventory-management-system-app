@@ -64,31 +64,6 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup26 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -134,12 +109,7 @@
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
-            this.ribbonPage2,
-            this.ribbonPage3,
-            this.ribbonPage4,
-            this.ribbonPage5,
-            this.ribbonPage6});
+            this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(959, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -147,7 +117,7 @@
             // 
             this.barButtonAbout.Caption = "About the program";
             this.barButtonAbout.Id = 3;
-            this.barButtonAbout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonAbout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonAbout.ImageOptions.SvgImage")));
             this.barButtonAbout.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonAbout.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonAbout.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -167,8 +137,8 @@
             // 
             this.barButtonManageProducts.Caption = "Manage products";
             this.barButtonManageProducts.Id = 4;
-            this.barButtonManageProducts.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonManageProducts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonManageProducts.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageProducts.ImageOptions.Image")));
+            this.barButtonManageProducts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageProducts.ImageOptions.LargeImage")));
             this.barButtonManageProducts.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageProducts.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageProducts.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -182,7 +152,7 @@
             this.barButtonManageProducts.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonManageProducts.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonManageProducts.Name = "barButtonManageProducts";
-            this.barButtonManageProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.barButtonManageProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageProducts_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -265,8 +235,8 @@
             // 
             this.barButtonManageSuppliers.Caption = "Manage Suppliers";
             this.barButtonManageSuppliers.Id = 9;
-            this.barButtonManageSuppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonManageSuppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonManageSuppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageSuppliers.ImageOptions.Image")));
+            this.barButtonManageSuppliers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageSuppliers.ImageOptions.LargeImage")));
             this.barButtonManageSuppliers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageSuppliers.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageSuppliers.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -364,7 +334,7 @@
             // 
             this.barButtonManageOrders.Caption = "Manage Orders";
             this.barButtonManageOrders.Id = 14;
-            this.barButtonManageOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
+            this.barButtonManageOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonManageOrders.ImageOptions.SvgImage")));
             this.barButtonManageOrders.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -462,8 +432,8 @@
             // 
             this.barButtonManageCustomers.Caption = "Manage Customers";
             this.barButtonManageCustomers.Id = 19;
-            this.barButtonManageCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
-            this.barButtonManageCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
+            this.barButtonManageCustomers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageCustomers.ImageOptions.Image")));
+            this.barButtonManageCustomers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageCustomers.ImageOptions.LargeImage")));
             this.barButtonManageCustomers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageCustomers.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageCustomers.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -562,8 +532,8 @@
             // 
             this.barButtonManageEmployees.Caption = "Manage Employees";
             this.barButtonManageEmployees.Id = 24;
-            this.barButtonManageEmployees.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.Image")));
-            this.barButtonManageEmployees.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.LargeImage")));
+            this.barButtonManageEmployees.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageEmployees.ImageOptions.Image")));
+            this.barButtonManageEmployees.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageEmployees.ImageOptions.LargeImage")));
             this.barButtonManageEmployees.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.barButtonManageEmployees.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonManageEmployees.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -726,256 +696,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonAbout);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // ribbonPage2
-            // 
-            this.ribbonPage2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage2.Appearance.Options.UseFont = true;
-            this.ribbonPage2.Appearance.Options.UseTextOptions = true;
-            this.ribbonPage2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage2.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage2.AppearanceHovered.Options.UseFont = true;
-            this.ribbonPage2.AppearanceHovered.Options.UseTextOptions = true;
-            this.ribbonPage2.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage2.AppearanceSelected.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage2.AppearanceSelected.Options.UseFont = true;
-            this.ribbonPage2.AppearanceSelected.Options.UseTextOptions = true;
-            this.ribbonPage2.AppearanceSelected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7,
-            this.ribbonPageGroup8,
-            this.ribbonPageGroup9,
-            this.ribbonPageGroup10});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Products";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.AllowTextClipping = false;
-            this.ribbonPageGroup7.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.AllowTextClipping = false;
-            this.ribbonPageGroup8.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.AllowTextClipping = false;
-            this.ribbonPageGroup9.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.AllowTextClipping = false;
-            this.ribbonPageGroup10.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage3.Appearance.Options.UseFont = true;
-            this.ribbonPage3.Appearance.Options.UseTextOptions = true;
-            this.ribbonPage3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage3.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage3.AppearanceHovered.Options.UseFont = true;
-            this.ribbonPage3.AppearanceHovered.Options.UseTextOptions = true;
-            this.ribbonPage3.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage3.AppearanceSelected.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage3.AppearanceSelected.Options.UseFont = true;
-            this.ribbonPage3.AppearanceSelected.Options.UseTextOptions = true;
-            this.ribbonPage3.AppearanceSelected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup11,
-            this.ribbonPageGroup12,
-            this.ribbonPageGroup13,
-            this.ribbonPageGroup14});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Suppliers";
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.AllowTextClipping = false;
-            this.ribbonPageGroup11.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup11.ImageOptions.Image")));
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.AllowTextClipping = false;
-            this.ribbonPageGroup12.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem9);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.AllowTextClipping = false;
-            this.ribbonPageGroup13.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem10);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            // 
-            // ribbonPageGroup14
-            // 
-            this.ribbonPageGroup14.AllowTextClipping = false;
-            this.ribbonPageGroup14.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem11);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            // 
-            // ribbonPage4
-            // 
-            this.ribbonPage4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage4.Appearance.Options.UseFont = true;
-            this.ribbonPage4.Appearance.Options.UseTextOptions = true;
-            this.ribbonPage4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage4.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage4.AppearanceHovered.Options.UseFont = true;
-            this.ribbonPage4.AppearanceHovered.Options.UseTextOptions = true;
-            this.ribbonPage4.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage4.AppearanceSelected.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage4.AppearanceSelected.Options.UseFont = true;
-            this.ribbonPage4.AppearanceSelected.Options.UseTextOptions = true;
-            this.ribbonPage4.AppearanceSelected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup15,
-            this.ribbonPageGroup16,
-            this.ribbonPageGroup17,
-            this.ribbonPageGroup18});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Orders";
-            // 
-            // ribbonPageGroup15
-            // 
-            this.ribbonPageGroup15.AllowTextClipping = false;
-            this.ribbonPageGroup15.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem13);
-            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
-            // 
-            // ribbonPageGroup16
-            // 
-            this.ribbonPageGroup16.AllowTextClipping = false;
-            this.ribbonPageGroup16.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem14);
-            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.AllowTextClipping = false;
-            this.ribbonPageGroup17.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup17.ItemLinks.Add(this.barButtonItem15);
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            // 
-            // ribbonPageGroup18
-            // 
-            this.ribbonPageGroup18.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup18.ItemLinks.Add(this.barButtonItem16);
-            this.ribbonPageGroup18.Name = "ribbonPageGroup18";
-            // 
-            // ribbonPage5
-            // 
-            this.ribbonPage5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage5.Appearance.Options.UseFont = true;
-            this.ribbonPage5.Appearance.Options.UseTextOptions = true;
-            this.ribbonPage5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage5.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage5.AppearanceHovered.Options.UseFont = true;
-            this.ribbonPage5.AppearanceHovered.Options.UseTextOptions = true;
-            this.ribbonPage5.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage5.AppearanceSelected.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage5.AppearanceSelected.Options.UseFont = true;
-            this.ribbonPage5.AppearanceSelected.Options.UseTextOptions = true;
-            this.ribbonPage5.AppearanceSelected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup19,
-            this.ribbonPageGroup20,
-            this.ribbonPageGroup21,
-            this.ribbonPageGroup22});
-            this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "Customers";
-            // 
-            // ribbonPageGroup19
-            // 
-            this.ribbonPageGroup19.AllowTextClipping = false;
-            this.ribbonPageGroup19.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup19.ItemLinks.Add(this.barButtonItem18);
-            this.ribbonPageGroup19.Name = "ribbonPageGroup19";
-            // 
-            // ribbonPageGroup20
-            // 
-            this.ribbonPageGroup20.AllowTextClipping = false;
-            this.ribbonPageGroup20.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup20.ItemLinks.Add(this.barButtonItem19);
-            this.ribbonPageGroup20.Name = "ribbonPageGroup20";
-            // 
-            // ribbonPageGroup21
-            // 
-            this.ribbonPageGroup21.AllowTextClipping = false;
-            this.ribbonPageGroup21.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup21.ItemLinks.Add(this.barButtonItem20);
-            this.ribbonPageGroup21.Name = "ribbonPageGroup21";
-            // 
-            // ribbonPageGroup22
-            // 
-            this.ribbonPageGroup22.AllowTextClipping = false;
-            this.ribbonPageGroup22.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup22.ItemLinks.Add(this.barButtonItem21);
-            this.ribbonPageGroup22.Name = "ribbonPageGroup22";
-            // 
-            // ribbonPage6
-            // 
-            this.ribbonPage6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage6.Appearance.Options.UseFont = true;
-            this.ribbonPage6.Appearance.Options.UseTextOptions = true;
-            this.ribbonPage6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage6.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage6.AppearanceHovered.Options.UseFont = true;
-            this.ribbonPage6.AppearanceHovered.Options.UseTextOptions = true;
-            this.ribbonPage6.AppearanceHovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage6.AppearanceSelected.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ribbonPage6.AppearanceSelected.Options.UseFont = true;
-            this.ribbonPage6.AppearanceSelected.Options.UseTextOptions = true;
-            this.ribbonPage6.AppearanceSelected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup23,
-            this.ribbonPageGroup24,
-            this.ribbonPageGroup25,
-            this.ribbonPageGroup26});
-            this.ribbonPage6.Name = "ribbonPage6";
-            this.ribbonPage6.Text = "Employees";
-            // 
-            // ribbonPageGroup23
-            // 
-            this.ribbonPageGroup23.AllowTextClipping = false;
-            this.ribbonPageGroup23.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup23.ItemLinks.Add(this.barButtonItem23);
-            this.ribbonPageGroup23.Name = "ribbonPageGroup23";
-            // 
-            // ribbonPageGroup24
-            // 
-            this.ribbonPageGroup24.AllowTextClipping = false;
-            this.ribbonPageGroup24.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup24.ItemLinks.Add(this.barButtonItem24);
-            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
-            // 
-            // ribbonPageGroup25
-            // 
-            this.ribbonPageGroup25.AllowTextClipping = false;
-            this.ribbonPageGroup25.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem25);
-            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
-            // 
-            // ribbonPageGroup26
-            // 
-            this.ribbonPageGroup26.AllowTextClipping = false;
-            this.ribbonPageGroup26.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup26.ItemLinks.Add(this.barButtonItem26);
-            this.ribbonPageGroup26.Name = "ribbonPageGroup26";
-            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 573);
@@ -1011,46 +731,29 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem barButtonAbout;
         private DevExpress.XtraBars.BarButtonItem barButtonManageProducts;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem barButtonManageSuppliers;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.BarButtonItem barButtonManageOrders;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.BarButtonItem barButtonManageCustomers;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
@@ -1061,13 +764,5 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
         private DevExpress.XtraBars.BarButtonItem barButtonItem26;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup20;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup21;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup22;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup23;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup25;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup26;
     }
 }

@@ -160,7 +160,7 @@
             // 
             this.buttonCustomerIdFind.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCustomerIdFind.Appearance.Options.UseFont = true;
-            this.buttonCustomerIdFind.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonCustomerIdFind.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCustomerIdFind.ImageOptions.Image")));
             this.buttonCustomerIdFind.Location = new System.Drawing.Point(440, 35);
             this.buttonCustomerIdFind.Name = "buttonCustomerIdFind";
             this.buttonCustomerIdFind.Size = new System.Drawing.Size(95, 35);
@@ -189,7 +189,7 @@
             // 
             this.buttonExitCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExitCustomer.Appearance.Options.UseFont = true;
-            this.buttonExitCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.buttonExitCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitCustomer.ImageOptions.Image")));
             this.buttonExitCustomer.Location = new System.Drawing.Point(482, 282);
             this.buttonExitCustomer.Name = "buttonExitCustomer";
             this.buttonExitCustomer.Size = new System.Drawing.Size(106, 44);
@@ -200,7 +200,7 @@
             // 
             this.buttonRemoveCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveCustomer.Appearance.Options.UseFont = true;
-            this.buttonRemoveCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.buttonRemoveCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveCustomer.ImageOptions.Image")));
             this.buttonRemoveCustomer.Location = new System.Drawing.Point(356, 282);
             this.buttonRemoveCustomer.Name = "buttonRemoveCustomer";
             this.buttonRemoveCustomer.Size = new System.Drawing.Size(106, 44);
@@ -211,7 +211,7 @@
             // 
             this.buttonEditCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEditCustomer.Appearance.Options.UseFont = true;
-            this.buttonEditCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.buttonEditCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditCustomer.ImageOptions.Image")));
             this.buttonEditCustomer.Location = new System.Drawing.Point(233, 282);
             this.buttonEditCustomer.Name = "buttonEditCustomer";
             this.buttonEditCustomer.Size = new System.Drawing.Size(106, 44);
@@ -222,7 +222,7 @@
             // 
             this.buttonAddCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAddCustomer.Appearance.Options.UseFont = true;
-            this.buttonAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.buttonAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddCustomer.ImageOptions.Image")));
             this.buttonAddCustomer.Location = new System.Drawing.Point(110, 282);
             this.buttonAddCustomer.Name = "buttonAddCustomer";
             this.buttonAddCustomer.Size = new System.Drawing.Size(106, 44);
