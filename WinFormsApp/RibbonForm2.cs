@@ -25,7 +25,8 @@ namespace WinFormsApp
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            FormManageProducts form = new FormManageProducts();
+            form.ShowDialog();
         }
     }
 }
