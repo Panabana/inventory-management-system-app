@@ -24,26 +24,22 @@ namespace WinFormsApp
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
-            labelManageProductsMessage.Text = "test add button";
-            labelManageProductsMessage.Visible = true;
+            Utility.LabelMessageSuccess(labelManageProductsMessage, "test add button");
         }
 
         private void buttonEditProduct_Click(object sender, EventArgs e)
         {
-            labelManageProductsMessage.Text = "test edit button";
-            labelManageProductsMessage.Visible = true;
+            Utility.LabelMessageSuccess(labelManageProductsMessage, "test edit button");
         }
 
         private void buttonRemoveProduct_Click(object sender, EventArgs e)
         {
-            labelManageProductsMessage.Text = "test remove button";
-            labelManageProductsMessage.Visible = true;
+            Utility.LabelMessageSuccess(labelManageProductsMessage, "test remove button");
         }
 
         private void buttonExitProduct_Click(object sender, EventArgs e)
         {
-            labelManageProductsMessage.Text = "test exit button";
-            labelManageProductsMessage.Visible = true;
+            Utility.LabelMessageSuccess(labelManageProductsMessage, "test exit button");
         }
     }
 }
