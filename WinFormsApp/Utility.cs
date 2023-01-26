@@ -8,7 +8,7 @@ namespace WinFormsApp
 {
     public class Utility
     {
-        // Input which label you want to change the text for. Successful messages are black.
+        // Outputs a message for succesful user input. Parameters are which label you want to change to what text . Successful messages become black.
         public void labelMessageSuccess(Label chosenLabel,string textInput)
         {
             chosenLabel.Text = (textInput);
@@ -16,7 +16,7 @@ namespace WinFormsApp
             chosenLabel.Visible = true;
         }
 
-        // Input which label you want to change the text for. Successful messages are red.
+        // Outputs a message for failed user input. Parameters are which label you want to change to what text. Failure messages become red.
         public void labelMessageFailure(Label chosenLabel, string textInput)
         {
             chosenLabel.Text = (textInput);
