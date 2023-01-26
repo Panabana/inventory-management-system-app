@@ -48,12 +48,29 @@ namespace WinFormsApp
             }
         }
 
-        public DataSet ViewAllEmployees()
+        public void UpdateCustomer (DataSet ds)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                using (SqlCommand command = new SqlCommand("UPDATE Customers SET CustomerName = @Name, CustomerAddress = @Address, PhoneNumber = @Phone" +
+                                                             " WHERE CustomerID = @ID", connection))
+                {
+                    command.Parameters.Add("@Name", SqlDbType.VarChar);
+                    command.Parameters.Add("@Address", SqlDbType.VarChar);
+                    command.Parameters.Add("@Phone", SqlDbType.Int);
+                    command.Parameters.Add("@ID", SqlDbType.Int);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.UpdateCommand = command;
+                        adapter.Update(ds);
+                    }
+                }
+
 
             }
         }
+        
+           
+        }
     }
-}
+
