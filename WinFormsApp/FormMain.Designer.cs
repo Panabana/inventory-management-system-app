@@ -250,6 +250,7 @@
             this.barButtonManageSuppliers.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonManageSuppliers.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonManageSuppliers.Name = "barButtonManageSuppliers";
+            this.barButtonManageSuppliers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageSuppliers_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -348,6 +349,7 @@
             this.barButtonManageOrders.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonManageOrders.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonManageOrders.Name = "barButtonManageOrders";
+            this.barButtonManageOrders.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageOrders_ItemClick);
             // 
             // barButtonItem13
             // 
@@ -447,6 +449,7 @@
             this.barButtonManageCustomers.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonManageCustomers.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonManageCustomers.Name = "barButtonManageCustomers";
+            this.barButtonManageCustomers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageCustomers_ItemClick);
             // 
             // barButtonItem18
             // 
@@ -547,7 +550,7 @@
             this.barButtonManageEmployees.ItemAppearance.Pressed.Options.UseTextOptions = true;
             this.barButtonManageEmployees.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonManageEmployees.Name = "barButtonManageEmployees";
-            this.barButtonManageEmployees.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageEmployees_ItemClick_1);
+            this.barButtonManageEmployees.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageEmployees_ItemClick);
             // 
             // barButtonItem23
             // 
