@@ -38,6 +38,21 @@ namespace WinFormsApp
             }
         }
 
+        public DataSet ViewCustomers(string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter customerAdapter = SqlAdapterClass.CustomerAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+
+                    customerAdapter.Fill(ds, "Customer");
+                    return ds;
+                }
+            }
+
+        }
+
 
     }
 
