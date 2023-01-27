@@ -38,6 +38,31 @@ namespace WinFormsApp
             }
         }
 
+        public void InsertEmployee(int EmployeeID, string EmployeeName, string EmployeeAddress, int PhoneNumber, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter empAdapter = SqlAdapterClass.InsertEmployeeAdapter(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    empAdapter.Fill(dataSet, "Employee");
+
+                    DataTable empDataTable = dataSet.Tables["Employee"];
+
+                    DataRow row = empDataTable.NewRow();
+                    row["EmployeeID"] = EmployeeID;
+                    row["EmployeeName"] = EmployeeName;
+                    row["EmployeeAddress"] = EmployeeAddress;
+                    row["PhoneNumber"] = PhoneNumber;
+
+                    empDataTable.Rows.Add(row);
+                    empAdapter.Update(empDataTable);
+
+                }
+            }
+        }
+
         public DataSet ViewCustomers(string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
