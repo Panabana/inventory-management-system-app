@@ -154,7 +154,7 @@
             this.groupBox2.Size = new System.Drawing.Size(669, 93);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Find an employee:";
+            this.groupBox2.Text = "Find an employee";
             // 
             // buttonFindEmployee
             // 

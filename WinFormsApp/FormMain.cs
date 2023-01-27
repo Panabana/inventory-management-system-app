@@ -51,7 +51,8 @@ namespace WinFormsApp
 
         private void barButtonManageOrders_ItemClick(object sender, ItemClickEventArgs e)
         {
-           // FormManageOrders form = new FormManageOrders();
+            FormManageOrders form = new FormManageOrders();
+            form.ShowDialog();
         }
 
         private void barButtonManageSuppliers_ItemClick(object sender, ItemClickEventArgs e)

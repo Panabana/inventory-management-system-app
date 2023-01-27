@@ -110,7 +110,7 @@
             this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(959, 161);
+            this.ribbon.Size = new System.Drawing.Size(898, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonAbout
@@ -702,17 +702,17 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 573);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 575);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(959, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(898, 24);
             // 
             // FormMain
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(959, 597);
+            this.ClientSize = new System.Drawing.Size(898, 599);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
