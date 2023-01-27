@@ -41,5 +41,18 @@ namespace WinFormsApp
 
           return empAdapter;
         }
+
+        public static SqlDataAdapter CustomerAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter customerAdapter = new SqlDataAdapter();
+            SqlCommand command;
+            //Read/View all customers
+            command = new SqlCommand("SELECT * FROM Customer", connection);
+
+            command.Connection = connection;
+            customerAdapter.SelectCommand = command;
+            return customerAdapter;
+
+        }
     }
 }
