@@ -42,7 +42,7 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter customerAdapter = SqlAdapterClass.CustomerAdapter(connection))
+                using (SqlDataAdapter customerAdapter = SqlAdapterClass.ViewCustomerAdapter(connection))
                 {
                     DataSet ds = new DataSet();
 
@@ -51,6 +51,32 @@ namespace WinFormsApp
                 }
             }
 
+        }
+
+        public void InsertCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter customerAdapter = SqlAdapterClass.InsertCustomerAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    customerAdapter.Fill(ds, "Customer");
+
+                    DataTable customerDataTable = new DataTable();
+                    customerDataTable = ds.Tables["Customer"];
+
+                    DataRow row = customerDataTable.NewRow();
+                    row["CustomerID"] = custId;
+                    row["CustomerName"] = custName;
+                    row["CustomerAddress"] = custAddress;
+                    row["PhoneNumber"] = phoneNbr;
+
+                    customerDataTable.Rows.Add(row);
+                    customerAdapter.Update(customerDataTable);
+                    
+                }
+
+            }
         }
 
 
