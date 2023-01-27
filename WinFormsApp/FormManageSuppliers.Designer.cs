@@ -154,13 +154,13 @@
             this.groupBox2.Size = new System.Drawing.Size(669, 93);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Find a supplier:";
+            this.groupBox2.Text = "Find a supplier";
             // 
             // buttonFindSupplier
             // 
             this.buttonFindSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindSupplier.Appearance.Options.UseFont = true;
-            this.buttonFindSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonFindSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindSupplier.ImageOptions.Image")));
             this.buttonFindSupplier.Location = new System.Drawing.Point(440, 35);
             this.buttonFindSupplier.Name = "buttonFindSupplier";
             this.buttonFindSupplier.Size = new System.Drawing.Size(95, 35);
@@ -189,7 +189,7 @@
             // 
             this.buttonExitSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExitSupplier.Appearance.Options.UseFont = true;
-            this.buttonExitSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.buttonExitSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitSupplier.ImageOptions.Image")));
             this.buttonExitSupplier.Location = new System.Drawing.Point(482, 282);
             this.buttonExitSupplier.Name = "buttonExitSupplier";
             this.buttonExitSupplier.Size = new System.Drawing.Size(106, 44);
@@ -200,7 +200,7 @@
             // 
             this.buttonRemoveSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveSupplier.Appearance.Options.UseFont = true;
-            this.buttonRemoveSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.buttonRemoveSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveSupplier.ImageOptions.Image")));
             this.buttonRemoveSupplier.Location = new System.Drawing.Point(356, 282);
             this.buttonRemoveSupplier.Name = "buttonRemoveSupplier";
             this.buttonRemoveSupplier.Size = new System.Drawing.Size(106, 44);
@@ -211,7 +211,7 @@
             // 
             this.buttonEditSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEditSupplier.Appearance.Options.UseFont = true;
-            this.buttonEditSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.buttonEditSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditSupplier.ImageOptions.Image")));
             this.buttonEditSupplier.Location = new System.Drawing.Point(233, 282);
             this.buttonEditSupplier.Name = "buttonEditSupplier";
             this.buttonEditSupplier.Size = new System.Drawing.Size(106, 44);
@@ -222,7 +222,7 @@
             // 
             this.buttonAddSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAddSupplier.Appearance.Options.UseFont = true;
-            this.buttonAddSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.buttonAddSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddSupplier.ImageOptions.Image")));
             this.buttonAddSupplier.Location = new System.Drawing.Point(110, 282);
             this.buttonAddSupplier.Name = "buttonAddSupplier";
             this.buttonAddSupplier.Size = new System.Drawing.Size(106, 44);
