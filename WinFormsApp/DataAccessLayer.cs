@@ -21,7 +21,26 @@ namespace WinFormsApp
             SqlConnection connection = new(builder.ConnectionString);
 
             return connection;
-        }  
-     }
+        }
+
+        public DataSet ViewAllEmployees(string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter empAdapter = SqlAdapterClass.EmployeeAdapter(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    empAdapter.Fill(dataSet, "Employee");
+
+                    return dataSet;
+                }
+            }
+        }
+
+
+    }
+
+   
 }
 
