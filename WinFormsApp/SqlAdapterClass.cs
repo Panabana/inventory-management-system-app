@@ -88,5 +88,39 @@ namespace WinFormsApp
             
 
         }
+
+        public static SqlDataAdapter InsertEmployeeAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
+            SqlCommand command;
+            string insertEmployeeQuery = "INSERT INTO Employee (EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber) VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)";
+
+            //Add new employee
+            command = new SqlCommand(insertEmployeeQuery, connection);
+
+            //Parameters
+            SqlParameter parameterEmployeeId = new SqlParameter("@EmployeeID", SqlDbType.Int);
+            SqlParameter parameterEmployeeName = new SqlParameter("@EmployeeName", SqlDbType.VarChar);
+            SqlParameter parameterEmployeeAddress = new SqlParameter("@EmployeeAddress", SqlDbType.VarChar);
+            SqlParameter parameterEmployeePhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
+
+            //Source column mapping
+            parameterEmployeeId.SourceColumn = "EmployeeID";
+            parameterEmployeeName.SourceColumn = "EmployeeName";
+            parameterEmployeeAddress.SourceColumn = "EmployeeAddress";
+            parameterEmployeePhoneNumber.SourceColumn = "PhoneNumber";
+
+            command.Parameters.Add(parameterEmployeeId);
+            command.Parameters.Add(parameterEmployeeName);
+            command.Parameters.Add(parameterEmployeeAddress);
+            command.Parameters.Add(parameterEmployeePhoneNumber);
+
+            command.Connection = connection;
+            addEmpAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            addEmpAdapter.SelectCommand = command;
+
+            return addEmpAdapter;
+        }
+
     }
 }
