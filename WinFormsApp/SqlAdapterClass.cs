@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.CodeParser;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -26,5 +27,19 @@ namespace WinFormsApp
             }
         }
 
+        public static SqlDataAdapter EmployeeAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter empAdapter = new SqlDataAdapter();
+            SqlCommand command;
+            string viewEmployeesQuery = "SELECT * FROM Employee";
+
+            //Read all employees
+            command = new SqlCommand(viewEmployeesQuery, connection);
+
+            command.Connection= connection;
+            empAdapter.SelectCommand= command;
+
+          return empAdapter;
+        }
     }
 }
