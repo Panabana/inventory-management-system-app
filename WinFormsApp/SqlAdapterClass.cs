@@ -89,6 +89,52 @@ namespace WinFormsApp
 
         }
 
+        public static SqlDataAdapter UpdateCustomerAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter customerAdapter = new SqlDataAdapter();
+            SqlCommand command;
+
+            command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress," 
+                                       +"PhoneNumber = @PhoneNumber WHERE CustomerID = @CustomerID", connection);
+            //Parameters
+            SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
+            SqlParameter parameterCustomerName = new SqlParameter("@CustomerName", SqlDbType.VarChar);
+            SqlParameter parameterCustomerAddress = new SqlParameter("@CustomerAddress", SqlDbType.VarChar);
+            SqlParameter parameterPhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
+
+            parameterCustomerID.SourceColumn = "CustomerID";
+            parameterCustomerName.SourceColumn = "CustomerName";
+            parameterCustomerAddress.SourceColumn = "CustomerAddress";
+            parameterPhoneNumber.SourceColumn = "PhoneNumber";
+
+            command.Parameters.Add(parameterCustomerID);
+            command.Parameters.Add(parameterCustomerName);
+            command.Parameters.Add(parameterCustomerAddress);
+            command.Parameters.Add(parameterPhoneNumber);
+
+            command.Connection = connection;
+            customerAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            customerAdapter.SelectCommand = command;
+
+            return customerAdapter;
+        }
+
+        public static SqlDataAdapter DeleteCustomerAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter customerAdapter = new SqlDataAdapter();
+            SqlCommand command;
+
+            command = new SqlCommand("DELETE FROM Customer WHERE CustomerID = @CustomerID", connection);
+
+            SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
+
+            command.Parameters.Add(parameterCustomerID);
+            command.Connection = connection;
+            customerAdapter.SelectCommand = command;
+
+            return customerAdapter;
+        }
+
         public static SqlDataAdapter InsertEmployeeAdapter(SqlConnection connection)
         {
             SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
