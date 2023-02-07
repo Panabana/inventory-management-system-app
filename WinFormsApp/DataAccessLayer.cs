@@ -107,9 +107,6 @@ namespace WinFormsApp
                 }
             }
         }
-
-
-
         public DataSet ViewCustomers(string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
@@ -144,10 +141,8 @@ namespace WinFormsApp
                     row["PhoneNumber"] = phoneNbr;
 
                     customerDataTable.Rows.Add(row);
-                    customerAdapter.Update(customerDataTable);
-                    
+                    customerAdapter.Update(customerDataTable); 
                 }
-
             }
         }
 
@@ -194,8 +189,88 @@ namespace WinFormsApp
                 }
             }
         }
+        public DataSet ViewSuppliers(string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.ViewSupplierAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
 
-        
+                    adapter.Fill(ds, "Supplier");
+                    return ds;   
+                }
+            }
+        }
+        public void InsertSupplier(int suppId, string suppName, string suppAddress, int phoneNbr, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.InsertSupplierAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Supplier");
+
+                    DataTable supplierDataTable = new DataTable();
+                    supplierDataTable = ds.Tables["Supplier"];
+
+                    DataRow row = supplierDataTable.NewRow();
+                    row["SupplierID"] = suppId;
+                    row["SupplierName"] = suppName;
+                    row["SupplierAddress"] = suppAddress;
+                    row["PhoneNumber"] = phoneNbr;
+
+                    supplierDataTable.Rows.Add(row);
+                    adapter.Update(supplierDataTable);
+                }
+            }
+        }
+
+        public void DeleteSupplier(int suppId, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteSupplierAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Supplier");
+
+                    DataTable supplierDataTable = new DataTable();
+                    supplierDataTable = ds.Tables["Supplier"];
+
+                    DataRow row = supplierDataTable.Rows.Find(suppId);
+                    row.Delete();
+                    adapter.Update(supplierDataTable);
+                }
+            }
+        }
+
+        public void UpdateSupplier(int suppId, string suppName, string suppAddress, int phoneNbr, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateSupplierAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Supplier");
+
+                    DataTable suppDataTable = new DataTable();
+                    suppDataTable = ds.Tables["Supplier"];
+
+                    DataRow[] rows = suppDataTable.Select("SupplierID =" + suppId);
+                    if (rows.Length == 1)
+                    {
+                        rows[0]["EmployeeName"] = suppName;
+                        rows[0]["CustomerAddress"] = suppAddress;
+                        rows[0]["PhoneNumber"] = phoneNbr;
+                    }
+
+                    adapter.Update(suppDataTable);
+                }
+            }
+        }
+
+
 
 
     }
