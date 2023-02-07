@@ -270,6 +270,89 @@ namespace WinFormsApp
             }
         }
 
+        public DataSet ViewProducts(string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.ViewAllProductAdapter(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet, "Product");
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public void InsertProduct(int prodId, string prodName, int price, int stock, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.InsertProductAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Product");
+
+                    DataTable productDataTable = new DataTable();
+                    productDataTable = ds.Tables["Product"];
+
+                    DataRow row = productDataTable.NewRow();
+                    row["ProductID"] = prodId;
+                    row["ProductName"] = prodName;
+                    row["Price"] = price;
+                    row["Stock"] = stock;
+
+                    productDataTable.Rows.Add(row);
+                    adapter.Update(productDataTable);
+                }
+            }
+        }
+
+        public void UpdateProduct(int prodId, string prodName, string price, int stock, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Product");
+
+                    DataTable productDataTable = new DataTable();
+                    productDataTable = ds.Tables["Product"];
+
+                    DataRow[] rows = productDataTable.Select("ProductID =" + prodId);
+                    if (rows.Length == 1)
+                    {
+                        rows[0]["ProductName"] = prodName;
+                        rows[0]["Price"] = price;
+                        rows[0]["Stock"] = stock;
+                    }
+
+                    adapter.Update(productDataTable);
+                }
+            }
+        }
+
+        public void DeleteProduct(int prodId, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteProductAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Product");
+
+                    DataTable productDataTable = new DataTable();
+                    productDataTable = ds.Tables["Product"];
+
+                    DataRow row = productDataTable.Rows.Find(prodId);
+                    row.Delete();
+                    adapter.Update(productDataTable);
+                }
+            }
+        }
+
 
 
 
