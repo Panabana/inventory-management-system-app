@@ -28,7 +28,7 @@ namespace WinFormsApp
             }
         }
 
-        public static SqlDataAdapter EmployeeAdapter(SqlConnection connection)
+        public static SqlDataAdapter ViewAllEmployeeAdapter(SqlConnection connection)
         {
             SqlDataAdapter empAdapter = new SqlDataAdapter();
             SqlCommand command;
@@ -166,6 +166,55 @@ namespace WinFormsApp
             addEmpAdapter.SelectCommand = command;
 
             return addEmpAdapter;
+        }
+
+        public static SqlDataAdapter DeleteEmployeeAdapter (SqlConnection connection)
+        {
+            SqlDataAdapter deleteEmpAdapter = new SqlDataAdapter();
+            SqlCommand command;
+            string query = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
+
+            command = new SqlCommand(query, connection);
+
+            SqlParameter parameterEmployeeID = new SqlParameter("@EmployeeID", SqlDbType.Int);
+
+            command.Parameters.Add(parameterEmployeeID);
+            command.Connection = connection;
+            deleteEmpAdapter.SelectCommand = command;
+
+            return deleteEmpAdapter;
+        }
+
+        public static SqlDataAdapter UpdateEmployeeAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter updateEmpAdapter = new();
+            SqlCommand command;
+            string query = "UPDATE Employee SET EmployeeName = @EmployeeName, EmployeeAddress = @EmployeeAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID";
+
+            command = new(query, connection);
+
+            //Parameters
+            SqlParameter parameterEmployeeID = new SqlParameter("@EmployeeID", SqlDbType.Int);
+            SqlParameter parameterEmployeeName = new SqlParameter("@EmployeeName", SqlDbType.VarChar);
+            SqlParameter parameterEmployeeAddress = new SqlParameter("@EmployeeAddress", SqlDbType.VarChar);
+            SqlParameter parameterEmployeePhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
+
+            //Source column mapping
+            parameterEmployeeID.SourceColumn = "EmployeeID";
+            parameterEmployeeName.SourceColumn = "EmployeeName";
+            parameterEmployeeAddress.SourceColumn = "EmployeeAddress";
+            parameterEmployeePhoneNumber.SourceColumn = "PhoneNumber";
+
+            command.Parameters.Add(parameterEmployeeID);
+            command.Parameters.Add(parameterEmployeeName);
+            command.Parameters.Add(parameterEmployeeAddress);
+            command.Parameters.Add(parameterEmployeePhoneNumber);
+
+            command.Connection = connection;
+            updateEmpAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            updateEmpAdapter.SelectCommand = command;
+
+            return updateEmpAdapter;
         }
 
     }
