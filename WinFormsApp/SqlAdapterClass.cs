@@ -217,5 +217,96 @@ namespace WinFormsApp
             return updateEmpAdapter;
         }
 
+        public static SqlDataAdapter ViewSupplierAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+            //Read/View all customers
+            command = new SqlCommand("SELECT * FROM Supplier", connection);
+
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+
+        }
+
+        public static SqlDataAdapter InsertSupplierAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+
+            command = new SqlCommand("INSERT INTO Supplier (SupplierID, SupplierName, SupplierAddress,"
+                                    + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNbr)", connection);
+
+
+            SqlParameter parameterSupplierID = new("@SupplierID", SqlDbType.Int);
+            SqlParameter parameterSupplierName = new("@SupplierName", SqlDbType.VarChar);
+            SqlParameter parameterSupplierAddress = new("@SupplierAddress", SqlDbType.VarChar);
+            SqlParameter parameterPhoneNumber = new("@PhoneNbr", SqlDbType.Int);
+
+            parameterSupplierID.SourceColumn = "SupplierID";
+            parameterSupplierName.SourceColumn = "SupplierName";
+            parameterSupplierAddress.SourceColumn = "SupplierAddress";
+            parameterPhoneNumber.SourceColumn = "PhoneNumber";
+
+            command.Parameters.Add(parameterSupplierID);
+            command.Parameters.Add(parameterSupplierName);
+            command.Parameters.Add(parameterSupplierAddress);
+            command.Parameters.Add(parameterPhoneNumber);
+
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter UpdateSupplierAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+
+            command = new SqlCommand("UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress,"
+                                       + "PhoneNumber = @PhoneNumber WHERE SupplierID = @SupplierID", connection);
+            //Parameters
+            SqlParameter parameterSupplierID = new SqlParameter("@SupplierID", SqlDbType.Int);
+            SqlParameter parameterSupplierName = new SqlParameter("@SupplierName", SqlDbType.VarChar);
+            SqlParameter parameterSupplierAddress = new SqlParameter("@SupplierAddress", SqlDbType.VarChar);
+            SqlParameter parameterPhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
+
+            parameterSupplierID.SourceColumn = "SupplierID";
+            parameterSupplierName.SourceColumn = "SupplierName";
+            parameterSupplierAddress.SourceColumn = "SupplierAddress";
+            parameterPhoneNumber.SourceColumn = "PhoneNumber";
+
+            command.Parameters.Add(parameterSupplierID);
+            command.Parameters.Add(parameterSupplierName);
+            command.Parameters.Add(parameterSupplierAddress);
+            command.Parameters.Add(parameterPhoneNumber);
+
+            command.Connection = connection;
+            //Don't know if AddWithKey is necesseray here
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapter.SelectCommand = command;
+
+            return adapter;
+        }
+
+        public static SqlDataAdapter DeleteSupplierAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+
+            command = new SqlCommand("DELETE FROM Supplier WHERE SupplierID = @SupplierID", connection);
+
+            SqlParameter parameterSupplierID = new SqlParameter("@SupplierID", SqlDbType.Int);
+
+            command.Parameters.Add(parameterSupplierID);
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+
+            return adapter;
+        }
+
     }
 }
