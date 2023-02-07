@@ -308,5 +308,98 @@ namespace WinFormsApp
             return adapter;
         }
 
+        public static SqlDataAdapter ViewAllProductAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+            string query = "SELECT * FROM Product";
+
+            command = new(query, connection);
+
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter InsertProductAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+            string query = "Insert INTO Product (ProductID, ProductName, Price, Stock) VALUES (@ProductID, @ProductName, @Price, @Stock)";
+
+            command = new SqlCommand(query, connection);
+
+
+            SqlParameter parameterProductID = new("@ProductID", SqlDbType.Int);
+            SqlParameter parameterProductName = new("@ProductrName", SqlDbType.VarChar);
+            SqlParameter parameterPrice = new("@Price", SqlDbType.Int);
+            SqlParameter parameterStock = new("@Stock", SqlDbType.Int);
+
+            parameterProductID.SourceColumn = "ProductID";
+            parameterProductName.SourceColumn = "ProductrName";
+            parameterPrice.SourceColumn = "Price";
+            parameterStock.SourceColumn = "Stock";
+
+            command.Parameters.Add(parameterProductID);
+            command.Parameters.Add(parameterProductName);
+            command.Parameters.Add(parameterPrice);
+            command.Parameters.Add(parameterStock);
+
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter UpdateProductAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command;
+            string query = "UPDATE Product SET ProductName = @ProductName, Price = @Price, Stock = @Stock WHERE ProductID = @ProductID";
+
+            command = new(query, connection);
+
+            //Parameters
+            SqlParameter parameterProductID = new SqlParameter("@ProductID", SqlDbType.Int);
+            SqlParameter parameterProductName = new SqlParameter("@ProductName", SqlDbType.VarChar);
+            SqlParameter parameterPrice = new SqlParameter("@Price", SqlDbType.Int);
+            SqlParameter parameterStock = new SqlParameter("@Stock", SqlDbType.Int);
+
+            parameterProductID.SourceColumn = "ProductID";
+            parameterProductName.SourceColumn = "ProductName";
+            parameterPrice.SourceColumn = "Price";
+            parameterStock.SourceColumn = "Stock";
+
+            command.Parameters.Add(parameterProductID);
+            command.Parameters.Add(parameterProductName);
+            command.Parameters.Add(parameterPrice);
+            command.Parameters.Add(parameterStock);
+
+            command.Connection = connection;
+            //Don't know if AddWithKey is necesseray here
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapter.SelectCommand = command;
+
+            return adapter;
+        }
+
+        public static SqlDataAdapter DeleteProductAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+            string query = "DELETE FROM Product WHERE ProductID = @ProductID";
+
+            command = new SqlCommand(query, connection);
+
+            SqlParameter parameterProductID = new SqlParameter("@ProductID", SqlDbType.Int);
+
+            command.Parameters.Add(parameterProductID);
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+
+            return adapter;
+        }
+
     }
 }
