@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.PivotGrid.CustomFunctions;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -103,6 +104,52 @@ namespace WinFormsApp
 
             }
         }
+
+        public void DeleteCustomer(int custId, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    customerAdapter.Fill(ds, "Customer");
+
+                    DataTable customerDataTable = new DataTable();
+                    customerDataTable = ds.Tables["Customer"];
+
+                    DataRow row = customerDataTable.Rows.Find(custId);
+                    row.Delete();
+                    customerAdapter.Update(customerDataTable);
+                }
+            }
+        }
+
+        public void UpdateCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+             {
+              using ( SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Customer");
+
+                    DataTable customerDataTable = new DataTable();
+                    customerDataTable = ds.Tables["Customer"];
+
+                    DataRow[] rows = customerDataTable.Select("CustomerID ="+ custId);
+                    if(rows.Length == 1)
+                    {
+                        rows[0]["CustomerName"] = custName;
+                        rows[0]["CustomerAddress"] = custAddress;
+                        rows[0]["PhoneNumber"] = phoneNbr;
+                    }
+
+                    adapter.Update(customerDataTable);
+                }
+            }
+        }
+
+        
 
 
     }
