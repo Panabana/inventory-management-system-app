@@ -28,7 +28,7 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter empAdapter = SqlAdapterClass.EmployeeAdapter(connection))
+                using (SqlDataAdapter empAdapter = SqlAdapterClass.ViewAllEmployeeAdapter(connection))
                 {
                     DataSet dataSet = new DataSet();
 
@@ -63,6 +63,52 @@ namespace WinFormsApp
                 }
             }
         }
+
+        public void DeleteEmployee(int empId, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteEmployeeAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Employee");
+
+                    DataTable empDataTable = new DataTable();
+                    empDataTable = ds.Tables["Employee"];
+
+                    DataRow row = empDataTable.Rows.Find(empId);
+                    row.Delete();
+                    adapter.Update(empDataTable);
+                }
+            }
+        }
+
+        public void UpdateEmployee(int empId, string empName, string empAddress, int phoneNbr, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateEmployeeAdapter(connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Employee");
+
+                    DataTable empDataTable = new DataTable();
+                    empDataTable = ds.Tables["Employee"];
+
+                    DataRow[] rows = empDataTable.Select("EmployeeID =" + empId);
+                    if (rows.Length == 1)
+                    {
+                        rows[0]["EmployeeName"] = empName;
+                        rows[0]["CustomerAddress"] = empAddress;
+                        rows[0]["PhoneNumber"] = phoneNbr;
+                    }
+
+                    adapter.Update(empDataTable);
+                }
+            }
+        }
+
+
 
         public DataSet ViewCustomers(string connectionString)
         {
