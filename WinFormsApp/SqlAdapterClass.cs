@@ -167,7 +167,13 @@ namespace WinFormsApp
             command.Parameters.Add(parameterEmployeePhoneNumber);
 
             SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
+
+            // THIS .SelectCommand line throws the exception: 'The parameterized query '(@EmployeeID int, @EmployeeName varchar(8000), @EmployeeAddress va' expects the parameter '@EmployeeID', which was not supplied.'
+            addEmpAdapter.SelectCommand = command;
             addEmpAdapter.InsertCommand = command;
+
+            // Testade att ersätta .SelectCommand med .InsertCommand och då throwas exception: System.InvalidOperationException: 'The SelectCommand property has not been initialized before calling 'Fill'.'
+
             // OLD, commented out for now, couldn't find its purpose right now /Alex
             //command.Connection = connection;
             //addEmpAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;           
