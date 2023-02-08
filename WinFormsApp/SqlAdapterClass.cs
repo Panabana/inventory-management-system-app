@@ -18,7 +18,7 @@ namespace WinFormsApp
             public static SqlConnection GetDatabaseConnection()
             {
                 string connectionString = ConfigurationManager.ConnectionStrings
-                    ["insertDetailsHere"].ConnectionString;
+                    ["dbConnectionString"].ConnectionString;
 
                 SqlConnectionStringBuilder builder = new(connectionString);
 
