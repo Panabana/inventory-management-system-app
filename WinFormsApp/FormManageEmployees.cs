@@ -3,7 +3,9 @@ using DevExpress.XtraRichEdit.Layout.Engine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -30,14 +32,16 @@ namespace WinFormsApp
                 string employeeName = textBoxEmployeeName.Text;
                 string employeeAddress = textBoxEmployeeAddress.Text;
                 int employeePhoneNumber = Convert.ToInt32(textBoxEmployeePhone.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                _layer.InsertEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber, SqlAdapterClass.ConnectionHandler.GetDatabaseConnection()); //osäker om rätt
+                _layer.InsertEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber, connectionString); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
             
             }
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
+                Console.WriteLine(ex.Message);
             }
 
         }
