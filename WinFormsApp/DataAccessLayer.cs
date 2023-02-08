@@ -12,7 +12,6 @@ namespace WinFormsApp
 {
     public class DataAccessLayer
     {
-        //Are we using this GetDatabaseConnection() in here also or only in SqlAdapterClass? /Alex
         public SqlConnection GetDatabaseConnection()
         {
             string connectionString = ConfigurationManager.ConnectionStrings
@@ -41,7 +40,7 @@ namespace WinFormsApp
             }
         }
 
-        public void InsertEmployee(int EmployeeID, string EmployeeName, string EmployeeAddress, int PhoneNumber)
+        public void InsertEmployee(int EmployeeID, string EmployeeName, string EmployeeAddress, int PhoneNumber, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
