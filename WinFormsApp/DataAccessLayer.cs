@@ -21,7 +21,7 @@ namespace WinFormsApp
 
             SqlConnection connection = new(builder.ConnectionString);
 
-            return connection;
+            return connection;  
         }
 
         public DataSet ViewAllEmployees(string connectionString)
@@ -353,10 +353,10 @@ namespace WinFormsApp
             }
         }
     
-        internal void InsertEmployee(int employeeId, string employeeName, string employeeAddress, int employeePhoneNumber, SqlConnection sqlConnection)
-        {
-            throw new NotImplementedException();
-        }
+       // internal void InsertEmployee(int employeeId, string employeeName, string employeeAddress, int employeePhoneNumber, SqlConnection sqlConnection)
+       // {
+          //  throw new NotImplementedException();
+        //}
     
     }
 
