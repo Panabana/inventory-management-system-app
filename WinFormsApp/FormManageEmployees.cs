@@ -32,7 +32,7 @@ namespace WinFormsApp
                 string employeeName = textBoxEmployeeName.Text;
                 string employeeAddress = textBoxEmployeeAddress.Text;
                 int employeePhoneNumber = Convert.ToInt32(textBoxEmployeePhone.Text);
-                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings["InventoryManagementSystem"].ConnectionString;
 
                 _layer.InsertEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber, connectionString); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
