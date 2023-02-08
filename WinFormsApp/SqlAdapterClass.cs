@@ -15,10 +15,10 @@ namespace WinFormsApp
     {
         internal class ConnectionHandler
         {
-            public static SqlConnection GetDatabaseConnection()
+            public static SqlConnection GetSqlServerConnection()
             {
                 string connectionString = ConfigurationManager.ConnectionStrings
-                    ["InventoryManagementSystem"].ConnectionString;
+                    ["test"].ConnectionString;
 
                 SqlConnectionStringBuilder builder = new(connectionString);
 
@@ -138,33 +138,39 @@ namespace WinFormsApp
 
         public static SqlDataAdapter InsertEmployeeAdapter(SqlConnection connection)
         {
-            SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
-            SqlCommand command;
-            string insertEmployeeQuery = "INSERT INTO Employee (EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber) VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)";
+            
+            SqlCommand command = connection.CreateCommand();
+            string insertEmployeeQuery = "INSERT INTO [Employee] ([EmployeeID], [EmployeeName], [EmployeeAddress], [PhoneNumber]) VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)";
 
-            //Add new employee
-            command = new SqlCommand(insertEmployeeQuery, connection);
+            // Add new employee
+            command.CommandText = insertEmployeeQuery;
 
-            //Parameters
-            SqlParameter parameterEmployeeId = new SqlParameter("@EmployeeID", SqlDbType.Int);
-            SqlParameter parameterEmployeeName = new SqlParameter("@EmployeeName", SqlDbType.VarChar);
-            SqlParameter parameterEmployeeAddress = new SqlParameter("@EmployeeAddress", SqlDbType.VarChar);
-            SqlParameter parameterEmployeePhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
+            // OLD
+            //command = new SqlCommand(insertEmployeeQuery, connection);
 
-            //Source column mapping
+            // Parameters
+            SqlParameter parameterEmployeeId = new ("@EmployeeID", SqlDbType.Int);
+            SqlParameter parameterEmployeeName = new ("@EmployeeName", SqlDbType.VarChar);
+            SqlParameter parameterEmployeeAddress = new ("@EmployeeAddress", SqlDbType.VarChar);
+            SqlParameter parameterEmployeePhoneNumber = new ("@PhoneNumber", SqlDbType.Int);
+
+            // Source column mapping
             parameterEmployeeId.SourceColumn = "EmployeeID";
             parameterEmployeeName.SourceColumn = "EmployeeName";
             parameterEmployeeAddress.SourceColumn = "EmployeeAddress";
             parameterEmployeePhoneNumber.SourceColumn = "PhoneNumber";
 
+            // Add parameters to INSERT SqlCommand
             command.Parameters.Add(parameterEmployeeId);
             command.Parameters.Add(parameterEmployeeName);
             command.Parameters.Add(parameterEmployeeAddress);
             command.Parameters.Add(parameterEmployeePhoneNumber);
 
-            command.Connection = connection;
-            addEmpAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            addEmpAdapter.SelectCommand = command;
+            SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
+            addEmpAdapter.InsertCommand = command;
+            // OLD, commented out for now, couldn't find its purpose right now /Alex
+            //command.Connection = connection;
+            //addEmpAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;           
 
             return addEmpAdapter;
         }
