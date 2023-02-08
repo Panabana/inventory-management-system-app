@@ -15,7 +15,7 @@ namespace WinFormsApp
         public SqlConnection GetDatabaseConnection()
         {
             string connectionString = ConfigurationManager.ConnectionStrings
-                ["test"].ConnectionString;
+                ["InventoryManagementSystem"].ConnectionString;
 
             SqlConnectionStringBuilder builder = new(connectionString);
 
@@ -24,6 +24,7 @@ namespace WinFormsApp
             return connection;  
         }
 
+        // - EMPLOYEE -
         public DataSet ViewAllEmployees(string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
@@ -107,6 +108,8 @@ namespace WinFormsApp
                 }
             }
         }
+        
+        // - CUSTOMER -
         public DataSet ViewCustomers(string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
@@ -189,6 +192,8 @@ namespace WinFormsApp
                 }
             }
         }
+        
+        // - SUPPLIER -
         public DataSet ViewSuppliers(string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
@@ -270,6 +275,7 @@ namespace WinFormsApp
             }
         }
 
+        // - PRODUCT -
         public DataSet ViewProducts(string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
