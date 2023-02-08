@@ -45,10 +45,9 @@ namespace WinFormsApp
         public static SqlDataAdapter InsertCustomerAdapter(SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
-            SqlCommand command;
             //Insert customer
-            command = new SqlCommand("INSERT INTO Customer (CustomerID, CustomerName, CustomerAddress," 
-                                    +"PhoneNumber) VALUES (@CustomerId, @CustomerName, @CustomerAddress, @PhoneNbr)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO Customer (CustomerID, CustomerName, CustomerAddress," 
+                                    +"PhoneNumber) VALUES (@CustomerID, @CustomerName, @CustomerAddress, @PhoneNbr)", connection);
        
               //Parameters
             SqlParameter parameterCustomerId = new("@CustomerID", SqlDbType.Int);
