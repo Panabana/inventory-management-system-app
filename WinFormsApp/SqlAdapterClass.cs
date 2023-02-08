@@ -15,7 +15,7 @@ namespace WinFormsApp
     {
         internal class ConnectionHandler
         {
-            public static SqlConnection GetDatabaseConnection()
+            public static SqlConnection GetSqlServerConnection()
             {
                 string connectionString = ConfigurationManager.ConnectionStrings
                     ["test"].ConnectionString;
@@ -27,21 +27,8 @@ namespace WinFormsApp
                 return connection;
             }
         }
-
-        public static SqlDataAdapter ViewAllEmployeeAdapter(SqlConnection connection)
-        {
-            SqlDataAdapter empAdapter = new SqlDataAdapter();
-            SqlCommand command;
-            string viewEmployeesQuery = "SELECT * FROM Employee";
-
-            //Read all employees
-            command = new SqlCommand(viewEmployeesQuery, connection);
-            command.Connection= connection;
-            empAdapter.SelectCommand= command;
-
-          return empAdapter;
-        }
-
+        
+        // - CUSTOMER -
         public static SqlDataAdapter ViewCustomerAdapter(SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
@@ -58,10 +45,9 @@ namespace WinFormsApp
         public static SqlDataAdapter InsertCustomerAdapter(SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
-            SqlCommand command;
             //Insert customer
-            command = new SqlCommand("INSERT INTO Customer (CustomerID, CustomerName, CustomerAddress," 
-                                    +"PhoneNumber) VALUES (@CustomerId, @CustomerName, @CustomerAddress, @PhoneNbr)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO Customer (CustomerID, CustomerName, CustomerAddress," 
+                                    +"PhoneNumber) VALUES (@CustomerID, @CustomerName, @CustomerAddress, @PhoneNbr)", connection);
        
               //Parameters
             SqlParameter parameterCustomerId = new("@CustomerID", SqlDbType.Int);
@@ -135,35 +121,56 @@ namespace WinFormsApp
             return customerAdapter;
         }
 
+        // - EMPLOYEE -
+        public static SqlDataAdapter ViewAllEmployeeAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter empAdapter = new SqlDataAdapter();
+            SqlCommand command;
+            string viewEmployeesQuery = "SELECT * FROM Employee";
+
+            //Read all employees
+            command = new SqlCommand(viewEmployeesQuery, connection);
+            command.Connection = connection;
+            empAdapter.SelectCommand = command;
+
+            return empAdapter;
+        }
+
         public static SqlDataAdapter InsertEmployeeAdapter(SqlConnection connection)
         {
-            SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
-            SqlCommand command;
-            string insertEmployeeQuery = "INSERT INTO Employee (EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber) VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)";
+            
+            SqlCommand command = connection.CreateCommand();
+            string insertEmployeeQuery = "INSERT INTO [Employee] ([EmployeeID], [EmployeeName], [EmployeeAddress], [PhoneNumber]) VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)";
 
-            //Add new employee
-            command = new SqlCommand(insertEmployeeQuery, connection);
+            // Add new employee
+            command.CommandText = insertEmployeeQuery;
 
-            //Parameters
-            SqlParameter parameterEmployeeId = new SqlParameter("@EmployeeID", SqlDbType.Int);
-            SqlParameter parameterEmployeeName = new SqlParameter("@EmployeeName", SqlDbType.VarChar);
-            SqlParameter parameterEmployeeAddress = new SqlParameter("@EmployeeAddress", SqlDbType.VarChar);
-            SqlParameter parameterEmployeePhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
+            // OLD
+            //command = new SqlCommand(insertEmployeeQuery, connection);
 
-            //Source column mapping
+            // Parameters
+            SqlParameter parameterEmployeeId = new ("@EmployeeID", SqlDbType.Int);
+            SqlParameter parameterEmployeeName = new ("@EmployeeName", SqlDbType.VarChar);
+            SqlParameter parameterEmployeeAddress = new ("@EmployeeAddress", SqlDbType.VarChar);
+            SqlParameter parameterEmployeePhoneNumber = new ("@PhoneNumber", SqlDbType.Int);
+
+            // Source column mapping
             parameterEmployeeId.SourceColumn = "EmployeeID";
             parameterEmployeeName.SourceColumn = "EmployeeName";
             parameterEmployeeAddress.SourceColumn = "EmployeeAddress";
             parameterEmployeePhoneNumber.SourceColumn = "PhoneNumber";
 
+            // Add parameters to INSERT SqlCommand
             command.Parameters.Add(parameterEmployeeId);
             command.Parameters.Add(parameterEmployeeName);
             command.Parameters.Add(parameterEmployeeAddress);
             command.Parameters.Add(parameterEmployeePhoneNumber);
 
-            command.Connection = connection;
-            addEmpAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            addEmpAdapter.SelectCommand = command;
+            SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
+            addEmpAdapter.InsertCommand = command;
+            // OLD, commented out for now, couldn't find its purpose right now /Alex
+            //command.Connection = connection;
+            //addEmpAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;           
 
             return addEmpAdapter;
         }
@@ -217,6 +224,7 @@ namespace WinFormsApp
             return updateEmpAdapter;
         }
 
+        // - SUPPLIER -
         public static SqlDataAdapter ViewSupplierAdapter(SqlConnection connection)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -308,6 +316,7 @@ namespace WinFormsApp
             return adapter;
         }
 
+        // - PRODUCT -
         public static SqlDataAdapter ViewAllProductAdapter(SqlConnection connection)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();

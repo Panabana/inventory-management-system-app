@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp
 {
-    public class Utility
+    static class Utility
     {
-        // Outputs a message for succesful user input. Parameters are which label you want to change to what text . Successful messages become black.
+        // Outputs a message for a successful user input. Parameters are which label you want to change to what text. Successful messages become black.
         public static void LabelMessageSuccess(Label chosenLabel,string textInput)
         {
             chosenLabel.Text = (textInput);
@@ -16,7 +16,7 @@ namespace WinFormsApp
             chosenLabel.Visible = true;
         }
 
-        // Outputs a message for failed user input. Parameters are which label you want to change to what text. Failure messages become red.
+        // Outputs a message for a failed user input. Parameters are which label you want to change to what text. Failure messages become red.
         public static void LabelMessageFailure(Label chosenLabel, string textInput)
         {
             chosenLabel.Text = (textInput);
