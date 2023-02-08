@@ -27,21 +27,8 @@ namespace WinFormsApp
                 return connection;
             }
         }
-
-        public static SqlDataAdapter ViewAllEmployeeAdapter(SqlConnection connection)
-        {
-            SqlDataAdapter empAdapter = new SqlDataAdapter();
-            SqlCommand command;
-            string viewEmployeesQuery = "SELECT * FROM Employee";
-
-            //Read all employees
-            command = new SqlCommand(viewEmployeesQuery, connection);
-            command.Connection= connection;
-            empAdapter.SelectCommand= command;
-
-          return empAdapter;
-        }
-
+        
+        // - CUSTOMER -
         public static SqlDataAdapter ViewCustomerAdapter(SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
@@ -135,6 +122,21 @@ namespace WinFormsApp
             return customerAdapter;
         }
 
+        // - EMPLOYEE -
+        public static SqlDataAdapter ViewAllEmployeeAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter empAdapter = new SqlDataAdapter();
+            SqlCommand command;
+            string viewEmployeesQuery = "SELECT * FROM Employee";
+
+            //Read all employees
+            command = new SqlCommand(viewEmployeesQuery, connection);
+            command.Connection = connection;
+            empAdapter.SelectCommand = command;
+
+            return empAdapter;
+        }
+
         public static SqlDataAdapter InsertEmployeeAdapter(SqlConnection connection)
         {
             SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
@@ -217,6 +219,7 @@ namespace WinFormsApp
             return updateEmpAdapter;
         }
 
+        // - SUPPLIER -
         public static SqlDataAdapter ViewSupplierAdapter(SqlConnection connection)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -308,6 +311,7 @@ namespace WinFormsApp
             return adapter;
         }
 
+        // - PRODUCT -
         public static SqlDataAdapter ViewAllProductAdapter(SqlConnection connection)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
