@@ -166,6 +166,7 @@
             this.buttonFindEmployee.Size = new System.Drawing.Size(95, 35);
             this.buttonFindEmployee.TabIndex = 6;
             this.buttonFindEmployee.Text = "Find";
+            this.buttonFindEmployee.Click += new System.EventHandler(this.buttonFindEmployee_Click);
             // 
             // textBoxEmployeeIdFind
             // 

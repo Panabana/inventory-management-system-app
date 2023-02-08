@@ -33,6 +33,7 @@ namespace WinFormsApp
                     DataSet dataSet = new DataSet();
 
                     empAdapter.Fill(dataSet, "Employee");
+                    Console.WriteLine(dataSet.Tables["Employee"].Rows.Count);
 
                     return dataSet;
                 }

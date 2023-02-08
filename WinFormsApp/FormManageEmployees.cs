@@ -19,5 +19,10 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
         }
+
+        private void buttonFindEmployee_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Find Employee");
+        }
     }
 }
