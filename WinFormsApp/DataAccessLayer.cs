@@ -15,7 +15,7 @@ namespace WinFormsApp
         public SqlConnection GetDatabaseConnection()
         {
             string connectionString = ConfigurationManager.ConnectionStrings
-                ["insertDetailsHere"].ConnectionString;
+                ["test"].ConnectionString;
 
             SqlConnectionStringBuilder builder = new(connectionString);
 
@@ -141,7 +141,7 @@ namespace WinFormsApp
                     row["PhoneNumber"] = phoneNbr;
 
                     customerDataTable.Rows.Add(row);
-                    customerAdapter.Update(customerDataTable); 
+                    customerAdapter.Update(customerDataTable);
                 }
             }
         }
@@ -168,8 +168,8 @@ namespace WinFormsApp
         public void UpdateCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-             {
-              using ( SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(connection))
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Customer");
@@ -177,8 +177,8 @@ namespace WinFormsApp
                     DataTable customerDataTable = new DataTable();
                     customerDataTable = ds.Tables["Customer"];
 
-                    DataRow[] rows = customerDataTable.Select("CustomerID ="+ custId);
-                    if(rows.Length == 1)
+                    DataRow[] rows = customerDataTable.Select("CustomerID =" + custId);
+                    if (rows.Length == 1)
                     {
                         rows[0]["CustomerName"] = custName;
                         rows[0]["CustomerAddress"] = custAddress;
@@ -198,7 +198,7 @@ namespace WinFormsApp
                     DataSet ds = new DataSet();
 
                     adapter.Fill(ds, "Supplier");
-                    return ds;   
+                    return ds;
                 }
             }
         }
@@ -352,10 +352,12 @@ namespace WinFormsApp
                 }
             }
         }
-
-
-
-
+    
+        internal void InsertEmployee(int employeeId, string employeeName, string employeeAddress, int employeePhoneNumber, SqlConnection sqlConnection)
+        {
+            throw new NotImplementedException();
+        }
+    
     }
 
    

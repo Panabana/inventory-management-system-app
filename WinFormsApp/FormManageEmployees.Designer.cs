@@ -206,6 +206,7 @@
             this.buttonRemoveEmployee.Size = new System.Drawing.Size(106, 44);
             this.buttonRemoveEmployee.TabIndex = 22;
             this.buttonRemoveEmployee.Text = "Remove";
+            this.buttonRemoveEmployee.Click += new System.EventHandler(this.buttonRemoveEmployee_Click);
             // 
             // buttonEditEmployee
             // 
@@ -217,6 +218,7 @@
             this.buttonEditEmployee.Size = new System.Drawing.Size(106, 44);
             this.buttonEditEmployee.TabIndex = 21;
             this.buttonEditEmployee.Text = "Edit";
+            this.buttonEditEmployee.Click += new System.EventHandler(this.buttonEditEmployee_Click);
             // 
             // buttonAddEmployee
             // 
@@ -227,7 +229,9 @@
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(106, 44);
             this.buttonAddEmployee.TabIndex = 20;
+            this.buttonAddEmployee.Tag = "<Null>";
             this.buttonAddEmployee.Text = "Add";
+            this.buttonAddEmployee.Click += new System.EventHandler(this.buttonAddEmployee_Click);
             // 
             // labelManageEmployeesMessage
             // 
@@ -239,6 +243,7 @@
             this.labelManageEmployeesMessage.Size = new System.Drawing.Size(48, 18);
             this.labelManageEmployeesMessage.TabIndex = 24;
             this.labelManageEmployeesMessage.Text = "****";
+            this.labelManageEmployeesMessage.Visible = false;
             // 
             // FormManageEmployees
             // 
