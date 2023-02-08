@@ -19,5 +19,10 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
         }
+
+        private void buttonCustomerIdFind_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

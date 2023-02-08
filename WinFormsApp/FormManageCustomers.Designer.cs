@@ -154,7 +154,7 @@
             this.groupBox2.Size = new System.Drawing.Size(669, 93);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Find a customer:";
+            this.groupBox2.Text = "Find a customer";
             // 
             // buttonCustomerIdFind
             // 
@@ -166,6 +166,7 @@
             this.buttonCustomerIdFind.Size = new System.Drawing.Size(95, 35);
             this.buttonCustomerIdFind.TabIndex = 6;
             this.buttonCustomerIdFind.Text = "Find";
+            this.buttonCustomerIdFind.Click += new System.EventHandler(this.buttonCustomerIdFind_Click);
             // 
             // textBoxCustomerIdFind
             // 
