@@ -12,6 +12,7 @@ namespace WinFormsApp
 {
     public class DataAccessLayer
     {
+        // Används denna?
         public SqlConnection GetDatabaseConnection()
         {
             string connectionString = ConfigurationManager.ConnectionStrings
@@ -27,7 +28,7 @@ namespace WinFormsApp
         // - EMPLOYEE -
         public DataSet ViewAllEmployees(string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter empAdapter = SqlAdapterClass.ViewAllEmployeeAdapter(connection))
                 {
@@ -42,9 +43,11 @@ namespace WinFormsApp
 
         public void InsertEmployee(int EmployeeID, string EmployeeName, string EmployeeAddress, int PhoneNumber, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter empAdapter = SqlAdapterClass.InsertEmployeeAdapter(connection))
+                connection.Open();
+
+                using (SqlDataAdapter empAdapter = SqlAdapterClass.InsertEmployeeAdapter(EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber, connection))
                 {
                     DataSet dataSet = new DataSet();
 
@@ -67,7 +70,7 @@ namespace WinFormsApp
 
         public void DeleteEmployee(int empId, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.DeleteEmployeeAdapter(connection))
                 {
@@ -86,7 +89,7 @@ namespace WinFormsApp
 
         public void UpdateEmployee(int empId, string empName, string empAddress, int phoneNbr, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.UpdateEmployeeAdapter(connection))
                 {
@@ -112,7 +115,7 @@ namespace WinFormsApp
         // - CUSTOMER -
         public DataSet ViewCustomers(string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter customerAdapter = SqlAdapterClass.ViewCustomerAdapter(connection))
                 {
@@ -127,7 +130,7 @@ namespace WinFormsApp
 
         public void InsertCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter customerAdapter = SqlAdapterClass.InsertCustomerAdapter(connection))
                 {
@@ -151,7 +154,7 @@ namespace WinFormsApp
 
         public void DeleteCustomer(int custId, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(connection))
                 {
@@ -170,7 +173,7 @@ namespace WinFormsApp
 
         public void UpdateCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(connection))
                 {
@@ -196,7 +199,7 @@ namespace WinFormsApp
         // - SUPPLIER -
         public DataSet ViewSuppliers(string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.ViewSupplierAdapter(connection))
                 {
@@ -209,7 +212,7 @@ namespace WinFormsApp
         }
         public void InsertSupplier(int suppId, string suppName, string suppAddress, int phoneNbr, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.InsertSupplierAdapter(connection))
                 {
@@ -233,7 +236,7 @@ namespace WinFormsApp
 
         public void DeleteSupplier(int suppId, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.DeleteSupplierAdapter(connection))
                 {
@@ -252,7 +255,7 @@ namespace WinFormsApp
 
         public void UpdateSupplier(int suppId, string suppName, string suppAddress, int phoneNbr, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.UpdateSupplierAdapter(connection))
                 {
@@ -278,7 +281,7 @@ namespace WinFormsApp
         // - PRODUCT -
         public DataSet ViewProducts(string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.ViewAllProductAdapter(connection))
                 {
@@ -293,7 +296,7 @@ namespace WinFormsApp
 
         public void InsertProduct(int prodId, string prodName, int price, int stock, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.InsertProductAdapter(connection))
                 {
@@ -317,7 +320,7 @@ namespace WinFormsApp
 
         public void UpdateProduct(int prodId, string prodName, string price, int stock, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(connection))
                 {
@@ -342,7 +345,7 @@ namespace WinFormsApp
 
         public void DeleteProduct(int prodId, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = SqlAdapterClass.DeleteProductAdapter(connection))
                 {
@@ -368,4 +371,3 @@ namespace WinFormsApp
 
    
 }
-
