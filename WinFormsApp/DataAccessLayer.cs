@@ -44,7 +44,9 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetSqlServerConnection())
             {
-                using (SqlDataAdapter empAdapter = SqlAdapterClass.InsertEmployeeAdapter(connection))
+                connection.Open();
+
+                using (SqlDataAdapter empAdapter = SqlAdapterClass.InsertEmployeeAdapter(EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber, connection))
                 {
                     DataSet dataSet = new DataSet();
 
