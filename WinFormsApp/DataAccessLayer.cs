@@ -267,17 +267,20 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteSupplierAdapter(connection))
+                using (SqlDataAdapter addSupplierAdapter = SqlAdapterClass.DeleteSupplierAdapter(suppId,connection))
                 {
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Supplier");
+                    addSupplierAdapter.Fill(ds, "Supplier");
 
                     DataTable supplierDataTable = new DataTable();
                     supplierDataTable = ds.Tables["Supplier"];
 
-                    DataRow row = supplierDataTable.Rows.Find(suppId);
-                    row.Delete();
-                    adapter.Update(supplierDataTable);
+                    DataRow[] rows = supplierDataTable.Select("SupplierID = " + suppId.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        addSupplierAdapter.Update(supplierDataTable);
+                    }
                 }
             }
         }

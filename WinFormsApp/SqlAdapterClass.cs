@@ -1,4 +1,5 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.Pdf.Native.BouncyCastle.Ocsp;
 using DevExpress.Utils.About;
 using DevExpress.XtraRichEdit.Commands;
 using System;
@@ -385,7 +386,7 @@ namespace WinFormsApp
             string deleteSuppQuery = "DELETE FROM Supplier WHERE SupplierID = @SupplierID";
             command = new SqlCommand(deleteSuppQuery, connection);
 
-            command.Parameters.AddWithValue("@SupplierId", SupplierId);
+            command.Parameters.AddWithValue("@SupplierID", SupplierId);
             command.Parameters.AddWithValue("@SupplierName", SupplierName);
             command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
@@ -426,20 +427,27 @@ namespace WinFormsApp
             return adapter;
         }
 
-        public static SqlDataAdapter DeleteSupplierAdapter(SqlConnection connection)
+        public static SqlDataAdapter DeleteSupplierAdapter(int suppId, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command;
+            connection = ConnectionHandler.GetDatabaseConnection();
 
-            command = new SqlCommand("DELETE FROM Supplier WHERE SupplierID = @SupplierID", connection);
+            SqlDataAdapter deleteSupplierAdapter = new SqlDataAdapter();
 
-            SqlParameter parameterSupplierID = new SqlParameter("@SupplierID", SqlDbType.Int);
+            string selectQuery = "SELECT * FROM Supplier WHERE SupplierID = @SupplierID";
 
-            command.Parameters.Add(parameterSupplierID);
-            command.Connection = connection;
-            adapter.SelectCommand = command;
+            SqlCommand command = new SqlCommand(selectQuery, connection);
 
-            return adapter;
+            command.Parameters.AddWithValue("@SupplierID", suppId);
+            deleteSupplierAdapter.SelectCommand = command;
+
+            string deleteQuery = "DELETE FROM Supplier WHERE SupplierID = @SupplierID";
+
+            command = new SqlCommand(deleteQuery, connection);
+
+            command.Parameters.AddWithValue("@SupplierID", suppId);
+            deleteSupplierAdapter.DeleteCommand = command;
+
+            return deleteSupplierAdapter;
         }
 
         // - PRODUCT -
