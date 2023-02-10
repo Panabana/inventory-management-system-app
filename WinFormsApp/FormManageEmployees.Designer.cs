@@ -42,7 +42,6 @@
             this.buttonFindEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxEmployeeIdFind = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonExitEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddEmployee = new DevExpress.XtraEditors.SimpleButton();
@@ -201,18 +200,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Employee ID:";
             // 
-            // buttonExitEmployee
-            // 
-            this.buttonExitEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExitEmployee.Appearance.Options.UseFont = true;
-            this.buttonExitEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitEmployee.ImageOptions.Image")));
-            this.buttonExitEmployee.Location = new System.Drawing.Point(656, 427);
-            this.buttonExitEmployee.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonExitEmployee.Name = "buttonExitEmployee";
-            this.buttonExitEmployee.Size = new System.Drawing.Size(124, 54);
-            this.buttonExitEmployee.TabIndex = 23;
-            this.buttonExitEmployee.Text = "Exit";
-            // 
             // buttonRemoveEmployee
             // 
             this.buttonRemoveEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -258,7 +245,7 @@
             this.labelManageEmployeesMessage.AutoSize = true;
             this.labelManageEmployeesMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageEmployeesMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageEmployeesMessage.Location = new System.Drawing.Point(435, 500);
+            this.labelManageEmployeesMessage.Location = new System.Drawing.Point(10, 500);
             this.labelManageEmployeesMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageEmployeesMessage.Name = "labelManageEmployeesMessage";
             this.labelManageEmployeesMessage.Size = new System.Drawing.Size(58, 23);
@@ -272,7 +259,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 532);
             this.Controls.Add(this.labelManageEmployeesMessage);
-            this.Controls.Add(this.buttonExitEmployee);
             this.Controls.Add(this.buttonRemoveEmployee);
             this.Controls.Add(this.buttonEditEmployee);
             this.Controls.Add(this.buttonAddEmployee);
@@ -308,7 +294,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonFindEmployee;
         private TextBox textBoxEmployeeIdFind;
         private Label label8;
-        private DevExpress.XtraEditors.SimpleButton buttonExitEmployee;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveEmployee;
         private DevExpress.XtraEditors.SimpleButton buttonEditEmployee;
         private DevExpress.XtraEditors.SimpleButton buttonAddEmployee;
