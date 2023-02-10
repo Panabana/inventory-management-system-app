@@ -331,6 +331,7 @@ namespace WinFormsApp
             SqlDataAdapter addSupplierAdapter = new SqlDataAdapter();
             SqlCommand command;
 
+            //Select Supplier
             command = new SqlCommand(
                 "SELECT * " +
                 "FROM Supplier " +
@@ -345,6 +346,7 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
 
+            //Insert Supplier
             command = new SqlCommand("INSERT INTO Supplier (SupplierID, SupplierName, SupplierAddress,"
                                     + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNumber)", connection);
 
@@ -355,7 +357,17 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
 
             addSupplierAdapter.InsertCommand = command;
-            
+
+            string deleteSuppQuery = "DELETE FROM Supplier WHERE SupplierId = @SupplierID";
+            command = new SqlCommand(deleteSuppQuery, connection);
+
+            command.Parameters.AddWithValue("@SupplierID", SupplierId);
+            command.Parameters.AddWithValue("@SupplierName", SupplierName);
+            command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
+
+            addSupplierAdapter.DeleteCommand = command;
+
             return addSupplierAdapter;
         }
 
