@@ -250,6 +250,7 @@
             this.buttonAddCustomer.Name = "buttonAddCustomer";
             this.buttonAddCustomer.Size = new System.Drawing.Size(124, 54);
             this.buttonAddCustomer.TabIndex = 16;
+            this.buttonAddCustomer.Tag = "<Null>";
             this.buttonAddCustomer.Text = "Add";
             this.buttonAddCustomer.Click += new System.EventHandler(this.buttonAddCustomer_Click);
             // 
