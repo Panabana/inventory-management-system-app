@@ -48,7 +48,22 @@ namespace WinFormsApp
 
         private void buttonEditEmployee_Click(object sender, EventArgs e)
         {
-            Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
+            try
+            {
+                int empID = Convert.ToInt32(textBoxEmployeeId.Text);
+                string empName = textBoxEmployeeName.Text;
+                string empAddress = textBoxEmployeeAddress.Text;
+                int empPhoneNbr = Convert.ToInt32(textBoxEmployeePhone.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+
+                _layer.UpdateEmployee(empID, empName, empAddress, empPhoneNbr, connectionString);
+                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
+            }
+            catch(Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
+            }
+            
         }
 
         private void buttonRemoveEmployee_Click(object sender, EventArgs e)
