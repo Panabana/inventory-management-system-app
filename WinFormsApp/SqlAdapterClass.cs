@@ -286,7 +286,7 @@ namespace WinFormsApp
 
             command = new SqlCommand(
                 "SELECT * " +
-                "FROM Suppliers " +
+                "FROM Supplier " +
                 "WHERE SupplierId = @SupplierId " +
                 "AND SupplierName = @SupplierName",
                 connection);
@@ -299,7 +299,7 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
 
             command = new SqlCommand("INSERT INTO Supplier (SupplierID, SupplierName, SupplierAddress,"
-                                    + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNbr)", connection);
+                                    + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNumber)", connection);
 
             //Add parameters with value
             command.Parameters.AddWithValue("@SupplierId", SupplierId);
