@@ -152,6 +152,26 @@ namespace WinFormsApp
             }
         }
 
+        /* public void DeleteCustomer(int custId, string connectionString)
+         {
+             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+             {
+                 connection.Open();
+                 using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(custId,connection))
+                 {
+                     DataSet ds = new DataSet();
+                     customerAdapter.Fill(ds, "Customer");
+
+                     DataTable customerDataTable = new DataTable();
+                     customerDataTable = ds.Tables["Customer"];
+
+                     DataRow row = customerDataTable.Rows.Find(custId);
+                     row.Delete();
+                     customerAdapter.Update(customerDataTable);
+                 }
+             }
+        */ //}
+
         public void DeleteCustomer(int custId, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
@@ -164,12 +184,16 @@ namespace WinFormsApp
                     DataTable customerDataTable = new DataTable();
                     customerDataTable = ds.Tables["Customer"];
 
-                    DataRow row = customerDataTable.Rows.Find(custId);
-                    row.Delete();
-                    customerAdapter.Update(customerDataTable);
+                    DataRow[] rows = customerDataTable.Select("CustomerID = " + custId.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        customerAdapter.Update(customerDataTable);
+                    }
                 }
             }
         }
+
 
         public void UpdateCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
         {

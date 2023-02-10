@@ -132,8 +132,8 @@ namespace WinFormsApp
             return customerAdapter;
         }
 
-       //* public static SqlDataAdapter DeleteCustomerAdapter(int CustomerId, SqlConnection connection)
-       /*  { 
+        public static SqlDataAdapter DeleteCustomerAdapter(int CustomerId, SqlConnection connection)
+         { 
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
             SqlCommand command = new SqlCommand("SELECT * " +
                                                "FROM Customer " +
@@ -147,7 +147,7 @@ namespace WinFormsApp
             customerAdapter.DeleteCommand = command;
 
             return customerAdapter;
-      */   // }
+          }
 
         // - EMPLOYEE -
 
