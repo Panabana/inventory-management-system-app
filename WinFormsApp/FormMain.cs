@@ -24,6 +24,7 @@ namespace WinFormsApp
             InitializeComponent();
         }
 
+        // RibbonForm2_Load can be removed right?
         private void RibbonForm2_Load(object sender, EventArgs e)
         {
 
@@ -40,8 +41,6 @@ namespace WinFormsApp
             FormManageEmployees form = new FormManageEmployees();
             form.ShowDialog();
         }
-
-
 
         private void barButtonManageCustomers_ItemClick(object sender, ItemClickEventArgs e)
         {
