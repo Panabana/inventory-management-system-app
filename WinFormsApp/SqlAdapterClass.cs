@@ -382,10 +382,10 @@ namespace WinFormsApp
 
             addSupplierAdapter.InsertCommand = command;
 
-            string deleteSuppQuery = "DELETE FROM Supplier WHERE SupplierId = @SupplierID";
+            string deleteSuppQuery = "DELETE FROM Supplier WHERE SupplierID = @SupplierID";
             command = new SqlCommand(deleteSuppQuery, connection);
 
-            command.Parameters.AddWithValue("@SupplierID", SupplierId);
+            command.Parameters.AddWithValue("@SupplierId", SupplierId);
             command.Parameters.AddWithValue("@SupplierName", SupplierName);
             command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);

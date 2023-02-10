@@ -184,9 +184,6 @@
             this.labelSupplierIDFind.Size = new System.Drawing.Size(79, 14);
             this.labelSupplierIDFind.TabIndex = 0;
             this.labelSupplierIDFind.Text = "Supplier ID:";
-           
-            // 
-            // 
             // 
             // buttonRemoveSupplier
             // 
@@ -229,7 +226,7 @@
             this.labelManageSuppliersMessage.AutoSize = true;
             this.labelManageSuppliersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageSuppliersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(10, 420);
+            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(291, 329);
             this.labelManageSuppliersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageSuppliersMessage.Name = "labelManageSuppliersMessage";
             this.labelManageSuppliersMessage.Size = new System.Drawing.Size(48, 18);
@@ -241,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 368);
+            this.ClientSize = new System.Drawing.Size(698, 375);
             this.Controls.Add(this.labelManageSuppliersMessage);
             this.Controls.Add(this.buttonRemoveSupplier);
             this.Controls.Add(this.buttonEditSupplier);

@@ -49,7 +49,21 @@ namespace WinFormsApp
 
         private void buttonRemoveSupplier_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int suppId = Convert.ToInt32(textBoxSupplierID.Text);
 
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+
+                _layer.DeleteSupplier(suppId, connectionString); //osäker om rätt
+                Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier removed!");
+
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
+                Console.WriteLine(ex.Message);
+            }
         }
         
         private void buttonFindSupplier_Click(object sender, EventArgs e)
