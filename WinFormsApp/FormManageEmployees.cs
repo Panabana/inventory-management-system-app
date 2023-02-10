@@ -53,7 +53,22 @@ namespace WinFormsApp
 
         private void buttonRemoveEmployee_Click(object sender, EventArgs e)
         {
-            Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
+            try
+            {
+                int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+                
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+
+                _layer.DeleteEmployee(employeeId, connectionString); //osäker om rätt
+                Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
+
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         private void buttonFindEmployee_Click(object sender, EventArgs e)

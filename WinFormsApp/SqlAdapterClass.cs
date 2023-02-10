@@ -200,6 +200,17 @@ namespace WinFormsApp
 
             addEmpAdapter.InsertCommand = command;
 
+            // Create SqlCommand for SqlDataAdapter's DeleteCommand
+            string deleteEmpQuery = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
+            command = new SqlCommand(deleteEmpQuery, connection);
+
+            command.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+            command.Parameters.AddWithValue("@EmployeeName", EmployeeName);
+            command.Parameters.AddWithValue("@EmployeeAddress", EmployeeAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+
+            addEmpAdapter.DeleteCommand = command;
+
             return addEmpAdapter;
 
             //-----
@@ -226,19 +237,25 @@ namespace WinFormsApp
 
         }
 
-        public static SqlDataAdapter DeleteEmployeeAdapter (SqlConnection connection)
+        public static SqlDataAdapter DeleteEmployeeAdapter (int empID, SqlConnection connection)
         {
+            connection = ConnectionHandler.GetDatabaseConnection();
+
             SqlDataAdapter deleteEmpAdapter = new SqlDataAdapter();
-            SqlCommand command;
-            string query = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
 
-            command = new SqlCommand(query, connection);
+            string selectQuery = "SELECT * FROM Employee WHERE EmployeeID = @EmployeeID";
 
-            SqlParameter parameterEmployeeID = new SqlParameter("@EmployeeID", SqlDbType.Int);
+            SqlCommand command = new SqlCommand(selectQuery, connection);
 
-            command.Parameters.Add(parameterEmployeeID);
-            command.Connection = connection;
+            command.Parameters.AddWithValue("@EmployeeID", empID);
             deleteEmpAdapter.SelectCommand = command;
+
+            string deleteQuery = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
+
+            command = new SqlCommand(deleteQuery, connection);
+
+            command.Parameters.AddWithValue("@EmployeeID", empID);
+            deleteEmpAdapter.DeleteCommand = command;
 
             return deleteEmpAdapter;
         }
