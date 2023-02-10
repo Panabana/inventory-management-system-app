@@ -323,7 +323,7 @@ namespace WinFormsApp
             }
         }
 
-        public void InsertProduct(int productId, string productName, int productPrice, int productStock, string connectionString)
+        public void InsertProduct(int productId, string productName, decimal productPrice, int productStock, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {

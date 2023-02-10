@@ -29,7 +29,7 @@ namespace WinFormsApp
             {
                 int productId = Convert.ToInt32(textBoxProductID.Text);
                 string productName = textBoxProductName.Text;
-                int productPrice = Convert.ToInt32(textBoxProductPrice.Text);
+                decimal productPrice = Convert.ToDecimal(textBoxProductPrice.Text);
                 int productStock = Convert.ToInt32(textBoxStock.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 

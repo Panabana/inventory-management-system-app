@@ -444,7 +444,7 @@ namespace WinFormsApp
             return adapter;
         }
 
-        public static SqlDataAdapter InsertProductAdapter(int productId, string productName, int productPrice, int productStock, SqlConnection connection)
+        public static SqlDataAdapter InsertProductAdapter(int productId, string productName, decimal productPrice, int productStock, SqlConnection connection)
         {
             SqlDataAdapter productAdapter = new SqlDataAdapter();
 
@@ -552,7 +552,7 @@ namespace WinFormsApp
 
             return productAdapter;
 
-            /*
+            /* OLD
             SqlParameter parameterProductID = new SqlParameter("@ProductID", SqlDbType.);
 
             command.Parameters.Add(parameterProductID);
