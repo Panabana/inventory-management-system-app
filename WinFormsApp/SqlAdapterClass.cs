@@ -1,4 +1,5 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.Utils.About;
 using DevExpress.XtraRichEdit.Commands;
 using System;
 using System.Collections.Generic;
@@ -371,12 +372,34 @@ namespace WinFormsApp
             return adapter;
         }
 
-        public static SqlDataAdapter InsertProductAdapter(SqlConnection connection)
+        public static SqlDataAdapter InsertProductAdapter(int productId, string productName, int productPrice, int productStock, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command;
-            string query = "Insert INTO Product (ProductID, ProductName, Price, Stock) VALUES (@ProductID, @ProductName, @Price, @Stock)";
+            SqlDataAdapter productAdapter = new SqlDataAdapter();
 
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Product " +
+                                                "WHERE ProductID = @ProductID " +
+                                                "AND ProductName = ProductName", connection);
+
+            command.Parameters.AddWithValue("@ProductID", productId);
+            command.Parameters.AddWithValue("@ProductName", productName);
+            command.Parameters.AddWithValue("@Price", productPrice);
+            command.Parameters.AddWithValue("@Stock", productStock);
+
+            productAdapter.SelectCommand = command;
+
+            command = new SqlCommand("Insert INTO Product (ProductID, ProductName, Price, Stock) " +
+                                     "VALUES (@ProductID, @ProductName, @Price, @Stock)", connection);
+
+            command.Parameters.AddWithValue("@ProductID", productId);
+            command.Parameters.AddWithValue("@ProductName", productName);
+            command.Parameters.AddWithValue("@Price", productPrice);
+            command.Parameters.AddWithValue("@Stock", productStock);
+
+            productAdapter.InsertCommand = command;
+            return productAdapter;
+
+            /*
             command = new SqlCommand(query, connection);
 
 
@@ -400,6 +423,7 @@ namespace WinFormsApp
             command.Connection = connection;
             adapter.SelectCommand = command;
             return adapter;
+            */
         }
 
         public static SqlDataAdapter UpdateProductAdapter(SqlConnection connection)
