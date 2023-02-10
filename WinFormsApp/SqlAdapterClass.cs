@@ -46,8 +46,10 @@ namespace WinFormsApp
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Customer " +
-                                                "WHERE CustomerID = @CustomerID", connection);
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Customer " +
+                                                "WHERE CustomerID = @CustomerID "+
+                                                "AND CustomerName = CustomerName", connection);
 
             command.Parameters.AddWithValue("@CustomerID", CustomerID);
             command.Parameters.AddWithValue("@CustomerName", CustomerName);
@@ -64,7 +66,7 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
 
-            customerAdapter.SelectCommand = command;
+            customerAdapter.InsertCommand = command;
             return customerAdapter;
             
             /*  //Parameters
