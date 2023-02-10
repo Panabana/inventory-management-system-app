@@ -141,7 +141,6 @@
             this.textBoxProductID.Name = "textBoxProductID";
             this.textBoxProductID.Size = new System.Drawing.Size(233, 30);
             this.textBoxProductID.TabIndex = 1;
-            this.textBoxProductID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // labelProductID
             // 
