@@ -265,6 +265,7 @@
             this.labelManageCustomersMessage.Size = new System.Drawing.Size(58, 23);
             this.labelManageCustomersMessage.TabIndex = 20;
             this.labelManageCustomersMessage.Text = "****";
+            this.labelManageCustomersMessage.Visible = false;
             // 
             // FormManageCustomers
             // 

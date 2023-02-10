@@ -264,6 +264,7 @@
             this.labelManageSuppliersMessage.Size = new System.Drawing.Size(58, 23);
             this.labelManageSuppliersMessage.TabIndex = 16;
             this.labelManageSuppliersMessage.Text = "****";
+            this.labelManageSuppliersMessage.Visible = false;
             // 
             // FormManageSuppliers
             // 

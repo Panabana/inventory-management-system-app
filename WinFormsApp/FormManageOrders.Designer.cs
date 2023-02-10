@@ -282,6 +282,7 @@
             this.labelManageOrdersMessage.Size = new System.Drawing.Size(58, 23);
             this.labelManageOrdersMessage.TabIndex = 24;
             this.labelManageOrdersMessage.Text = "****";
+            this.labelManageOrdersMessage.Visible = false;
             // 
             // buttonRemoveLineOrder
             // 
