@@ -35,11 +35,10 @@ namespace WinFormsApp
 
                 _layer.InsertProduct(productId, productName, productPrice, productStock, connectionString);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
-
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Error: " + ex.Message);
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
@@ -62,8 +61,8 @@ namespace WinFormsApp
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
-                Console.WriteLine(ex.Message);
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Error: " + ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
         
