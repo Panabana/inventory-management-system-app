@@ -289,7 +289,7 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateSupplierAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateSupplierAdapter(suppId, suppName, suppAddress, phoneNbr,connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Supplier");
@@ -300,8 +300,8 @@ namespace WinFormsApp
                     DataRow[] rows = suppDataTable.Select("SupplierID =" + suppId);
                     if (rows.Length == 1)
                     {
-                        rows[0]["EmployeeName"] = suppName;
-                        rows[0]["CustomerAddress"] = suppAddress;
+                        rows[0]["SupplierName"] = suppName;
+                        rows[0]["SupplierAddress"] = suppAddress;
                         rows[0]["PhoneNumber"] = phoneNbr;
                     }
 
