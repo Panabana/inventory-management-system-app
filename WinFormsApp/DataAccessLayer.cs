@@ -116,7 +116,20 @@ namespace WinFormsApp
                 }
             }
         }
-        
+
+        public DataTable FindEmployee(int empID, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter findEmpAdapter = SqlAdapterClass.FindEmployeeAdapter(empID, connection))
+                {
+                    DataTable findEmpDataTable = new();
+
+                    findEmpAdapter.Fill(findEmpDataTable);
+                    return findEmpDataTable;
+                }
+            }
+        }
         // - CUSTOMER -
         public DataSet ViewCustomers(string connectionString)
         {
