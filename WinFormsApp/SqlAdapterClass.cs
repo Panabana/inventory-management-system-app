@@ -304,6 +304,18 @@ namespace WinFormsApp
             return empUpdateAdapter;
         }
 
+        public static SqlDataAdapter FindEmployeeAdapter(int empId, SqlConnection connection)
+        {
+            SqlDataAdapter empFindAdapter = new();
+            string query = "SELECT EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber WHERE EmployeeID = @EmployeeID";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@EmployeeID", empId);
+            empFindAdapter.SelectCommand = command;
+
+            return empFindAdapter;
+        }
+
             /*
             SqlDataAdapter updateEmpAdapter = new();
             SqlCommand command;

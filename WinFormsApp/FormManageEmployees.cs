@@ -88,6 +88,28 @@ namespace WinFormsApp
 
         private void buttonFindEmployee_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int empId = Convert.ToInt32(textBoxEmployeeIdFind.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+
+                DataTable findEmpDataTable = new();
+                findEmpDataTable = _layer.FindEmployee(empId, connectionString);
+
+                if(findEmpDataTable.Rows.Count == 1)
+                {
+                    textBoxEmployeeId.Text = findEmpDataTable.Rows[0]["EmployeeID"].ToString();
+                    textBoxEmployeeName.Text = findEmpDataTable.Rows[0]["EmployeeName"].ToString();
+                    textBoxEmployeeAddress.Text = findEmpDataTable.Rows[0]["EmployeeAddress"].ToString();
+                    textBoxEmployeePhone.Text = findEmpDataTable.Rows[0]["PhoneNumber"].ToString();
+
+                    Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee found!");
+                }
+            }
+            catch(Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
+            }
 
         }
     }
