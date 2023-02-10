@@ -42,7 +42,6 @@
             this.labelOrderIDFind = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
-            this.buttonExitOrder = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveOrderOrder = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditOrder = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddOrder = new DevExpress.XtraEditors.SimpleButton();
@@ -219,19 +218,6 @@
             this.dataGridViewOrder.Size = new System.Drawing.Size(890, 271);
             this.dataGridViewOrder.TabIndex = 0;
             // 
-            // buttonExitOrder
-            // 
-            this.buttonExitOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExitOrder.Appearance.Options.UseFont = true;
-            this.buttonExitOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitOrder.ImageOptions.Image")));
-            this.buttonExitOrder.Location = new System.Drawing.Point(734, 597);
-            this.buttonExitOrder.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExitOrder.Name = "buttonExitOrder";
-            this.buttonExitOrder.Size = new System.Drawing.Size(164, 54);
-            this.buttonExitOrder.TabIndex = 23;
-            this.buttonExitOrder.Text = "Exit";
-            this.buttonExitOrder.Click += new System.EventHandler(this.buttonExitOrder_Click);
-            // 
             // buttonRemoveOrderOrder
             // 
             this.buttonRemoveOrderOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -276,7 +262,7 @@
             this.labelManageOrdersMessage.AutoSize = true;
             this.labelManageOrdersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageOrdersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageOrdersMessage.Location = new System.Drawing.Point(451, 668);
+            this.labelManageOrdersMessage.Location = new System.Drawing.Point(10, 668);
             this.labelManageOrdersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageOrdersMessage.Name = "labelManageOrdersMessage";
             this.labelManageOrdersMessage.Size = new System.Drawing.Size(58, 23);
@@ -304,7 +290,6 @@
             this.ClientSize = new System.Drawing.Size(931, 699);
             this.Controls.Add(this.buttonRemoveLineOrder);
             this.Controls.Add(this.labelManageOrdersMessage);
-            this.Controls.Add(this.buttonExitOrder);
             this.Controls.Add(this.buttonRemoveOrderOrder);
             this.Controls.Add(this.buttonEditOrder);
             this.Controls.Add(this.buttonAddOrder);
@@ -342,7 +327,6 @@
         private TextBox textBoxOrderIDFind;
         private Label labelOrderIDFind;
         private GroupBox groupBox3;
-        private DevExpress.XtraEditors.SimpleButton buttonExitOrder;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveOrderOrder;
         private DevExpress.XtraEditors.SimpleButton buttonEditOrder;
         private DevExpress.XtraEditors.SimpleButton buttonAddOrder;
