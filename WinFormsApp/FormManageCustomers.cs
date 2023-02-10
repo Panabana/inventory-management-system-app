@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.CodeParser;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,9 +46,22 @@ namespace WinFormsApp
 
         private void buttonEditCustomer_Click(object sender, EventArgs e)
         {
+            try{
+                int customerId = Convert.ToInt32(textBoxCustomerId.Text);
+                string customerName = textBoxCustomerName.Text;
+                string customerAddress = textBoxCustomerAddress.Text;
+                int customerPhoneNumber = Convert.ToInt32(textBoxCustomerPhone.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
+                _layer.UpdateCustomer(customerId, customerName, customerAddress, customerPhoneNumber, connectionString);
+                Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer edited!");
+
+             }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
+            }
         }
-
         private void buttonRemoveCustomer_Click(object sender, EventArgs e)
         {
             try {
