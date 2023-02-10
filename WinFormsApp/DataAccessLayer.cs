@@ -204,7 +204,7 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(custId, custName, custAddress, phoneNbr,connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Customer");
@@ -243,14 +243,14 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.InsertSupplierAdapter(connection))
+                using (SqlDataAdapter AddSupplierAdapter = SqlAdapterClass.InsertSupplierAdapter(suppId, suppName, suppAddress, phoneNbr, connection))
                 {
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Supplier");
+                    AddSupplierAdapter.Fill(ds, "Supplier");
 
                     DataTable supplierDataTable = new DataTable();
                     supplierDataTable = ds.Tables["Supplier"];
-
+                    
                     DataRow row = supplierDataTable.NewRow();
                     row["SupplierID"] = suppId;
                     row["SupplierName"] = suppName;
@@ -258,7 +258,7 @@ namespace WinFormsApp
                     row["PhoneNumber"] = phoneNbr;
 
                     supplierDataTable.Rows.Add(row);
-                    adapter.Update(supplierDataTable);
+                    AddSupplierAdapter.Update(supplierDataTable);
                 }
             }
         }

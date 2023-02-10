@@ -103,15 +103,35 @@ namespace WinFormsApp
 
         }
 
-        public static SqlDataAdapter UpdateCustomerAdapter(SqlConnection connection)
+        public static SqlDataAdapter UpdateCustomerAdapter(int CustomerId, string CustomerName, string CustomerAddress, int CustomerPhoneNbr, SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
 
-            SqlCommand command;
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Customer " +
+                                                "WHERE CustomerID = @CustomerId", connection);
+
+            command.Parameters.AddWithValue("@CustomerID", CustomerId);
+
+            customerAdapter.SelectCommand = command;
+
             command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress,"
                                        + "PhoneNumber = @PhoneNumber WHERE CustomerID = @CustomerID", connection);
-            //Parameters
-            SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
+
+            command.Parameters.AddWithValue("@CustomerID", CustomerId);
+            command.Parameters.AddWithValue("@CustomerName", CustomerName);
+            command.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", CustomerPhoneNbr);
+
+            customerAdapter.UpdateCommand = command;
+            return customerAdapter;
+            
+            
+            
+            
+            
+            
+           /* SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
             SqlParameter parameterCustomerName = new SqlParameter("@CustomerName", SqlDbType.VarChar);
             SqlParameter parameterCustomerAddress = new SqlParameter("@CustomerAddress", SqlDbType.VarChar);
             SqlParameter parameterPhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
@@ -130,8 +150,8 @@ namespace WinFormsApp
             customerAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             customerAdapter.SelectCommand = command;
 
-            return customerAdapter;
-        }
+              return customerAdapter;
+           */ }
 
         public static SqlDataAdapter DeleteCustomerAdapter(int CustomerId, SqlConnection connection)
          { 
@@ -330,35 +350,37 @@ namespace WinFormsApp
 
         }
 
-        public static SqlDataAdapter InsertSupplierAdapter(SqlConnection connection)
+        public static SqlDataAdapter InsertSupplierAdapter(int SupplierId, string SupplierName, string SupplierAddress, int PhoneNbr, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter addSupplierAdapter = new SqlDataAdapter();
             SqlCommand command;
 
+            command = new SqlCommand(
+                "SELECT * " +
+                "FROM Supplier " +
+                "WHERE SupplierId = @SupplierId " +
+                "AND SupplierName = @SupplierName",
+                connection);
+            
+            addSupplierAdapter.SelectCommand = command;
+
+            command.Parameters.AddWithValue("@SupplierId", SupplierId);
+            command.Parameters.AddWithValue("@SupplierName", SupplierName);
+            command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
+
             command = new SqlCommand("INSERT INTO Supplier (SupplierID, SupplierName, SupplierAddress,"
-                                    + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNbr)", connection);
+                                    + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNumber)", connection);
 
+            //Add parameters with value
+            command.Parameters.AddWithValue("@SupplierId", SupplierId);
+            command.Parameters.AddWithValue("@SupplierName", SupplierName);
+            command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
 
-            SqlParameter parameterSupplierID = new("@SupplierID", SqlDbType.Int);
-            SqlParameter parameterSupplierName = new("@SupplierName", SqlDbType.VarChar);
-            SqlParameter parameterSupplierAddress = new("@SupplierAddress", SqlDbType.VarChar);
-            SqlParameter parameterPhoneNumber = new("@PhoneNbr", SqlDbType.Int);
-
-            parameterSupplierID.SourceColumn = "SupplierID";
-            parameterSupplierName.SourceColumn = "SupplierName";
-            parameterSupplierAddress.SourceColumn = "SupplierAddress";
-            parameterPhoneNumber.SourceColumn = "PhoneNumber";
-
-            command.Parameters.Add(parameterSupplierID);
-            command.Parameters.Add(parameterSupplierName);
-            command.Parameters.Add(parameterSupplierAddress);
-            command.Parameters.Add(parameterPhoneNumber);
-
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-
-            command.Connection = connection;
-            adapter.SelectCommand = command;
-            return adapter;
+            addSupplierAdapter.InsertCommand = command;
+            
+            return addSupplierAdapter;
         }
 
         public static SqlDataAdapter UpdateSupplierAdapter(SqlConnection connection)
