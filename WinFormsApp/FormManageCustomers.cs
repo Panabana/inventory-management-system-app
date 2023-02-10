@@ -62,16 +62,7 @@ namespace WinFormsApp
 
             }
         }
-<<<<<<< HEAD
-        
-=======
-    
-        private void buttonExitCustomer_Click(object sender, EventArgs e)
-        {
 
-        }
-
->>>>>>> master
         private void buttonFindCustomer_Click(object sender, EventArgs e)
         {
 
