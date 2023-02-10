@@ -66,12 +66,7 @@ namespace WinFormsApp
                 Console.WriteLine(ex.Message);
             }
         }
-
-        private void buttonExitProduct_Click(object sender, EventArgs e)
-        {
-            Utility.LabelMessageSuccess(labelManageProductsMessage, "test exit button");
-        }
-
+        
         private void buttonFindProduct_Click(object sender, EventArgs e)
         {
             Utility.LabelMessageSuccess(labelManageProductsMessage, "test find button");

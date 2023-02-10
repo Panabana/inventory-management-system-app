@@ -34,12 +34,7 @@ namespace WinFormsApp
         {
 
         }
-
-        private void buttonExitSupplier_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void buttonFindSupplier_Click(object sender, EventArgs e)
         {
 

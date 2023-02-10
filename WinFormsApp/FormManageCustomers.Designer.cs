@@ -42,7 +42,6 @@
             this.buttonFindCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxCustomerIdFind = new System.Windows.Forms.TextBox();
             this.labelCustomerIDFind = new System.Windows.Forms.Label();
-            this.buttonExitCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddCustomer = new DevExpress.XtraEditors.SimpleButton();
@@ -201,19 +200,6 @@
             this.labelCustomerIDFind.TabIndex = 0;
             this.labelCustomerIDFind.Text = "Customer ID:";
             // 
-            // buttonExitCustomer
-            // 
-            this.buttonExitCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExitCustomer.Appearance.Options.UseFont = true;
-            this.buttonExitCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitCustomer.ImageOptions.Image")));
-            this.buttonExitCustomer.Location = new System.Drawing.Point(562, 347);
-            this.buttonExitCustomer.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExitCustomer.Name = "buttonExitCustomer";
-            this.buttonExitCustomer.Size = new System.Drawing.Size(124, 54);
-            this.buttonExitCustomer.TabIndex = 19;
-            this.buttonExitCustomer.Text = "Exit";
-            this.buttonExitCustomer.Click += new System.EventHandler(this.buttonExitCustomer_Click);
-            // 
             // buttonRemoveCustomer
             // 
             this.buttonRemoveCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -259,7 +245,7 @@
             this.labelManageCustomersMessage.AutoSize = true;
             this.labelManageCustomersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageCustomersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageCustomersMessage.Location = new System.Drawing.Point(379, 420);
+            this.labelManageCustomersMessage.Location = new System.Drawing.Point(10, 420);
             this.labelManageCustomersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageCustomersMessage.Name = "labelManageCustomersMessage";
             this.labelManageCustomersMessage.Size = new System.Drawing.Size(58, 23);
@@ -273,7 +259,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 453);
             this.Controls.Add(this.labelManageCustomersMessage);
-            this.Controls.Add(this.buttonExitCustomer);
             this.Controls.Add(this.buttonRemoveCustomer);
             this.Controls.Add(this.buttonEditCustomer);
             this.Controls.Add(this.buttonAddCustomer);
@@ -309,7 +294,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonFindCustomer;
         private TextBox textBoxCustomerIdFind;
         private Label labelCustomerIDFind;
-        private DevExpress.XtraEditors.SimpleButton buttonExitCustomer;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveCustomer;
         private DevExpress.XtraEditors.SimpleButton buttonEditCustomer;
         private DevExpress.XtraEditors.SimpleButton buttonAddCustomer;

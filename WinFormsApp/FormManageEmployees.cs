@@ -56,11 +56,6 @@ namespace WinFormsApp
             Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
         }
 
-        private void buttonExitEmployee_Click(object sender, EventArgs e)
-        {
-            Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee exited!");
-        }
-
         private void buttonFindEmployee_Click(object sender, EventArgs e)
         {
 

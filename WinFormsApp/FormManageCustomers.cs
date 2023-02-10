@@ -52,12 +52,7 @@ namespace WinFormsApp
         {
 
         }
-
-        private void buttonExitCustomer_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void buttonFindCustomer_Click(object sender, EventArgs e)
         {
 

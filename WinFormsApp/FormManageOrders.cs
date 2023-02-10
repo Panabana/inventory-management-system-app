@@ -39,12 +39,7 @@ namespace WinFormsApp
         {
 
         }
-
-        private void buttonExitOrder_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void buttonFindOrder_Click(object sender, EventArgs e)
         {
 
