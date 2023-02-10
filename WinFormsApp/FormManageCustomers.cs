@@ -50,9 +50,19 @@ namespace WinFormsApp
 
         private void buttonRemoveCustomer_Click(object sender, EventArgs e)
         {
+            try {
+                int customerId = Convert.ToInt32(textBoxCustomerId.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+                _layer.DeleteCustomer(customerId, connectionString);
+                Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer deleted!");
+            }
+            catch (Exception ex)
+            {
+            Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
 
+            }
         }
-
+    
         private void buttonExitCustomer_Click(object sender, EventArgs e)
         {
 
