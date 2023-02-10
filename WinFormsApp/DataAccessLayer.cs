@@ -199,7 +199,7 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(custId, custName, custAddress, phoneNbr,connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Customer");

@@ -102,15 +102,35 @@ namespace WinFormsApp
 
         }
 
-        public static SqlDataAdapter UpdateCustomerAdapter(SqlConnection connection)
+        public static SqlDataAdapter UpdateCustomerAdapter(int CustomerId, string CustomerName, string CustomerAddress, int CustomerPhoneNbr, SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
 
-            SqlCommand command;
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Customer " +
+                                                "WHERE CustomerID = @CustomerId", connection);
+
+            command.Parameters.AddWithValue("@CustomerID", CustomerId);
+
+            customerAdapter.SelectCommand = command;
+
             command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress,"
                                        + "PhoneNumber = @PhoneNumber WHERE CustomerID = @CustomerID", connection);
-            //Parameters
-            SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
+
+            command.Parameters.AddWithValue("@CustomerID", CustomerId);
+            command.Parameters.AddWithValue("@CustomerName", CustomerName);
+            command.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", CustomerPhoneNbr);
+
+            customerAdapter.UpdateCommand = command;
+            return customerAdapter;
+            
+            
+            
+            
+            
+            
+           /* SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
             SqlParameter parameterCustomerName = new SqlParameter("@CustomerName", SqlDbType.VarChar);
             SqlParameter parameterCustomerAddress = new SqlParameter("@CustomerAddress", SqlDbType.VarChar);
             SqlParameter parameterPhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
@@ -129,8 +149,8 @@ namespace WinFormsApp
             customerAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             customerAdapter.SelectCommand = command;
 
-            return customerAdapter;
-        }
+              return customerAdapter;
+           */ }
 
         public static SqlDataAdapter DeleteCustomerAdapter(int CustomerId, SqlConnection connection)
          { 
