@@ -1,4 +1,6 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.Pdf.Native.BouncyCastle.Ocsp;
+using DevExpress.Pdf.Xmp;
 using DevExpress.Utils.About;
 using DevExpress.XtraRichEdit.Commands;
 using System;
@@ -367,6 +369,7 @@ namespace WinFormsApp
             SqlDataAdapter addSupplierAdapter = new SqlDataAdapter();
             SqlCommand command;
 
+            //Select Supplier
             command = new SqlCommand(
                 "SELECT * " +
                 "FROM Supplier " +
@@ -381,6 +384,7 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
 
+            //Insert Supplier
             command = new SqlCommand("INSERT INTO Supplier (SupplierID, SupplierName, SupplierAddress,"
                                     + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNumber)", connection);
 
@@ -391,55 +395,64 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
 
             addSupplierAdapter.InsertCommand = command;
-            
+
+            string deleteSuppQuery = "DELETE FROM Supplier WHERE SupplierID = @SupplierID";
+            command = new SqlCommand(deleteSuppQuery, connection);
+
+            command.Parameters.AddWithValue("@SupplierID", SupplierId);
+            command.Parameters.AddWithValue("@SupplierName", SupplierName);
+            command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
+
+            addSupplierAdapter.DeleteCommand = command;
+
             return addSupplierAdapter;
         }
 
-        public static SqlDataAdapter UpdateSupplierAdapter(SqlConnection connection)
+        public static SqlDataAdapter UpdateSupplierAdapter(int suppId, string suppName, string suppAddress, int phoneNumber, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command;
+            SqlDataAdapter suppUpdateAdapter = new SqlDataAdapter();
+            string selectQuery = "SELECT * FROM Supplier WHERE SupplierId = @SupplierID";
+            SqlCommand command = new SqlCommand(selectQuery, connection);
 
-            command = new SqlCommand("UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress,"
-                                       + "PhoneNumber = @PhoneNumber WHERE SupplierID = @SupplierID", connection);
-            //Parameters
-            SqlParameter parameterSupplierID = new SqlParameter("@SupplierID", SqlDbType.Int);
-            SqlParameter parameterSupplierName = new SqlParameter("@SupplierName", SqlDbType.VarChar);
-            SqlParameter parameterSupplierAddress = new SqlParameter("@SupplierAddress", SqlDbType.VarChar);
-            SqlParameter parameterPhoneNumber = new SqlParameter("@PhoneNumber", SqlDbType.Int);
+            command.Parameters.AddWithValue("@SupplierId", suppId);
 
-            parameterSupplierID.SourceColumn = "SupplierID";
-            parameterSupplierName.SourceColumn = "SupplierName";
-            parameterSupplierAddress.SourceColumn = "SupplierAddress";
-            parameterPhoneNumber.SourceColumn = "PhoneNumber";
+            suppUpdateAdapter.SelectCommand = command;
 
-            command.Parameters.Add(parameterSupplierID);
-            command.Parameters.Add(parameterSupplierName);
-            command.Parameters.Add(parameterSupplierAddress);
-            command.Parameters.Add(parameterPhoneNumber);
+            string updateQuery = "UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress, PhoneNumber = @PhoneNumber WHERE SupplierId = @SupplierId";
+            command = new SqlCommand(updateQuery, connection);
+            
+            command.Parameters.AddWithValue("@SupplierId", suppId);
+            command.Parameters.AddWithValue("@SupplierName", suppName);
+            command.Parameters.AddWithValue("@SupplierAddress", suppAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
 
-            command.Connection = connection;
-            //Don't know if AddWithKey is necesseray here
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.SelectCommand = command;
+            suppUpdateAdapter.UpdateCommand = command;
 
-            return adapter;
+            return suppUpdateAdapter;
         }
 
-        public static SqlDataAdapter DeleteSupplierAdapter(SqlConnection connection)
+        public static SqlDataAdapter DeleteSupplierAdapter(int suppId, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command;
+            connection = ConnectionHandler.GetDatabaseConnection();
 
-            command = new SqlCommand("DELETE FROM Supplier WHERE SupplierID = @SupplierID", connection);
+            SqlDataAdapter deleteSupplierAdapter = new SqlDataAdapter();
 
-            SqlParameter parameterSupplierID = new SqlParameter("@SupplierID", SqlDbType.Int);
+            string selectQuery = "SELECT * FROM Supplier WHERE SupplierID = @SupplierID";
 
-            command.Parameters.Add(parameterSupplierID);
-            command.Connection = connection;
-            adapter.SelectCommand = command;
+            SqlCommand command = new SqlCommand(selectQuery, connection);
 
-            return adapter;
+            command.Parameters.AddWithValue("@SupplierID", suppId);
+            deleteSupplierAdapter.SelectCommand = command;
+
+            string deleteQuery = "DELETE FROM Supplier WHERE SupplierID = @SupplierID";
+
+            command = new SqlCommand(deleteQuery, connection);
+
+            command.Parameters.AddWithValue("@SupplierID", suppId);
+            deleteSupplierAdapter.DeleteCommand = command;
+
+            return deleteSupplierAdapter;
         }
 
         // - PRODUCT -

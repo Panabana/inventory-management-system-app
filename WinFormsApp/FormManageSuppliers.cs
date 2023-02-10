@@ -44,12 +44,41 @@ namespace WinFormsApp
 
         private void buttonEditSupplier_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int suppId = Convert.ToInt32(textBoxSupplierID.Text);
+                string suppName = textBoxSupplierName.Text;
+                string suppAddress = textBoxSupplierAddress.Text;
+                int phoneNumber = Convert.ToInt32(textBoxSupplierPhone.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+                Utility.ClearTextBoxes(this);
+                _layer.UpdateSupplier(suppId, suppName, suppAddress, phoneNumber, connectionString);
+                Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier edited!");
 
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
+            }
         }
 
         private void buttonRemoveSupplier_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int suppId = Convert.ToInt32(textBoxSupplierID.Text);
 
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+
+                _layer.DeleteSupplier(suppId, connectionString); //osäker om rätt
+                Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier removed!");
+
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
+                Console.WriteLine(ex.Message);
+            }
         }
         
         private void buttonFindSupplier_Click(object sender, EventArgs e)

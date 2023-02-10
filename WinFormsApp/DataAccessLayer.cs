@@ -280,17 +280,20 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteSupplierAdapter(connection))
+                using (SqlDataAdapter addSupplierAdapter = SqlAdapterClass.DeleteSupplierAdapter(suppId,connection))
                 {
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Supplier");
+                    addSupplierAdapter.Fill(ds, "Supplier");
 
                     DataTable supplierDataTable = new DataTable();
                     supplierDataTable = ds.Tables["Supplier"];
 
-                    DataRow row = supplierDataTable.Rows.Find(suppId);
-                    row.Delete();
-                    adapter.Update(supplierDataTable);
+                    DataRow[] rows = supplierDataTable.Select("SupplierID = " + suppId.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        addSupplierAdapter.Update(supplierDataTable);
+                    }
                 }
             }
         }
@@ -299,7 +302,7 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateSupplierAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateSupplierAdapter(suppId, suppName, suppAddress, phoneNbr,connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Supplier");
@@ -310,8 +313,8 @@ namespace WinFormsApp
                     DataRow[] rows = suppDataTable.Select("SupplierID =" + suppId);
                     if (rows.Length == 1)
                     {
-                        rows[0]["EmployeeName"] = suppName;
-                        rows[0]["CustomerAddress"] = suppAddress;
+                        rows[0]["SupplierName"] = suppName;
+                        rows[0]["SupplierAddress"] = suppAddress;
                         rows[0]["PhoneNumber"] = phoneNbr;
                     }
 
