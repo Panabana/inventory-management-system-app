@@ -64,9 +64,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox1.Location = new System.Drawing.Point(18, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(780, 170);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -75,7 +75,7 @@
             // textBoxEmployeeAddress
             // 
             this.textBoxEmployeeAddress.Location = new System.Drawing.Point(530, 102);
-            this.textBoxEmployeeAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmployeeAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmployeeAddress.Name = "textBoxEmployeeAddress";
             this.textBoxEmployeeAddress.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeAddress.TabIndex = 7;
@@ -95,7 +95,7 @@
             // textBoxEmployeePhone
             // 
             this.textBoxEmployeePhone.Location = new System.Drawing.Point(128, 102);
-            this.textBoxEmployeePhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmployeePhone.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmployeePhone.Name = "textBoxEmployeePhone";
             this.textBoxEmployeePhone.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeePhone.TabIndex = 5;
@@ -115,7 +115,7 @@
             // textBoxEmployeeName
             // 
             this.textBoxEmployeeName.Location = new System.Drawing.Point(530, 42);
-            this.textBoxEmployeeName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmployeeName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmployeeName.Name = "textBoxEmployeeName";
             this.textBoxEmployeeName.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeName.TabIndex = 3;
@@ -135,7 +135,7 @@
             // textBoxEmployeeId
             // 
             this.textBoxEmployeeId.Location = new System.Drawing.Point(128, 42);
-            this.textBoxEmployeeId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmployeeId.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeId.TabIndex = 1;
@@ -160,9 +160,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 204);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(780, 114);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
@@ -174,7 +174,7 @@
             this.buttonFindEmployee.Appearance.Options.UseFont = true;
             this.buttonFindEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindEmployee.ImageOptions.Image")));
             this.buttonFindEmployee.Location = new System.Drawing.Point(513, 43);
-            this.buttonFindEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFindEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindEmployee.Name = "buttonFindEmployee";
             this.buttonFindEmployee.Size = new System.Drawing.Size(111, 43);
             this.buttonFindEmployee.TabIndex = 6;
@@ -184,7 +184,7 @@
             // textBoxEmployeeIdFind
             // 
             this.textBoxEmployeeIdFind.Location = new System.Drawing.Point(253, 48);
-            this.textBoxEmployeeIdFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmployeeIdFind.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmployeeIdFind.Name = "textBoxEmployeeIdFind";
             this.textBoxEmployeeIdFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxEmployeeIdFind.TabIndex = 5;
@@ -207,7 +207,7 @@
             this.buttonExitEmployee.Appearance.Options.UseFont = true;
             this.buttonExitEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitEmployee.ImageOptions.Image")));
             this.buttonExitEmployee.Location = new System.Drawing.Point(562, 347);
-            this.buttonExitEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExitEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExitEmployee.Name = "buttonExitEmployee";
             this.buttonExitEmployee.Size = new System.Drawing.Size(124, 54);
             this.buttonExitEmployee.TabIndex = 23;
@@ -219,7 +219,7 @@
             this.buttonRemoveEmployee.Appearance.Options.UseFont = true;
             this.buttonRemoveEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveEmployee.ImageOptions.Image")));
             this.buttonRemoveEmployee.Location = new System.Drawing.Point(415, 347);
-            this.buttonRemoveEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRemoveEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveEmployee.Name = "buttonRemoveEmployee";
             this.buttonRemoveEmployee.Size = new System.Drawing.Size(124, 54);
             this.buttonRemoveEmployee.TabIndex = 22;
@@ -232,7 +232,7 @@
             this.buttonEditEmployee.Appearance.Options.UseFont = true;
             this.buttonEditEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditEmployee.ImageOptions.Image")));
             this.buttonEditEmployee.Location = new System.Drawing.Point(272, 347);
-            this.buttonEditEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditEmployee.Name = "buttonEditEmployee";
             this.buttonEditEmployee.Size = new System.Drawing.Size(124, 54);
             this.buttonEditEmployee.TabIndex = 21;
@@ -245,7 +245,7 @@
             this.buttonAddEmployee.Appearance.Options.UseFont = true;
             this.buttonAddEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddEmployee.ImageOptions.Image")));
             this.buttonAddEmployee.Location = new System.Drawing.Point(128, 347);
-            this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(124, 54);
             this.buttonAddEmployee.TabIndex = 20;
@@ -279,7 +279,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageEmployees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
