@@ -172,7 +172,7 @@
             // 
             this.buttonFindCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindCustomer.Appearance.Options.UseFont = true;
-            this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCustomerIdFind.ImageOptions.Image")));
+            this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindCustomer.ImageOptions.Image")));
             this.buttonFindCustomer.Location = new System.Drawing.Point(513, 43);
             this.buttonFindCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindCustomer.Name = "buttonFindCustomer";

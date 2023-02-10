@@ -155,7 +155,7 @@
             // 
             this.buttonFindOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindOrder.Appearance.Options.UseFont = true;
-            this.buttonFindOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonOrderIdFind.ImageOptions.Image")));
+            this.buttonFindOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindOrder.ImageOptions.Image")));
             this.buttonFindOrder.Location = new System.Drawing.Point(564, 43);
             this.buttonFindOrder.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindOrder.Name = "buttonFindOrder";
@@ -234,7 +234,7 @@
             // 
             this.buttonRemoveOrderOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveOrderOrder.Appearance.Options.UseFont = true;
-            this.buttonRemoveOrderOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveOrder.ImageOptions.Image")));
+            this.buttonRemoveOrderOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveOrderOrder.ImageOptions.Image")));
             this.buttonRemoveOrderOrder.Location = new System.Drawing.Point(559, 597);
             this.buttonRemoveOrderOrder.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveOrderOrder.Name = "buttonRemoveOrderOrder";
@@ -282,7 +282,7 @@
             // 
             this.buttonRemoveLineOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveLineOrder.Appearance.Options.UseFont = true;
-            this.buttonRemoveLineOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonRemoveLineOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveLineOrder.ImageOptions.Image")));
             this.buttonRemoveLineOrder.Location = new System.Drawing.Point(384, 597);
             this.buttonRemoveLineOrder.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveLineOrder.Name = "buttonRemoveLineOrder";
