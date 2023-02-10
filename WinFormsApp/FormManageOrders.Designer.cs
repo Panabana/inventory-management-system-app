@@ -162,6 +162,7 @@
             this.buttonFindOrder.Size = new System.Drawing.Size(111, 43);
             this.buttonFindOrder.TabIndex = 6;
             this.buttonFindOrder.Text = "Find";
+            this.buttonFindOrder.Click += new System.EventHandler(this.buttonFindOrder_Click);
             // 
             // textBoxOrderIDFind
             // 
@@ -229,6 +230,7 @@
             this.buttonExitOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonExitOrder.TabIndex = 23;
             this.buttonExitOrder.Text = "Exit";
+            this.buttonExitOrder.Click += new System.EventHandler(this.buttonExitOrder_Click);
             // 
             // buttonRemoveOrderOrder
             // 
@@ -241,6 +243,7 @@
             this.buttonRemoveOrderOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonRemoveOrderOrder.TabIndex = 22;
             this.buttonRemoveOrderOrder.Text = "Remove Order";
+            this.buttonRemoveOrderOrder.Click += new System.EventHandler(this.buttonRemoveOrderOrder_Click);
             // 
             // buttonEditOrder
             // 
@@ -253,6 +256,7 @@
             this.buttonEditOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonEditOrder.TabIndex = 21;
             this.buttonEditOrder.Text = "Edit";
+            this.buttonEditOrder.Click += new System.EventHandler(this.buttonEditOrder_Click);
             // 
             // buttonAddOrder
             // 
@@ -265,6 +269,7 @@
             this.buttonAddOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonAddOrder.TabIndex = 20;
             this.buttonAddOrder.Text = "Add";
+            this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
             // 
             // labelManageOrdersMessage
             // 
@@ -289,6 +294,7 @@
             this.buttonRemoveLineOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonRemoveLineOrder.TabIndex = 25;
             this.buttonRemoveLineOrder.Text = "Remove Line";
+            this.buttonRemoveLineOrder.Click += new System.EventHandler(this.buttonRemoveLineOrder_Click);
             // 
             // FormManageOrders
             // 

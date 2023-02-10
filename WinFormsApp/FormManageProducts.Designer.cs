@@ -182,6 +182,7 @@
             this.buttonFindProduct.Size = new System.Drawing.Size(111, 43);
             this.buttonFindProduct.TabIndex = 6;
             this.buttonFindProduct.Text = "Find";
+            this.buttonFindProduct.Click += new System.EventHandler(this.buttonFindProduct_Click);
             // 
             // textBoxProductIDFInd
             // 

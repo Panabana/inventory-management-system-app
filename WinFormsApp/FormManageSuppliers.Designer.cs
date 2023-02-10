@@ -64,9 +64,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox1.Location = new System.Drawing.Point(18, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(780, 170);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -75,7 +75,7 @@
             // textBoxSupplierAddress
             // 
             this.textBoxSupplierAddress.Location = new System.Drawing.Point(530, 102);
-            this.textBoxSupplierAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierAddress.Name = "textBoxSupplierAddress";
             this.textBoxSupplierAddress.Size = new System.Drawing.Size(233, 30);
             this.textBoxSupplierAddress.TabIndex = 7;
@@ -95,7 +95,7 @@
             // textBoxSupplierPhone
             // 
             this.textBoxSupplierPhone.Location = new System.Drawing.Point(128, 102);
-            this.textBoxSupplierPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierPhone.Name = "textBoxSupplierPhone";
             this.textBoxSupplierPhone.Size = new System.Drawing.Size(233, 30);
             this.textBoxSupplierPhone.TabIndex = 5;
@@ -115,7 +115,7 @@
             // textBoxSupplierName
             // 
             this.textBoxSupplierName.Location = new System.Drawing.Point(530, 42);
-            this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
             this.textBoxSupplierName.Size = new System.Drawing.Size(233, 30);
             this.textBoxSupplierName.TabIndex = 3;
@@ -135,7 +135,7 @@
             // textBoxSupplierID
             // 
             this.textBoxSupplierID.Location = new System.Drawing.Point(128, 42);
-            this.textBoxSupplierID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierID.Name = "textBoxSupplierID";
             this.textBoxSupplierID.Size = new System.Drawing.Size(233, 30);
             this.textBoxSupplierID.TabIndex = 1;
@@ -160,9 +160,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 206);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(780, 114);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
@@ -174,16 +174,17 @@
             this.buttonFindSupplier.Appearance.Options.UseFont = true;
             this.buttonFindSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindSupplier.ImageOptions.Image")));
             this.buttonFindSupplier.Location = new System.Drawing.Point(513, 43);
-            this.buttonFindSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFindSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindSupplier.Name = "buttonFindSupplier";
             this.buttonFindSupplier.Size = new System.Drawing.Size(111, 43);
             this.buttonFindSupplier.TabIndex = 6;
             this.buttonFindSupplier.Text = "Find";
+            this.buttonFindSupplier.Click += new System.EventHandler(this.buttonFindSupplier_Click);
             // 
             // textBoxSupplierIdFind
             // 
             this.textBoxSupplierIdFind.Location = new System.Drawing.Point(253, 48);
-            this.textBoxSupplierIdFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSupplierIdFind.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSupplierIdFind.Name = "textBoxSupplierIdFind";
             this.textBoxSupplierIdFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxSupplierIdFind.TabIndex = 5;
@@ -206,11 +207,12 @@
             this.buttonExitSupplier.Appearance.Options.UseFont = true;
             this.buttonExitSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitSupplier.ImageOptions.Image")));
             this.buttonExitSupplier.Location = new System.Drawing.Point(562, 347);
-            this.buttonExitSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExitSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExitSupplier.Name = "buttonExitSupplier";
             this.buttonExitSupplier.Size = new System.Drawing.Size(124, 54);
             this.buttonExitSupplier.TabIndex = 15;
             this.buttonExitSupplier.Text = "Exit";
+            this.buttonExitSupplier.Click += new System.EventHandler(this.buttonExitSupplier_Click);
             // 
             // buttonRemoveSupplier
             // 
@@ -218,11 +220,12 @@
             this.buttonRemoveSupplier.Appearance.Options.UseFont = true;
             this.buttonRemoveSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveSupplier.ImageOptions.Image")));
             this.buttonRemoveSupplier.Location = new System.Drawing.Point(415, 347);
-            this.buttonRemoveSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRemoveSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveSupplier.Name = "buttonRemoveSupplier";
             this.buttonRemoveSupplier.Size = new System.Drawing.Size(124, 54);
             this.buttonRemoveSupplier.TabIndex = 14;
             this.buttonRemoveSupplier.Text = "Remove";
+            this.buttonRemoveSupplier.Click += new System.EventHandler(this.buttonRemoveSupplier_Click);
             // 
             // buttonEditSupplier
             // 
@@ -230,11 +233,12 @@
             this.buttonEditSupplier.Appearance.Options.UseFont = true;
             this.buttonEditSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditSupplier.ImageOptions.Image")));
             this.buttonEditSupplier.Location = new System.Drawing.Point(272, 347);
-            this.buttonEditSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditSupplier.Name = "buttonEditSupplier";
             this.buttonEditSupplier.Size = new System.Drawing.Size(124, 54);
             this.buttonEditSupplier.TabIndex = 13;
             this.buttonEditSupplier.Text = "Edit";
+            this.buttonEditSupplier.Click += new System.EventHandler(this.buttonEditSupplier_Click);
             // 
             // buttonAddSupplier
             // 
@@ -242,11 +246,12 @@
             this.buttonAddSupplier.Appearance.Options.UseFont = true;
             this.buttonAddSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddSupplier.ImageOptions.Image")));
             this.buttonAddSupplier.Location = new System.Drawing.Point(128, 347);
-            this.buttonAddSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddSupplier.Name = "buttonAddSupplier";
             this.buttonAddSupplier.Size = new System.Drawing.Size(124, 54);
             this.buttonAddSupplier.TabIndex = 12;
             this.buttonAddSupplier.Text = "Add";
+            this.buttonAddSupplier.Click += new System.EventHandler(this.buttonAddSupplier_Click);
             // 
             // labelManageSuppliersMessage
             // 
@@ -273,7 +278,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageSuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
