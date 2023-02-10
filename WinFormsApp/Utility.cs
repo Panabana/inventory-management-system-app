@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WinFormsApp
 {
@@ -22,6 +23,22 @@ namespace WinFormsApp
             chosenLabel.Text = (textInput);
             chosenLabel.ForeColor = Color.Red;
             chosenLabel.Visible = true;
+        }
+
+        //Clears all textboxes
+        public static void ClearTextBoxes(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Clear();
+                }
+                else
+                {
+                    ClearTextBoxes(c);
+                }
+            }
         }
     }
 }

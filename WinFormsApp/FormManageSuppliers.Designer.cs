@@ -184,19 +184,7 @@
             this.labelSupplierIDFind.Size = new System.Drawing.Size(79, 14);
             this.labelSupplierIDFind.TabIndex = 0;
             this.labelSupplierIDFind.Text = "Supplier ID:";
-            // 
-            // buttonExitSupplier
-            // 
-            this.buttonExitSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExitSupplier.Appearance.Options.UseFont = true;
-            this.buttonExitSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitSupplier.ImageOptions.Image")));
-            this.buttonExitSupplier.Location = new System.Drawing.Point(562, 347);
-            this.buttonExitSupplier.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExitSupplier.Name = "buttonExitSupplier";
-            this.buttonExitSupplier.Size = new System.Drawing.Size(124, 54);
-            this.buttonExitSupplier.TabIndex = 15;
-            this.buttonExitSupplier.Text = "Exit";
-            this.buttonExitSupplier.Click += new System.EventHandler(this.buttonExitSupplier_Click);
+           
             // 
             // 
             // 
