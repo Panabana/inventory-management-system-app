@@ -72,7 +72,9 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteEmployeeAdapter(connection))
+                connection.Open();
+                
+                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteEmployeeAdapter(empId, connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Employee");
@@ -80,9 +82,12 @@ namespace WinFormsApp
                     DataTable empDataTable = new DataTable();
                     empDataTable = ds.Tables["Employee"];
 
-                    DataRow row = empDataTable.Rows.Find(empId);
-                    row.Delete();
-                    adapter.Update(empDataTable);
+                    DataRow[] rows = empDataTable.Select("EmployeeID =" + empId);
+                    if(rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        adapter.Update(empDataTable);
+                    }
                 }
             }
         }
