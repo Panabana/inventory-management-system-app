@@ -155,13 +155,14 @@
             // 
             this.buttonFindOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindOrder.Appearance.Options.UseFont = true;
-            this.buttonFindOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonOrderIdFind.ImageOptions.Image")));
+            this.buttonFindOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindOrder.ImageOptions.Image")));
             this.buttonFindOrder.Location = new System.Drawing.Point(564, 43);
             this.buttonFindOrder.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindOrder.Name = "buttonFindOrder";
             this.buttonFindOrder.Size = new System.Drawing.Size(111, 43);
             this.buttonFindOrder.TabIndex = 6;
             this.buttonFindOrder.Text = "Find";
+            this.buttonFindOrder.Click += new System.EventHandler(this.buttonFindOrder_Click);
             // 
             // textBoxOrderIDFind
             // 
@@ -229,18 +230,20 @@
             this.buttonExitOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonExitOrder.TabIndex = 23;
             this.buttonExitOrder.Text = "Exit";
+            this.buttonExitOrder.Click += new System.EventHandler(this.buttonExitOrder_Click);
             // 
             // buttonRemoveOrderOrder
             // 
             this.buttonRemoveOrderOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveOrderOrder.Appearance.Options.UseFont = true;
-            this.buttonRemoveOrderOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveOrder.ImageOptions.Image")));
+            this.buttonRemoveOrderOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveOrderOrder.ImageOptions.Image")));
             this.buttonRemoveOrderOrder.Location = new System.Drawing.Point(559, 597);
             this.buttonRemoveOrderOrder.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveOrderOrder.Name = "buttonRemoveOrderOrder";
             this.buttonRemoveOrderOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonRemoveOrderOrder.TabIndex = 22;
             this.buttonRemoveOrderOrder.Text = "Remove Order";
+            this.buttonRemoveOrderOrder.Click += new System.EventHandler(this.buttonRemoveOrderOrder_Click);
             // 
             // buttonEditOrder
             // 
@@ -253,6 +256,7 @@
             this.buttonEditOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonEditOrder.TabIndex = 21;
             this.buttonEditOrder.Text = "Edit";
+            this.buttonEditOrder.Click += new System.EventHandler(this.buttonEditOrder_Click);
             // 
             // buttonAddOrder
             // 
@@ -265,6 +269,7 @@
             this.buttonAddOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonAddOrder.TabIndex = 20;
             this.buttonAddOrder.Text = "Add";
+            this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
             // 
             // labelManageOrdersMessage
             // 
@@ -277,18 +282,20 @@
             this.labelManageOrdersMessage.Size = new System.Drawing.Size(58, 23);
             this.labelManageOrdersMessage.TabIndex = 24;
             this.labelManageOrdersMessage.Text = "****";
+            this.labelManageOrdersMessage.Visible = false;
             // 
             // buttonRemoveLineOrder
             // 
             this.buttonRemoveLineOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveLineOrder.Appearance.Options.UseFont = true;
-            this.buttonRemoveLineOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.buttonRemoveLineOrder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveLineOrder.ImageOptions.Image")));
             this.buttonRemoveLineOrder.Location = new System.Drawing.Point(384, 597);
             this.buttonRemoveLineOrder.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveLineOrder.Name = "buttonRemoveLineOrder";
             this.buttonRemoveLineOrder.Size = new System.Drawing.Size(164, 54);
             this.buttonRemoveLineOrder.TabIndex = 25;
             this.buttonRemoveLineOrder.Text = "Remove Line";
+            this.buttonRemoveLineOrder.Click += new System.EventHandler(this.buttonRemoveLineOrder_Click);
             // 
             // FormManageOrders
             // 

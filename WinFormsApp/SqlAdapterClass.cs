@@ -197,23 +197,6 @@ namespace WinFormsApp
             //command = connection.CreateCommand();
             //command.CommandText = insertEmployeeQuery;            
 
-            //// OLD - Test Parameters
-            //SqlParameter parameterEmployeeId = new ("@EmployeeID", SqlDbType.Int);
-            //parameterEmployeeId.Value = "EmployeeID";
-            //addEmpAdapter.SelectCommand.Parameters.Add(parameterEmployeeId);
-
-            //SqlParameter parameterEmployeeName = new ("@EmployeeName", SqlDbType.VarChar);
-            //parameterEmployeeName.Value = "EmployeeName";
-            //addEmpAdapter.SelectCommand.Parameters.Add(parameterEmployeeName);
-
-            //SqlParameter parameterEmployeeAddress = new ("@EmployeeAddress", SqlDbType.VarChar);
-            //parameterEmployeeAddress.Value = "EmployeeAddress";
-            //addEmpAdapter.SelectCommand.Parameters.Add(parameterEmployeeAddress);
-
-            //SqlParameter parameterEmployeePhoneNumber = new("@PhoneNumber", SqlDbType.Int);
-            //parameterEmployeePhoneNumber.Value = "PhoneNumber";
-            //addEmpAdapter.SelectCommand.Parameters.Add(parameterEmployeePhoneNumber);
-
             //// OLD - Source column mapping
             //parameterEmployeeId.SourceColumn = "EmployeeID";
             //parameterEmployeeName.SourceColumn = "EmployeeName";

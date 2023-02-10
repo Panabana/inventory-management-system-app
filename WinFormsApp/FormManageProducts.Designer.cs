@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageProducts));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxProductPrice = new System.Windows.Forms.TextBox();
-            this.labelPrice = new System.Windows.Forms.Label();
+            this.labelProductPrice = new System.Windows.Forms.Label();
             this.textBoxStock = new System.Windows.Forms.TextBox();
-            this.labelStock = new System.Windows.Forms.Label();
+            this.labelProductStock = new System.Windows.Forms.Label();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.labelProductName = new System.Windows.Forms.Label();
             this.textBoxProductID = new System.Windows.Forms.TextBox();
@@ -56,9 +56,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxProductPrice);
-            this.groupBox1.Controls.Add(this.labelPrice);
+            this.groupBox1.Controls.Add(this.labelProductPrice);
             this.groupBox1.Controls.Add(this.textBoxStock);
-            this.groupBox1.Controls.Add(this.labelStock);
+            this.groupBox1.Controls.Add(this.labelProductStock);
             this.groupBox1.Controls.Add(this.textBoxProductName);
             this.groupBox1.Controls.Add(this.labelProductName);
             this.groupBox1.Controls.Add(this.textBoxProductID);
@@ -82,17 +82,17 @@
             this.textBoxProductPrice.Size = new System.Drawing.Size(233, 30);
             this.textBoxProductPrice.TabIndex = 7;
             // 
-            // labelPrice
+            // labelProductPrice
             // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPrice.Location = new System.Drawing.Point(455, 110);
-            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(52, 18);
-            this.labelPrice.TabIndex = 6;
-            this.labelPrice.Text = "Price:";
+            this.labelProductPrice.AutoSize = true;
+            this.labelProductPrice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelProductPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelProductPrice.Location = new System.Drawing.Point(455, 110);
+            this.labelProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductPrice.Name = "labelProductPrice";
+            this.labelProductPrice.Size = new System.Drawing.Size(52, 18);
+            this.labelProductPrice.TabIndex = 6;
+            this.labelProductPrice.Text = "Price:";
             // 
             // textBoxStock
             // 
@@ -102,17 +102,17 @@
             this.textBoxStock.Size = new System.Drawing.Size(233, 30);
             this.textBoxStock.TabIndex = 5;
             // 
-            // labelStock
+            // labelProductStock
             // 
-            this.labelStock.AutoSize = true;
-            this.labelStock.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelStock.Location = new System.Drawing.Point(44, 110);
-            this.labelStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelStock.Name = "labelStock";
-            this.labelStock.Size = new System.Drawing.Size(55, 18);
-            this.labelStock.TabIndex = 4;
-            this.labelStock.Text = "Stock:";
+            this.labelProductStock.AutoSize = true;
+            this.labelProductStock.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelProductStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelProductStock.Location = new System.Drawing.Point(44, 110);
+            this.labelProductStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductStock.Name = "labelProductStock";
+            this.labelProductStock.Size = new System.Drawing.Size(55, 18);
+            this.labelProductStock.TabIndex = 4;
+            this.labelProductStock.Text = "Stock:";
             // 
             // textBoxProductName
             // 
@@ -182,6 +182,7 @@
             this.buttonFindProduct.Size = new System.Drawing.Size(111, 43);
             this.buttonFindProduct.TabIndex = 6;
             this.buttonFindProduct.Text = "Find";
+            this.buttonFindProduct.Click += new System.EventHandler(this.buttonFindProduct_Click);
             // 
             // textBoxProductIDFInd
             // 
@@ -306,9 +307,9 @@
         private TextBox textBoxProductName;
         private Label labelProductName;
         private TextBox textBoxProductPrice;
-        private Label labelPrice;
+        private Label labelProductPrice;
         private TextBox textBoxStock;
-        private Label labelStock;
+        private Label labelProductStock;
         private GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton buttonFindProduct;
         private TextBox textBoxProductIDFInd;
