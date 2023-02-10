@@ -105,6 +105,10 @@ namespace WinFormsApp
 
                     Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee found!");
                 }
+                else
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Employee not found!");
+                }
             }
             catch(Exception ex)
             {
