@@ -13,17 +13,17 @@ namespace WinFormsApp
     public class DataAccessLayer
     {
         // Används denna?
-        public SqlConnection GetDatabaseConnection()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings
-                ["test"].ConnectionString;
+       // public SqlConnection GetDatabaseConnection()
+       // {
+           // string connectionString = ConfigurationManager.ConnectionStrings
+              //  ["Test"].ConnectionString;
 
-            SqlConnectionStringBuilder builder = new(connectionString);
+           // SqlConnectionStringBuilder builder = new(connectionString);
 
-            SqlConnection connection = new(builder.ConnectionString);
+          //  SqlConnection connection = new(builder.ConnectionString);
 
-            return connection;  
-        }
+          //  return connection;  
+     //   }
 
         // - EMPLOYEE -
         public DataSet ViewAllEmployees(string connectionString)
@@ -132,8 +132,8 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter customerAdapter = SqlAdapterClass.InsertCustomerAdapter(connection))
-                {
+                using (SqlDataAdapter customerAdapter = SqlAdapterClass.InsertCustomerAdapter(custId,custName, custAddress,phoneNbr,connection))
+                { 
                     DataSet ds = new DataSet();
                     customerAdapter.Fill(ds, "Customer");
 

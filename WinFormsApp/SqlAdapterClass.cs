@@ -18,7 +18,7 @@ namespace WinFormsApp
             public static SqlConnection GetDatabaseConnection()
             {
                 string connectionString = ConfigurationManager.ConnectionStrings
-                    ["test"].ConnectionString;
+                    ["Test"].ConnectionString;
 
                 SqlConnectionStringBuilder builder = new(connectionString);
 
@@ -42,35 +42,54 @@ namespace WinFormsApp
 
         }
 
-        public static SqlDataAdapter InsertCustomerAdapter(SqlConnection connection)
+        public static SqlDataAdapter InsertCustomerAdapter(int CustomerID, string CustomerName, string CustomerAddress, int PhoneNumber, SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
-            //Insert customer
-            SqlCommand command = new SqlCommand("INSERT INTO Customer (CustomerID, CustomerName, CustomerAddress,"
-                                    + "PhoneNumber) VALUES (@CustomerID, @CustomerName, @CustomerAddress, @PhoneNbr)", connection);
 
-            //Parameters
-            SqlParameter parameterCustomerId = new("@CustomerID", SqlDbType.Int);
-            SqlParameter parameterCustomerName = new("@CustomerName", SqlDbType.VarChar);
-            SqlParameter parameterCustomerAddress = new("@CustomerAddress", SqlDbType.VarChar);
-            SqlParameter parameterPhoneNumber = new("@PhoneNumber", SqlDbType.Int);
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Customer " +
+                                                "WHERE CustomerID = @CustomerID "+
+                                                "AND CustomerName = CustomerName", connection);
 
-            //source column mapping
-            parameterCustomerId.SourceColumn = "CustomerID";
-            parameterCustomerName.SourceColumn = "CustomerName";
-            parameterCustomerAddress.SourceColumn = "CustomerAddress";
-            parameterPhoneNumber.SourceColumn = "PhoneNumber";
+            command.Parameters.AddWithValue("@CustomerID", CustomerID);
+            command.Parameters.AddWithValue("@CustomerName", CustomerName);
+            command.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
 
-            command.Parameters.Add(parameterCustomerId);
-            command.Parameters.Add(parameterCustomerName);
-            command.Parameters.Add(parameterCustomerAddress);
-            command.Parameters.Add(parameterPhoneNumber);
-
-            customerAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-
-            command.Connection = connection;
             customerAdapter.SelectCommand = command;
+
+            command = new SqlCommand("INSERT INTO Customer (CustomerID, CustomerName, CustomerAddress,"
+                                    + "PhoneNumber) VALUES (@CustomerID, @CustomerName, @CustomerAddress, @PhoneNumber)", connection);
+            
+            command.Parameters.AddWithValue("@CustomerID", CustomerID);
+            command.Parameters.AddWithValue("@CustomerName", CustomerName);
+            command.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+
+            customerAdapter.InsertCommand = command;
             return customerAdapter;
+            
+            /*  //Parameters
+              SqlParameter parameterCustomerId = new("@CustomerID", SqlDbType.Int);
+              SqlParameter parameterCustomerName = new("@CustomerName", SqlDbType.VarChar);
+              SqlParameter parameterCustomerAddress = new("@CustomerAddress", SqlDbType.VarChar);
+              SqlParameter parameterPhoneNumber = new("@PhoneNumber", SqlDbType.Int);
+
+              //source column mapping
+              parameterCustomerId.SourceColumn = "CustomerID";
+              parameterCustomerName.SourceColumn = "CustomerName";
+              parameterCustomerAddress.SourceColumn = "CustomerAddress";
+              parameterPhoneNumber.SourceColumn = "PhoneNumber";
+
+              command.Parameters.Add(parameterCustomerId);
+              command.Parameters.Add(parameterCustomerName);
+              command.Parameters.Add(parameterCustomerAddress);
+              command.Parameters.Add(parameterPhoneNumber);
+
+         */
+            
+
+            
 
 
         }
