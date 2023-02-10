@@ -280,8 +280,31 @@ namespace WinFormsApp
             return deleteEmpAdapter;
         }
 
-        public static SqlDataAdapter UpdateEmployeeAdapter(SqlConnection connection)
+        public static SqlDataAdapter UpdateEmployeeAdapter(int empID, string empName, string empAddress, int phoneNumber, SqlConnection connection)
         {
+
+            SqlDataAdapter empUpdateAdapter = new SqlDataAdapter();
+            string selectQuery = "SELECT * FROM Employee WHERE EmployeeID = @EmployeeID";
+            SqlCommand command = new SqlCommand(selectQuery, connection);
+
+            command.Parameters.AddWithValue("@EmployeeID", empID);
+
+            empUpdateAdapter.SelectCommand = command;
+
+            string updateQuery = "UPDATE Employee SET EmployeeName = @EmployeeName, EmployeeAddress = @EmployeeAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID";
+            command = new SqlCommand(updateQuery, connection);
+
+            command.Parameters.AddWithValue("@EmployeeID", empID);
+            command.Parameters.AddWithValue("@EmployeeName", empName);
+            command.Parameters.AddWithValue("@EmployeeAddress", empAddress);
+            command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+
+            empUpdateAdapter.UpdateCommand = command;
+
+            return empUpdateAdapter;
+        }
+
+            /*
             SqlDataAdapter updateEmpAdapter = new();
             SqlCommand command;
             string query = "UPDATE Employee SET EmployeeName = @EmployeeName, EmployeeAddress = @EmployeeAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID";
@@ -311,6 +334,7 @@ namespace WinFormsApp
 
             return updateEmpAdapter;
         }
+            */
 
         // - SUPPLIER -
         public static SqlDataAdapter ViewSupplierAdapter(SqlConnection connection)

@@ -96,7 +96,7 @@ namespace WinFormsApp
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateEmployeeAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateEmployeeAdapter(empId, empName, empAddress, phoneNbr, connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Employee");
@@ -108,7 +108,7 @@ namespace WinFormsApp
                     if (rows.Length == 1)
                     {
                         rows[0]["EmployeeName"] = empName;
-                        rows[0]["CustomerAddress"] = empAddress;
+                        rows[0]["EmployeeAddress"] = empAddress;
                         rows[0]["PhoneNumber"] = phoneNbr;
                     }
 
