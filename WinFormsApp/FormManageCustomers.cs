@@ -40,7 +40,7 @@ namespace WinFormsApp
 
         }
 
-        private void buttonCustomerIdFind_Click(object sender, EventArgs e)
+        private void buttonFindCustomer_Click(object sender, EventArgs e)
         {
 
         }

@@ -179,7 +179,7 @@
             this.buttonFindCustomer.Size = new System.Drawing.Size(111, 43);
             this.buttonFindCustomer.TabIndex = 6;
             this.buttonFindCustomer.Text = "Find";
-            this.buttonFindCustomer.Click += new System.EventHandler(this.buttonCustomerIdFind_Click);
+            this.buttonFindCustomer.Click += new System.EventHandler(this.buttonFindCustomer_Click);
             // 
             // textBoxCustomerIdFind
             // 
