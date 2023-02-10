@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageEmployees));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxEmployeeAddress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelEmployeeAddress = new System.Windows.Forms.Label();
             this.textBoxEmployeePhone = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelEmployeePhoneNumber = new System.Windows.Forms.Label();
             this.textBoxEmployeeName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelEmployeeName = new System.Windows.Forms.Label();
             this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelEmployeeID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonFindEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxEmployeeIdFind = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelEmployeeIDFind = new System.Windows.Forms.Label();
             this.buttonExitEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditEmployee = new DevExpress.XtraEditors.SimpleButton();
@@ -54,13 +54,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxEmployeeAddress);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.labelEmployeeAddress);
             this.groupBox1.Controls.Add(this.textBoxEmployeePhone);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.labelEmployeePhoneNumber);
             this.groupBox1.Controls.Add(this.textBoxEmployeeName);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.labelEmployeeName);
             this.groupBox1.Controls.Add(this.textBoxEmployeeId);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelEmployeeID);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox1.Location = new System.Drawing.Point(18, 15);
@@ -80,17 +80,17 @@
             this.textBoxEmployeeAddress.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeAddress.TabIndex = 7;
             // 
-            // label4
+            // labelEmployeeAddress
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(453, 110);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Address:";
+            this.labelEmployeeAddress.AutoSize = true;
+            this.labelEmployeeAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEmployeeAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmployeeAddress.Location = new System.Drawing.Point(453, 110);
+            this.labelEmployeeAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmployeeAddress.Name = "labelEmployeeAddress";
+            this.labelEmployeeAddress.Size = new System.Drawing.Size(73, 18);
+            this.labelEmployeeAddress.TabIndex = 6;
+            this.labelEmployeeAddress.Text = "Address:";
             // 
             // textBoxEmployeePhone
             // 
@@ -100,17 +100,17 @@
             this.textBoxEmployeePhone.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeePhone.TabIndex = 5;
             // 
-            // label3
+            // labelEmployeePhoneNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(4, 110);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Phone number:";
+            this.labelEmployeePhoneNumber.AutoSize = true;
+            this.labelEmployeePhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEmployeePhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmployeePhoneNumber.Location = new System.Drawing.Point(4, 110);
+            this.labelEmployeePhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmployeePhoneNumber.Name = "labelEmployeePhoneNumber";
+            this.labelEmployeePhoneNumber.Size = new System.Drawing.Size(119, 18);
+            this.labelEmployeePhoneNumber.TabIndex = 4;
+            this.labelEmployeePhoneNumber.Text = "Phone number:";
             // 
             // textBoxEmployeeName
             // 
@@ -120,17 +120,17 @@
             this.textBoxEmployeeName.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeName.TabIndex = 3;
             // 
-            // label2
+            // labelEmployeeName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(398, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Employee name:";
+            this.labelEmployeeName.AutoSize = true;
+            this.labelEmployeeName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEmployeeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmployeeName.Location = new System.Drawing.Point(398, 49);
+            this.labelEmployeeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmployeeName.Name = "labelEmployeeName";
+            this.labelEmployeeName.Size = new System.Drawing.Size(129, 18);
+            this.labelEmployeeName.TabIndex = 2;
+            this.labelEmployeeName.Text = "Employee name:";
             // 
             // textBoxEmployeeId
             // 
@@ -140,23 +140,23 @@
             this.textBoxEmployeeId.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeId.TabIndex = 1;
             // 
-            // label1
+            // labelEmployeeID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(19, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Employee ID:";
+            this.labelEmployeeID.AutoSize = true;
+            this.labelEmployeeID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEmployeeID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmployeeID.Location = new System.Drawing.Point(19, 49);
+            this.labelEmployeeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmployeeID.Name = "labelEmployeeID";
+            this.labelEmployeeID.Size = new System.Drawing.Size(107, 18);
+            this.labelEmployeeID.TabIndex = 0;
+            this.labelEmployeeID.Text = "Employee ID:";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttonFindEmployee);
             this.groupBox2.Controls.Add(this.textBoxEmployeeIdFind);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.labelEmployeeIDFind);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 204);
@@ -189,17 +189,17 @@
             this.textBoxEmployeeIdFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxEmployeeIdFind.TabIndex = 5;
             // 
-            // label8
+            // labelEmployeeIDFind
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(144, 55);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 18);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Employee ID:";
+            this.labelEmployeeIDFind.AutoSize = true;
+            this.labelEmployeeIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEmployeeIDFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmployeeIDFind.Location = new System.Drawing.Point(144, 55);
+            this.labelEmployeeIDFind.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmployeeIDFind.Name = "labelEmployeeIDFind";
+            this.labelEmployeeIDFind.Size = new System.Drawing.Size(107, 18);
+            this.labelEmployeeIDFind.TabIndex = 0;
+            this.labelEmployeeIDFind.Text = "Employee ID:";
             // 
             // buttonExitEmployee
             // 
@@ -297,17 +297,17 @@
 
         private GroupBox groupBox1;
         private TextBox textBoxEmployeeAddress;
-        private Label label4;
+        private Label labelEmployeeAddress;
         private TextBox textBoxEmployeePhone;
-        private Label label3;
+        private Label labelEmployeePhoneNumber;
         private TextBox textBoxEmployeeName;
-        private Label label2;
+        private Label labelEmployeeName;
         private TextBox textBoxEmployeeId;
-        private Label label1;
+        private Label labelEmployeeID;
         private GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton buttonFindEmployee;
         private TextBox textBoxEmployeeIdFind;
-        private Label label8;
+        private Label labelEmployeeIDFind;
         private DevExpress.XtraEditors.SimpleButton buttonExitEmployee;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveEmployee;
         private DevExpress.XtraEditors.SimpleButton buttonEditEmployee;

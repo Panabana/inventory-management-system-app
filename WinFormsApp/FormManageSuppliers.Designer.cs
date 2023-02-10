@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageSuppliers));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxSupplierAddress = new System.Windows.Forms.TextBox();
-            this.labelAddress = new System.Windows.Forms.Label();
+            this.labelSupplierAddress = new System.Windows.Forms.Label();
             this.textBoxSupplierPhone = new System.Windows.Forms.TextBox();
-            this.labelPhoneNumber = new System.Windows.Forms.Label();
+            this.labelSupplierPhoneNumber = new System.Windows.Forms.Label();
             this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.labelSupplierName = new System.Windows.Forms.Label();
             this.textBoxSupplierID = new System.Windows.Forms.TextBox();
@@ -41,7 +41,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonFindSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxSupplierIdFind = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelSupplierIDFind = new System.Windows.Forms.Label();
             this.buttonExitSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditSupplier = new DevExpress.XtraEditors.SimpleButton();
@@ -54,9 +54,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxSupplierAddress);
-            this.groupBox1.Controls.Add(this.labelAddress);
+            this.groupBox1.Controls.Add(this.labelSupplierAddress);
             this.groupBox1.Controls.Add(this.textBoxSupplierPhone);
-            this.groupBox1.Controls.Add(this.labelPhoneNumber);
+            this.groupBox1.Controls.Add(this.labelSupplierPhoneNumber);
             this.groupBox1.Controls.Add(this.textBoxSupplierName);
             this.groupBox1.Controls.Add(this.labelSupplierName);
             this.groupBox1.Controls.Add(this.textBoxSupplierID);
@@ -80,17 +80,17 @@
             this.textBoxSupplierAddress.Size = new System.Drawing.Size(233, 30);
             this.textBoxSupplierAddress.TabIndex = 7;
             // 
-            // labelAddress
+            // labelSupplierAddress
             // 
-            this.labelAddress.AutoSize = true;
-            this.labelAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelAddress.Location = new System.Drawing.Point(453, 110);
-            this.labelAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(73, 18);
-            this.labelAddress.TabIndex = 6;
-            this.labelAddress.Text = "Address:";
+            this.labelSupplierAddress.AutoSize = true;
+            this.labelSupplierAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelSupplierAddress.Location = new System.Drawing.Point(453, 110);
+            this.labelSupplierAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierAddress.Name = "labelSupplierAddress";
+            this.labelSupplierAddress.Size = new System.Drawing.Size(73, 18);
+            this.labelSupplierAddress.TabIndex = 6;
+            this.labelSupplierAddress.Text = "Address:";
             // 
             // textBoxSupplierPhone
             // 
@@ -100,17 +100,17 @@
             this.textBoxSupplierPhone.Size = new System.Drawing.Size(233, 30);
             this.textBoxSupplierPhone.TabIndex = 5;
             // 
-            // labelPhoneNumber
+            // labelSupplierPhoneNumber
             // 
-            this.labelPhoneNumber.AutoSize = true;
-            this.labelPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPhoneNumber.Location = new System.Drawing.Point(4, 110);
-            this.labelPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPhoneNumber.Name = "labelPhoneNumber";
-            this.labelPhoneNumber.Size = new System.Drawing.Size(119, 18);
-            this.labelPhoneNumber.TabIndex = 4;
-            this.labelPhoneNumber.Text = "Phone number:";
+            this.labelSupplierPhoneNumber.AutoSize = true;
+            this.labelSupplierPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelSupplierPhoneNumber.Location = new System.Drawing.Point(4, 110);
+            this.labelSupplierPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierPhoneNumber.Name = "labelSupplierPhoneNumber";
+            this.labelSupplierPhoneNumber.Size = new System.Drawing.Size(119, 18);
+            this.labelSupplierPhoneNumber.TabIndex = 4;
+            this.labelSupplierPhoneNumber.Text = "Phone number:";
             // 
             // textBoxSupplierName
             // 
@@ -156,7 +156,7 @@
             // 
             this.groupBox2.Controls.Add(this.buttonFindSupplier);
             this.groupBox2.Controls.Add(this.textBoxSupplierIdFind);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.labelSupplierIDFind);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 206);
@@ -188,17 +188,17 @@
             this.textBoxSupplierIdFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxSupplierIdFind.TabIndex = 5;
             // 
-            // label8
+            // labelSupplierIDFind
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(155, 55);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 18);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Supplier ID:";
+            this.labelSupplierIDFind.AutoSize = true;
+            this.labelSupplierIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierIDFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelSupplierIDFind.Location = new System.Drawing.Point(155, 55);
+            this.labelSupplierIDFind.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierIDFind.Name = "labelSupplierIDFind";
+            this.labelSupplierIDFind.Size = new System.Drawing.Size(98, 18);
+            this.labelSupplierIDFind.TabIndex = 0;
+            this.labelSupplierIDFind.Text = "Supplier ID:";
             // 
             // buttonExitSupplier
             // 
@@ -291,9 +291,9 @@
 
         private GroupBox groupBox1;
         private TextBox textBoxSupplierAddress;
-        private Label labelAddress;
+        private Label labelSupplierAddress;
         private TextBox textBoxSupplierPhone;
-        private Label labelPhoneNumber;
+        private Label labelSupplierPhoneNumber;
         private TextBox textBoxSupplierName;
         private Label labelSupplierName;
         private TextBox textBoxSupplierID;
@@ -301,7 +301,7 @@
         private GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton buttonFindSupplier;
         private TextBox textBoxSupplierIdFind;
-        private Label label8;
+        private Label labelSupplierIDFind;
         private DevExpress.XtraEditors.SimpleButton buttonExitSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonEditSupplier;
