@@ -33,13 +33,14 @@ namespace WinFormsApp
                 int productStock = Convert.ToInt32(textBoxStock.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
+                Utility.ClearTextBoxes(this);
+
                 _layer.InsertProduct(productId, productName, productPrice, productStock, connectionString);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
-
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Error: " + ex.Message);
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
@@ -56,14 +57,16 @@ namespace WinFormsApp
                 int productId = Convert.ToInt32(textBoxProductID.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
+                Utility.ClearTextBoxes(this);
+
                 _layer.DeleteProduct(productId, connectionString);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product deleted!");
 
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
-                Console.WriteLine(ex.Message);
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Error: " + ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
         
