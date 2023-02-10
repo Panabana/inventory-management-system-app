@@ -65,8 +65,16 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@CustomerName", CustomerName);
             command.Parameters.AddWithValue("@CustomerAddress", CustomerAddress);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
-
+            
             customerAdapter.InsertCommand = command;
+
+            
+            command = new SqlCommand("DELETE FROM Customer WHERE CustomerID = @CustomerID", connection);
+
+            command.Parameters.AddWithValue("@CustomerID", CustomerID);
+            customerAdapter.DeleteCommand = command;
+
+
             return customerAdapter;
             
             /*  //Parameters
@@ -97,8 +105,8 @@ namespace WinFormsApp
         public static SqlDataAdapter UpdateCustomerAdapter(SqlConnection connection)
         {
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
-            SqlCommand command;
 
+            SqlCommand command;
             command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress,"
                                        + "PhoneNumber = @PhoneNumber WHERE CustomerID = @CustomerID", connection);
             //Parameters
@@ -124,21 +132,22 @@ namespace WinFormsApp
             return customerAdapter;
         }
 
-        public static SqlDataAdapter DeleteCustomerAdapter(SqlConnection connection)
-        {
+        public static SqlDataAdapter DeleteCustomerAdapter(int CustomerId, SqlConnection connection)
+         { 
             SqlDataAdapter customerAdapter = new SqlDataAdapter();
-            SqlCommand command;
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                               "FROM Customer " +
+                                               "WHERE CustomerID = @CustomerID ", connection);
 
-            command = new SqlCommand("DELETE FROM Customer WHERE CustomerID = @CustomerID", connection);
-
-            SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
-
-            command.Parameters.Add(parameterCustomerID);
-            command.Connection = connection;
+            command.Parameters.AddWithValue("@CustomerID",CustomerId);   
             customerAdapter.SelectCommand = command;
 
+            command = new SqlCommand("DELETE FROM Customer WHERE CustomerID = @CustomerID", connection);
+            command.Parameters.AddWithValue("@CustomerID", CustomerId);
+            customerAdapter.DeleteCommand = command;
+
             return customerAdapter;
-        }
+          }
 
         // - EMPLOYEE -
 
