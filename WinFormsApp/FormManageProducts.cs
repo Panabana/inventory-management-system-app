@@ -34,13 +34,13 @@ namespace WinFormsApp
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 _layer.InsertProduct(productId, productName, productPrice, productStock, connectionString);
-                Utility.LabelMessageSuccess(labelManageProductsMessage, "Employee added!");
+                Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
 
             }
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
 
@@ -51,7 +51,20 @@ namespace WinFormsApp
 
         private void buttonRemoveProduct_Click(object sender, EventArgs e)
         {
-            Utility.LabelMessageSuccess(labelManageProductsMessage, "test remove button");
+            try
+            {
+                int productId = Convert.ToInt32(textBoxProductID.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+
+                _layer.DeleteProduct(productId, connectionString);
+                Utility.LabelMessageSuccess(labelManageProductsMessage, "Product deleted!");
+
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void buttonExitProduct_Click(object sender, EventArgs e)

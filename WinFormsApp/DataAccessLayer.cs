@@ -345,21 +345,25 @@ namespace WinFormsApp
             }
         }
 
-        public void DeleteProduct(int prodId, string connectionString)
+        public void DeleteProduct(int productId, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteProductAdapter(connection))
+
+                using (SqlDataAdapter productAdapter = SqlAdapterClass.DeleteProductAdapter(productId, connection))
                 {
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Product");
+                    productAdapter.Fill(ds, "Product");
 
                     DataTable productDataTable = new DataTable();
                     productDataTable = ds.Tables["Product"];
 
-                    DataRow row = productDataTable.Rows.Find(prodId);
-                    row.Delete();
-                    adapter.Update(productDataTable);
+                    DataRow[] rows = productDataTable.Select("ProductID = " + productId.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        productAdapter.Update(productDataTable);
+                    }
                 }
             }
         }
