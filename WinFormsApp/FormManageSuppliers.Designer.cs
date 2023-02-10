@@ -42,7 +42,6 @@
             this.buttonFindSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxSupplierIdFind = new System.Windows.Forms.TextBox();
             this.labelSupplierIDFind = new System.Windows.Forms.Label();
-            this.buttonExitSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddSupplier = new DevExpress.XtraEditors.SimpleButton();
@@ -201,19 +200,6 @@
             this.labelSupplierIDFind.TabIndex = 0;
             this.labelSupplierIDFind.Text = "Supplier ID:";
             // 
-            // buttonExitSupplier
-            // 
-            this.buttonExitSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExitSupplier.Appearance.Options.UseFont = true;
-            this.buttonExitSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitSupplier.ImageOptions.Image")));
-            this.buttonExitSupplier.Location = new System.Drawing.Point(562, 347);
-            this.buttonExitSupplier.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExitSupplier.Name = "buttonExitSupplier";
-            this.buttonExitSupplier.Size = new System.Drawing.Size(124, 54);
-            this.buttonExitSupplier.TabIndex = 15;
-            this.buttonExitSupplier.Text = "Exit";
-            this.buttonExitSupplier.Click += new System.EventHandler(this.buttonExitSupplier_Click);
-            // 
             // buttonRemoveSupplier
             // 
             this.buttonRemoveSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -258,7 +244,7 @@
             this.labelManageSuppliersMessage.AutoSize = true;
             this.labelManageSuppliersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageSuppliersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(379, 420);
+            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(10, 420);
             this.labelManageSuppliersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageSuppliersMessage.Name = "labelManageSuppliersMessage";
             this.labelManageSuppliersMessage.Size = new System.Drawing.Size(58, 23);
@@ -272,7 +258,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 453);
             this.Controls.Add(this.labelManageSuppliersMessage);
-            this.Controls.Add(this.buttonExitSupplier);
             this.Controls.Add(this.buttonRemoveSupplier);
             this.Controls.Add(this.buttonEditSupplier);
             this.Controls.Add(this.buttonAddSupplier);
@@ -308,7 +293,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonFindSupplier;
         private TextBox textBoxSupplierIdFind;
         private Label labelSupplierIDFind;
-        private DevExpress.XtraEditors.SimpleButton buttonExitSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonEditSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonAddSupplier;
