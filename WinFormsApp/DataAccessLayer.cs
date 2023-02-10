@@ -157,11 +157,31 @@ namespace WinFormsApp
             }
         }
 
+        /* public void DeleteCustomer(int custId, string connectionString)
+         {
+             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+             {
+                 connection.Open();
+                 using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(custId,connection))
+                 {
+                     DataSet ds = new DataSet();
+                     customerAdapter.Fill(ds, "Customer");
+
+                     DataTable customerDataTable = new DataTable();
+                     customerDataTable = ds.Tables["Customer"];
+
+                     DataRow row = customerDataTable.Rows.Find(custId);
+                     row.Delete();
+                     customerAdapter.Update(customerDataTable);
+                 }
+             }
+        */ //}
+
         public void DeleteCustomer(int custId, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(connection))
+                using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(custId,connection))
                 {
                     DataSet ds = new DataSet();
                     customerAdapter.Fill(ds, "Customer");
@@ -169,12 +189,16 @@ namespace WinFormsApp
                     DataTable customerDataTable = new DataTable();
                     customerDataTable = ds.Tables["Customer"];
 
-                    DataRow row = customerDataTable.Rows.Find(custId);
-                    row.Delete();
-                    customerAdapter.Update(customerDataTable);
+                    DataRow[] rows = customerDataTable.Select("CustomerID = " + custId.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        customerAdapter.Update(customerDataTable);
+                    }
                 }
             }
         }
+
 
         public void UpdateCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
         {
@@ -299,11 +323,13 @@ namespace WinFormsApp
             }
         }
 
-        public void InsertProduct(int prodId, string prodName, int price, int stock, string connectionString)
+        public void InsertProduct(int productId, string productName, int productPrice, int productStock, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.InsertProductAdapter(connection))
+                connection.Open();
+
+                using (SqlDataAdapter adapter = SqlAdapterClass.InsertProductAdapter(productId, productName, productPrice, productStock, connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Product");
@@ -312,10 +338,10 @@ namespace WinFormsApp
                     productDataTable = ds.Tables["Product"];
 
                     DataRow row = productDataTable.NewRow();
-                    row["ProductID"] = prodId;
-                    row["ProductName"] = prodName;
-                    row["Price"] = price;
-                    row["Stock"] = stock;
+                    row["ProductID"] = productId;
+                    row["ProductName"] = productName;
+                    row["Price"] = productPrice;
+                    row["Stock"] = productStock;
 
                     productDataTable.Rows.Add(row);
                     adapter.Update(productDataTable);
@@ -323,7 +349,7 @@ namespace WinFormsApp
             }
         }
 
-        public void UpdateProduct(int prodId, string prodName, string price, int stock, string connectionString)
+        public void UpdateProduct(int productId, string productName, string productPrice, int productStock, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
@@ -335,12 +361,12 @@ namespace WinFormsApp
                     DataTable productDataTable = new DataTable();
                     productDataTable = ds.Tables["Product"];
 
-                    DataRow[] rows = productDataTable.Select("ProductID =" + prodId);
+                    DataRow[] rows = productDataTable.Select("ProductID =" + productId);
                     if (rows.Length == 1)
                     {
-                        rows[0]["ProductName"] = prodName;
-                        rows[0]["Price"] = price;
-                        rows[0]["Stock"] = stock;
+                        rows[0]["ProductName"] = productName;
+                        rows[0]["Price"] = productPrice;
+                        rows[0]["Stock"] = productStock;
                     }
 
                     adapter.Update(productDataTable);
@@ -348,21 +374,25 @@ namespace WinFormsApp
             }
         }
 
-        public void DeleteProduct(int prodId, string connectionString)
+        public void DeleteProduct(int productId, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteProductAdapter(connection))
+
+                using (SqlDataAdapter productAdapter = SqlAdapterClass.DeleteProductAdapter(productId, connection))
                 {
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Product");
+                    productAdapter.Fill(ds, "Product");
 
                     DataTable productDataTable = new DataTable();
                     productDataTable = ds.Tables["Product"];
 
-                    DataRow row = productDataTable.Rows.Find(prodId);
-                    row.Delete();
-                    adapter.Update(productDataTable);
+                    DataRow[] rows = productDataTable.Select("ProductID = " + productId.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        productAdapter.Update(productDataTable);
+                    }
                 }
             }
         }

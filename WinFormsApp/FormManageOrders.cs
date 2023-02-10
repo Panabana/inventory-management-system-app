@@ -20,5 +20,29 @@ namespace WinFormsApp
             InitializeComponent();
         }
 
+        private void buttonAddOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEditOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRemoveLineOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRemoveOrderOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void buttonFindOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

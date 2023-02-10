@@ -31,18 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageCustomers));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxCustomerAddress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelCustomerAddress = new System.Windows.Forms.Label();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelCustomerPhoneNumber = new System.Windows.Forms.Label();
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelCustomerName = new System.Windows.Forms.Label();
             this.textBoxCustomerId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelCustomerID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonFindCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxCustomerIdFind = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.buttonExitCustomer = new DevExpress.XtraEditors.SimpleButton();
+            this.labelCustomerIDFind = new System.Windows.Forms.Label();
             this.buttonRemoveCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddCustomer = new DevExpress.XtraEditors.SimpleButton();
@@ -54,13 +53,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxCustomerAddress);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.labelCustomerAddress);
             this.groupBox1.Controls.Add(this.textBoxCustomerPhone);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.labelCustomerPhoneNumber);
             this.groupBox1.Controls.Add(this.textBoxCustomerName);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.labelCustomerName);
             this.groupBox1.Controls.Add(this.textBoxCustomerId);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelCustomerID);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox1.Location = new System.Drawing.Point(18, 15);
@@ -80,17 +79,17 @@
             this.textBoxCustomerAddress.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerAddress.TabIndex = 7;
             // 
-            // label4
+            // labelCustomerAddress
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(453, 110);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Address:";
+            this.labelCustomerAddress.AutoSize = true;
+            this.labelCustomerAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelCustomerAddress.Location = new System.Drawing.Point(453, 110);
+            this.labelCustomerAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerAddress.Name = "labelCustomerAddress";
+            this.labelCustomerAddress.Size = new System.Drawing.Size(73, 18);
+            this.labelCustomerAddress.TabIndex = 6;
+            this.labelCustomerAddress.Text = "Address:";
             // 
             // textBoxCustomerPhone
             // 
@@ -100,17 +99,17 @@
             this.textBoxCustomerPhone.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerPhone.TabIndex = 5;
             // 
-            // label3
+            // labelCustomerPhoneNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(4, 110);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Phone number:";
+            this.labelCustomerPhoneNumber.AutoSize = true;
+            this.labelCustomerPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelCustomerPhoneNumber.Location = new System.Drawing.Point(4, 110);
+            this.labelCustomerPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerPhoneNumber.Name = "labelCustomerPhoneNumber";
+            this.labelCustomerPhoneNumber.Size = new System.Drawing.Size(119, 18);
+            this.labelCustomerPhoneNumber.TabIndex = 4;
+            this.labelCustomerPhoneNumber.Text = "Phone number:";
             // 
             // textBoxCustomerName
             // 
@@ -120,17 +119,17 @@
             this.textBoxCustomerName.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerName.TabIndex = 3;
             // 
-            // label2
+            // labelCustomerName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(398, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Customer name:";
+            this.labelCustomerName.AutoSize = true;
+            this.labelCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelCustomerName.Location = new System.Drawing.Point(398, 49);
+            this.labelCustomerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerName.Name = "labelCustomerName";
+            this.labelCustomerName.Size = new System.Drawing.Size(128, 18);
+            this.labelCustomerName.TabIndex = 2;
+            this.labelCustomerName.Text = "Customer name:";
             // 
             // textBoxCustomerId
             // 
@@ -140,23 +139,23 @@
             this.textBoxCustomerId.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerId.TabIndex = 1;
             // 
-            // label1
+            // labelCustomerID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(19, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Customer ID:";
+            this.labelCustomerID.AutoSize = true;
+            this.labelCustomerID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelCustomerID.Location = new System.Drawing.Point(19, 49);
+            this.labelCustomerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerID.Name = "labelCustomerID";
+            this.labelCustomerID.Size = new System.Drawing.Size(106, 18);
+            this.labelCustomerID.TabIndex = 0;
+            this.labelCustomerID.Text = "Customer ID:";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttonFindCustomer);
             this.groupBox2.Controls.Add(this.textBoxCustomerIdFind);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.labelCustomerIDFind);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 206);
@@ -172,14 +171,14 @@
             // 
             this.buttonFindCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindCustomer.Appearance.Options.UseFont = true;
-            this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCustomerIdFind.ImageOptions.Image")));
+            this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindCustomer.ImageOptions.Image")));
             this.buttonFindCustomer.Location = new System.Drawing.Point(513, 43);
             this.buttonFindCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindCustomer.Name = "buttonFindCustomer";
             this.buttonFindCustomer.Size = new System.Drawing.Size(111, 43);
             this.buttonFindCustomer.TabIndex = 6;
             this.buttonFindCustomer.Text = "Find";
-            this.buttonFindCustomer.Click += new System.EventHandler(this.buttonCustomerIdFind_Click);
+            this.buttonFindCustomer.Click += new System.EventHandler(this.buttonFindCustomer_Click);
             // 
             // textBoxCustomerIdFind
             // 
@@ -189,30 +188,17 @@
             this.textBoxCustomerIdFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxCustomerIdFind.TabIndex = 5;
             // 
-            // label8
+            // labelCustomerIDFind
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(144, 55);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 18);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Customer ID:";
-            // 
-            // buttonExitCustomer
-            // 
-            this.buttonExitCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExitCustomer.Appearance.Options.UseFont = true;
-            this.buttonExitCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitCustomer.ImageOptions.Image")));
-            this.buttonExitCustomer.Location = new System.Drawing.Point(562, 347);
-            this.buttonExitCustomer.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExitCustomer.Name = "buttonExitCustomer";
-            this.buttonExitCustomer.Size = new System.Drawing.Size(124, 54);
-            this.buttonExitCustomer.TabIndex = 19;
-            this.buttonExitCustomer.Text = "Exit";
-            this.buttonExitCustomer.Click += new System.EventHandler(this.buttonExitCustomer_Click);
+            this.labelCustomerIDFind.AutoSize = true;
+            this.labelCustomerIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerIDFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelCustomerIDFind.Location = new System.Drawing.Point(144, 55);
+            this.labelCustomerIDFind.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerIDFind.Name = "labelCustomerIDFind";
+            this.labelCustomerIDFind.Size = new System.Drawing.Size(106, 18);
+            this.labelCustomerIDFind.TabIndex = 0;
+            this.labelCustomerIDFind.Text = "Customer ID:";
             // 
             // buttonRemoveCustomer
             // 
@@ -259,12 +245,13 @@
             this.labelManageCustomersMessage.AutoSize = true;
             this.labelManageCustomersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageCustomersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageCustomersMessage.Location = new System.Drawing.Point(379, 420);
+            this.labelManageCustomersMessage.Location = new System.Drawing.Point(10, 420);
             this.labelManageCustomersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageCustomersMessage.Name = "labelManageCustomersMessage";
             this.labelManageCustomersMessage.Size = new System.Drawing.Size(58, 23);
             this.labelManageCustomersMessage.TabIndex = 20;
             this.labelManageCustomersMessage.Text = "****";
+            this.labelManageCustomersMessage.Visible = false;
             // 
             // FormManageCustomers
             // 
@@ -272,7 +259,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 453);
             this.Controls.Add(this.labelManageCustomersMessage);
-            this.Controls.Add(this.buttonExitCustomer);
             this.Controls.Add(this.buttonRemoveCustomer);
             this.Controls.Add(this.buttonEditCustomer);
             this.Controls.Add(this.buttonAddCustomer);
@@ -297,18 +283,17 @@
 
         private GroupBox groupBox1;
         private TextBox textBoxCustomerAddress;
-        private Label label4;
+        private Label labelCustomerAddress;
         private TextBox textBoxCustomerPhone;
-        private Label label3;
+        private Label labelCustomerPhoneNumber;
         private TextBox textBoxCustomerName;
-        private Label label2;
+        private Label labelCustomerName;
         private TextBox textBoxCustomerId;
-        private Label label1;
+        private Label labelCustomerID;
         private GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton buttonFindCustomer;
         private TextBox textBoxCustomerIdFind;
-        private Label label8;
-        private DevExpress.XtraEditors.SimpleButton buttonExitCustomer;
+        private Label labelCustomerIDFind;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveCustomer;
         private DevExpress.XtraEditors.SimpleButton buttonEditCustomer;
         private DevExpress.XtraEditors.SimpleButton buttonAddCustomer;

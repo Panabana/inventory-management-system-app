@@ -19,5 +19,25 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
         }
+
+        private void buttonAddSupplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEditSupplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRemoveSupplier_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void buttonFindSupplier_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

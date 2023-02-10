@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageProducts));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxProductPrice = new System.Windows.Forms.TextBox();
-            this.labelPrice = new System.Windows.Forms.Label();
+            this.labelProductPrice = new System.Windows.Forms.Label();
             this.textBoxStock = new System.Windows.Forms.TextBox();
-            this.labelStock = new System.Windows.Forms.Label();
+            this.labelProductStock = new System.Windows.Forms.Label();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.labelProductName = new System.Windows.Forms.Label();
             this.textBoxProductID = new System.Windows.Forms.TextBox();
@@ -47,7 +46,6 @@
             this.buttonAddProduct = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditProduct = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveProduct = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonExitProduct = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageProductsMessage = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -56,9 +54,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxProductPrice);
-            this.groupBox1.Controls.Add(this.labelPrice);
+            this.groupBox1.Controls.Add(this.labelProductPrice);
             this.groupBox1.Controls.Add(this.textBoxStock);
-            this.groupBox1.Controls.Add(this.labelStock);
+            this.groupBox1.Controls.Add(this.labelProductStock);
             this.groupBox1.Controls.Add(this.textBoxProductName);
             this.groupBox1.Controls.Add(this.labelProductName);
             this.groupBox1.Controls.Add(this.textBoxProductID);
@@ -82,17 +80,17 @@
             this.textBoxProductPrice.Size = new System.Drawing.Size(233, 30);
             this.textBoxProductPrice.TabIndex = 7;
             // 
-            // labelPrice
+            // labelProductPrice
             // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPrice.Location = new System.Drawing.Point(455, 110);
-            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(52, 18);
-            this.labelPrice.TabIndex = 6;
-            this.labelPrice.Text = "Price:";
+            this.labelProductPrice.AutoSize = true;
+            this.labelProductPrice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelProductPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelProductPrice.Location = new System.Drawing.Point(455, 110);
+            this.labelProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductPrice.Name = "labelProductPrice";
+            this.labelProductPrice.Size = new System.Drawing.Size(52, 18);
+            this.labelProductPrice.TabIndex = 6;
+            this.labelProductPrice.Text = "Price:";
             // 
             // textBoxStock
             // 
@@ -102,17 +100,17 @@
             this.textBoxStock.Size = new System.Drawing.Size(233, 30);
             this.textBoxStock.TabIndex = 5;
             // 
-            // labelStock
+            // labelProductStock
             // 
-            this.labelStock.AutoSize = true;
-            this.labelStock.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelStock.Location = new System.Drawing.Point(44, 110);
-            this.labelStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelStock.Name = "labelStock";
-            this.labelStock.Size = new System.Drawing.Size(55, 18);
-            this.labelStock.TabIndex = 4;
-            this.labelStock.Text = "Stock:";
+            this.labelProductStock.AutoSize = true;
+            this.labelProductStock.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelProductStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelProductStock.Location = new System.Drawing.Point(44, 110);
+            this.labelProductStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductStock.Name = "labelProductStock";
+            this.labelProductStock.Size = new System.Drawing.Size(55, 18);
+            this.labelProductStock.TabIndex = 4;
+            this.labelProductStock.Text = "Stock:";
             // 
             // textBoxProductName
             // 
@@ -141,7 +139,6 @@
             this.textBoxProductID.Name = "textBoxProductID";
             this.textBoxProductID.Size = new System.Drawing.Size(233, 30);
             this.textBoxProductID.TabIndex = 1;
-            this.textBoxProductID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // labelProductID
             // 
@@ -175,13 +172,13 @@
             // 
             this.buttonFindProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindProduct.Appearance.Options.UseFont = true;
-            this.buttonFindProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindProduct.ImageOptions.Image")));
             this.buttonFindProduct.Location = new System.Drawing.Point(513, 43);
             this.buttonFindProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindProduct.Name = "buttonFindProduct";
             this.buttonFindProduct.Size = new System.Drawing.Size(111, 43);
             this.buttonFindProduct.TabIndex = 6;
             this.buttonFindProduct.Text = "Find";
+            this.buttonFindProduct.Click += new System.EventHandler(this.buttonFindProduct_Click);
             // 
             // textBoxProductIDFInd
             // 
@@ -207,7 +204,6 @@
             // 
             this.buttonAddProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProduct.Appearance.Options.UseFont = true;
-            this.buttonAddProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddProduct.ImageOptions.Image")));
             this.buttonAddProduct.Location = new System.Drawing.Point(128, 341);
             this.buttonAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddProduct.Name = "buttonAddProduct";
@@ -221,7 +217,6 @@
             // 
             this.buttonEditProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEditProduct.Appearance.Options.UseFont = true;
-            this.buttonEditProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditProduct.ImageOptions.Image")));
             this.buttonEditProduct.Location = new System.Drawing.Point(272, 341);
             this.buttonEditProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditProduct.Name = "buttonEditProduct";
@@ -234,7 +229,6 @@
             // 
             this.buttonRemoveProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveProduct.Appearance.Options.UseFont = true;
-            this.buttonRemoveProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveProduct.ImageOptions.Image")));
             this.buttonRemoveProduct.Location = new System.Drawing.Point(415, 341);
             this.buttonRemoveProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveProduct.Name = "buttonRemoveProduct";
@@ -243,26 +237,13 @@
             this.buttonRemoveProduct.Text = "Remove";
             this.buttonRemoveProduct.Click += new System.EventHandler(this.buttonRemoveProduct_Click);
             // 
-            // buttonExitProduct
-            // 
-            this.buttonExitProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExitProduct.Appearance.Options.UseFont = true;
-            this.buttonExitProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitProduct.ImageOptions.Image")));
-            this.buttonExitProduct.Location = new System.Drawing.Point(562, 341);
-            this.buttonExitProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExitProduct.Name = "buttonExitProduct";
-            this.buttonExitProduct.Size = new System.Drawing.Size(124, 54);
-            this.buttonExitProduct.TabIndex = 11;
-            this.buttonExitProduct.Text = "Exit";
-            this.buttonExitProduct.Click += new System.EventHandler(this.buttonExitProduct_Click);
-            // 
             // labelManageProductsMessage
             // 
             this.labelManageProductsMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelManageProductsMessage.AutoSize = true;
             this.labelManageProductsMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageProductsMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageProductsMessage.Location = new System.Drawing.Point(376, 420);
+            this.labelManageProductsMessage.Location = new System.Drawing.Point(10, 420);
             this.labelManageProductsMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageProductsMessage.Name = "labelManageProductsMessage";
             this.labelManageProductsMessage.Size = new System.Drawing.Size(58, 23);
@@ -277,7 +258,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 453);
             this.Controls.Add(this.labelManageProductsMessage);
-            this.Controls.Add(this.buttonExitProduct);
             this.Controls.Add(this.buttonRemoveProduct);
             this.Controls.Add(this.buttonEditProduct);
             this.Controls.Add(this.buttonAddProduct);
@@ -306,9 +286,9 @@
         private TextBox textBoxProductName;
         private Label labelProductName;
         private TextBox textBoxProductPrice;
-        private Label labelPrice;
+        private Label labelProductPrice;
         private TextBox textBoxStock;
-        private Label labelStock;
+        private Label labelProductStock;
         private GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton buttonFindProduct;
         private TextBox textBoxProductIDFInd;
@@ -317,7 +297,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonAddProduct;
         private DevExpress.XtraEditors.SimpleButton buttonEditProduct;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveProduct;
-        private DevExpress.XtraEditors.SimpleButton buttonExitProduct;
         private Label labelManageProductsMessage;
     }
 }
