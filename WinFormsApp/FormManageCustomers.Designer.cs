@@ -39,7 +39,7 @@
             this.textBoxCustomerId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonCustomerIdFind = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonFindCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxCustomerIdFind = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonExitCustomer = new DevExpress.XtraEditors.SimpleButton();
@@ -64,9 +64,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox1.Location = new System.Drawing.Point(18, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(780, 170);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -75,7 +75,7 @@
             // textBoxCustomerAddress
             // 
             this.textBoxCustomerAddress.Location = new System.Drawing.Point(530, 102);
-            this.textBoxCustomerAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCustomerAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCustomerAddress.Name = "textBoxCustomerAddress";
             this.textBoxCustomerAddress.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerAddress.TabIndex = 7;
@@ -95,7 +95,7 @@
             // textBoxCustomerPhone
             // 
             this.textBoxCustomerPhone.Location = new System.Drawing.Point(128, 102);
-            this.textBoxCustomerPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCustomerPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
             this.textBoxCustomerPhone.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerPhone.TabIndex = 5;
@@ -115,7 +115,7 @@
             // textBoxCustomerName
             // 
             this.textBoxCustomerName.Location = new System.Drawing.Point(530, 42);
-            this.textBoxCustomerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
             this.textBoxCustomerName.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerName.TabIndex = 3;
@@ -135,7 +135,7 @@
             // textBoxCustomerId
             // 
             this.textBoxCustomerId.Location = new System.Drawing.Point(128, 42);
-            this.textBoxCustomerId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCustomerId.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCustomerId.Name = "textBoxCustomerId";
             this.textBoxCustomerId.Size = new System.Drawing.Size(233, 30);
             this.textBoxCustomerId.TabIndex = 1;
@@ -154,37 +154,37 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonCustomerIdFind);
+            this.groupBox2.Controls.Add(this.buttonFindCustomer);
             this.groupBox2.Controls.Add(this.textBoxCustomerIdFind);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 206);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(780, 114);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find a customer";
             // 
-            // buttonCustomerIdFind
+            // buttonFindCustomer
             // 
-            this.buttonCustomerIdFind.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCustomerIdFind.Appearance.Options.UseFont = true;
-            this.buttonCustomerIdFind.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCustomerIdFind.ImageOptions.Image")));
-            this.buttonCustomerIdFind.Location = new System.Drawing.Point(513, 43);
-            this.buttonCustomerIdFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonCustomerIdFind.Name = "buttonCustomerIdFind";
-            this.buttonCustomerIdFind.Size = new System.Drawing.Size(111, 43);
-            this.buttonCustomerIdFind.TabIndex = 6;
-            this.buttonCustomerIdFind.Text = "Find";
-            this.buttonCustomerIdFind.Click += new System.EventHandler(this.buttonCustomerIdFind_Click);
+            this.buttonFindCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonFindCustomer.Appearance.Options.UseFont = true;
+            this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCustomerIdFind.ImageOptions.Image")));
+            this.buttonFindCustomer.Location = new System.Drawing.Point(513, 43);
+            this.buttonFindCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFindCustomer.Name = "buttonFindCustomer";
+            this.buttonFindCustomer.Size = new System.Drawing.Size(111, 43);
+            this.buttonFindCustomer.TabIndex = 6;
+            this.buttonFindCustomer.Text = "Find";
+            this.buttonFindCustomer.Click += new System.EventHandler(this.buttonCustomerIdFind_Click);
             // 
             // textBoxCustomerIdFind
             // 
             this.textBoxCustomerIdFind.Location = new System.Drawing.Point(253, 48);
-            this.textBoxCustomerIdFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCustomerIdFind.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCustomerIdFind.Name = "textBoxCustomerIdFind";
             this.textBoxCustomerIdFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxCustomerIdFind.TabIndex = 5;
@@ -207,7 +207,7 @@
             this.buttonExitCustomer.Appearance.Options.UseFont = true;
             this.buttonExitCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitCustomer.ImageOptions.Image")));
             this.buttonExitCustomer.Location = new System.Drawing.Point(562, 347);
-            this.buttonExitCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExitCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExitCustomer.Name = "buttonExitCustomer";
             this.buttonExitCustomer.Size = new System.Drawing.Size(124, 54);
             this.buttonExitCustomer.TabIndex = 19;
@@ -220,7 +220,7 @@
             this.buttonRemoveCustomer.Appearance.Options.UseFont = true;
             this.buttonRemoveCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveCustomer.ImageOptions.Image")));
             this.buttonRemoveCustomer.Location = new System.Drawing.Point(415, 347);
-            this.buttonRemoveCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRemoveCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveCustomer.Name = "buttonRemoveCustomer";
             this.buttonRemoveCustomer.Size = new System.Drawing.Size(124, 54);
             this.buttonRemoveCustomer.TabIndex = 18;
@@ -233,7 +233,7 @@
             this.buttonEditCustomer.Appearance.Options.UseFont = true;
             this.buttonEditCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditCustomer.ImageOptions.Image")));
             this.buttonEditCustomer.Location = new System.Drawing.Point(272, 347);
-            this.buttonEditCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditCustomer.Name = "buttonEditCustomer";
             this.buttonEditCustomer.Size = new System.Drawing.Size(124, 54);
             this.buttonEditCustomer.TabIndex = 17;
@@ -246,7 +246,7 @@
             this.buttonAddCustomer.Appearance.Options.UseFont = true;
             this.buttonAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddCustomer.ImageOptions.Image")));
             this.buttonAddCustomer.Location = new System.Drawing.Point(128, 347);
-            this.buttonAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddCustomer.Name = "buttonAddCustomer";
             this.buttonAddCustomer.Size = new System.Drawing.Size(124, 54);
             this.buttonAddCustomer.TabIndex = 16;
@@ -278,7 +278,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,7 +304,7 @@
         private TextBox textBoxCustomerId;
         private Label label1;
         private GroupBox groupBox2;
-        private DevExpress.XtraEditors.SimpleButton buttonCustomerIdFind;
+        private DevExpress.XtraEditors.SimpleButton buttonFindCustomer;
         private TextBox textBoxCustomerIdFind;
         private Label label8;
         private DevExpress.XtraEditors.SimpleButton buttonExitCustomer;
