@@ -24,12 +24,6 @@ namespace WinFormsApp
             InitializeComponent();
         }
 
-        // RibbonForm2_Load can be removed right?
-        private void RibbonForm2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void barButtonManageProducts_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormManageProducts form = new FormManageProducts();
