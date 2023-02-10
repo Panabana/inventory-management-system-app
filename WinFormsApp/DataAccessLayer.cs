@@ -349,11 +349,11 @@ namespace WinFormsApp
             }
         }
 
-        public void UpdateProduct(int productId, string productName, string productPrice, int productStock, string connectionString)
+        public void UpdateProduct(int productId, string productName, decimal productPrice, int productStock, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(productId, productName, productPrice, productStock, connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Product");

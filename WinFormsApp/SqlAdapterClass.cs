@@ -498,36 +498,30 @@ namespace WinFormsApp
             */
         }
 
-        public static SqlDataAdapter UpdateProductAdapter(SqlConnection connection)
+        public static SqlDataAdapter UpdateProductAdapter(int productId, string productName, decimal productPrice, int productStock, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new();
-            SqlCommand command;
-            string query = "UPDATE Product SET ProductName = @ProductName, Price = @Price, Stock = @Stock WHERE ProductID = @ProductID";
+            SqlDataAdapter productAdapter = new SqlDataAdapter();
 
-            command = new(query, connection);
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Product " +
+                                                "WHERE ProductID = @ProductID", connection);
 
-            //Parameters
-            SqlParameter parameterProductID = new SqlParameter("@ProductID", SqlDbType.Int);
-            SqlParameter parameterProductName = new SqlParameter("@ProductName", SqlDbType.VarChar);
-            SqlParameter parameterPrice = new SqlParameter("@Price", SqlDbType.Int);
-            SqlParameter parameterStock = new SqlParameter("@Stock", SqlDbType.Int);
+            command.Parameters.AddWithValue("@ProductID", productId);
 
-            parameterProductID.SourceColumn = "ProductID";
-            parameterProductName.SourceColumn = "ProductName";
-            parameterPrice.SourceColumn = "Price";
-            parameterStock.SourceColumn = "Stock";
+            productAdapter.SelectCommand = command;
 
-            command.Parameters.Add(parameterProductID);
-            command.Parameters.Add(parameterProductName);
-            command.Parameters.Add(parameterPrice);
-            command.Parameters.Add(parameterStock);
+            command = new SqlCommand("UPDATE Product " +
+                                     "SET ProductName = @ProductName, Price = @Price, Stock = @Stock " +
+                                     "WHERE ProductID = @ProductID",
+                                     connection);
 
-            command.Connection = connection;
-            //Don't know if AddWithKey is necesseray here
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.SelectCommand = command;
+            command.Parameters.AddWithValue("@ProductID", productId);
+            command.Parameters.AddWithValue("@ProductName", productName);
+            command.Parameters.AddWithValue("@Price", productPrice);
+            command.Parameters.AddWithValue("@Stock", productStock);
 
-            return adapter;
+            productAdapter.UpdateCommand = command;
+            return productAdapter;
         }
 
         public static SqlDataAdapter DeleteProductAdapter(int productId, SqlConnection connection)

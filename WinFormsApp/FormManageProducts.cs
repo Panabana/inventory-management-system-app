@@ -36,18 +36,35 @@ namespace WinFormsApp
                 Utility.ClearTextBoxes(this);
 
                 _layer.InsertProduct(productId, productName, productPrice, productStock, connectionString);
-                Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
+                Utility.LabelMessageSuccess(labelManageProductsMessage, $"Product with new ID {productId} added");
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageProductsMessage, "Error: " + ex.Message);
-                Console.WriteLine("Error: " + ex.Message);
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Sorry, error: " + ex.Message);
+                Console.WriteLine("Sorry, error: " + ex.Message);
             }
         }
 
         private void buttonEditProduct_Click(object sender, EventArgs e)
         {
-            Utility.LabelMessageSuccess(labelManageProductsMessage, "test edit button");
+            try
+            {
+                int productId = Convert.ToInt32(textBoxProductID.Text);
+                string productName = textBoxProductName.Text;
+                decimal productPrice = Convert.ToDecimal(textBoxProductPrice.Text);
+                int productStock = Convert.ToInt32(textBoxStock.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+
+                Utility.ClearTextBoxes(this);
+
+                _layer.UpdateProduct(productId, productName, productPrice, productStock, connectionString);
+                Utility.LabelMessageSuccess(labelManageProductsMessage, $"Product with ID {productId} edited");
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Sorry, error: " + ex.Message);
+                Console.WriteLine("Sorry, error: " + ex.Message);
+            }
         }
 
         private void buttonRemoveProduct_Click(object sender, EventArgs e)
@@ -60,13 +77,13 @@ namespace WinFormsApp
                 Utility.ClearTextBoxes(this);
 
                 _layer.DeleteProduct(productId, connectionString);
-                Utility.LabelMessageSuccess(labelManageProductsMessage, "Product deleted!");
+                Utility.LabelMessageSuccess(labelManageProductsMessage, $"Product with ID {productId} removed");
 
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageProductsMessage, "Error: " + ex.Message);
-                Console.WriteLine("Error: " + ex.Message);
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Sorry, error: " + ex.Message);
+                Console.WriteLine("Sorry, error: " + ex.Message);
             }
         }
         
