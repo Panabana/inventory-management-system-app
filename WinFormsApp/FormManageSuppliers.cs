@@ -149,7 +149,9 @@ namespace WinFormsApp
             try
             {
                 int supplierID = Convert.ToInt32(textBoxSupplierIdFind.Text);
-                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+
 
                 DataTable findSupplierDataTable = new();
                 findSupplierDataTable = _layer.FindSupplier(supplierID, connectionString);
@@ -172,9 +174,11 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an ID number!");
             }
+
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a Supplier ID to search for!");
+
             }
         }
     }

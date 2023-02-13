@@ -26,7 +26,7 @@ namespace WinFormsApp
      //   }
 
         // - EMPLOYEE -
-        public DataSet ViewAllEmployees(string connectionString)
+        public DataSet ViewAllEmployees()//string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
@@ -131,7 +131,7 @@ namespace WinFormsApp
             }
         }
         // - CUSTOMER -
-        public DataSet ViewCustomers(string connectionString)
+        public DataSet ViewCustomers()
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
@@ -352,7 +352,7 @@ namespace WinFormsApp
         }
 
         // - PRODUCT -
-        public DataSet ViewProducts(string connectionString)
+        public DataSet ViewProducts()
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
@@ -459,6 +459,71 @@ namespace WinFormsApp
         // {
         //  throw new NotImplementedException();
         //}
+
+
+        // - Order -
+        public DataSet ViewOrder()
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.ViewAllOrderAdapter(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet, "Orders");
+
+                    return dataSet;
+                }
+            }
+        }
+            
+        
+        public void InsertOrder(int orderId, int customerId, int employeeId)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                connection.Open();
+
+                using (SqlDataAdapter adapter = SqlAdapterClass.InsertOrderAdapter(orderId, customerId, employeeId, connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Orders");
+
+                    DataTable orderDataTable = new DataTable();
+                    orderDataTable = ds.Tables["Orders"];
+
+                    DataRow row = orderDataTable.NewRow();
+                    row["OrderID"] = orderId;
+                    row["CustomerID"] = customerId;
+                    row["EmployeeID"] = employeeId;
+
+                    orderDataTable.Rows.Add(row);
+                    adapter.Update(orderDataTable);
+                }
+            }
+        }
+
+        public void DeleteOrder(int orderID)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter ordersAdapter = SqlAdapterClass.DeleteOrderAdapter(orderID, connection))
+                {
+                    DataSet ds = new DataSet();
+                    ordersAdapter.Fill(ds, "Orders");
+
+                    DataTable ordersDataTable = new DataTable();
+                    ordersDataTable = ds.Tables["Orders"];
+                    
+                    DataRow[] rows = ordersDataTable.Select("OrderID = " + orderID.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        ordersAdapter.Update(ordersDataTable);
+                    }
+                }
+            }
+        }
 
     }
 
