@@ -499,8 +499,7 @@ namespace WinFormsApp
 
             SqlCommand command = new SqlCommand("SELECT * " +
                                                 "FROM Product " +
-                                                "WHERE ProductID = @ProductID " +
-                                                "AND ProductName = ProductName", connection);
+                                                "WHERE ProductID = @ProductID", connection);
 
             command.Parameters.AddWithValue("@ProductID", productId);
             command.Parameters.AddWithValue("@ProductName", productName);
@@ -613,6 +612,71 @@ namespace WinFormsApp
             productFindAdapter.SelectCommand = command;
 
             return productFindAdapter;
+        }
+
+        // - ORDER -
+
+        public static SqlDataAdapter ViewAllOrderAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command;
+            string query = "SELECT * FROM Orders";
+
+            command = new(query, connection);
+
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter InsertOrderAdapter(int orderId, int customerId, int employeeId, SqlConnection connection)
+        {
+            SqlDataAdapter orderAdapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Orders " +
+                                                "WHERE OrderID = @OrderID " +
+                                                "AND CustomerID = @CustomerID " +
+                                                "AND EmployeeID = @EmployeeID", connection);
+
+            command.Parameters.AddWithValue("@OrderID", orderId);
+            command.Parameters.AddWithValue("@CustomerID", customerId);
+            command.Parameters.AddWithValue("@EmployeeID", employeeId);
+
+            orderAdapter.SelectCommand = command;
+
+            command = new SqlCommand("Insert INTO Orders (OrderID, CustomerID, EmployeeID) " +
+                                     "VALUES (@OrderID, @CustomerID, @EmployeeID)", connection);
+
+            command.Parameters.AddWithValue("@OrderID", orderId);
+            command.Parameters.AddWithValue("@CustomerID", customerId);
+            command.Parameters.AddWithValue("@EmployeeID", employeeId);
+
+            orderAdapter.InsertCommand = command;
+            return orderAdapter;
+        }
+
+        public static SqlDataAdapter DeleteOrderAdapter(int orderId, SqlConnection connection)
+        {
+            SqlDataAdapter orderAdapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Orders " +
+                                                "WHERE OrderID = @OrderID",
+                                                connection);
+
+            command.Parameters.AddWithValue("@OrderID", orderId);
+            orderAdapter.SelectCommand = command;
+
+            command = new SqlCommand("DELETE " +
+                                     "FROM Orders " +
+                                     "WHERE OrderID = @OrderID",
+                                     connection);
+
+            command.Parameters.AddWithValue("@OrderID", orderId);
+            orderAdapter.DeleteCommand = command;
+
+            return orderAdapter;
         }
     }
 }
