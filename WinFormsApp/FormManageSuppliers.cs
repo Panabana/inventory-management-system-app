@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,26 @@ namespace WinFormsApp
         {
             try
             {
+                if (string.IsNullOrEmpty(textBoxSupplierID.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a valid ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxSupplierName.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a name!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxSupplierAddress.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an address!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxSupplierPhone.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a phone number!");
+                    return;
+                }
                 int suppId = Convert.ToInt32(textBoxSupplierID.Text);
                 string suppName = textBoxSupplierName.Text;
                 string suppAddress = textBoxSupplierAddress.Text;
@@ -34,6 +55,18 @@ namespace WinFormsApp
                 _layer.InsertSupplier(suppId, suppName, suppAddress, phoneNbr, connectionString); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added!");
 
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the fields in the correct format!");
+            }
+
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "A supplier with this ID already exists!");
+                }
             }
             catch (Exception ex)
             {
@@ -86,7 +119,7 @@ namespace WinFormsApp
             try
             {
                 int supplierID = Convert.ToInt32(textBoxSupplierIdFind.Text);
-                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
                 DataTable findSupplierDataTable = new();
                 findSupplierDataTable = _layer.FindSupplier(supplierID, connectionString);
