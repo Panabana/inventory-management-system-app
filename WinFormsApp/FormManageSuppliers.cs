@@ -83,7 +83,36 @@ namespace WinFormsApp
         
         private void buttonFindSupplier_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int supplierID = Convert.ToInt32(textBoxSupplierIdFind.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
+                DataTable findSupplierDataTable = new();
+                findSupplierDataTable = _layer.FindSupplier(supplierID, connectionString);
+
+                if (findSupplierDataTable.Rows.Count == 1)
+                {
+                    textBoxSupplierID.Text = findSupplierDataTable.Rows[0]["SupplierID"].ToString();
+                    textBoxSupplierName.Text = findSupplierDataTable.Rows[0]["SupplierName"].ToString();
+                    textBoxSupplierAddress.Text = findSupplierDataTable.Rows[0]["SupplierAddress"].ToString();
+                    textBoxSupplierPhone.Text = findSupplierDataTable.Rows[0]["PhoneNumber"].ToString();
+
+                    Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier found!");
+                }
+                else
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Supplier not found!");
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an ID number!");
+            }
+            catch (FormatException nbrEx)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a valid number!");
+            }
         }
     }
 }
