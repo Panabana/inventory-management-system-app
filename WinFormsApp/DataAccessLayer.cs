@@ -237,7 +237,21 @@ namespace WinFormsApp
                 }
             }
         }
-        
+
+        public DataTable FindCustomer(int customerId, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.FindCustomerAdapter(customerId, connection))
+                {
+                    DataTable findCustomerDataTable = new();
+
+                    adapter.Fill(findCustomerDataTable);
+                    return findCustomerDataTable;
+                }
+            }
+        }
+
         // - SUPPLIER -
         public DataSet ViewSuppliers(string connectionString)
         {
