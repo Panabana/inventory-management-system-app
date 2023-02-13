@@ -72,9 +72,6 @@ namespace WinFormsApp
                 }
             }
 
-            
-
-
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);

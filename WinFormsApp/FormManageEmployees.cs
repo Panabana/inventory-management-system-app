@@ -27,7 +27,27 @@ namespace WinFormsApp
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
             try 
-            { 
+            {
+                if (string.IsNullOrEmpty(textBoxEmployeeId.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a valid ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeeName.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a name!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeeAddress.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter an address!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeePhone.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a phone number!");
+                    return;
+                }
                 int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
                 string employeeName = textBoxEmployeeName.Text;
                 string employeeAddress = textBoxEmployeeAddress.Text;
@@ -36,8 +56,20 @@ namespace WinFormsApp
 
                 _layer.InsertEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber, connectionString); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
-            
             }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter the fields in the correct format");
+            }
+
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "A customer with this ID already exists");
+                }
+            }
+        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
