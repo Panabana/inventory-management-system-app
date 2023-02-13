@@ -52,7 +52,7 @@ namespace WinFormsApp
                 int phoneNbr = Convert.ToInt32(textBoxSupplierPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
                 
-                _layer.InsertSupplier(suppId, suppName, suppAddress, phoneNbr, connectionString); //osäker om rätt
+                _layer.InsertSupplier(suppId, suppName, suppAddress, phoneNbr, connectionString); 
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added!");
 
             }
@@ -79,6 +79,26 @@ namespace WinFormsApp
         {
             try
             {
+                if (string.IsNullOrEmpty(textBoxSupplierID.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a Supplier ID to edit!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxSupplierName.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an edited or unedited name!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxSupplierAddress.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an edited or unedited address!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxSupplierPhone.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an edited or unedited phone number!");
+                    return;
+                }
                 int suppId = Convert.ToInt32(textBoxSupplierID.Text);
                 string suppName = textBoxSupplierName.Text;
                 string suppAddress = textBoxSupplierAddress.Text;
@@ -89,12 +109,18 @@ namespace WinFormsApp
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier edited!");
 
             }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the fields in the correct format!");
+            }
+        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
-            }
+               
+            }  
         }
-
+        
         private void buttonRemoveSupplier_Click(object sender, EventArgs e)
         {
             try
@@ -103,8 +129,12 @@ namespace WinFormsApp
 
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-                _layer.DeleteSupplier(suppId, connectionString); //osäker om rätt
+                _layer.DeleteSupplier(suppId, connectionString);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier removed!");
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the ID of the supplier you want to remove");
 
             }
             catch (Exception ex)
@@ -142,9 +172,9 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an ID number!");
             }
-            catch (FormatException nbrEx)
+            catch (FormatException)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a valid number!");
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a Supplier ID to search for!");
             }
         }
     }
