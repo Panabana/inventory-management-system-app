@@ -337,6 +337,20 @@ namespace WinFormsApp
             }
         }
 
+        public DataTable FindSupplier(int supplierID, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter findSupplierAdapter = SqlAdapterClass.FindSupplierAdapter(supplierID, connection))
+                {
+                    DataTable findSupplierDataTable = new();
+
+                    findSupplierAdapter.Fill(findSupplierDataTable);
+                    return findSupplierDataTable;
+                }
+            }
+        }
+
         // - PRODUCT -
         public DataSet ViewProducts(string connectionString)
         {
@@ -379,11 +393,11 @@ namespace WinFormsApp
             }
         }
 
-        public void UpdateProduct(int productId, string productName, string productPrice, int productStock, string connectionString)
+        public void UpdateProduct(int productId, string productName, int productPrice, int productStock, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(productId, productName, productPrice, productStock, connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Product");
@@ -426,12 +440,26 @@ namespace WinFormsApp
                 }
             }
         }
-    
-       // internal void InsertEmployee(int employeeId, string employeeName, string employeeAddress, int employeePhoneNumber, SqlConnection sqlConnection)
-       // {
-          //  throw new NotImplementedException();
+
+        public DataTable FindProduct(int productID, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter findProductAdapter = SqlAdapterClass.FindProductAdapter(productID, connection))
+                {
+                    DataTable findProductDataTable = new();
+
+                    findProductAdapter.Fill(findProductDataTable);
+                    return findProductDataTable;
+                }
+            }
+        }
+
+        // internal void InsertEmployee(int employeeId, string employeeName, string employeeAddress, int employeePhoneNumber, SqlConnection sqlConnection)
+        // {
+        //  throw new NotImplementedException();
         //}
-    
+
     }
 
    

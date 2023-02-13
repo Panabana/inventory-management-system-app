@@ -467,6 +467,18 @@ namespace WinFormsApp
             return deleteSupplierAdapter;
         }
 
+        public static SqlDataAdapter FindSupplierAdapter(int supplierID, SqlConnection connection)
+        {
+            SqlDataAdapter empFindAdapter = new();
+            string query = "SELECT SupplierID, SupplierName, SupplierAddress, PhoneNumber FROM Supplier WHERE SupplierID = @SupplierID";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@SupplierID", supplierID);
+            empFindAdapter.SelectCommand = command;
+
+            return empFindAdapter;
+        }
+
         // - PRODUCT -
         public static SqlDataAdapter ViewAllProductAdapter(SqlConnection connection)
         {
@@ -535,36 +547,27 @@ namespace WinFormsApp
             */
         }
 
-        public static SqlDataAdapter UpdateProductAdapter(SqlConnection connection)
+        public static SqlDataAdapter UpdateProductAdapter(int productID, string productName, int stock, int price, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new();
-            SqlCommand command;
-            string query = "UPDATE Product SET ProductName = @ProductName, Price = @Price, Stock = @Stock WHERE ProductID = @ProductID";
+            SqlDataAdapter updateProductAdapter = new();
+            string selectQuery = "SELECT * FROM Product WHERE ProductID = @ProductID";
+            SqlCommand command = new(selectQuery, connection);
 
-            command = new(query, connection);
+            command.Parameters.AddWithValue("@ProductID", productID);
 
-            //Parameters
-            SqlParameter parameterProductID = new SqlParameter("@ProductID", SqlDbType.Int);
-            SqlParameter parameterProductName = new SqlParameter("@ProductName", SqlDbType.VarChar);
-            SqlParameter parameterPrice = new SqlParameter("@Price", SqlDbType.Int);
-            SqlParameter parameterStock = new SqlParameter("@Stock", SqlDbType.Int);
+            updateProductAdapter.SelectCommand = command;
 
-            parameterProductID.SourceColumn = "ProductID";
-            parameterProductName.SourceColumn = "ProductName";
-            parameterPrice.SourceColumn = "Price";
-            parameterStock.SourceColumn = "Stock";
+            string updateQuery = "UPDATE Product SET ProductName = @ProductName, Price = @Price, Stock = @Stock WHERE ProductID = @ProductID";
+            command = new(updateQuery, connection);
 
-            command.Parameters.Add(parameterProductID);
-            command.Parameters.Add(parameterProductName);
-            command.Parameters.Add(parameterPrice);
-            command.Parameters.Add(parameterStock);
+            command.Parameters.AddWithValue("@ProductID", productID);
+            command.Parameters.AddWithValue("@ProductName", productName);
+            command.Parameters.AddWithValue("@Price", price);
+            command.Parameters.AddWithValue("@Stock", stock);
 
-            command.Connection = connection;
-            //Don't know if AddWithKey is necesseray here
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.SelectCommand = command;
+            updateProductAdapter.UpdateCommand = command;
 
-            return adapter;
+            return updateProductAdapter;
         }
 
         public static SqlDataAdapter DeleteProductAdapter(int productId, SqlConnection connection)
@@ -598,6 +601,18 @@ namespace WinFormsApp
 
             return adapter;
             */
+        }
+
+        public static SqlDataAdapter FindProductAdapter(int productID, SqlConnection connection)
+        {
+            SqlDataAdapter productFindAdapter = new();
+            string query = "SELECT ProductID, ProductName, Stock, Price FROM Product WHERE ProductID = @ProductID";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ProductID", productID);
+            productFindAdapter.SelectCommand = command;
+
+            return productFindAdapter;
         }
     }
 }

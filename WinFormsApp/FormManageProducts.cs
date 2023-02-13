@@ -47,7 +47,23 @@ namespace WinFormsApp
 
         private void buttonEditProduct_Click(object sender, EventArgs e)
         {
-            Utility.LabelMessageSuccess(labelManageProductsMessage, "test edit button");
+            try
+            {
+                int productID = Convert.ToInt32(textBoxProductID.Text);
+                string productName = textBoxProductName.Text;
+                int stock = Convert.ToInt32(textBoxStock.Text);
+                int price = Convert.ToInt32(textBoxProductPrice.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+
+                _layer.UpdateProduct(productID, productName, stock, price, connectionString);
+                Utility.LabelMessageSuccess(labelManageProductsMessage, "Product edited!");
+                Utility.ClearTextBoxes(this);
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
+            }
+
         }
 
         private void buttonRemoveProduct_Click(object sender, EventArgs e)
@@ -69,10 +85,39 @@ namespace WinFormsApp
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
-        
+
         private void buttonFindProduct_Click(object sender, EventArgs e)
         {
-            Utility.LabelMessageSuccess(labelManageProductsMessage, "test find button");
+            try
+            {
+                int productID = Convert.ToInt32(textBoxProductIDFind.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+
+                DataTable findProductDataTable = new();
+                findProductDataTable = _layer.FindProduct(productID, connectionString);
+
+                if (findProductDataTable.Rows.Count == 1)
+                {
+                    textBoxProductID.Text = findProductDataTable.Rows[0]["ProductID"].ToString();
+                    textBoxProductName.Text = findProductDataTable.Rows[0]["ProductName"].ToString();
+                    textBoxStock.Text = findProductDataTable.Rows[0]["Stock"].ToString();
+                    textBoxProductPrice.Text = findProductDataTable.Rows[0]["Price"].ToString();
+
+                    Utility.LabelMessageSuccess(labelManageProductsMessage, "Product found!");
+                }
+                else
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Product not found!");
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter an ID number!");
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a valid number!");
+            }
         }
     }
 }

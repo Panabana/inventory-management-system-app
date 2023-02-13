@@ -40,7 +40,7 @@
             this.labelProductID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonFindProduct = new DevExpress.XtraEditors.SimpleButton();
-            this.textBoxProductIDFInd = new System.Windows.Forms.TextBox();
+            this.textBoxProductIDFind = new System.Windows.Forms.TextBox();
             this.labelProductIDFind = new System.Windows.Forms.Label();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.buttonAddProduct = new DevExpress.XtraEditors.SimpleButton();
@@ -155,7 +155,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttonFindProduct);
-            this.groupBox2.Controls.Add(this.textBoxProductIDFInd);
+            this.groupBox2.Controls.Add(this.textBoxProductIDFind);
             this.groupBox2.Controls.Add(this.labelProductIDFind);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
@@ -182,11 +182,11 @@
             // 
             // textBoxProductIDFInd
             // 
-            this.textBoxProductIDFInd.Location = new System.Drawing.Point(253, 48);
-            this.textBoxProductIDFInd.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxProductIDFInd.Name = "textBoxProductIDFInd";
-            this.textBoxProductIDFInd.Size = new System.Drawing.Size(247, 30);
-            this.textBoxProductIDFInd.TabIndex = 5;
+            this.textBoxProductIDFind.Location = new System.Drawing.Point(253, 48);
+            this.textBoxProductIDFind.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxProductIDFind.Name = "textBoxProductIDFInd";
+            this.textBoxProductIDFind.Size = new System.Drawing.Size(247, 30);
+            this.textBoxProductIDFind.TabIndex = 5;
             // 
             // labelProductIDFind
             // 
@@ -291,7 +291,7 @@
         private Label labelProductStock;
         private GroupBox groupBox2;
         private DevExpress.XtraEditors.SimpleButton buttonFindProduct;
-        private TextBox textBoxProductIDFInd;
+        private TextBox textBoxProductIDFind;
         private Label labelProductIDFind;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraEditors.SimpleButton buttonAddProduct;
