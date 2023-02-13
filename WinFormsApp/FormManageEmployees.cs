@@ -27,7 +27,27 @@ namespace WinFormsApp
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
             try 
-            { 
+            {
+                if (string.IsNullOrEmpty(textBoxEmployeeId.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a valid ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeeName.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a name!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeeAddress.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter an address!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeePhone.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a phone number!");
+                    return;
+                }
                 int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
                 string employeeName = textBoxEmployeeName.Text;
                 string employeeAddress = textBoxEmployeeAddress.Text;
@@ -36,12 +56,24 @@ namespace WinFormsApp
 
                 _layer.InsertEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber, connectionString); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
-            
             }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter the fields in the correct format");
+            }
+
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "A customer with this ID already exists");
+                }
+            }
+        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
-                Console.WriteLine(ex.Message);
+               
             }
 
         }
@@ -50,6 +82,26 @@ namespace WinFormsApp
         {
             try
             {
+                if (string.IsNullOrEmpty(textBoxEmployeeId.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Choose a employee ID to edit!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeeName.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter an edited or unedited name!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeeAddress.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter an edited or unedited address!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxEmployeePhone.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter an edited or unedited phone number");
+                    return;
+                }
                 int empID = Convert.ToInt32(textBoxEmployeeId.Text);
                 string empName = textBoxEmployeeName.Text;
                 string empAddress = textBoxEmployeeAddress.Text;
@@ -59,6 +111,11 @@ namespace WinFormsApp
                 _layer.UpdateEmployee(empID, empName, empAddress, empPhoneNbr, connectionString);
                  Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
             }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter the fields in the correct format");
+            }
+        
             catch(Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
@@ -78,6 +135,11 @@ namespace WinFormsApp
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
 
             }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter the ID of the employee you want to remove!");
+            }
+        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
@@ -96,7 +158,7 @@ namespace WinFormsApp
                 DataTable findEmpDataTable = new();
                 findEmpDataTable = _layer.FindEmployee(empId, connectionString);
 
-                if(findEmpDataTable.Rows.Count == 1)
+                if (findEmpDataTable.Rows.Count == 1)
                 {
                     textBoxEmployeeId.Text = findEmpDataTable.Rows[0]["EmployeeID"].ToString();
                     textBoxEmployeeName.Text = findEmpDataTable.Rows[0]["EmployeeName"].ToString();
@@ -110,9 +172,14 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManageEmployeesMessage, "Employee not found!");
                 }
             }
-            catch(Exception ex)
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a Employee ID to search for!");
+            }
+            catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
+
             }
 
         }

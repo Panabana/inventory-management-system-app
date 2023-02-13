@@ -614,6 +614,7 @@ namespace WinFormsApp
             return productFindAdapter;
         }
 
+
         // - ORDER -
 
         public static SqlDataAdapter ViewAllOrderAdapter(SqlConnection connection)
@@ -678,5 +679,6 @@ namespace WinFormsApp
 
             return orderAdapter;
         }
+
     }
 }
