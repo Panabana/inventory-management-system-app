@@ -72,9 +72,6 @@ namespace WinFormsApp
                 }
             }
 
-            
-
-
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
@@ -86,6 +83,27 @@ namespace WinFormsApp
         private void buttonEditCustomer_Click(object sender, EventArgs e)
         {
             try{
+
+                if(string.IsNullOrEmpty(textBoxCustomerId.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter a customer ID to edit!");
+                    return;
+                }
+                if(string.IsNullOrEmpty(textBoxCustomerName.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter an edited or unedited name!");
+                    return;
+                }
+                if(string.IsNullOrEmpty(textBoxCustomerAddress.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter an edited or unedited address!");
+                    return;
+                }
+                if(string.IsNullOrEmpty(textBoxCustomerPhone.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter an edited or unedited phone number");
+                    return;
+                }
                 int customerId = Convert.ToInt32(textBoxCustomerId.Text);
                 string customerName = textBoxCustomerName.Text;
                 string customerAddress = textBoxCustomerAddress.Text;
@@ -95,7 +113,12 @@ namespace WinFormsApp
                 _layer.UpdateCustomer(customerId, customerName, customerAddress, customerPhoneNumber, connectionString);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer edited!");
 
-             }
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter the fields in the correct format");
+            }
+        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
@@ -103,12 +126,18 @@ namespace WinFormsApp
         }
         private void buttonRemoveCustomer_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 int customerId = Convert.ToInt32(textBoxCustomerId.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
                 Utility.ClearTextBoxes(this);
                 _layer.DeleteCustomer(customerId, connectionString);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer deleted!");
+
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter the ID of the customer you want to remove!");
             }
             catch (Exception ex)
             {
@@ -140,6 +169,10 @@ namespace WinFormsApp
                 {
                     Utility.LabelMessageFailure(labelManageCustomersMessage, "Customer not found!");
                 }
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter a Customer ID to search for!");
             }
             catch (Exception ex)
             {
