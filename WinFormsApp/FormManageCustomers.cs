@@ -169,14 +169,11 @@ namespace WinFormsApp
                 {
                     Utility.LabelMessageFailure(labelManageCustomersMessage, "Customer not found!");
                 }
-
             }
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter a Customer ID to search for!");
             }
-
-        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
