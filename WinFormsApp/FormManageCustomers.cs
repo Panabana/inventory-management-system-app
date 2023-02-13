@@ -86,7 +86,7 @@ namespace WinFormsApp
 
                 if(string.IsNullOrEmpty(textBoxCustomerId.Text))
                 {
-                    Utility.LabelMessageFailure(labelManageCustomersMessage, "Choose a customer ID to edit!");
+                    Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter a customer ID to edit!");
                     return;
                 }
                 if(string.IsNullOrEmpty(textBoxCustomerName.Text))
