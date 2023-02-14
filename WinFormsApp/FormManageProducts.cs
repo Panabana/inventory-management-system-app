@@ -206,10 +206,11 @@ namespace WinFormsApp
             {
                 int purchaseId = Convert.ToInt32(comboBoxSelectPurchaseToAddProduct.Text);
                 int productId = Convert.ToInt32(textBoxProductID.Text);
+                int quantity = Convert.ToInt32(textBoxQuantity.Text);
                 //string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 Utility.ClearTextBoxes(this);
-                _layer.InsertProductPurchase(purchaseId, productId);
+                _layer.InsertProductPurchase(purchaseId, productId, quantity);
 
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added to purchase!");
 
