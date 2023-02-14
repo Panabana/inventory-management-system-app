@@ -211,7 +211,9 @@ namespace WinFormsApp
 
         }
 
-        private void buttonAddProductToPurchase_Click(object sender, EventArgs e)
+        
+
+        private void buttonAddProductToPurchase_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -219,7 +221,7 @@ namespace WinFormsApp
                 int productId = Convert.ToInt32(textBoxProductID.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                 Utility.ClearTextBoxes(this);
+                Utility.ClearTextBoxes(this);
                 _layer.InsertProductPurchase(purchaseId, productId);
 
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added to purchase!");
