@@ -181,5 +181,47 @@ namespace WinFormsApp
 
             }
         }
+
+        private void buttonAddSupplierToProduct_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(textBoxSupplierID.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a valid ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(comboBoxSelectProductToAddSupplier.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please select a product to add a supplier to!");
+                    return;
+                }
+
+                int suppId = Convert.ToInt32(textBoxSupplierID.Text);
+                int prodId = Convert.ToInt32(comboBoxSelectProductToAddSupplier.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+
+                _layer.InsertSupplierProduct(suppId, prodId);
+                Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added to product!");
+
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the fields in the correct format!");
+            }
+
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManageSuppliersMessage, "A supplier with this ID already exists!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

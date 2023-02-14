@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageCustomers));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCustomerNew = new System.Windows.Forms.GroupBox();
             this.textBoxCustomerAddress = new System.Windows.Forms.TextBox();
             this.labelCustomerAddress = new System.Windows.Forms.Label();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.labelCustomerName = new System.Windows.Forms.Label();
             this.textBoxCustomerId = new System.Windows.Forms.TextBox();
             this.labelCustomerID = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCustomerFind = new System.Windows.Forms.GroupBox();
             this.buttonFindCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxCustomerIdFind = new System.Windows.Forms.TextBox();
             this.labelCustomerIDFind = new System.Windows.Forms.Label();
@@ -46,30 +46,30 @@
             this.buttonEditCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageCustomersMessage = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxCustomerNew.SuspendLayout();
+            this.groupBoxCustomerFind.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxCustomerNew
             // 
-            this.groupBox1.Controls.Add(this.textBoxCustomerAddress);
-            this.groupBox1.Controls.Add(this.labelCustomerAddress);
-            this.groupBox1.Controls.Add(this.textBoxCustomerPhone);
-            this.groupBox1.Controls.Add(this.labelCustomerPhoneNumber);
-            this.groupBox1.Controls.Add(this.textBoxCustomerName);
-            this.groupBox1.Controls.Add(this.labelCustomerName);
-            this.groupBox1.Controls.Add(this.textBoxCustomerId);
-            this.groupBox1.Controls.Add(this.labelCustomerID);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox1.Location = new System.Drawing.Point(18, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(780, 170);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New customer details";
+            this.groupBoxCustomerNew.Controls.Add(this.textBoxCustomerAddress);
+            this.groupBoxCustomerNew.Controls.Add(this.labelCustomerAddress);
+            this.groupBoxCustomerNew.Controls.Add(this.textBoxCustomerPhone);
+            this.groupBoxCustomerNew.Controls.Add(this.labelCustomerPhoneNumber);
+            this.groupBoxCustomerNew.Controls.Add(this.textBoxCustomerName);
+            this.groupBoxCustomerNew.Controls.Add(this.labelCustomerName);
+            this.groupBoxCustomerNew.Controls.Add(this.textBoxCustomerId);
+            this.groupBoxCustomerNew.Controls.Add(this.labelCustomerID);
+            this.groupBoxCustomerNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxCustomerNew.ForeColor = System.Drawing.Color.DarkBlue;
+            this.groupBoxCustomerNew.Location = new System.Drawing.Point(18, 15);
+            this.groupBoxCustomerNew.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxCustomerNew.Name = "groupBoxCustomerNew";
+            this.groupBoxCustomerNew.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxCustomerNew.Size = new System.Drawing.Size(780, 170);
+            this.groupBoxCustomerNew.TabIndex = 2;
+            this.groupBoxCustomerNew.TabStop = false;
+            this.groupBoxCustomerNew.Text = "New customer details";
             // 
             // textBoxCustomerAddress
             // 
@@ -151,21 +151,21 @@
             this.labelCustomerID.TabIndex = 0;
             this.labelCustomerID.Text = "Customer ID:";
             // 
-            // groupBox2
+            // groupBoxCustomerFind
             // 
-            this.groupBox2.Controls.Add(this.buttonFindCustomer);
-            this.groupBox2.Controls.Add(this.textBoxCustomerIdFind);
-            this.groupBox2.Controls.Add(this.labelCustomerIDFind);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox2.Location = new System.Drawing.Point(18, 206);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(780, 114);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Find a customer";
+            this.groupBoxCustomerFind.Controls.Add(this.buttonFindCustomer);
+            this.groupBoxCustomerFind.Controls.Add(this.textBoxCustomerIdFind);
+            this.groupBoxCustomerFind.Controls.Add(this.labelCustomerIDFind);
+            this.groupBoxCustomerFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxCustomerFind.ForeColor = System.Drawing.Color.DarkBlue;
+            this.groupBoxCustomerFind.Location = new System.Drawing.Point(18, 206);
+            this.groupBoxCustomerFind.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxCustomerFind.Name = "groupBoxCustomerFind";
+            this.groupBoxCustomerFind.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxCustomerFind.Size = new System.Drawing.Size(780, 114);
+            this.groupBoxCustomerFind.TabIndex = 10;
+            this.groupBoxCustomerFind.TabStop = false;
+            this.groupBoxCustomerFind.Text = "Find a customer";
             // 
             // buttonFindCustomer
             // 
@@ -262,18 +262,18 @@
             this.Controls.Add(this.buttonRemoveCustomer);
             this.Controls.Add(this.buttonEditCustomer);
             this.Controls.Add(this.buttonAddCustomer);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxCustomerFind);
+            this.Controls.Add(this.groupBoxCustomerNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Customers";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxCustomerNew.ResumeLayout(false);
+            this.groupBoxCustomerNew.PerformLayout();
+            this.groupBoxCustomerFind.ResumeLayout(false);
+            this.groupBoxCustomerFind.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +281,7 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox groupBoxCustomerNew;
         private TextBox textBoxCustomerAddress;
         private Label labelCustomerAddress;
         private TextBox textBoxCustomerPhone;
@@ -290,7 +290,7 @@
         private Label labelCustomerName;
         private TextBox textBoxCustomerId;
         private Label labelCustomerID;
-        private GroupBox groupBox2;
+        private GroupBox groupBoxCustomerFind;
         private DevExpress.XtraEditors.SimpleButton buttonFindCustomer;
         private TextBox textBoxCustomerIdFind;
         private Label labelCustomerIDFind;

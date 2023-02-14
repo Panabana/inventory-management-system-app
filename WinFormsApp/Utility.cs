@@ -25,7 +25,7 @@ namespace WinFormsApp
             chosenLabel.Visible = true;
         }
 
-        //Clears all textboxes
+        //Clears all textboxes. Taken from ChatGPT.
         public static void ClearTextBoxes(Control control)
         {
             foreach (Control c in control.Controls)

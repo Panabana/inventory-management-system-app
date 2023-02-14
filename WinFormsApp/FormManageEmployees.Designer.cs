@@ -63,9 +63,9 @@
             this.groupBoxEmployeeNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxEmployeeNew.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxEmployeeNew.Location = new System.Drawing.Point(21, 18);
-            this.groupBoxEmployeeNew.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBoxEmployeeNew.Margin = new System.Windows.Forms.Padding(5);
             this.groupBoxEmployeeNew.Name = "groupBoxEmployeeNew";
-            this.groupBoxEmployeeNew.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBoxEmployeeNew.Padding = new System.Windows.Forms.Padding(5);
             this.groupBoxEmployeeNew.Size = new System.Drawing.Size(910, 209);
             this.groupBoxEmployeeNew.TabIndex = 3;
             this.groupBoxEmployeeNew.TabStop = false;
@@ -74,7 +74,7 @@
             // textBoxEmployeeAddress
             // 
             this.textBoxEmployeeAddress.Location = new System.Drawing.Point(618, 126);
-            this.textBoxEmployeeAddress.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxEmployeeAddress.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxEmployeeAddress.Name = "textBoxEmployeeAddress";
             this.textBoxEmployeeAddress.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeAddress.TabIndex = 7;
@@ -94,7 +94,7 @@
             // textBoxEmployeePhone
             // 
             this.textBoxEmployeePhone.Location = new System.Drawing.Point(149, 126);
-            this.textBoxEmployeePhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxEmployeePhone.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxEmployeePhone.Name = "textBoxEmployeePhone";
             this.textBoxEmployeePhone.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeePhone.TabIndex = 5;
@@ -114,7 +114,7 @@
             // textBoxEmployeeName
             // 
             this.textBoxEmployeeName.Location = new System.Drawing.Point(618, 52);
-            this.textBoxEmployeeName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxEmployeeName.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxEmployeeName.Name = "textBoxEmployeeName";
             this.textBoxEmployeeName.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeName.TabIndex = 3;
@@ -134,7 +134,7 @@
             // textBoxEmployeeId
             // 
             this.textBoxEmployeeId.Location = new System.Drawing.Point(149, 52);
-            this.textBoxEmployeeId.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxEmployeeId.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(233, 30);
             this.textBoxEmployeeId.TabIndex = 1;
@@ -159,9 +159,9 @@
             this.groupBoxEmployeeFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxEmployeeFind.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxEmployeeFind.Location = new System.Drawing.Point(21, 251);
-            this.groupBoxEmployeeFind.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBoxEmployeeFind.Margin = new System.Windows.Forms.Padding(5);
             this.groupBoxEmployeeFind.Name = "groupBoxEmployeeFind";
-            this.groupBoxEmployeeFind.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBoxEmployeeFind.Padding = new System.Windows.Forms.Padding(5);
             this.groupBoxEmployeeFind.Size = new System.Drawing.Size(910, 140);
             this.groupBoxEmployeeFind.TabIndex = 11;
             this.groupBoxEmployeeFind.TabStop = false;
@@ -173,7 +173,7 @@
             this.buttonFindEmployee.Appearance.Options.UseFont = true;
             this.buttonFindEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindEmployee.ImageOptions.Image")));
             this.buttonFindEmployee.Location = new System.Drawing.Point(598, 53);
-            this.buttonFindEmployee.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonFindEmployee.Margin = new System.Windows.Forms.Padding(5);
             this.buttonFindEmployee.Name = "buttonFindEmployee";
             this.buttonFindEmployee.Size = new System.Drawing.Size(111, 43);
             this.buttonFindEmployee.TabIndex = 6;
@@ -183,7 +183,7 @@
             // textBoxEmployeeIdFind
             // 
             this.textBoxEmployeeIdFind.Location = new System.Drawing.Point(295, 59);
-            this.textBoxEmployeeIdFind.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxEmployeeIdFind.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxEmployeeIdFind.Name = "textBoxEmployeeIdFind";
             this.textBoxEmployeeIdFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxEmployeeIdFind.TabIndex = 5;
@@ -206,7 +206,7 @@
             this.buttonRemoveEmployee.Appearance.Options.UseFont = true;
             this.buttonRemoveEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveEmployee.ImageOptions.Image")));
             this.buttonRemoveEmployee.Location = new System.Drawing.Point(484, 427);
-            this.buttonRemoveEmployee.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonRemoveEmployee.Margin = new System.Windows.Forms.Padding(5);
             this.buttonRemoveEmployee.Name = "buttonRemoveEmployee";
             this.buttonRemoveEmployee.Size = new System.Drawing.Size(124, 54);
             this.buttonRemoveEmployee.TabIndex = 22;
@@ -219,7 +219,7 @@
             this.buttonEditEmployee.Appearance.Options.UseFont = true;
             this.buttonEditEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditEmployee.ImageOptions.Image")));
             this.buttonEditEmployee.Location = new System.Drawing.Point(317, 427);
-            this.buttonEditEmployee.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonEditEmployee.Margin = new System.Windows.Forms.Padding(5);
             this.buttonEditEmployee.Name = "buttonEditEmployee";
             this.buttonEditEmployee.Size = new System.Drawing.Size(124, 54);
             this.buttonEditEmployee.TabIndex = 21;
@@ -232,7 +232,7 @@
             this.buttonAddEmployee.Appearance.Options.UseFont = true;
             this.buttonAddEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddEmployee.ImageOptions.Image")));
             this.buttonAddEmployee.Location = new System.Drawing.Point(149, 427);
-            this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(124, 54);
             this.buttonAddEmployee.TabIndex = 20;
@@ -265,7 +265,7 @@
             this.Controls.Add(this.groupBoxEmployeeFind);
             this.Controls.Add(this.groupBoxEmployeeNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "FormManageEmployees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
