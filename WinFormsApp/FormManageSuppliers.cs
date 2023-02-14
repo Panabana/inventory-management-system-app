@@ -201,7 +201,7 @@ namespace WinFormsApp
                 int prodId = Convert.ToInt32(comboBoxSelectProductToAddSupplier.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                _layer.InsertSupplierProduct(suppId, prodId, connectionString);
+                _layer.InsertSupplierProduct(suppId, prodId);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added to product!");
 
             }
