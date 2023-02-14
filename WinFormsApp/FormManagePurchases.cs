@@ -89,11 +89,7 @@ namespace WinFormsApp
                 //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a date!");
                 //    return;
                 //}
-                //if (string.IsNullOrEmpty(textBoxPurchaseTotal.Text))
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a total!");
-                //    return;
-                //}
+                
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
                 int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.Text);
                 int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.Text);
