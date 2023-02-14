@@ -691,7 +691,7 @@ namespace WinFormsApp
 
         // - ProductPurchase -
 
-        public static SqlDataAdapter InsertProductPurchaseAdapter(int purchaseID, int productID, SqlConnection connection)
+        public static SqlDataAdapter InsertProductPurchaseAdapter(int purchaseID, int productID, int quantity, SqlConnection connection)
         {
             SqlDataAdapter productPurchaseAdapter = new SqlDataAdapter();
 
@@ -705,11 +705,12 @@ namespace WinFormsApp
 
             productPurchaseAdapter.SelectCommand = command;
 
-            command = new SqlCommand("Insert INTO ProductPurchase (PurchaseID, ProductID) " +
-                                     "VALUES (@PurchaseID, @ProductID)", connection);
+            command = new SqlCommand("Insert INTO ProductPurchase (PurchaseID, ProductID, Quantity) " +
+                                     "VALUES (@PurchaseID, @ProductID, @Quantity)", connection);
 
             command.Parameters.AddWithValue("@PurchaseID", purchaseID);
             command.Parameters.AddWithValue("@ProductID", productID);
+            command.Parameters.AddWithValue("@Quantity", quantity);
 
             productPurchaseAdapter.InsertCommand = command;
             return productPurchaseAdapter;

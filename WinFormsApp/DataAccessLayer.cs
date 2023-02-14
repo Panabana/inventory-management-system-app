@@ -540,13 +540,13 @@ namespace WinFormsApp
 
         // - ProductPurchase -
 
-        public void InsertProductPurchase(int purchaseID, int productID)
+        public void InsertProductPurchase(int purchaseID, int productID, int quantity)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 connection.Open();
 
-                using (SqlDataAdapter productPurchaseAdapter = SqlAdapterClass.InsertProductPurchaseAdapter(purchaseID, productID, connection))
+                using (SqlDataAdapter productPurchaseAdapter = SqlAdapterClass.InsertProductPurchaseAdapter(purchaseID, productID, quantity, connection))
                 {
                     DataSet dataSet = new DataSet();
 
@@ -557,6 +557,7 @@ namespace WinFormsApp
                     DataRow row = productPurchaseDataTable.NewRow();
                     row["PurchaseID"] = purchaseID;
                     row["ProductID"] = productID;
+                    row["Quantity"] = quantity;
 
                     productPurchaseDataTable.Rows.Add(row);
                     productPurchaseAdapter.Update(productPurchaseDataTable);
