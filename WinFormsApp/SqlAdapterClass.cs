@@ -508,7 +508,7 @@ namespace WinFormsApp
             return adapter;
         }
 
-        public static SqlDataAdapter InsertProductAdapter(int productId, string productName, int productPrice, int productStock, SqlConnection connection)
+        public static SqlDataAdapter InsertProductAdapter(int productId, string productName, int productPrice, SqlConnection connection)
         {
             SqlDataAdapter productAdapter = new SqlDataAdapter();
 
@@ -519,17 +519,15 @@ namespace WinFormsApp
             command.Parameters.AddWithValue("@ProductID", productId);
             command.Parameters.AddWithValue("@ProductName", productName);
             command.Parameters.AddWithValue("@Price", productPrice);
-            command.Parameters.AddWithValue("@Stock", productStock);
 
             productAdapter.SelectCommand = command;
 
-            command = new SqlCommand("Insert INTO Product (ProductID, ProductName, Price, Stock) " +
-                                     "VALUES (@ProductID, @ProductName, @Price, @Stock)", connection);
+            command = new SqlCommand("Insert INTO Product (ProductID, ProductName, Price) " +
+                                     "VALUES (@ProductID, @ProductName, @Price)", connection);
 
             command.Parameters.AddWithValue("@ProductID", productId);
             command.Parameters.AddWithValue("@ProductName", productName);
             command.Parameters.AddWithValue("@Price", productPrice);
-            command.Parameters.AddWithValue("@Stock", productStock);
 
             productAdapter.InsertCommand = command;
             return productAdapter;
@@ -541,17 +539,14 @@ namespace WinFormsApp
             SqlParameter parameterProductID = new("@ProductID", SqlDbType.Int);
             SqlParameter parameterProductName = new("@ProductrName", SqlDbType.VarChar);
             SqlParameter parameterPrice = new("@Price", SqlDbType.Int);
-            SqlParameter parameterStock = new("@Stock", SqlDbType.Int);
 
             parameterProductID.SourceColumn = "ProductID";
             parameterProductName.SourceColumn = "ProductrName";
             parameterPrice.SourceColumn = "Price";
-            parameterStock.SourceColumn = "Stock";
 
             command.Parameters.Add(parameterProductID);
             command.Parameters.Add(parameterProductName);
             command.Parameters.Add(parameterPrice);
-            command.Parameters.Add(parameterStock);
 
             adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
 
@@ -561,7 +556,7 @@ namespace WinFormsApp
             */
         }
 
-        public static SqlDataAdapter UpdateProductAdapter(int productID, string productName, int stock, int price, SqlConnection connection)
+        public static SqlDataAdapter UpdateProductAdapter(int productID, string productName, int price, SqlConnection connection)
         {
             SqlDataAdapter updateProductAdapter = new();
             string selectQuery = "SELECT * FROM Product WHERE ProductID = @ProductID";
@@ -571,13 +566,12 @@ namespace WinFormsApp
 
             updateProductAdapter.SelectCommand = command;
 
-            string updateQuery = "UPDATE Product SET ProductName = @ProductName, Price = @Price, Stock = @Stock WHERE ProductID = @ProductID";
+            string updateQuery = "UPDATE Product SET ProductName = @ProductName, Price = @Price WHERE ProductID = @ProductID";
             command = new(updateQuery, connection);
 
             command.Parameters.AddWithValue("@ProductID", productID);
             command.Parameters.AddWithValue("@ProductName", productName);
             command.Parameters.AddWithValue("@Price", price);
-            command.Parameters.AddWithValue("@Stock", stock);
 
             updateProductAdapter.UpdateCommand = command;
 
@@ -620,7 +614,7 @@ namespace WinFormsApp
         public static SqlDataAdapter FindProductAdapter(int productID, SqlConnection connection)
         {
             SqlDataAdapter productFindAdapter = new();
-            string query = "SELECT ProductID, ProductName, Stock, Price FROM Product WHERE ProductID = @ProductID";
+            string query = "SELECT ProductID, ProductName, Price FROM Product WHERE ProductID = @ProductID";
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@ProductID", productID);

@@ -382,13 +382,13 @@ namespace WinFormsApp
             }
         }
 
-        public void InsertProduct(int productId, string productName, int productPrice, int productStock, string connectionString)
+        public void InsertProduct(int productId, string productName, int productPrice, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 connection.Open();
 
-                using (SqlDataAdapter adapter = SqlAdapterClass.InsertProductAdapter(productId, productName, productPrice, productStock, connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.InsertProductAdapter(productId, productName, productPrice, connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Product");
@@ -400,7 +400,6 @@ namespace WinFormsApp
                     row["ProductID"] = productId;
                     row["ProductName"] = productName;
                     row["Price"] = productPrice;
-                    row["Stock"] = productStock;
 
                     productDataTable.Rows.Add(row);
                     adapter.Update(productDataTable);
@@ -408,11 +407,11 @@ namespace WinFormsApp
             }
         }
 
-        public void UpdateProduct(int productId, string productName, int productPrice, int productStock, string connectionString)
+        public void UpdateProduct(int productId, string productName, int productPrice, string connectionString)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(productId, productName, productPrice, productStock, connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(productId, productName, productPrice, connection))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds, "Product");
@@ -425,7 +424,6 @@ namespace WinFormsApp
                     {
                         rows[0]["ProductName"] = productName;
                         rows[0]["Price"] = productPrice;
-                        rows[0]["Stock"] = productStock;
                     }
 
                     adapter.Update(productDataTable);
