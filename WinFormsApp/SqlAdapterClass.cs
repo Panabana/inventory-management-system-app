@@ -706,5 +706,6 @@ namespace WinFormsApp
             return productPurchaseAdapter;
         }
 
+
     }
 }

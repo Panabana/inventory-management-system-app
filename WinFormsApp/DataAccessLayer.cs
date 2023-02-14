@@ -552,6 +552,37 @@ namespace WinFormsApp
             }
         }
 
+        // - PRODUCT_SUPPLIER -
+
+        public void InsertSupplierProduct(int supplierID, int productID)
+        {
+
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                connection.Open();
+
+                using (SqlDataAdapter supplierProductAdapter = SqlAdapterClass.InsertSupplierProductAdapter(supplierID, productID, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    supplierProductAdapter.Fill(dataSet, "ProductSupplier");
+
+                    DataTable supplierProductDataTable = dataSet.Tables["ProductSupplier"];
+
+                    DataRow row = supplierProductDataTable.NewRow();
+                    row["SupplierID"] = supplierID;
+                    row["ProductID"] = productID;
+
+                    supplierProductDataTable.Rows.Add(row);
+                    supplierProductAdapter.Update(supplierProductDataTable);
+
+                }
+            }
+        }
+
+
+
+
     }
 
 
