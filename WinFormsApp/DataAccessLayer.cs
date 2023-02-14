@@ -461,16 +461,16 @@ namespace WinFormsApp
         //}
 
 
-        // - Order -
-        public DataSet ViewOrder()
+        // - Purchase -
+        public DataSet ViewPurchase()
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.ViewAllOrderAdapter(connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.ViewAllPurchaseAdapter(connection))
                 {
                     DataSet dataSet = new DataSet();
 
-                    adapter.Fill(dataSet, "Orders");
+                    adapter.Fill(dataSet, "Purchase");
 
                     return dataSet;
                 }
@@ -478,48 +478,48 @@ namespace WinFormsApp
         }
             
         
-        public void InsertOrder(int orderId, int customerId, int employeeId)
+        public void InsertPurchase(int purchaseId, int customerId, int employeeId)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
                 connection.Open();
 
-                using (SqlDataAdapter adapter = SqlAdapterClass.InsertOrderAdapter(orderId, customerId, employeeId, connection))
+                using (SqlDataAdapter adapter = SqlAdapterClass.InsertPurchaseAdapter(purchaseId, customerId, employeeId, connection))
                 {
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Orders");
+                    adapter.Fill(ds, "Purchase");
 
-                    DataTable orderDataTable = new DataTable();
-                    orderDataTable = ds.Tables["Orders"];
+                    DataTable purchaseDataTable = new DataTable();
+                    purchaseDataTable = ds.Tables["Purchase"];
 
-                    DataRow row = orderDataTable.NewRow();
-                    row["OrderID"] = orderId;
+                    DataRow row = purchaseDataTable.NewRow();
+                    row["PurchaseID"] = purchaseId;
                     row["CustomerID"] = customerId;
                     row["EmployeeID"] = employeeId;
 
-                    orderDataTable.Rows.Add(row);
-                    adapter.Update(orderDataTable);
+                    purchaseDataTable.Rows.Add(row);
+                    adapter.Update(purchaseDataTable);
                 }
             }
         }
 
-        public void DeleteOrder(int orderID)
+        public void DeletePurchase(int purchaseID)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter ordersAdapter = SqlAdapterClass.DeleteOrderAdapter(orderID, connection))
+                using (SqlDataAdapter purchaseAdapter = SqlAdapterClass.DeletePurchaseAdapter(purchaseID, connection))
                 {
                     DataSet ds = new DataSet();
-                    ordersAdapter.Fill(ds, "Orders");
+                    purchaseAdapter.Fill(ds, "Purchase");
 
-                    DataTable ordersDataTable = new DataTable();
-                    ordersDataTable = ds.Tables["Orders"];
+                    DataTable purchaseDataTable = new DataTable();
+                    purchaseDataTable = ds.Tables["Purchase"];
                     
-                    DataRow[] rows = ordersDataTable.Select("OrderID = " + orderID.ToString());
+                    DataRow[] rows = purchaseDataTable.Select("PurchaseID = " + purchaseID.ToString());
                     if (rows.Length > 0)
                     {
                         rows[0].Delete();
-                        ordersAdapter.Update(ordersDataTable);
+                        purchaseAdapter.Update(purchaseDataTable);
                     }
                 }
             }

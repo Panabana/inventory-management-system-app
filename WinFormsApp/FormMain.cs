@@ -42,9 +42,9 @@ namespace WinFormsApp
             form.ShowDialog();
         }
 
-        private void barButtonManageOrders_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonManagePurchase_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormManageOrders form = new FormManageOrders();
+            FormManagePurchase form = new FormManagePurchase();
             form.ShowDialog();
         }
 

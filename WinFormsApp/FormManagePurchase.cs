@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace WinFormsApp
 {
-    public partial class FormManageOrders : DevExpress.XtraEditors.XtraForm
+    public partial class FormManagePurchase : DevExpress.XtraEditors.XtraForm
     {
         private readonly DataAccessLayer _layer;
-        public FormManageOrders()
+        public FormManagePurchase()
         {
             _layer = new();
             InitializeComponent();
@@ -38,9 +38,9 @@ namespace WinFormsApp
                 row["DisplayString"] = empID + " - " + empName;
             }
             */
-            comboBoxOrderEmployeeName.DataSource = dt;
-            comboBoxOrderEmployeeName.DisplayMember = "EmployeeID"; //displayString
-            comboBoxOrderEmployeeName.ValueMember = "EmployeeID";
+            comboBoxPurchaseEmployeeName.DataSource = dt;
+            comboBoxPurchaseEmployeeName.DisplayMember = "EmployeeID"; //displayString
+            comboBoxPurchaseEmployeeName.ValueMember = "EmployeeID";
         }
 
         private void PopulateCustomerComboBox() //med hjälp av ChatGPT
@@ -57,80 +57,80 @@ namespace WinFormsApp
                 row["DisplayString"] = custID + " - " + custName;
             }
             */
-            comboBoxOrderCustomerName.DataSource = dt;
-            comboBoxOrderCustomerName.DisplayMember = "CustomerID"; //displayString
-            comboBoxOrderCustomerName.ValueMember = "CustomerID";
+            comboBoxPurchaseCustomerName.DataSource = dt;
+            comboBoxPurchaseCustomerName.DisplayMember = "CustomerID"; //displayString
+            comboBoxPurchaseCustomerName.ValueMember = "CustomerID";
         }
 
-        private void buttonAddOrder_Click(object sender, EventArgs e)
+        private void buttonAddPurchase_Click(object sender, EventArgs e)
         {
             try
             {
-                //if (string.IsNullOrEmpty(textBoxOrderId.Text))
+                //if (string.IsNullOrEmpty(textBoxPurchaseId.Text))
                 //{
-                //    Utility.LabelMessageFailure(labelManageOrdersMessage, "Please enter a valid ID!");
+                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a valid ID!");
                 //    return;
                 //}
-                //if (string.IsNullOrEmpty(textBoxOrderCustomerId.Text))
+                //if (string.IsNullOrEmpty(textBoxPurchaseCustomerId.Text))
                 //{
-                //    Utility.LabelMessageFailure(labelManageOrdersMessage, "Please enter a valid customer ID!");
+                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a valid customer ID!");
                 //    return;
                 //}
-                //if (string.IsNullOrEmpty(textBoxOrderDate.Text))
+                //if (string.IsNullOrEmpty(textBoxPurchaseDate.Text))
                 //{
-                //    Utility.LabelMessageFailure(labelManageOrdersMessage, "Please enter a date!");
+                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a date!");
                 //    return;
                 //}
-                //if (string.IsNullOrEmpty(textBoxOrderTotal.Text))
+                //if (string.IsNullOrEmpty(textBoxPurchaseTotal.Text))
                 //{
-                //    Utility.LabelMessageFailure(labelManageOrdersMessage, "Please enter a total!");
+                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a total!");
                 //    return;
                 //}
-                int orderId = Convert.ToInt32(textBoxOrderID.Text);
-                int orderCustomerId = Convert.ToInt32(comboBoxOrderCustomerName.Text);
-                int orderEmployeeId = Convert.ToInt32(comboBoxOrderEmployeeName.Text);
+                int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
+                int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.Text);
+                int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 // Utility.ClearTextBoxes(this);
-                _layer.InsertOrder(orderId, orderCustomerId, orderEmployeeId);
+                _layer.InsertPurchase(purchaseId, purchaseCustomerId, purchaseEmployeeId);
 
-                Utility.LabelMessageSuccess(labelManageOrdersMessage, "New Order Created!");
+                Utility.LabelMessageSuccess(labelManagePurchaseMessage, "New Purchase Created!");
 
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageOrdersMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManagePurchaseMessage, ex.Message);
             }
         }
 
-        private void buttonEditOrder_Click(object sender, EventArgs e)
+        private void buttonEditPurchase_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonRemoveLineOrder_Click(object sender, EventArgs e)
+        private void buttonRemoveLinePurchase_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void buttonRemoveOrderOrder_Click(object sender, EventArgs e)
+        private void buttonRemovePurchasePurchase_Click(object sender, EventArgs e)
         {
             try
             {
-                int orderID = Convert.ToInt32(textBoxOrderID.Text);
+                int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
                 //Utility.ClearTextBoxes(this);
-                _layer.DeleteOrder(orderID);
-                Utility.LabelMessageSuccess(labelManageOrdersMessage, "Order deleted!");
+                _layer.DeletePurchase(purchaseId);
+                Utility.LabelMessageSuccess(labelManagePurchaseMessage, "Purchase deleted!");
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageOrdersMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManagePurchaseMessage, ex.Message);
 
             }
         }
         
-        private void buttonFindOrder_Click(object sender, EventArgs e)
+        private void buttonFindPurchase_Click(object sender, EventArgs e)
         {
 
         }

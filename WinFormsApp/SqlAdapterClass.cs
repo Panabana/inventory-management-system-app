@@ -615,13 +615,13 @@ namespace WinFormsApp
         }
 
 
-        // - ORDER -
+        // - PURCHASE -
 
-        public static SqlDataAdapter ViewAllOrderAdapter(SqlConnection connection)
+        public static SqlDataAdapter ViewAllPurchaseAdapter(SqlConnection connection)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
             SqlCommand command;
-            string query = "SELECT * FROM Orders";
+            string query = "SELECT * FROM Purchase";
 
             command = new(query, connection);
 
@@ -630,54 +630,54 @@ namespace WinFormsApp
             return adapter;
         }
 
-        public static SqlDataAdapter InsertOrderAdapter(int orderId, int customerId, int employeeId, SqlConnection connection)
+        public static SqlDataAdapter InsertPurchaseAdapter(int purchaseId, int customerId, int employeeId, SqlConnection connection)
         {
-            SqlDataAdapter orderAdapter = new SqlDataAdapter();
+            SqlDataAdapter purchaseAdapter = new SqlDataAdapter();
 
             SqlCommand command = new SqlCommand("SELECT * " +
-                                                "FROM Orders " +
-                                                "WHERE OrderID = @OrderID " +
+                                                "FROM Purchase " +
+                                                "WHERE PurchaseID = @PurchaseID " +
                                                 "AND CustomerID = @CustomerID " +
                                                 "AND EmployeeID = @EmployeeID", connection);
 
-            command.Parameters.AddWithValue("@OrderID", orderId);
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
             command.Parameters.AddWithValue("@CustomerID", customerId);
             command.Parameters.AddWithValue("@EmployeeID", employeeId);
 
-            orderAdapter.SelectCommand = command;
+            purchaseAdapter.SelectCommand = command;
 
-            command = new SqlCommand("Insert INTO Orders (OrderID, CustomerID, EmployeeID) " +
-                                     "VALUES (@OrderID, @CustomerID, @EmployeeID)", connection);
+            command = new SqlCommand("Insert INTO Purchase (PurchaseID, CustomerID, EmployeeID) " +
+                                     "VALUES (@PurchaseID, @CustomerID, @EmployeeID)", connection);
 
-            command.Parameters.AddWithValue("@OrderID", orderId);
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
             command.Parameters.AddWithValue("@CustomerID", customerId);
             command.Parameters.AddWithValue("@EmployeeID", employeeId);
 
-            orderAdapter.InsertCommand = command;
-            return orderAdapter;
+            purchaseAdapter.InsertCommand = command;
+            return purchaseAdapter;
         }
 
-        public static SqlDataAdapter DeleteOrderAdapter(int orderId, SqlConnection connection)
+        public static SqlDataAdapter DeletePurchaseAdapter(int purchaseId, SqlConnection connection)
         {
-            SqlDataAdapter orderAdapter = new SqlDataAdapter();
+            SqlDataAdapter purchaseAdapter = new SqlDataAdapter();
 
             SqlCommand command = new SqlCommand("SELECT * " +
-                                                "FROM Orders " +
-                                                "WHERE OrderID = @OrderID",
+                                                "FROM Purchase " +
+                                                "WHERE PurchaseID = @PurchaseID",
                                                 connection);
 
-            command.Parameters.AddWithValue("@OrderID", orderId);
-            orderAdapter.SelectCommand = command;
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            purchaseAdapter.SelectCommand = command;
 
             command = new SqlCommand("DELETE " +
-                                     "FROM Orders " +
-                                     "WHERE OrderID = @OrderID",
+                                     "FROM Purchase " +
+                                     "WHERE PurchaseID = @PurchaseID",
                                      connection);
 
-            command.Parameters.AddWithValue("@OrderID", orderId);
-            orderAdapter.DeleteCommand = command;
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            purchaseAdapter.DeleteCommand = command;
 
-            return orderAdapter;
+            return purchaseAdapter;
         }
 
     }

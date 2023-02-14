@@ -51,7 +51,7 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonManageOrders = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonManagePurchase = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
@@ -110,7 +110,7 @@
             this.barButtonItem9,
             this.barButtonItem10,
             this.barButtonItem11,
-            this.barButtonManageOrders,
+            this.barButtonManagePurchase,
             this.barButtonItem13,
             this.barButtonItem14,
             this.barButtonItem15,
@@ -353,29 +353,29 @@
             this.barButtonItem11.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.barButtonItem11.Name = "barButtonItem11";
             // 
-            // barButtonManageOrders
+            // barButtonManagePurchase
             // 
-            this.barButtonManageOrders.Caption = "Manage Orders";
-            this.barButtonManageOrders.Id = 14;
-            this.barButtonManageOrders.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonManageOrders.ImageOptions.SvgImage")));
-            this.barButtonManageOrders.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonManageOrders.ItemAppearance.Hovered.Options.UseTextOptions = true;
-            this.barButtonManageOrders.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonManageOrders.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonManageOrders.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonManageOrders.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonManageOrders.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonManageOrders.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.barButtonManageOrders.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonManageOrders.ItemAppearance.Pressed.Options.UseTextOptions = true;
-            this.barButtonManageOrders.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonManageOrders.Name = "barButtonManageOrders";
-            this.barButtonManageOrders.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManageOrders_ItemClick);
+            this.barButtonManagePurchase.Caption = "Manage Purchase";
+            this.barButtonManagePurchase.Id = 14;
+            this.barButtonManagePurchase.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonManagePurchase.ImageOptions.SvgImage")));
+            this.barButtonManagePurchase.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManagePurchase.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonManagePurchase.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonManagePurchase.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManagePurchase.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManagePurchase.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonManagePurchase.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonManagePurchase.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManagePurchase.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barButtonManagePurchase.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonManagePurchase.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonManagePurchase.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonManagePurchase.Name = "barButtonManagePurchase";
+            this.barButtonManagePurchase.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonManagePurchase_ItemClick);
             // 
             // barButtonItem13
             // 
-            this.barButtonItem13.Caption = "Edit order";
+            this.barButtonItem13.Caption = "Edit purchase";
             this.barButtonItem13.Id = 15;
             this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
             this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
@@ -395,7 +395,7 @@
             // 
             // barButtonItem14
             // 
-            this.barButtonItem14.Caption = "Remove order";
+            this.barButtonItem14.Caption = "Remove purchase";
             this.barButtonItem14.Id = 16;
             this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
             this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
@@ -415,7 +415,7 @@
             // 
             // barButtonItem15
             // 
-            this.barButtonItem15.Caption = "Find order";
+            this.barButtonItem15.Caption = "Find purchase";
             this.barButtonItem15.Id = 17;
             this.barButtonItem15.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem15.ImageOptions.SvgImage")));
             this.barButtonItem15.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -434,7 +434,7 @@
             // 
             // barButtonItem16
             // 
-            this.barButtonItem16.Caption = "View all orders";
+            this.barButtonItem16.Caption = "View all purchases";
             this.barButtonItem16.Id = 18;
             this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
             this.barButtonItem16.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
@@ -698,7 +698,7 @@
             // 
             this.ribbonPageGroup4.AllowTextClipping = false;
             this.ribbonPageGroup4.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonManageOrders);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonManagePurchase);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPageGroup5
@@ -887,7 +887,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private DevExpress.XtraBars.BarButtonItem barButtonManageOrders;
+        private DevExpress.XtraBars.BarButtonItem barButtonManagePurchase;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
