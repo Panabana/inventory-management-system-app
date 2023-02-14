@@ -38,7 +38,7 @@ namespace WinFormsApp
         {
             SqlDataAdapter adapter = new();
             SqlCommand command = new SqlCommand("SELECT pp.PurchaseID , prod.ProductName AS Product, " +
-                                                "prod.ProductID, prod.Price, p.Quantity FROM ProductPurchase pp " +
+                                                "prod.ProductID, prod.Price, pp.Quantity FROM ProductPurchase pp " +
                                                 "JOIN Product prod ON pp.ProductID = prod.ProductID " +
                                                 "JOIN Purchase p ON pp.PurchaseID = p.PurchaseID");
             command.Connection = connection;
