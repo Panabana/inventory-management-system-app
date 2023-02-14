@@ -610,7 +610,6 @@ namespace WinFormsApp
             return productFindAdapter;
         }
 
-
         // - PURCHASE -
 
         public static SqlDataAdapter ViewAllPurchaseAdapter(SqlConnection connection)
@@ -676,5 +675,7 @@ namespace WinFormsApp
             return purchaseAdapter;
         }
 
+
+        
     }
 }
