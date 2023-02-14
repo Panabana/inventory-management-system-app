@@ -140,11 +140,7 @@ namespace WinFormsApp
 
             return adapter;
         }
-
-
-
-
-
+        
         /* SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
          SqlParameter parameterCustomerName = new SqlParameter("@CustomerName", SqlDbType.VarChar);
          SqlParameter parameterCustomerAddress = new SqlParameter("@CustomerAddress", SqlDbType.VarChar);
