@@ -20,6 +20,17 @@ namespace WinFormsApp
         {
             _layer = new();
             InitializeComponent();
+            this.PopulateProductSupplierComboBox();
+        }
+
+        private void PopulateProductSupplierComboBox() //med hjälp av ChatGPT
+        {
+            DataSet ds = _layer.ViewProducts();
+            DataTable dt = ds.Tables[0];
+            
+            comboBoxSelectProductToAddSupplier.DataSource = dt;
+            comboBoxSelectProductToAddSupplier.DisplayMember = "ProductID"; //displayString
+            comboBoxSelectProductToAddSupplier.ValueMember = "ProductID";
         }
 
         private void buttonAddSupplier_Click(object sender, EventArgs e)
