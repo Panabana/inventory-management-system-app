@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxProductNew = new System.Windows.Forms.GroupBox();
             this.textBoxProductPrice = new System.Windows.Forms.TextBox();
             this.labelProductPrice = new System.Windows.Forms.Label();
             this.textBoxStock = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.labelProductName = new System.Windows.Forms.Label();
             this.textBoxProductID = new System.Windows.Forms.TextBox();
             this.labelProductID = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxProductFind = new System.Windows.Forms.GroupBox();
             this.buttonFindProduct = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxProductIDFind = new System.Windows.Forms.TextBox();
             this.labelProductIDFind = new System.Windows.Forms.Label();
@@ -47,30 +47,30 @@
             this.buttonEditProduct = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveProduct = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageProductsMessage = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxProductNew.SuspendLayout();
+            this.groupBoxProductFind.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxProductNew
             // 
-            this.groupBox1.Controls.Add(this.textBoxProductPrice);
-            this.groupBox1.Controls.Add(this.labelProductPrice);
-            this.groupBox1.Controls.Add(this.textBoxStock);
-            this.groupBox1.Controls.Add(this.labelProductStock);
-            this.groupBox1.Controls.Add(this.textBoxProductName);
-            this.groupBox1.Controls.Add(this.labelProductName);
-            this.groupBox1.Controls.Add(this.textBoxProductID);
-            this.groupBox1.Controls.Add(this.labelProductID);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox1.Location = new System.Drawing.Point(18, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(780, 170);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New product details";
+            this.groupBoxProductNew.Controls.Add(this.textBoxProductPrice);
+            this.groupBoxProductNew.Controls.Add(this.labelProductPrice);
+            this.groupBoxProductNew.Controls.Add(this.textBoxStock);
+            this.groupBoxProductNew.Controls.Add(this.labelProductStock);
+            this.groupBoxProductNew.Controls.Add(this.textBoxProductName);
+            this.groupBoxProductNew.Controls.Add(this.labelProductName);
+            this.groupBoxProductNew.Controls.Add(this.textBoxProductID);
+            this.groupBoxProductNew.Controls.Add(this.labelProductID);
+            this.groupBoxProductNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxProductNew.ForeColor = System.Drawing.Color.DarkBlue;
+            this.groupBoxProductNew.Location = new System.Drawing.Point(18, 15);
+            this.groupBoxProductNew.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxProductNew.Name = "groupBoxProductNew";
+            this.groupBoxProductNew.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxProductNew.Size = new System.Drawing.Size(780, 170);
+            this.groupBoxProductNew.TabIndex = 0;
+            this.groupBoxProductNew.TabStop = false;
+            this.groupBoxProductNew.Text = "New product details";
             // 
             // textBoxProductPrice
             // 
@@ -152,21 +152,21 @@
             this.labelProductID.TabIndex = 0;
             this.labelProductID.Text = "Product ID:";
             // 
-            // groupBox2
+            // groupBoxProductFind
             // 
-            this.groupBox2.Controls.Add(this.buttonFindProduct);
-            this.groupBox2.Controls.Add(this.textBoxProductIDFind);
-            this.groupBox2.Controls.Add(this.labelProductIDFind);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox2.Location = new System.Drawing.Point(18, 203);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(780, 114);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Find a product";
+            this.groupBoxProductFind.Controls.Add(this.buttonFindProduct);
+            this.groupBoxProductFind.Controls.Add(this.textBoxProductIDFind);
+            this.groupBoxProductFind.Controls.Add(this.labelProductIDFind);
+            this.groupBoxProductFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxProductFind.ForeColor = System.Drawing.Color.DarkBlue;
+            this.groupBoxProductFind.Location = new System.Drawing.Point(18, 203);
+            this.groupBoxProductFind.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxProductFind.Name = "groupBoxProductFind";
+            this.groupBoxProductFind.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxProductFind.Size = new System.Drawing.Size(780, 114);
+            this.groupBoxProductFind.TabIndex = 8;
+            this.groupBoxProductFind.TabStop = false;
+            this.groupBoxProductFind.Text = "Find a product";
             // 
             // buttonFindProduct
             // 
@@ -180,11 +180,11 @@
             this.buttonFindProduct.Text = "Find";
             this.buttonFindProduct.Click += new System.EventHandler(this.buttonFindProduct_Click);
             // 
-            // textBoxProductIDFInd
+            // textBoxProductIDFind
             // 
             this.textBoxProductIDFind.Location = new System.Drawing.Point(253, 48);
             this.textBoxProductIDFind.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxProductIDFind.Name = "textBoxProductIDFInd";
+            this.textBoxProductIDFind.Name = "textBoxProductIDFind";
             this.textBoxProductIDFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxProductIDFind.TabIndex = 5;
             // 
@@ -261,18 +261,18 @@
             this.Controls.Add(this.buttonRemoveProduct);
             this.Controls.Add(this.buttonEditProduct);
             this.Controls.Add(this.buttonAddProduct);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxProductFind);
+            this.Controls.Add(this.groupBoxProductNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Products";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxProductNew.ResumeLayout(false);
+            this.groupBoxProductNew.PerformLayout();
+            this.groupBoxProductFind.ResumeLayout(false);
+            this.groupBoxProductFind.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,7 +280,7 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox groupBoxProductNew;
         private TextBox textBoxProductID;
         private Label labelProductID;
         private TextBox textBoxProductName;
@@ -289,7 +289,7 @@
         private Label labelProductPrice;
         private TextBox textBoxStock;
         private Label labelProductStock;
-        private GroupBox groupBox2;
+        private GroupBox groupBoxProductFind;
         private DevExpress.XtraEditors.SimpleButton buttonFindProduct;
         private TextBox textBoxProductIDFind;
         private Label labelProductIDFind;

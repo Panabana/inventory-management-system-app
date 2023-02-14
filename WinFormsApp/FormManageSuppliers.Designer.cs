@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageSuppliers));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSupplierNew = new System.Windows.Forms.GroupBox();
             this.textBoxSupplierAddress = new System.Windows.Forms.TextBox();
             this.labelSupplierAddress = new System.Windows.Forms.Label();
             this.textBoxSupplierPhone = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.labelSupplierName = new System.Windows.Forms.Label();
             this.textBoxSupplierID = new System.Windows.Forms.TextBox();
             this.labelSupplierID = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSupplierFind = new System.Windows.Forms.GroupBox();
             this.buttonFindSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxSupplierIdFind = new System.Windows.Forms.TextBox();
             this.labelSupplierIDFind = new System.Windows.Forms.Label();
@@ -46,30 +46,30 @@
             this.buttonEditSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageSuppliersMessage = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxSupplierNew.SuspendLayout();
+            this.groupBoxSupplierFind.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxSupplierNew
             // 
-            this.groupBox1.Controls.Add(this.textBoxSupplierAddress);
-            this.groupBox1.Controls.Add(this.labelSupplierAddress);
-            this.groupBox1.Controls.Add(this.textBoxSupplierPhone);
-            this.groupBox1.Controls.Add(this.labelSupplierPhoneNumber);
-            this.groupBox1.Controls.Add(this.textBoxSupplierName);
-            this.groupBox1.Controls.Add(this.labelSupplierName);
-            this.groupBox1.Controls.Add(this.textBoxSupplierID);
-            this.groupBox1.Controls.Add(this.labelSupplierID);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox1.Location = new System.Drawing.Point(18, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(780, 170);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New supplier details";
+            this.groupBoxSupplierNew.Controls.Add(this.textBoxSupplierAddress);
+            this.groupBoxSupplierNew.Controls.Add(this.labelSupplierAddress);
+            this.groupBoxSupplierNew.Controls.Add(this.textBoxSupplierPhone);
+            this.groupBoxSupplierNew.Controls.Add(this.labelSupplierPhoneNumber);
+            this.groupBoxSupplierNew.Controls.Add(this.textBoxSupplierName);
+            this.groupBoxSupplierNew.Controls.Add(this.labelSupplierName);
+            this.groupBoxSupplierNew.Controls.Add(this.textBoxSupplierID);
+            this.groupBoxSupplierNew.Controls.Add(this.labelSupplierID);
+            this.groupBoxSupplierNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxSupplierNew.ForeColor = System.Drawing.Color.DarkBlue;
+            this.groupBoxSupplierNew.Location = new System.Drawing.Point(18, 15);
+            this.groupBoxSupplierNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSupplierNew.Name = "groupBoxSupplierNew";
+            this.groupBoxSupplierNew.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSupplierNew.Size = new System.Drawing.Size(780, 170);
+            this.groupBoxSupplierNew.TabIndex = 1;
+            this.groupBoxSupplierNew.TabStop = false;
+            this.groupBoxSupplierNew.Text = "New supplier details";
             // 
             // textBoxSupplierAddress
             // 
@@ -151,21 +151,21 @@
             this.labelSupplierID.TabIndex = 0;
             this.labelSupplierID.Text = "Supplier ID:";
             // 
-            // groupBox2
+            // groupBoxSupplierFind
             // 
-            this.groupBox2.Controls.Add(this.buttonFindSupplier);
-            this.groupBox2.Controls.Add(this.textBoxSupplierIdFind);
-            this.groupBox2.Controls.Add(this.labelSupplierIDFind);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox2.Location = new System.Drawing.Point(18, 206);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(780, 114);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Find a supplier";
+            this.groupBoxSupplierFind.Controls.Add(this.buttonFindSupplier);
+            this.groupBoxSupplierFind.Controls.Add(this.textBoxSupplierIdFind);
+            this.groupBoxSupplierFind.Controls.Add(this.labelSupplierIDFind);
+            this.groupBoxSupplierFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxSupplierFind.ForeColor = System.Drawing.Color.DarkBlue;
+            this.groupBoxSupplierFind.Location = new System.Drawing.Point(18, 206);
+            this.groupBoxSupplierFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSupplierFind.Name = "groupBoxSupplierFind";
+            this.groupBoxSupplierFind.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxSupplierFind.Size = new System.Drawing.Size(780, 114);
+            this.groupBoxSupplierFind.TabIndex = 9;
+            this.groupBoxSupplierFind.TabStop = false;
+            this.groupBoxSupplierFind.Text = "Find a supplier";
             // 
             // buttonFindSupplier
             // 
@@ -261,18 +261,18 @@
             this.Controls.Add(this.buttonRemoveSupplier);
             this.Controls.Add(this.buttonEditSupplier);
             this.Controls.Add(this.buttonAddSupplier);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxSupplierFind);
+            this.Controls.Add(this.groupBoxSupplierNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FormManageSuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Suppliers";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxSupplierNew.ResumeLayout(false);
+            this.groupBoxSupplierNew.PerformLayout();
+            this.groupBoxSupplierFind.ResumeLayout(false);
+            this.groupBoxSupplierFind.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,7 +280,7 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox groupBoxSupplierNew;
         private TextBox textBoxSupplierAddress;
         private Label labelSupplierAddress;
         private TextBox textBoxSupplierPhone;
@@ -289,7 +289,7 @@
         private Label labelSupplierName;
         private TextBox textBoxSupplierID;
         private Label labelSupplierID;
-        private GroupBox groupBox2;
+        private GroupBox groupBoxSupplierFind;
         private DevExpress.XtraEditors.SimpleButton buttonFindSupplier;
         private TextBox textBoxSupplierIdFind;
         private Label labelSupplierIDFind;
