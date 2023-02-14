@@ -22,6 +22,26 @@ namespace WinFormsApp
         {
             _layer = new();
             InitializeComponent();
+            this.PopulatePurchaseComboBox();
+        }
+
+        private void PopulatePurchaseComboBox() //med hjälp av ChatGPT
+        {
+            DataSet ds = _layer.ViewPurchase();
+            DataTable dt = ds.Tables[0];
+            /*
+            dt.Columns.Add("DisplayString");
+            
+            foreach(DataRow row in dt.Rows)
+            {
+                int orderID = Convert.ToInt32(row["PurchaseID"]);
+                string custName = row["CustomerName"].ToString();
+                row["DisplayString"] = custID + " - " + custName;
+            }
+            */
+            comboBoxSelectPurchaseToAddProduct.DataSource = dt;
+            comboBoxSelectPurchaseToAddProduct.DisplayMember = "PurchaseID"; //displayString
+            comboBoxSelectPurchaseToAddProduct.ValueMember = "PurchaseID";
         }
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
@@ -184,6 +204,16 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a Product ID to search for!");
             }
+        }
+
+        private void textBoxProductIDFind_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddProductToPurchase_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
