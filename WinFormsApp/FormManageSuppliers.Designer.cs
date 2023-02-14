@@ -273,6 +273,7 @@
             this.buttonAddSupplierToProduct.Size = new System.Drawing.Size(124, 54);
             this.buttonAddSupplierToProduct.TabIndex = 19;
             this.buttonAddSupplierToProduct.Text = "Add to Product";
+            this.buttonAddSupplierToProduct.Click += new System.EventHandler(this.buttonAddSupplierToProduct_Click);
             // 
             // FormManageSuppliers
             // 

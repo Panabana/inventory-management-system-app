@@ -181,5 +181,10 @@ namespace WinFormsApp
 
             }
         }
+
+        private void buttonAddSupplierToProduct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
