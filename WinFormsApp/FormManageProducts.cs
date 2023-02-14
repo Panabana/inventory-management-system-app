@@ -213,7 +213,22 @@ namespace WinFormsApp
 
         private void buttonAddProductToPurchase_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int purchaseId = Convert.ToInt32(comboBoxSelectPurchaseToAddProduct.Text);
+                int productId = Convert.ToInt32(textBoxProductID.Text);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
+                 Utility.ClearTextBoxes(this);
+                _layer.InsertProductPurchase(purchaseId, productId);
+
+                Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added to purchase!");
+
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
+            }
         }
     }
 }

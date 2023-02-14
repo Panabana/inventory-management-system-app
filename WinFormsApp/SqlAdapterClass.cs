@@ -680,5 +680,31 @@ namespace WinFormsApp
             return purchaseAdapter;
         }
 
+        // - ProductPurchase -
+        
+        public static SqlDataAdapter InsertProductPurchaseAdapter(int productID, int purchaseID, SqlConnection connection)
+        {
+            SqlDataAdapter productPurchaseAdapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM ProductPurchase " +
+                                                "WHERE PurchaseID = @PurchaseID " +
+                                                "AND ProductID = @ProductID", connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            command.Parameters.AddWithValue("@ProductID", productID);
+
+            productPurchaseAdapter.SelectCommand = command;
+
+            command = new SqlCommand("Insert INTO ProductPurchase (PurchaseID, ProductID) " +
+                                     "VALUES (@PurchaseID, @ProductID)", connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            command.Parameters.AddWithValue("@ProductID", productID);
+
+            productPurchaseAdapter.InsertCommand = command;
+            return productPurchaseAdapter;
+        }
+
     }
 }
