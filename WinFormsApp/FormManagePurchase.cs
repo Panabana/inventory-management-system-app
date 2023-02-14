@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace WinFormsApp
 {
-    public partial class FormManagePurchase : DevExpress.XtraEditors.XtraForm
+    public partial class FormManagePurchases : DevExpress.XtraEditors.XtraForm
     {
         private readonly DataAccessLayer _layer;
-        public FormManagePurchase()
+        public FormManagePurchases()
         {
             _layer = new();
             InitializeComponent();
@@ -94,12 +94,12 @@ namespace WinFormsApp
                 // Utility.ClearTextBoxes(this);
                 _layer.InsertPurchase(purchaseId, purchaseCustomerId, purchaseEmployeeId);
 
-                Utility.LabelMessageSuccess(labelManagePurchaseMessage, "New Purchase Created!");
+                Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
 
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManagePurchaseMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
             }
         }
 
@@ -121,11 +121,11 @@ namespace WinFormsApp
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
                 //Utility.ClearTextBoxes(this);
                 _layer.DeletePurchase(purchaseId);
-                Utility.LabelMessageSuccess(labelManagePurchaseMessage, "Purchase deleted!");
+                Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManagePurchaseMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
 
             }
         }
