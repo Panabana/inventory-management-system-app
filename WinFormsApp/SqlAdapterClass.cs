@@ -691,7 +691,7 @@ namespace WinFormsApp
 
         // - ProductPurchase -
 
-        public static SqlDataAdapter InsertProductPurchaseAdapter(int productID, int purchaseID, SqlConnection connection)
+        public static SqlDataAdapter InsertProductPurchaseAdapter(int purchaseID, int productID, SqlConnection connection)
         {
             SqlDataAdapter productPurchaseAdapter = new SqlDataAdapter();
 
