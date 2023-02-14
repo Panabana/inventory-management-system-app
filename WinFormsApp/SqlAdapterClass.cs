@@ -140,7 +140,11 @@ namespace WinFormsApp
 
             return adapter;
         }
-        
+
+
+
+
+
         /* SqlParameter parameterCustomerID = new SqlParameter("@CustomerID", SqlDbType.Int);
          SqlParameter parameterCustomerName = new SqlParameter("@CustomerName", SqlDbType.VarChar);
          SqlParameter parameterCustomerAddress = new SqlParameter("@CustomerAddress", SqlDbType.VarChar);
@@ -610,6 +614,7 @@ namespace WinFormsApp
             return productFindAdapter;
         }
 
+
         // - PURCHASE -
 
         public static SqlDataAdapter ViewAllPurchaseAdapter(SqlConnection connection)
@@ -675,12 +680,31 @@ namespace WinFormsApp
             return purchaseAdapter;
         }
 
-        // - PRODUCT_SUPPLIER -
-
-        public static SqlDataAdapter InsertProductSupplierAdapter(int productId, int supplierId, SqlConnection¨connection)
-        {
-            
-        }
+        // - ProductPurchase -
         
+        public static SqlDataAdapter InsertProductPurchaseAdapter(int productID, int purchaseID, SqlConnection connection)
+        {
+            SqlDataAdapter productPurchaseAdapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM ProductPurchase " +
+                                                "WHERE PurchaseID = @PurchaseID " +
+                                                "AND ProductID = @ProductID", connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            command.Parameters.AddWithValue("@ProductID", productID);
+
+            productPurchaseAdapter.SelectCommand = command;
+
+            command = new SqlCommand("Insert INTO ProductPurchase (PurchaseID, ProductID) " +
+                                     "VALUES (@PurchaseID, @ProductID)", connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            command.Parameters.AddWithValue("@ProductID", productID);
+
+            productPurchaseAdapter.InsertCommand = command;
+            return productPurchaseAdapter;
+        }
+
     }
 }

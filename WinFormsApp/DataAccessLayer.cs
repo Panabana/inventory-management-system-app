@@ -525,7 +525,34 @@ namespace WinFormsApp
             }
         }
 
+        // - ProductPurchase -
+
+        public void InsertProductPurchase(int purchaseID, int productID)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                connection.Open();
+
+                using (SqlDataAdapter productPurchaseAdapter = SqlAdapterClass.InsertProductPurchaseAdapter(purchaseID, productID, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    productPurchaseAdapter.Fill(dataSet, "ProductPurchase");
+
+                    DataTable productPurchaseDataTable = dataSet.Tables["ProductPurchase"];
+
+                    DataRow row = productPurchaseDataTable.NewRow();
+                    row["PurchaseID"] = purchaseID;
+                    row["ProductID"] = productID;
+
+                    productPurchaseDataTable.Rows.Add(row);
+                    productPurchaseAdapter.Update(productPurchaseDataTable);
+
+                }
+            }
+        }
+
     }
 
-   
+
 }
