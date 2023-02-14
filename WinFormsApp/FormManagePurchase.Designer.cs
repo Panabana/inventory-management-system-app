@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp
 {
-    partial class FormManagePurchase
+    partial class FormManagePurchases
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManagePurchase));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManagePurchases));
             this.groupBoxPurchaseNew = new System.Windows.Forms.GroupBox();
             this.labelPurchaseEmployeeName = new System.Windows.Forms.Label();
             this.comboBoxPurchaseEmployeeName = new System.Windows.Forms.ComboBox();
@@ -45,7 +45,7 @@
             this.buttonRemovePurchasePurchase = new DevExpress.XtraEditors.SimpleButton();
             this.buttonEditPurchase = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddPurchase = new DevExpress.XtraEditors.SimpleButton();
-            this.labelManagePurchaseMessage = new System.Windows.Forms.Label();
+            this.labelManagePurchasesMessage = new System.Windows.Forms.Label();
             this.buttonRemoveLinePurchase = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxPurchaseNew.SuspendLayout();
             this.groupBoxPurchaseFind.SuspendLayout();
@@ -256,18 +256,18 @@
             this.buttonAddPurchase.Text = "Add";
             this.buttonAddPurchase.Click += new System.EventHandler(this.buttonAddPurchase_Click);
             // 
-            // labelManagePurchaseMessage
+            // labelManagePurchasesMessage
             // 
-            this.labelManagePurchaseMessage.AutoSize = true;
-            this.labelManagePurchaseMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelManagePurchaseMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManagePurchaseMessage.Location = new System.Drawing.Point(10, 668);
-            this.labelManagePurchaseMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelManagePurchaseMessage.Name = "labelManagePurchaseMessage";
-            this.labelManagePurchaseMessage.Size = new System.Drawing.Size(58, 23);
-            this.labelManagePurchaseMessage.TabIndex = 24;
-            this.labelManagePurchaseMessage.Text = "****";
-            this.labelManagePurchaseMessage.Visible = false;
+            this.labelManagePurchasesMessage.AutoSize = true;
+            this.labelManagePurchasesMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelManagePurchasesMessage.ForeColor = System.Drawing.Color.Red;
+            this.labelManagePurchasesMessage.Location = new System.Drawing.Point(10, 668);
+            this.labelManagePurchasesMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelManagePurchasesMessage.Name = "labelManagePurchasesMessage";
+            this.labelManagePurchasesMessage.Size = new System.Drawing.Size(58, 23);
+            this.labelManagePurchasesMessage.TabIndex = 24;
+            this.labelManagePurchasesMessage.Text = "****";
+            this.labelManagePurchasesMessage.Visible = false;
             // 
             // buttonRemoveLinePurchase
             // 
@@ -282,13 +282,13 @@
             this.buttonRemoveLinePurchase.Text = "Remove Line";
             this.buttonRemoveLinePurchase.Click += new System.EventHandler(this.buttonRemoveLinePurchase_Click);
             // 
-            // FormManagePurchase
+            // FormManagePurchases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 699);
             this.Controls.Add(this.buttonRemoveLinePurchase);
-            this.Controls.Add(this.labelManagePurchaseMessage);
+            this.Controls.Add(this.labelManagePurchasesMessage);
             this.Controls.Add(this.buttonRemovePurchasePurchase);
             this.Controls.Add(this.buttonEditPurchase);
             this.Controls.Add(this.buttonAddPurchase);
@@ -298,9 +298,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "FormManagePurchase";
+            this.Name = "FormManagePurchases";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Purchase";
+            this.Text = "Manage Purchases";
             this.groupBoxPurchaseNew.ResumeLayout(false);
             this.groupBoxPurchaseNew.PerformLayout();
             this.groupBoxPurchaseFind.ResumeLayout(false);
@@ -329,7 +329,7 @@
         private DevExpress.XtraEditors.SimpleButton buttonRemovePurchasePurchase;
         private DevExpress.XtraEditors.SimpleButton buttonEditPurchase;
         private DevExpress.XtraEditors.SimpleButton buttonAddPurchase;
-        private Label labelManagePurchaseMessage;
+        private Label labelManagePurchasesMessage;
         private DevExpress.XtraEditors.SimpleButton buttonRemoveLinePurchase;
         private DataGridView dataGridViewPurchase;
     }

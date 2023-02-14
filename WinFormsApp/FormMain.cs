@@ -44,7 +44,7 @@ namespace WinFormsApp
 
         private void barButtonManagePurchase_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormManagePurchase form = new FormManagePurchase();
+            FormManagePurchases form = new FormManagePurchases();
             form.ShowDialog();
         }
 
