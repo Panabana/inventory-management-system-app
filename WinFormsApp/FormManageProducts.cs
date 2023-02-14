@@ -58,11 +58,6 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a product name!");
                     return;
                 }
-                if (string.IsNullOrEmpty(textBoxStock.Text))
-                {
-                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a stock amount!");
-                    return;
-                }
                 if (string.IsNullOrEmpty(textBoxProductPrice.Text))
                 {
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a price for the product!");
@@ -72,12 +67,11 @@ namespace WinFormsApp
                 int productId = Convert.ToInt32(textBoxProductID.Text);
                 string productName = textBoxProductName.Text;
                 int productPrice = Convert.ToInt32(textBoxProductPrice.Text);
-                int productStock = Convert.ToInt32(textBoxStock.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 Utility.ClearTextBoxes(this);
 
-                _layer.InsertProduct(productId, productName, productPrice, productStock, connectionString);
+                _layer.InsertProduct(productId, productName, productPrice, connectionString);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
             }
             catch (FormatException)
@@ -115,11 +109,6 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter an edited or unedited name!");
                     return;
                 }
-                if (string.IsNullOrEmpty(textBoxStock.Text))
-                {
-                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter an edited or unedited stock amount!");
-                    return;
-                }
                 if (string.IsNullOrEmpty(textBoxProductPrice.Text))
                 {
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter an edited or unedited product price");
@@ -128,11 +117,10 @@ namespace WinFormsApp
 
                 int productID = Convert.ToInt32(textBoxProductID.Text);
                 string productName = textBoxProductName.Text;
-                int stock = Convert.ToInt32(textBoxStock.Text);
                 int price = Convert.ToInt32(textBoxProductPrice.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                _layer.UpdateProduct(productID, productName, stock, price, connectionString);
+                _layer.UpdateProduct(productID, productName, price, connectionString);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product edited!");
                 Utility.ClearTextBoxes(this);
             }
@@ -184,7 +172,6 @@ namespace WinFormsApp
                 {
                     textBoxProductID.Text = findProductDataTable.Rows[0]["ProductID"].ToString();
                     textBoxProductName.Text = findProductDataTable.Rows[0]["ProductName"].ToString();
-                    textBoxStock.Text = findProductDataTable.Rows[0]["Stock"].ToString();
                     textBoxProductPrice.Text = findProductDataTable.Rows[0]["Price"].ToString();
 
                     Utility.LabelMessageSuccess(labelManageProductsMessage, "Product found!");
