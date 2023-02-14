@@ -219,7 +219,7 @@ namespace WinFormsApp
             {
                 int purchaseId = Convert.ToInt32(comboBoxSelectPurchaseToAddProduct.Text);
                 int productId = Convert.ToInt32(textBoxProductID.Text);
-                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                //string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 Utility.ClearTextBoxes(this);
                 _layer.InsertProductPurchase(purchaseId, productId);

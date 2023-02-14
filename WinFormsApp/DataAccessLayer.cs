@@ -268,7 +268,7 @@ namespace WinFormsApp
         }
 
         // - SUPPLIER -
-        public DataSet ViewSuppliers(string connectionString)
+        public DataSet ViewSuppliers()
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
             {
