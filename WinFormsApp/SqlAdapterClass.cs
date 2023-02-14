@@ -716,6 +716,33 @@ namespace WinFormsApp
             return productPurchaseAdapter;
         }
 
+        public static SqlDataAdapter DeleteProductPurchaseAdapter(int purchaseID, int productID, SqlConnection connection)
+        {
+            SqlDataAdapter productPurchaseAdapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM ProductPurchase " +
+                                                "WHERE PurchaseID = @PurchaseID " +
+                                                "AND ProductID = @ProductID",
+                                                connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            command.Parameters.AddWithValue("@ProductID", productID);
+            productPurchaseAdapter.SelectCommand = command;
+
+            command = new SqlCommand("DELETE " +
+                                     "FROM ProductPurchase " +
+                                     "WHERE PurchaseID = @PurchaseID " +
+                                     "AND ProductID = @ProductID",
+                                     connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            command.Parameters.AddWithValue("@ProductID", productID);
+            productPurchaseAdapter.DeleteCommand = command;
+
+            return productPurchaseAdapter;
+        }
+
         // - PRODUCT_SUPPLIER -
 
         public static SqlDataAdapter InsertSupplierProductAdapter(int supplierId, int productId, SqlConnection connection)

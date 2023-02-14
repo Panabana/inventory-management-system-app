@@ -566,6 +566,28 @@ namespace WinFormsApp
             }
         }
 
+        public void DeleteProductPurchase(int purchaseID, int productID)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter productPurchaseAdapter = SqlAdapterClass.DeleteProductPurchaseAdapter(purchaseID, productID, connection))
+                {
+                    DataSet ds = new DataSet();
+                    productPurchaseAdapter.Fill(ds, "ProductPurchase");
+
+                    DataTable productPurchaseDataTable = new DataTable();
+                    productPurchaseDataTable = ds.Tables["ProductPurchase"];
+
+                    DataRow[] rows = productPurchaseDataTable.Select("PurchaseID = " + purchaseID.ToString() + " AND ProductID = " + productID.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        productPurchaseAdapter.Update(productPurchaseDataTable);
+                    }
+                }
+            }
+        }
+
         // - PRODUCT_SUPPLIER -
 
         public void InsertSupplierProduct(int supplierID, int productID)

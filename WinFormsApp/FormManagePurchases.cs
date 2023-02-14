@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Utils.About;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,17 +115,43 @@ namespace WinFormsApp
 
         private void buttonRemoveLinePurchase_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
+                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value); //chatGPT
+                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["ProductID"].Value); //chatGPT
+
+                //chatGPT
+                if(dataGridViewPurchase.SelectedRows.Count > 0)
+                {
+                    dataGridViewPurchase.Rows.Remove(dataGridViewPurchase.SelectedRows[0]);
+                    _layer.DeleteProductPurchase(purchaseID, productID);
+                }
+
+                Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Product removed from purchase order!");
+            }
+            catch(Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
+            }
         }
 
         private void buttonRemovePurchasePurchase_Click(object sender, EventArgs e)
         {
             try
             {
-                int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
-                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
+                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value);
                 //Utility.ClearTextBoxes(this);
-                _layer.DeletePurchase(purchaseId);
+
+                //ChatGPT
+                if (dataGridViewPurchase.SelectedRows.Count > 0)
+                {
+                    dataGridViewPurchase.Rows.Remove(dataGridViewPurchase.SelectedRows[0]);
+                    _layer.DeletePurchase(purchaseID);
+                }
+
+                
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
             }
             catch (Exception ex)
