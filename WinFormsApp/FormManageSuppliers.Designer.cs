@@ -46,6 +46,8 @@
             this.buttonEditSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageSuppliersMessage = new System.Windows.Forms.Label();
+            this.comboBoxSelectProductToAddSupplier = new System.Windows.Forms.ComboBox();
+            this.buttonAddSupplierToProduct = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxSupplierNew.SuspendLayout();
             this.groupBoxSupplierFind.SuspendLayout();
             this.SuspendLayout();
@@ -252,11 +254,33 @@
             this.labelManageSuppliersMessage.Text = "****";
             this.labelManageSuppliersMessage.Visible = false;
             // 
+            // comboBoxSelectProductToAddSupplier
+            // 
+            this.comboBoxSelectProductToAddSupplier.FormattingEnabled = true;
+            this.comboBoxSelectProductToAddSupplier.Location = new System.Drawing.Point(594, 328);
+            this.comboBoxSelectProductToAddSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxSelectProductToAddSupplier.Name = "comboBoxSelectProductToAddSupplier";
+            this.comboBoxSelectProductToAddSupplier.Size = new System.Drawing.Size(163, 24);
+            this.comboBoxSelectProductToAddSupplier.TabIndex = 17;
+            // 
+            // buttonAddSupplierToProduct
+            // 
+            this.buttonAddSupplierToProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddSupplierToProduct.Appearance.Options.UseFont = true;
+            this.buttonAddSupplierToProduct.Location = new System.Drawing.Point(612, 379);
+            this.buttonAddSupplierToProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddSupplierToProduct.Name = "buttonAddSupplierToProduct";
+            this.buttonAddSupplierToProduct.Size = new System.Drawing.Size(124, 54);
+            this.buttonAddSupplierToProduct.TabIndex = 19;
+            this.buttonAddSupplierToProduct.Text = "Add to Product";
+            // 
             // FormManageSuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 462);
+            this.Controls.Add(this.buttonAddSupplierToProduct);
+            this.Controls.Add(this.comboBoxSelectProductToAddSupplier);
             this.Controls.Add(this.labelManageSuppliersMessage);
             this.Controls.Add(this.buttonRemoveSupplier);
             this.Controls.Add(this.buttonEditSupplier);
@@ -297,5 +321,7 @@
         private DevExpress.XtraEditors.SimpleButton buttonEditSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonAddSupplier;
         private Label labelManageSuppliersMessage;
+        private ComboBox comboBoxSelectProductToAddSupplier;
+        private DevExpress.XtraEditors.SimpleButton buttonAddSupplierToProduct;
     }
 }

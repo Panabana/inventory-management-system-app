@@ -66,9 +66,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox1.Location = new System.Drawing.Point(18, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(780, 170);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -77,7 +77,7 @@
             // textBoxProductPrice
             // 
             this.textBoxProductPrice.Location = new System.Drawing.Point(509, 102);
-            this.textBoxProductPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProductPrice.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
             this.textBoxProductPrice.Size = new System.Drawing.Size(233, 30);
             this.textBoxProductPrice.TabIndex = 7;
@@ -97,7 +97,7 @@
             // textBoxStock
             // 
             this.textBoxStock.Location = new System.Drawing.Point(105, 102);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxStock.Name = "textBoxStock";
             this.textBoxStock.Size = new System.Drawing.Size(233, 30);
             this.textBoxStock.TabIndex = 5;
@@ -117,7 +117,7 @@
             // textBoxProductName
             // 
             this.textBoxProductName.Location = new System.Drawing.Point(509, 42);
-            this.textBoxProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProductName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProductName.Name = "textBoxProductName";
             this.textBoxProductName.Size = new System.Drawing.Size(233, 30);
             this.textBoxProductName.TabIndex = 3;
@@ -137,7 +137,7 @@
             // textBoxProductID
             // 
             this.textBoxProductID.Location = new System.Drawing.Point(105, 42);
-            this.textBoxProductID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProductID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProductID.Name = "textBoxProductID";
             this.textBoxProductID.Size = new System.Drawing.Size(233, 30);
             this.textBoxProductID.TabIndex = 1;
@@ -162,9 +162,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(18, 203);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(780, 114);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
@@ -175,7 +175,7 @@
             this.buttonFindProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonFindProduct.Appearance.Options.UseFont = true;
             this.buttonFindProduct.Location = new System.Drawing.Point(513, 43);
-            this.buttonFindProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFindProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindProduct.Name = "buttonFindProduct";
             this.buttonFindProduct.Size = new System.Drawing.Size(111, 43);
             this.buttonFindProduct.TabIndex = 6;
@@ -185,7 +185,7 @@
             // textBoxProductIDFind
             // 
             this.textBoxProductIDFind.Location = new System.Drawing.Point(253, 48);
-            this.textBoxProductIDFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProductIDFind.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProductIDFind.Name = "textBoxProductIDFind";
             this.textBoxProductIDFind.Size = new System.Drawing.Size(247, 30);
             this.textBoxProductIDFind.TabIndex = 5;
@@ -207,7 +207,7 @@
             this.buttonAddProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProduct.Appearance.Options.UseFont = true;
             this.buttonAddProduct.Location = new System.Drawing.Point(128, 341);
-            this.buttonAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(124, 54);
             this.buttonAddProduct.TabIndex = 7;
@@ -220,7 +220,7 @@
             this.buttonEditProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEditProduct.Appearance.Options.UseFont = true;
             this.buttonEditProduct.Location = new System.Drawing.Point(272, 341);
-            this.buttonEditProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditProduct.Name = "buttonEditProduct";
             this.buttonEditProduct.Size = new System.Drawing.Size(124, 54);
             this.buttonEditProduct.TabIndex = 9;
@@ -232,7 +232,7 @@
             this.buttonRemoveProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveProduct.Appearance.Options.UseFont = true;
             this.buttonRemoveProduct.Location = new System.Drawing.Point(415, 341);
-            this.buttonRemoveProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRemoveProduct.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveProduct.Name = "buttonRemoveProduct";
             this.buttonRemoveProduct.Size = new System.Drawing.Size(124, 54);
             this.buttonRemoveProduct.TabIndex = 10;
@@ -257,7 +257,7 @@
             // buttonAddProductToPurchase
             // 
             this.buttonAddProductToPurchase.Location = new System.Drawing.Point(608, 378);
-            this.buttonAddProductToPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddProductToPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddProductToPurchase.Name = "buttonAddProductToPurchase";
             this.buttonAddProductToPurchase.Size = new System.Drawing.Size(130, 42);
             this.buttonAddProductToPurchase.TabIndex = 13;
@@ -268,7 +268,7 @@
             // 
             this.comboBoxSelectPurchaseToAddProduct.FormattingEnabled = true;
             this.comboBoxSelectPurchaseToAddProduct.Location = new System.Drawing.Point(596, 325);
-            this.comboBoxSelectPurchaseToAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxSelectPurchaseToAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSelectPurchaseToAddProduct.Name = "comboBoxSelectPurchaseToAddProduct";
             this.comboBoxSelectPurchaseToAddProduct.Size = new System.Drawing.Size(163, 24);
             this.comboBoxSelectPurchaseToAddProduct.TabIndex = 14;
@@ -287,7 +287,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
