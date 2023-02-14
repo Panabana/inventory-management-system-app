@@ -1,8 +1,11 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataProcessing.InMemoryDataProcessor;
 using DevExpress.Pdf.Native.BouncyCastle.Ocsp;
 using DevExpress.Pdf.Xmp;
 using DevExpress.Utils.About;
 using DevExpress.XtraRichEdit.Commands;
+using DevExpress.XtraSpreadsheet.Model;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -31,6 +34,18 @@ namespace WinFormsApp
             }
         }
 
+        public static SqlDataAdapter ViewPurchaseGrid(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT pp.PurchaseID , prod.ProductName AS Product, " +
+                                                "prod.ProductID, prod.Price, p.Quantity FROM ProductPurchase pp " +
+                                                "JOIN Product prod ON pp.ProductID = prod.ProductID " +
+                                                "JOIN Purchase p ON pp.PurchaseID = p.PurchaseID");
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+        
         // - CUSTOMER -
         public static SqlDataAdapter ViewCustomerAdapter(SqlConnection connection)
         {

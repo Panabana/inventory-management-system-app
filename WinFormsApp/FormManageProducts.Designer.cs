@@ -263,6 +263,7 @@
             this.buttonAddProductToPurchase.TabIndex = 13;
             this.buttonAddProductToPurchase.Text = "Add to Purchase";
             this.buttonAddProductToPurchase.UseVisualStyleBackColor = true;
+            this.buttonAddProductToPurchase.Click += new System.EventHandler(this.buttonAddProductToPurchase_Click_1);
             // 
             // comboBoxSelectPurchaseToAddProduct
             // 
