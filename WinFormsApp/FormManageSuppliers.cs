@@ -27,9 +27,18 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewProducts();
             DataTable dt = ds.Tables[0];
-            
+
+            dt.Columns.Add("DisplayString", typeof(string));
+
+            foreach (DataRow row in dt.Rows)
+            {
+                int prodID = Convert.ToInt32(row["ProductID"]);
+                string prodName = row["ProductName"].ToString();
+                row["DisplayString"] = prodID + " - " + prodName;
+            }
+
             comboBoxSelectProductToAddSupplier.DataSource = dt;
-            comboBoxSelectProductToAddSupplier.DisplayMember = "ProductID"; //displayString
+            comboBoxSelectProductToAddSupplier.DisplayMember = "DisplayString"; 
             comboBoxSelectProductToAddSupplier.ValueMember = "ProductID";
         }
 
@@ -65,6 +74,7 @@ namespace WinFormsApp
                 
                 _layer.InsertSupplier(suppId, suppName, suppAddress, phoneNbr, connectionString); 
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added!");
+                Utility.ClearTextBoxes(this);
 
             }
             catch (FormatException)
@@ -115,9 +125,9 @@ namespace WinFormsApp
                 string suppAddress = textBoxSupplierAddress.Text;
                 int phoneNumber = Convert.ToInt32(textBoxSupplierPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-                Utility.ClearTextBoxes(this);
                 _layer.UpdateSupplier(suppId, suppName, suppAddress, phoneNumber, connectionString);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier edited!");
+                Utility.ClearTextBoxes(this);
 
             }
             catch (FormatException)
@@ -142,6 +152,7 @@ namespace WinFormsApp
 
                 _layer.DeleteSupplier(suppId, connectionString);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier removed!");
+                Utility.ClearTextBoxes(this);
             }
             catch (FormatException)
             {
@@ -179,6 +190,7 @@ namespace WinFormsApp
                 else
                 {
                     Utility.LabelMessageFailure(labelManageSuppliersMessage, "Supplier not found!");
+                    Utility.ClearTextBoxes(this);
                 }
             }
             catch (NullReferenceException ex)
@@ -209,11 +221,12 @@ namespace WinFormsApp
                 }
 
                 int suppId = Convert.ToInt32(textBoxSupplierID.Text);
-                int prodId = Convert.ToInt32(comboBoxSelectProductToAddSupplier.Text);
+                int prodId = Convert.ToInt32(comboBoxSelectProductToAddSupplier.SelectedValue);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 _layer.InsertSupplierProduct(suppId, prodId);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added to product!");
+                Utility.ClearTextBoxes(this);
 
             }
             catch (FormatException)
@@ -231,7 +244,6 @@ namespace WinFormsApp
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
-                Console.WriteLine(ex.Message);
             }
         }
     }
