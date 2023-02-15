@@ -234,6 +234,12 @@ namespace WinFormsApp
                 if(ex.Number == 2627)
                     Utility.LabelMessageFailure(labelManageProductsMessage, "This product is already in this purchase!");
             }
+
+        
+            catch (FormatException)
+            {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please insert the quantity in the correct format!");
+            }
         
             catch (Exception ex)
             {
