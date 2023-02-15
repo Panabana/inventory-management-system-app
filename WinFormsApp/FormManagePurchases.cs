@@ -37,7 +37,7 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewAllEmployees();
             DataTable dt = ds.Tables[0];
-            /*
+            
             dt.Columns.Add("DisplayString", typeof(string));
             
             foreach(DataRow row in dt.Rows)
@@ -46,9 +46,9 @@ namespace WinFormsApp
                 string empName = row["EmployeeName"].ToString();
                 row["DisplayString"] = empID + " - " + empName;
             }
-            */
+            
             comboBoxPurchaseEmployeeName.DataSource = dt;
-            comboBoxPurchaseEmployeeName.DisplayMember = "EmployeeID"; //displayString
+            comboBoxPurchaseEmployeeName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseEmployeeName.ValueMember = "EmployeeID";
         }
 
@@ -56,7 +56,7 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewCustomers();
             DataTable dt = ds.Tables[0];
-            /*
+            
             dt.Columns.Add("DisplayString");
             
             foreach(DataRow row in dt.Rows)
@@ -65,9 +65,9 @@ namespace WinFormsApp
                 string custName = row["CustomerName"].ToString();
                 row["DisplayString"] = custID + " - " + custName;
             }
-            */
+            
             comboBoxPurchaseCustomerName.DataSource = dt;
-            comboBoxPurchaseCustomerName.DisplayMember = "CustomerID"; //displayString
+            comboBoxPurchaseCustomerName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseCustomerName.ValueMember = "CustomerID";
         }
 
@@ -89,12 +89,17 @@ namespace WinFormsApp
                 //{
                 //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a date!");
                 //    return;
+
+                //
+                
+
                 //}
 
 
+
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
-                int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.Text);
-                int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.Text);
+                int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
+                int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.SelectedValue);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 // Utility.ClearTextBoxes(this);
