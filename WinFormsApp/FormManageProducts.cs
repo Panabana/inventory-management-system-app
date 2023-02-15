@@ -204,6 +204,21 @@ namespace WinFormsApp
         {
             try
             {
+                if (string.IsNullOrEmpty(comboBoxSelectPurchaseToAddProduct.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please select a purchase ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxProductID.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a product ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxQuantity.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter the amount of this product!");
+                    return;
+                }
                 int purchaseId = Convert.ToInt32(comboBoxSelectPurchaseToAddProduct.Text);
                 int productId = Convert.ToInt32(textBoxProductID.Text);
                 int quantity = Convert.ToInt32(textBoxQuantity.Text);
@@ -213,8 +228,13 @@ namespace WinFormsApp
                 _layer.InsertProductPurchase(purchaseId, productId, quantity);
 
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added to purchase!");
-
             }
+            catch (SqlException ex)
+            {
+                if(ex.Number == 2627)
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "This product is already in this purchase!");
+            }
+        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
