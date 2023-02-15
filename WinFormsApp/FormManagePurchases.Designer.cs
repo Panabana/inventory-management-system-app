@@ -83,7 +83,6 @@
             // 
             // comboBoxPurchaseEmployeeName
             // 
-            this.comboBoxPurchaseEmployeeName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPurchaseEmployeeName.FormattingEnabled = true;
             this.comboBoxPurchaseEmployeeName.Location = new System.Drawing.Point(618, 34);
             this.comboBoxPurchaseEmployeeName.Name = "comboBoxPurchaseEmployeeName";
@@ -92,7 +91,6 @@
             // 
             // comboBoxPurchaseCustomerName
             // 
-            this.comboBoxPurchaseCustomerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPurchaseCustomerName.FormattingEnabled = true;
             this.comboBoxPurchaseCustomerName.Location = new System.Drawing.Point(346, 34);
             this.comboBoxPurchaseCustomerName.Name = "comboBoxPurchaseCustomerName";
