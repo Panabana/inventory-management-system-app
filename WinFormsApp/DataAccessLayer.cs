@@ -616,6 +616,19 @@ namespace WinFormsApp
             }
         }
 
+        public DataTable FindPurchase(int purchaseId, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.FindPurchaseAdapter(purchaseId, connection))
+                {
+                    DataTable findPurchaseDataTable = new();
+
+                    adapter.Fill(findPurchaseDataTable);
+                    return findPurchaseDataTable;
+                }
+            }
+        }
 
 
 
