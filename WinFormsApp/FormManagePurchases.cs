@@ -37,16 +37,16 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewAllEmployees();
             DataTable dt = ds.Tables[0];
-            
+
             dt.Columns.Add("DisplayString", typeof(string));
-            
-            foreach(DataRow row in dt.Rows)
+
+            foreach (DataRow row in dt.Rows)
             {
                 int empID = Convert.ToInt32(row["EmployeeID"]);
                 string empName = row["EmployeeName"].ToString();
                 row["DisplayString"] = empID + " - " + empName;
             }
-            
+
             comboBoxPurchaseEmployeeName.DataSource = dt;
             comboBoxPurchaseEmployeeName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseEmployeeName.ValueMember = "EmployeeID";
@@ -56,16 +56,16 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewCustomers();
             DataTable dt = ds.Tables[0];
-            
+
             dt.Columns.Add("DisplayString");
-            
-            foreach(DataRow row in dt.Rows)
+
+            foreach (DataRow row in dt.Rows)
             {
                 int custID = Convert.ToInt32(row["CustomerID"]);
                 string custName = row["CustomerName"].ToString();
                 row["DisplayString"] = custID + " - " + custName;
             }
-            
+
             comboBoxPurchaseCustomerName.DataSource = dt;
             comboBoxPurchaseCustomerName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseCustomerName.ValueMember = "CustomerID";
@@ -91,7 +91,7 @@ namespace WinFormsApp
                 //    return;
 
                 //
-                
+
 
                 //}
 
@@ -107,12 +107,28 @@ namespace WinFormsApp
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
 
+
             }
-            catch (Exception ex)
+
+            catch (SqlException ex)
             {
-                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
+                if (ex.Number == 547)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please select the correct Customer and Employee");
+                }
+            
+                else if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "This Purchase already exists!");
+                }
             }
         }
+
+
+        
+        
+         
+
 
         private void buttonEditPurchase_Click(object sender, EventArgs e)
         {
