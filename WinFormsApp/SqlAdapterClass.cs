@@ -688,6 +688,17 @@ namespace WinFormsApp
 
             return purchaseAdapter;
         }
+        public static SqlDataAdapter FindPurchaseAdapter(int purchaseId, SqlConnection connection)
+        {
+            SqlDataAdapter adapter= new();
+            string query = "SELECT PurchaseID, EmployeeID, CustomerID FROM Purchase WHERE PurchaseID = @PurchaseID";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            adapter.SelectCommand = command;
+
+            return adapter;
+        }
 
         // - ProductPurchase -
 

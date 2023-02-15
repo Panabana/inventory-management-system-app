@@ -90,7 +90,8 @@ namespace WinFormsApp
                 //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a date!");
                 //    return;
                 //}
-                
+
+
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
                 int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.Text);
                 int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.Text);
@@ -163,6 +164,38 @@ namespace WinFormsApp
         
         private void buttonFindPurchase_Click(object sender, EventArgs e)
         {
+            
+           try
+                {
+                    int purchaseId = Convert.ToInt32(textBoxPurchaseIDFind.Text);
+                    string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                    DataTable findPurchaseDataTable = new();
+                    findPurchaseDataTable = _layer.FindPurchase(purchaseId, connectionString);
+
+                    if (findPurchaseDataTable.Rows.Count == 1)
+                    {
+                        textBoxPurchaseID.Text = findPurchaseDataTable.Rows[0]["PurchaseID"].ToString();
+                        comboBoxPurchaseCustomerName.Text = findPurchaseDataTable.Rows[0]["CustomerID"].ToString();
+                        comboBoxPurchaseEmployeeName.Text = findPurchaseDataTable.Rows[0]["EmployeeID"].ToString();
+
+                        Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase found!");
+                    }
+                    else
+                    {
+                        Utility.LabelMessageFailure(labelManagePurchasesMessage, "Purchase does not exist!");
+                    }
+                }
+
+                catch (NullReferenceException ex)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a Purchase ID!");
+                }
+
+                catch (FormatException)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
+                }
+            
 
         }
     }
