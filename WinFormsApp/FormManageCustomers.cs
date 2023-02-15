@@ -52,9 +52,8 @@ namespace WinFormsApp
                 string customerAddress = textBoxCustomerAddress.Text;
                 int customerPhoneNumber = Convert.ToInt32(textBoxCustomerPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-                Utility.ClearTextBoxes(this);
                 _layer.InsertCustomer(customerId, customerName, customerAddress, customerPhoneNumber, connectionString); //osäker om rätt
-
+                Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer added!");
 
 
@@ -109,8 +108,8 @@ namespace WinFormsApp
                 string customerAddress = textBoxCustomerAddress.Text;
                 int customerPhoneNumber = Convert.ToInt32(textBoxCustomerPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-                Utility.ClearTextBoxes(this);
                 _layer.UpdateCustomer(customerId, customerName, customerAddress, customerPhoneNumber, connectionString);
+                Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer edited!");
 
             }
@@ -130,8 +129,8 @@ namespace WinFormsApp
             {
                 int customerId = Convert.ToInt32(textBoxCustomerId.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-                Utility.ClearTextBoxes(this);
                 _layer.DeleteCustomer(customerId, connectionString);
+                Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer deleted!");
 
             }
