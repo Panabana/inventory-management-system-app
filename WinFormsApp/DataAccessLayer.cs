@@ -12,18 +12,6 @@ namespace WinFormsApp
 {
     public class DataAccessLayer
     {
-        // Används denna?
-        // public SqlConnection GetDatabaseConnection()
-        // {
-        // string connectionString = ConfigurationManager.ConnectionStrings
-        //  ["Test"].ConnectionString;
-
-        // SqlConnectionStringBuilder builder = new(connectionString);
-
-        //  SqlConnection connection = new(builder.ConnectionString);
-
-        //  return connection;  
-        //   }
 
         public DataSet PopulatePurchaseGridView()
         {
@@ -184,26 +172,6 @@ namespace WinFormsApp
                 }
             }
         }
-
-        /* public void DeleteCustomer(int custId, string connectionString)
-         {
-             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-             {
-                 connection.Open();
-                 using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(custId,connection))
-                 {
-                     DataSet ds = new DataSet();
-                     customerAdapter.Fill(ds, "Customer");
-
-                     DataTable customerDataTable = new DataTable();
-                     customerDataTable = ds.Tables["Customer"];
-
-                     DataRow row = customerDataTable.Rows.Find(custId);
-                     row.Delete();
-                     customerAdapter.Update(customerDataTable);
-                 }
-             }
-        */ //}
 
         public void DeleteCustomer(int custId, string connectionString)
         {
@@ -467,11 +435,6 @@ namespace WinFormsApp
                 }
             }
         }
-
-        // internal void InsertEmployee(int employeeId, string employeeName, string employeeAddress, int employeePhoneNumber, SqlConnection sqlConnection)
-        // {
-        //  throw new NotImplementedException();
-        //}
 
 
         // - Purchase -
