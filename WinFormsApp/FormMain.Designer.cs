@@ -63,7 +63,6 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
@@ -111,7 +110,7 @@
             this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(898, 161);
+            this.ribbon.Size = new System.Drawing.Size(898, 196);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonAbout
@@ -655,8 +654,7 @@
             this.ribbonPageGroup3,
             this.ribbonPageGroup4,
             this.ribbonPageGroup5,
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
             // 
@@ -694,20 +692,13 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonManageEmployees);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.AllowTextClipping = false;
-            this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonAbout);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 575);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 569);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(898, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(898, 30);
             // 
             // tileControl1
             // 
@@ -717,10 +708,10 @@
             this.tileControl1.IndentBetweenGroups = 10;
             this.tileControl1.IndentBetweenItems = 4;
             this.tileControl1.ItemSize = 135;
-            this.tileControl1.Location = new System.Drawing.Point(0, 161);
+            this.tileControl1.Location = new System.Drawing.Point(0, 196);
             this.tileControl1.MaxId = 9;
             this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Size = new System.Drawing.Size(898, 414);
+            this.tileControl1.Size = new System.Drawing.Size(898, 373);
             this.tileControl1.TabIndex = 2;
             this.tileControl1.Text = "tileControl1";
             // 
@@ -757,7 +748,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem barButtonAbout;
         private DevExpress.XtraBars.BarButtonItem barButtonManageProducts;
