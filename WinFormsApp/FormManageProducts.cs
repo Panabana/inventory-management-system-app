@@ -29,18 +29,9 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewPurchase();
             DataTable dt = ds.Tables[0];
-            /*
-            dt.Columns.Add("DisplayString");
             
-            foreach(DataRow row in dt.Rows)
-            {
-                int orderID = Convert.ToInt32(row["PurchaseID"]);
-                string custName = row["CustomerName"].ToString();
-                row["DisplayString"] = custID + " - " + custName;
-            }
-            */
             comboBoxSelectPurchaseToAddProduct.DataSource = dt;
-            comboBoxSelectPurchaseToAddProduct.DisplayMember = "PurchaseID"; //displayString
+            comboBoxSelectPurchaseToAddProduct.DisplayMember = "PurchaseID"; 
             comboBoxSelectPurchaseToAddProduct.ValueMember = "PurchaseID";
         }
 
@@ -69,10 +60,11 @@ namespace WinFormsApp
                 int productPrice = Convert.ToInt32(textBoxProductPrice.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                Utility.ClearTextBoxes(this);
 
                 _layer.InsertProduct(productId, productName, productPrice, connectionString);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
+                Utility.ClearTextBoxes(this);
+
             }
             catch (FormatException)
             {
@@ -145,10 +137,10 @@ namespace WinFormsApp
                 int productId = Convert.ToInt32(textBoxProductID.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                Utility.ClearTextBoxes(this);
 
                 _layer.DeleteProduct(productId, connectionString);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product deleted!");
+                Utility.ClearTextBoxes(this);
 
             }
             catch (Exception ex)
@@ -192,29 +184,47 @@ namespace WinFormsApp
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a Product ID to search for!");
             }
         }
-
-        private void textBoxProductIDFind_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         
-
         private void buttonAddProductToPurchase_Click_1(object sender, EventArgs e)
         {
             try
             {
+                if (string.IsNullOrEmpty(comboBoxSelectPurchaseToAddProduct.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please select a purchase ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxProductID.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a product ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxQuantity.Text))
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter the amount of this product!");
+                    return;
+                }
                 int purchaseId = Convert.ToInt32(comboBoxSelectPurchaseToAddProduct.Text);
                 int productId = Convert.ToInt32(textBoxProductID.Text);
                 int quantity = Convert.ToInt32(textBoxQuantity.Text);
-                //string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                Utility.ClearTextBoxes(this);
                 _layer.InsertProductPurchase(purchaseId, productId, quantity);
+                Utility.ClearTextBoxes(this);
 
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added to purchase!");
-
             }
+            catch (SqlException ex)
+            {
+                if(ex.Number == 2627)
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "This product is already in this purchase!");
+            }
+
+        
+            catch (FormatException)
+            {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "Please insert the quantity in the correct format!");
+            }
+        
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);

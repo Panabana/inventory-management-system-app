@@ -12,18 +12,6 @@ namespace WinFormsApp
 {
     public class DataAccessLayer
     {
-        // Används denna?
-        // public SqlConnection GetDatabaseConnection()
-        // {
-        // string connectionString = ConfigurationManager.ConnectionStrings
-        //  ["Test"].ConnectionString;
-
-        // SqlConnectionStringBuilder builder = new(connectionString);
-
-        //  SqlConnection connection = new(builder.ConnectionString);
-
-        //  return connection;  
-        //   }
 
         public DataSet PopulatePurchaseGridView()
         {
@@ -184,26 +172,6 @@ namespace WinFormsApp
                 }
             }
         }
-
-        /* public void DeleteCustomer(int custId, string connectionString)
-         {
-             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-             {
-                 connection.Open();
-                 using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(custId,connection))
-                 {
-                     DataSet ds = new DataSet();
-                     customerAdapter.Fill(ds, "Customer");
-
-                     DataTable customerDataTable = new DataTable();
-                     customerDataTable = ds.Tables["Customer"];
-
-                     DataRow row = customerDataTable.Rows.Find(custId);
-                     row.Delete();
-                     customerAdapter.Update(customerDataTable);
-                 }
-             }
-        */ //}
 
         public void DeleteCustomer(int custId, string connectionString)
         {
@@ -468,11 +436,6 @@ namespace WinFormsApp
             }
         }
 
-        // internal void InsertEmployee(int employeeId, string employeeName, string employeeAddress, int employeePhoneNumber, SqlConnection sqlConnection)
-        // {
-        //  throw new NotImplementedException();
-        //}
-
 
         // - Purchase -
         public DataSet ViewPurchase()
@@ -566,6 +529,28 @@ namespace WinFormsApp
             }
         }
 
+        public void DeleteProductPurchase(int purchaseID, int productID)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter productPurchaseAdapter = SqlAdapterClass.DeleteProductPurchaseAdapter(purchaseID, productID, connection))
+                {
+                    DataSet ds = new DataSet();
+                    productPurchaseAdapter.Fill(ds, "ProductPurchase");
+
+                    DataTable productPurchaseDataTable = new DataTable();
+                    productPurchaseDataTable = ds.Tables["ProductPurchase"];
+
+                    DataRow[] rows = productPurchaseDataTable.Select("PurchaseID = " + purchaseID.ToString() + " AND ProductID = " + productID.ToString());
+                    if (rows.Length > 0)
+                    {
+                        rows[0].Delete();
+                        productPurchaseAdapter.Update(productPurchaseDataTable);
+                    }
+                }
+            }
+        }
+
         // - PRODUCT_SUPPLIER -
 
         public void InsertSupplierProduct(int supplierID, int productID)
@@ -594,6 +579,19 @@ namespace WinFormsApp
             }
         }
 
+        public DataTable FindPurchase(int purchaseId, string connectionString)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.FindPurchaseAdapter(purchaseId, connection))
+                {
+                    DataTable findPurchaseDataTable = new();
+
+                    adapter.Fill(findPurchaseDataTable);
+                    return findPurchaseDataTable;
+                }
+            }
+        }
 
 
 

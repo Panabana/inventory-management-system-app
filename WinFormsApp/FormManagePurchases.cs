@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Utils.About;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,18 +37,18 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewAllEmployees();
             DataTable dt = ds.Tables[0];
-            /*
+
             dt.Columns.Add("DisplayString", typeof(string));
-            
-            foreach(DataRow row in dt.Rows)
+
+            foreach (DataRow row in dt.Rows)
             {
                 int empID = Convert.ToInt32(row["EmployeeID"]);
                 string empName = row["EmployeeName"].ToString();
                 row["DisplayString"] = empID + " - " + empName;
             }
-            */
+
             comboBoxPurchaseEmployeeName.DataSource = dt;
-            comboBoxPurchaseEmployeeName.DisplayMember = "EmployeeID"; //displayString
+            comboBoxPurchaseEmployeeName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseEmployeeName.ValueMember = "EmployeeID";
         }
 
@@ -55,18 +56,18 @@ namespace WinFormsApp
         {
             DataSet ds = _layer.ViewCustomers();
             DataTable dt = ds.Tables[0];
-            /*
+
             dt.Columns.Add("DisplayString");
-            
-            foreach(DataRow row in dt.Rows)
+
+            foreach (DataRow row in dt.Rows)
             {
                 int custID = Convert.ToInt32(row["CustomerID"]);
                 string custName = row["CustomerName"].ToString();
                 row["DisplayString"] = custID + " - " + custName;
             }
-            */
+
             comboBoxPurchaseCustomerName.DataSource = dt;
-            comboBoxPurchaseCustomerName.DisplayMember = "CustomerID"; //displayString
+            comboBoxPurchaseCustomerName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseCustomerName.ValueMember = "CustomerID";
         }
 
@@ -88,11 +89,17 @@ namespace WinFormsApp
                 //{
                 //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a date!");
                 //    return;
+
+                //
+
+
                 //}
-                
+
+
+
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
-                int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.Text);
-                int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.Text);
+                int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
+                int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.SelectedValue);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 // Utility.ClearTextBoxes(this);
@@ -100,12 +107,28 @@ namespace WinFormsApp
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
 
+
             }
-            catch (Exception ex)
+
+            catch (SqlException ex)
             {
-                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
+                if (ex.Number == 547)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please select the correct Customer and Employee");
+                }
+            
+                else if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "This Purchase already exists!");
+                }
             }
         }
+
+
+        
+        
+         
+
 
         private void buttonEditPurchase_Click(object sender, EventArgs e)
         {
@@ -114,17 +137,43 @@ namespace WinFormsApp
 
         private void buttonRemoveLinePurchase_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
+                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value); //chatGPT
+                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["ProductID"].Value); //chatGPT
+
+                //chatGPT
+                if(dataGridViewPurchase.SelectedRows.Count > 0)
+                {
+                    dataGridViewPurchase.Rows.Remove(dataGridViewPurchase.SelectedRows[0]);
+                    _layer.DeleteProductPurchase(purchaseID, productID);
+                }
+
+                Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Product removed from purchase order!");
+            }
+            catch(Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
+            }
         }
 
         private void buttonRemovePurchasePurchase_Click(object sender, EventArgs e)
         {
             try
             {
-                int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
-                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
+                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value);
                 //Utility.ClearTextBoxes(this);
-                _layer.DeletePurchase(purchaseId);
+
+                //ChatGPT
+                if (dataGridViewPurchase.SelectedRows.Count > 0)
+                {
+                    dataGridViewPurchase.Rows.Remove(dataGridViewPurchase.SelectedRows[0]);
+                    _layer.DeletePurchase(purchaseID);
+                }
+
+                
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
             }
             catch (Exception ex)
@@ -136,6 +185,38 @@ namespace WinFormsApp
         
         private void buttonFindPurchase_Click(object sender, EventArgs e)
         {
+            
+           try
+                {
+                    int purchaseId = Convert.ToInt32(textBoxPurchaseIDFind.Text);
+                    string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                    DataTable findPurchaseDataTable = new();
+                    findPurchaseDataTable = _layer.FindPurchase(purchaseId, connectionString);
+
+                    if (findPurchaseDataTable.Rows.Count == 1)
+                    {
+                        textBoxPurchaseID.Text = findPurchaseDataTable.Rows[0]["PurchaseID"].ToString();
+                        comboBoxPurchaseCustomerName.Text = findPurchaseDataTable.Rows[0]["CustomerID"].ToString();
+                        comboBoxPurchaseEmployeeName.Text = findPurchaseDataTable.Rows[0]["EmployeeID"].ToString();
+
+                        Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase found!");
+                    }
+                    else
+                    {
+                        Utility.LabelMessageFailure(labelManagePurchasesMessage, "Purchase does not exist!");
+                    }
+                }
+
+                catch (NullReferenceException ex)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a Purchase ID!");
+                }
+
+                catch (FormatException)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
+                }
+            
 
         }
     }

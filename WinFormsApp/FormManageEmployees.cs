@@ -56,6 +56,7 @@ namespace WinFormsApp
 
                 _layer.InsertEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber, connectionString); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
+                Utility.ClearTextBoxes(this);
             }
             catch (FormatException)
             {
@@ -109,7 +110,8 @@ namespace WinFormsApp
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
                 _layer.UpdateEmployee(empID, empName, empAddress, empPhoneNbr, connectionString);
-                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
+                Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
+                Utility.ClearTextBoxes(this);
             }
             catch (FormatException)
             {
@@ -133,6 +135,7 @@ namespace WinFormsApp
 
                 _layer.DeleteEmployee(employeeId, connectionString); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
+                Utility.ClearTextBoxes(this);
 
             }
             catch (FormatException)
