@@ -63,9 +63,11 @@
             this.groupBoxPurchaseNew.Controls.Add(this.labelPurchaseID);
             this.groupBoxPurchaseNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxPurchaseNew.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxPurchaseNew.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxPurchaseNew.Location = new System.Drawing.Point(10, 5);
+            this.groupBoxPurchaseNew.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxPurchaseNew.Name = "groupBoxPurchaseNew";
-            this.groupBoxPurchaseNew.Size = new System.Drawing.Size(775, 90);
+            this.groupBoxPurchaseNew.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxPurchaseNew.Size = new System.Drawing.Size(445, 231);
             this.groupBoxPurchaseNew.TabIndex = 3;
             this.groupBoxPurchaseNew.TabStop = false;
             this.groupBoxPurchaseNew.Text = "New purchase details";
@@ -73,56 +75,65 @@
             // labelPurchaseEmployeeName
             // 
             this.labelPurchaseEmployeeName.AutoSize = true;
-            this.labelPurchaseEmployeeName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPurchaseEmployeeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPurchaseEmployeeName.Location = new System.Drawing.Point(506, 40);
+            this.labelPurchaseEmployeeName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPurchaseEmployeeName.ForeColor = System.Drawing.Color.Black;
+            this.labelPurchaseEmployeeName.Location = new System.Drawing.Point(173, 149);
+            this.labelPurchaseEmployeeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPurchaseEmployeeName.Name = "labelPurchaseEmployeeName";
-            this.labelPurchaseEmployeeName.Size = new System.Drawing.Size(106, 14);
+            this.labelPurchaseEmployeeName.Size = new System.Drawing.Size(118, 18);
             this.labelPurchaseEmployeeName.TabIndex = 8;
             this.labelPurchaseEmployeeName.Text = "Employee name:";
             // 
             // comboBoxPurchaseEmployeeName
             // 
+            this.comboBoxPurchaseEmployeeName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPurchaseEmployeeName.FormattingEnabled = true;
-            this.comboBoxPurchaseEmployeeName.Location = new System.Drawing.Point(618, 34);
+            this.comboBoxPurchaseEmployeeName.Location = new System.Drawing.Point(114, 170);
+            this.comboBoxPurchaseEmployeeName.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPurchaseEmployeeName.Name = "comboBoxPurchaseEmployeeName";
-            this.comboBoxPurchaseEmployeeName.Size = new System.Drawing.Size(140, 26);
+            this.comboBoxPurchaseEmployeeName.Size = new System.Drawing.Size(237, 29);
             this.comboBoxPurchaseEmployeeName.TabIndex = 7;
             // 
             // comboBoxPurchaseCustomerName
             // 
+            this.comboBoxPurchaseCustomerName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPurchaseCustomerName.FormattingEnabled = true;
-            this.comboBoxPurchaseCustomerName.Location = new System.Drawing.Point(346, 34);
+            this.comboBoxPurchaseCustomerName.Location = new System.Drawing.Point(114, 116);
+            this.comboBoxPurchaseCustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPurchaseCustomerName.Name = "comboBoxPurchaseCustomerName";
-            this.comboBoxPurchaseCustomerName.Size = new System.Drawing.Size(140, 26);
+            this.comboBoxPurchaseCustomerName.Size = new System.Drawing.Size(237, 29);
             this.comboBoxPurchaseCustomerName.TabIndex = 6;
             // 
             // labelPurchaseCustomerName
             // 
             this.labelPurchaseCustomerName.AutoSize = true;
-            this.labelPurchaseCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPurchaseCustomerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPurchaseCustomerName.Location = new System.Drawing.Point(233, 40);
+            this.labelPurchaseCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPurchaseCustomerName.ForeColor = System.Drawing.Color.Black;
+            this.labelPurchaseCustomerName.Location = new System.Drawing.Point(173, 95);
+            this.labelPurchaseCustomerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPurchaseCustomerName.Name = "labelPurchaseCustomerName";
-            this.labelPurchaseCustomerName.Size = new System.Drawing.Size(107, 14);
+            this.labelPurchaseCustomerName.Size = new System.Drawing.Size(118, 18);
             this.labelPurchaseCustomerName.TabIndex = 2;
             this.labelPurchaseCustomerName.Text = "Customer name:";
             // 
             // textBoxPurchaseID
             // 
-            this.textBoxPurchaseID.Location = new System.Drawing.Point(80, 34);
+            this.textBoxPurchaseID.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPurchaseID.Location = new System.Drawing.Point(114, 63);
+            this.textBoxPurchaseID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPurchaseID.Name = "textBoxPurchaseID";
-            this.textBoxPurchaseID.Size = new System.Drawing.Size(140, 26);
+            this.textBoxPurchaseID.Size = new System.Drawing.Size(237, 28);
             this.textBoxPurchaseID.TabIndex = 1;
             // 
             // labelPurchaseID
             // 
             this.labelPurchaseID.AutoSize = true;
-            this.labelPurchaseID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPurchaseID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPurchaseID.Location = new System.Drawing.Point(11, 40);
+            this.labelPurchaseID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPurchaseID.ForeColor = System.Drawing.Color.Black;
+            this.labelPurchaseID.Location = new System.Drawing.Point(186, 42);
+            this.labelPurchaseID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPurchaseID.Name = "labelPurchaseID";
-            this.labelPurchaseID.Size = new System.Drawing.Size(84, 14);
+            this.labelPurchaseID.Size = new System.Drawing.Size(93, 18);
             this.labelPurchaseID.TabIndex = 0;
             this.labelPurchaseID.Text = "Purchase ID:";
             // 
@@ -133,53 +144,63 @@
             this.groupBoxPurchaseFind.Controls.Add(this.labelPurchaseIDFind);
             this.groupBoxPurchaseFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxPurchaseFind.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxPurchaseFind.Location = new System.Drawing.Point(12, 116);
+            this.groupBoxPurchaseFind.Location = new System.Drawing.Point(469, 5);
+            this.groupBoxPurchaseFind.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxPurchaseFind.Name = "groupBoxPurchaseFind";
-            this.groupBoxPurchaseFind.Size = new System.Drawing.Size(775, 90);
+            this.groupBoxPurchaseFind.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxPurchaseFind.Size = new System.Drawing.Size(445, 231);
             this.groupBoxPurchaseFind.TabIndex = 11;
             this.groupBoxPurchaseFind.TabStop = false;
-            this.groupBoxPurchaseFind.Text = "Find a purchase";
+            this.groupBoxPurchaseFind.Text = "Find by Purchase ID";
             // 
             // buttonFindPurchase
             // 
-            this.buttonFindPurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonFindPurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindPurchase.Appearance.Options.UseFont = true;
-            this.buttonFindPurchase.Location = new System.Drawing.Point(483, 35);
+            this.buttonFindPurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindPurchase.ImageOptions.Image")));
+            this.buttonFindPurchase.Location = new System.Drawing.Point(265, 93);
+            this.buttonFindPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFindPurchase.Name = "buttonFindPurchase";
-            this.buttonFindPurchase.Size = new System.Drawing.Size(95, 35);
+            this.buttonFindPurchase.Size = new System.Drawing.Size(111, 54);
             this.buttonFindPurchase.TabIndex = 6;
             this.buttonFindPurchase.Text = "Find";
             this.buttonFindPurchase.Click += new System.EventHandler(this.buttonFindPurchase_Click);
             // 
             // textBoxPurchaseIDFind
             // 
-            this.textBoxPurchaseIDFind.Location = new System.Drawing.Point(265, 39);
+            this.textBoxPurchaseIDFind.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPurchaseIDFind.Location = new System.Drawing.Point(97, 126);
+            this.textBoxPurchaseIDFind.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPurchaseIDFind.Name = "textBoxPurchaseIDFind";
-            this.textBoxPurchaseIDFind.Size = new System.Drawing.Size(212, 26);
+            this.textBoxPurchaseIDFind.Size = new System.Drawing.Size(128, 28);
             this.textBoxPurchaseIDFind.TabIndex = 5;
             // 
             // labelPurchaseIDFind
             // 
             this.labelPurchaseIDFind.AutoSize = true;
-            this.labelPurchaseIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPurchaseIDFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelPurchaseIDFind.Location = new System.Drawing.Point(196, 45);
+            this.labelPurchaseIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPurchaseIDFind.ForeColor = System.Drawing.Color.Black;
+            this.labelPurchaseIDFind.Location = new System.Drawing.Point(101, 84);
+            this.labelPurchaseIDFind.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPurchaseIDFind.Name = "labelPurchaseIDFind";
-            this.labelPurchaseIDFind.Size = new System.Drawing.Size(84, 14);
+            this.labelPurchaseIDFind.Size = new System.Drawing.Size(120, 36);
             this.labelPurchaseIDFind.TabIndex = 0;
-            this.labelPurchaseIDFind.Text = "Purchase ID:";
+            this.labelPurchaseIDFind.Text = "Select an existing\r\nPurchase ID\r\n";
+            this.labelPurchaseIDFind.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBoxPurchaseContents
             // 
             this.groupBoxPurchaseContents.Controls.Add(this.dataGridViewPurchase);
             this.groupBoxPurchaseContents.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxPurchaseContents.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxPurchaseContents.Location = new System.Drawing.Point(12, 217);
+            this.groupBoxPurchaseContents.Location = new System.Drawing.Point(10, 244);
+            this.groupBoxPurchaseContents.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxPurchaseContents.Name = "groupBoxPurchaseContents";
-            this.groupBoxPurchaseContents.Size = new System.Drawing.Size(775, 251);
+            this.groupBoxPurchaseContents.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxPurchaseContents.Size = new System.Drawing.Size(904, 344);
             this.groupBoxPurchaseContents.TabIndex = 12;
             this.groupBoxPurchaseContents.TabStop = false;
-            this.groupBoxPurchaseContents.Text = "Purchase contents";
+            this.groupBoxPurchaseContents.Text = "Purchase table";
             // 
             // dataGridViewPurchase
             // 
@@ -187,7 +208,8 @@
             this.dataGridViewPurchase.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewPurchase.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPurchase.Location = new System.Drawing.Point(6, 25);
+            this.dataGridViewPurchase.Location = new System.Drawing.Point(7, 31);
+            this.dataGridViewPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewPurchase.Name = "dataGridViewPurchase";
             this.dataGridViewPurchase.ReadOnly = true;
             this.dataGridViewPurchase.RowHeadersWidth = 51;
@@ -198,41 +220,47 @@
             this.dataGridViewPurchase.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Blue;
             this.dataGridViewPurchase.RowTemplate.Height = 25;
             this.dataGridViewPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPurchase.Size = new System.Drawing.Size(763, 220);
+            this.dataGridViewPurchase.Size = new System.Drawing.Size(890, 305);
             this.dataGridViewPurchase.TabIndex = 0;
             // 
             // buttonRemovePurchasePurchase
             // 
-            this.buttonRemovePurchasePurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRemovePurchasePurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemovePurchasePurchase.Appearance.Options.UseFont = true;
+            this.buttonRemovePurchasePurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemovePurchasePurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemovePurchasePurchase.ImageOptions.Image")));
-            this.buttonRemovePurchasePurchase.Location = new System.Drawing.Point(479, 485);
+            this.buttonRemovePurchasePurchase.Location = new System.Drawing.Point(731, 596);
+            this.buttonRemovePurchasePurchase.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemovePurchasePurchase.Name = "buttonRemovePurchasePurchase";
-            this.buttonRemovePurchasePurchase.Size = new System.Drawing.Size(141, 44);
+            this.buttonRemovePurchasePurchase.Size = new System.Drawing.Size(174, 54);
             this.buttonRemovePurchasePurchase.TabIndex = 22;
             this.buttonRemovePurchasePurchase.Text = "Remove Purchase";
             this.buttonRemovePurchasePurchase.Click += new System.EventHandler(this.buttonRemovePurchasePurchase_Click);
             // 
             // buttonEditPurchase
             // 
-            this.buttonEditPurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditPurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditPurchase.Appearance.Options.UseFont = true;
+            this.buttonEditPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditPurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditPurchase.ImageOptions.Image")));
-            this.buttonEditPurchase.Location = new System.Drawing.Point(179, 485);
+            this.buttonEditPurchase.Location = new System.Drawing.Point(254, 596);
+            this.buttonEditPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditPurchase.Name = "buttonEditPurchase";
-            this.buttonEditPurchase.Size = new System.Drawing.Size(141, 44);
+            this.buttonEditPurchase.Size = new System.Drawing.Size(174, 54);
             this.buttonEditPurchase.TabIndex = 21;
             this.buttonEditPurchase.Text = "Edit";
             this.buttonEditPurchase.Click += new System.EventHandler(this.buttonEditPurchase_Click);
             // 
             // buttonAddPurchase
             // 
-            this.buttonAddPurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddPurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddPurchase.Appearance.Options.UseFont = true;
+            this.buttonAddPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddPurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddPurchase.ImageOptions.Image")));
-            this.buttonAddPurchase.Location = new System.Drawing.Point(29, 485);
+            this.buttonAddPurchase.Location = new System.Drawing.Point(15, 596);
+            this.buttonAddPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddPurchase.Name = "buttonAddPurchase";
-            this.buttonAddPurchase.Size = new System.Drawing.Size(141, 44);
+            this.buttonAddPurchase.Size = new System.Drawing.Size(174, 54);
             this.buttonAddPurchase.TabIndex = 20;
             this.buttonAddPurchase.Text = "Add";
             this.buttonAddPurchase.Click += new System.EventHandler(this.buttonAddPurchase_Click);
@@ -240,32 +268,35 @@
             // labelManagePurchasesMessage
             // 
             this.labelManagePurchasesMessage.AutoSize = true;
-            this.labelManagePurchasesMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelManagePurchasesMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManagePurchasesMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManagePurchasesMessage.Location = new System.Drawing.Point(9, 543);
+            this.labelManagePurchasesMessage.Location = new System.Drawing.Point(14, 666);
+            this.labelManagePurchasesMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManagePurchasesMessage.Name = "labelManagePurchasesMessage";
-            this.labelManagePurchasesMessage.Size = new System.Drawing.Size(48, 18);
+            this.labelManagePurchasesMessage.Size = new System.Drawing.Size(62, 24);
             this.labelManagePurchasesMessage.TabIndex = 24;
             this.labelManagePurchasesMessage.Text = "****";
             this.labelManagePurchasesMessage.Visible = false;
             // 
             // buttonRemoveLinePurchase
             // 
-            this.buttonRemoveLinePurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRemoveLinePurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveLinePurchase.Appearance.Options.UseFont = true;
+            this.buttonRemoveLinePurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveLinePurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveLinePurchase.ImageOptions.Image")));
-            this.buttonRemoveLinePurchase.Location = new System.Drawing.Point(329, 485);
+            this.buttonRemoveLinePurchase.Location = new System.Drawing.Point(493, 596);
+            this.buttonRemoveLinePurchase.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveLinePurchase.Name = "buttonRemoveLinePurchase";
-            this.buttonRemoveLinePurchase.Size = new System.Drawing.Size(141, 44);
+            this.buttonRemoveLinePurchase.Size = new System.Drawing.Size(174, 54);
             this.buttonRemoveLinePurchase.TabIndex = 25;
             this.buttonRemoveLinePurchase.Text = "Remove Line";
             this.buttonRemoveLinePurchase.Click += new System.EventHandler(this.buttonRemoveLinePurchase_Click);
             // 
             // FormManagePurchases
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 568);
+            this.ClientSize = new System.Drawing.Size(931, 699);
             this.Controls.Add(this.buttonRemoveLinePurchase);
             this.Controls.Add(this.labelManagePurchasesMessage);
             this.Controls.Add(this.buttonRemovePurchasePurchase);
@@ -275,6 +306,7 @@
             this.Controls.Add(this.groupBoxPurchaseFind);
             this.Controls.Add(this.groupBoxPurchaseNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManagePurchases";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

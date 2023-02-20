@@ -171,7 +171,7 @@
             // 
             // buttonFindSupplier
             // 
-            this.buttonFindSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonFindSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindSupplier.Appearance.Options.UseFont = true;
             this.buttonFindSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindSupplier.ImageOptions.Image")));
             this.buttonFindSupplier.Location = new System.Drawing.Point(513, 43);
@@ -204,39 +204,39 @@
             // 
             // buttonRemoveSupplier
             // 
-            this.buttonRemoveSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRemoveSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveSupplier.Appearance.Options.UseFont = true;
             this.buttonRemoveSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveSupplier.ImageOptions.Image")));
-            this.buttonRemoveSupplier.Location = new System.Drawing.Point(415, 347);
+            this.buttonRemoveSupplier.Location = new System.Drawing.Point(731, 596);
             this.buttonRemoveSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveSupplier.Name = "buttonRemoveSupplier";
-            this.buttonRemoveSupplier.Size = new System.Drawing.Size(124, 54);
+            this.buttonRemoveSupplier.Size = new System.Drawing.Size(174, 54);
             this.buttonRemoveSupplier.TabIndex = 14;
             this.buttonRemoveSupplier.Text = "Remove";
             this.buttonRemoveSupplier.Click += new System.EventHandler(this.buttonRemoveSupplier_Click);
             // 
             // buttonEditSupplier
             // 
-            this.buttonEditSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditSupplier.Appearance.Options.UseFont = true;
             this.buttonEditSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditSupplier.ImageOptions.Image")));
-            this.buttonEditSupplier.Location = new System.Drawing.Point(272, 347);
+            this.buttonEditSupplier.Location = new System.Drawing.Point(373, 596);
             this.buttonEditSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditSupplier.Name = "buttonEditSupplier";
-            this.buttonEditSupplier.Size = new System.Drawing.Size(124, 54);
+            this.buttonEditSupplier.Size = new System.Drawing.Size(174, 54);
             this.buttonEditSupplier.TabIndex = 13;
             this.buttonEditSupplier.Text = "Edit";
             this.buttonEditSupplier.Click += new System.EventHandler(this.buttonEditSupplier_Click);
             // 
             // buttonAddSupplier
             // 
-            this.buttonAddSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddSupplier.Appearance.Options.UseFont = true;
             this.buttonAddSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddSupplier.ImageOptions.Image")));
-            this.buttonAddSupplier.Location = new System.Drawing.Point(128, 347);
+            this.buttonAddSupplier.Location = new System.Drawing.Point(15, 596);
             this.buttonAddSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddSupplier.Name = "buttonAddSupplier";
-            this.buttonAddSupplier.Size = new System.Drawing.Size(124, 54);
+            this.buttonAddSupplier.Size = new System.Drawing.Size(174, 54);
             this.buttonAddSupplier.TabIndex = 12;
             this.buttonAddSupplier.Text = "Add";
             this.buttonAddSupplier.Click += new System.EventHandler(this.buttonAddSupplier_Click);
@@ -244,12 +244,12 @@
             // labelManageSuppliersMessage
             // 
             this.labelManageSuppliersMessage.AutoSize = true;
-            this.labelManageSuppliersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelManageSuppliersMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageSuppliersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(21, 404);
+            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(14, 666);
             this.labelManageSuppliersMessage.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelManageSuppliersMessage.Name = "labelManageSuppliersMessage";
-            this.labelManageSuppliersMessage.Size = new System.Drawing.Size(58, 23);
+            this.labelManageSuppliersMessage.Size = new System.Drawing.Size(62, 24);
             this.labelManageSuppliersMessage.TabIndex = 16;
             this.labelManageSuppliersMessage.Text = "****";
             this.labelManageSuppliersMessage.Visible = false;
@@ -265,7 +265,7 @@
             // 
             // buttonAddSupplierToProduct
             // 
-            this.buttonAddSupplierToProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddSupplierToProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddSupplierToProduct.Appearance.Options.UseFont = true;
             this.buttonAddSupplierToProduct.Location = new System.Drawing.Point(612, 379);
             this.buttonAddSupplierToProduct.Margin = new System.Windows.Forms.Padding(4);
@@ -279,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 462);
+            this.ClientSize = new System.Drawing.Size(931, 699);
             this.Controls.Add(this.buttonAddSupplierToProduct);
             this.Controls.Add(this.comboBoxSelectProductToAddSupplier);
             this.Controls.Add(this.labelManageSuppliersMessage);

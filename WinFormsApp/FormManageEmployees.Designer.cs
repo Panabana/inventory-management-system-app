@@ -231,10 +231,10 @@
             this.buttonAddEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonAddEmployee.Appearance.Options.UseFont = true;
             this.buttonAddEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddEmployee.ImageOptions.Image")));
-            this.buttonAddEmployee.Location = new System.Drawing.Point(149, 427);
+            this.buttonAddEmployee.Location = new System.Drawing.Point(15, 596);
             this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
-            this.buttonAddEmployee.Size = new System.Drawing.Size(124, 54);
+            this.buttonAddEmployee.Size = new System.Drawing.Size(174, 54);
             this.buttonAddEmployee.TabIndex = 20;
             this.buttonAddEmployee.Tag = "<Null>";
             this.buttonAddEmployee.Text = "Add";
@@ -245,7 +245,7 @@
             this.labelManageEmployeesMessage.AutoSize = true;
             this.labelManageEmployeesMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageEmployeesMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageEmployeesMessage.Location = new System.Drawing.Point(10, 500);
+            this.labelManageEmployeesMessage.Location = new System.Drawing.Point(14, 666);
             this.labelManageEmployeesMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageEmployeesMessage.Name = "labelManageEmployeesMessage";
             this.labelManageEmployeesMessage.Size = new System.Drawing.Size(58, 23);
@@ -257,7 +257,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 532);
+            this.ClientSize = new System.Drawing.Size(931, 699);
             this.Controls.Add(this.labelManageEmployeesMessage);
             this.Controls.Add(this.buttonRemoveEmployee);
             this.Controls.Add(this.buttonEditEmployee);

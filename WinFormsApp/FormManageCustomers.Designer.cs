@@ -169,7 +169,7 @@
             // 
             // buttonFindCustomer
             // 
-            this.buttonFindCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonFindCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindCustomer.Appearance.Options.UseFont = true;
             this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindCustomer.ImageOptions.Image")));
             this.buttonFindCustomer.Location = new System.Drawing.Point(513, 43);
@@ -202,39 +202,39 @@
             // 
             // buttonRemoveCustomer
             // 
-            this.buttonRemoveCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonRemoveCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveCustomer.Appearance.Options.UseFont = true;
             this.buttonRemoveCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveCustomer.ImageOptions.Image")));
-            this.buttonRemoveCustomer.Location = new System.Drawing.Point(415, 347);
+            this.buttonRemoveCustomer.Location = new System.Drawing.Point(731, 596);
             this.buttonRemoveCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveCustomer.Name = "buttonRemoveCustomer";
-            this.buttonRemoveCustomer.Size = new System.Drawing.Size(124, 54);
+            this.buttonRemoveCustomer.Size = new System.Drawing.Size(174, 54);
             this.buttonRemoveCustomer.TabIndex = 18;
             this.buttonRemoveCustomer.Text = "Remove";
             this.buttonRemoveCustomer.Click += new System.EventHandler(this.buttonRemoveCustomer_Click);
             // 
             // buttonEditCustomer
             // 
-            this.buttonEditCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditCustomer.Appearance.Options.UseFont = true;
             this.buttonEditCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditCustomer.ImageOptions.Image")));
-            this.buttonEditCustomer.Location = new System.Drawing.Point(272, 347);
+            this.buttonEditCustomer.Location = new System.Drawing.Point(373, 596);
             this.buttonEditCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditCustomer.Name = "buttonEditCustomer";
-            this.buttonEditCustomer.Size = new System.Drawing.Size(124, 54);
+            this.buttonEditCustomer.Size = new System.Drawing.Size(174, 54);
             this.buttonEditCustomer.TabIndex = 17;
             this.buttonEditCustomer.Text = "Edit";
             this.buttonEditCustomer.Click += new System.EventHandler(this.buttonEditCustomer_Click);
             // 
             // buttonAddCustomer
             // 
-            this.buttonAddCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddCustomer.Appearance.Options.UseFont = true;
             this.buttonAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddCustomer.ImageOptions.Image")));
-            this.buttonAddCustomer.Location = new System.Drawing.Point(128, 347);
+            this.buttonAddCustomer.Location = new System.Drawing.Point(15, 596);
             this.buttonAddCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddCustomer.Name = "buttonAddCustomer";
-            this.buttonAddCustomer.Size = new System.Drawing.Size(124, 54);
+            this.buttonAddCustomer.Size = new System.Drawing.Size(174, 54);
             this.buttonAddCustomer.TabIndex = 16;
             this.buttonAddCustomer.Tag = "<Null>";
             this.buttonAddCustomer.Text = "Add";
@@ -245,7 +245,7 @@
             this.labelManageCustomersMessage.AutoSize = true;
             this.labelManageCustomersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageCustomersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageCustomersMessage.Location = new System.Drawing.Point(10, 420);
+            this.labelManageCustomersMessage.Location = new System.Drawing.Point(14, 666);
             this.labelManageCustomersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageCustomersMessage.Name = "labelManageCustomersMessage";
             this.labelManageCustomersMessage.Size = new System.Drawing.Size(58, 23);
@@ -257,7 +257,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 453);
+            this.ClientSize = new System.Drawing.Size(931, 699);
             this.Controls.Add(this.labelManageCustomersMessage);
             this.Controls.Add(this.buttonRemoveCustomer);
             this.Controls.Add(this.buttonEditCustomer);
