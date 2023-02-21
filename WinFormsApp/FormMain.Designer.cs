@@ -110,7 +110,7 @@
             this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(898, 196);
+            this.ribbon.Size = new System.Drawing.Size(898, 161);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonAbout
@@ -694,11 +694,11 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 569);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 575);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(898, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(898, 24);
             // 
             // tileControl1
             // 
@@ -708,10 +708,10 @@
             this.tileControl1.IndentBetweenGroups = 10;
             this.tileControl1.IndentBetweenItems = 4;
             this.tileControl1.ItemSize = 135;
-            this.tileControl1.Location = new System.Drawing.Point(0, 196);
+            this.tileControl1.Location = new System.Drawing.Point(0, 161);
             this.tileControl1.MaxId = 9;
             this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Size = new System.Drawing.Size(898, 373);
+            this.tileControl1.Size = new System.Drawing.Size(898, 414);
             this.tileControl1.TabIndex = 2;
             this.tileControl1.Text = "tileControl1";
             // 

@@ -70,11 +70,9 @@
             this.groupBox1.Controls.Add(this.labelProductID);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox1.Location = new System.Drawing.Point(10, 5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(13, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(445, 541);
+            this.groupBox1.Size = new System.Drawing.Size(381, 440);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New product details";
@@ -84,10 +82,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(198, 376);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(170, 306);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.Size = new System.Drawing.Size(58, 14);
             this.label2.TabIndex = 13;
             this.label2.Text = "Quantity:";
             // 
@@ -96,20 +93,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(175, 307);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(150, 249);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 18);
+            this.label1.Size = new System.Drawing.Size(98, 14);
             this.label1.TabIndex = 16;
             this.label1.Text = "Select Purchase:";
             // 
             // textBoxQuantity
             // 
             this.textBoxQuantity.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxQuantity.Location = new System.Drawing.Point(174, 404);
-            this.textBoxQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxQuantity.Location = new System.Drawing.Point(149, 328);
             this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(116, 30);
+            this.textBoxQuantity.Size = new System.Drawing.Size(100, 26);
             this.textBoxQuantity.TabIndex = 15;
             // 
             // buttonAddProductToPurchase
@@ -117,10 +112,9 @@
             this.buttonAddProductToPurchase.BackColor = System.Drawing.Color.White;
             this.buttonAddProductToPurchase.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProductToPurchase.ForeColor = System.Drawing.Color.Black;
-            this.buttonAddProductToPurchase.Location = new System.Drawing.Point(158, 444);
-            this.buttonAddProductToPurchase.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddProductToPurchase.Location = new System.Drawing.Point(136, 361);
             this.buttonAddProductToPurchase.Name = "buttonAddProductToPurchase";
-            this.buttonAddProductToPurchase.Size = new System.Drawing.Size(148, 54);
+            this.buttonAddProductToPurchase.Size = new System.Drawing.Size(127, 44);
             this.buttonAddProductToPurchase.TabIndex = 13;
             this.buttonAddProductToPurchase.Text = "Add to Purchase";
             this.buttonAddProductToPurchase.UseVisualStyleBackColor = false;
@@ -130,19 +124,17 @@
             // 
             this.comboBoxSelectPurchaseToAddProduct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxSelectPurchaseToAddProduct.FormattingEnabled = true;
-            this.comboBoxSelectPurchaseToAddProduct.Location = new System.Drawing.Point(151, 335);
-            this.comboBoxSelectPurchaseToAddProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxSelectPurchaseToAddProduct.Location = new System.Drawing.Point(129, 272);
             this.comboBoxSelectPurchaseToAddProduct.Name = "comboBoxSelectPurchaseToAddProduct";
-            this.comboBoxSelectPurchaseToAddProduct.Size = new System.Drawing.Size(163, 31);
+            this.comboBoxSelectPurchaseToAddProduct.Size = new System.Drawing.Size(140, 26);
             this.comboBoxSelectPurchaseToAddProduct.TabIndex = 14;
             // 
             // textBoxProductPrice
             // 
             this.textBoxProductPrice.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductPrice.Location = new System.Drawing.Point(116, 136);
-            this.textBoxProductPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxProductPrice.Location = new System.Drawing.Point(99, 110);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(233, 30);
+            this.textBoxProductPrice.Size = new System.Drawing.Size(200, 26);
             this.textBoxProductPrice.TabIndex = 7;
             // 
             // labelProductPrice
@@ -150,20 +142,18 @@
             this.labelProductPrice.AutoSize = true;
             this.labelProductPrice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProductPrice.ForeColor = System.Drawing.Color.Black;
-            this.labelProductPrice.Location = new System.Drawing.Point(211, 111);
-            this.labelProductPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductPrice.Location = new System.Drawing.Point(181, 90);
             this.labelProductPrice.Name = "labelProductPrice";
-            this.labelProductPrice.Size = new System.Drawing.Size(43, 18);
+            this.labelProductPrice.Size = new System.Drawing.Size(37, 14);
             this.labelProductPrice.TabIndex = 6;
             this.labelProductPrice.Text = "Price:";
             // 
             // textBoxProductName
             // 
             this.textBoxProductName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductName.Location = new System.Drawing.Point(116, 198);
-            this.textBoxProductName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxProductName.Location = new System.Drawing.Point(99, 161);
             this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(233, 30);
+            this.textBoxProductName.Size = new System.Drawing.Size(200, 26);
             this.textBoxProductName.TabIndex = 3;
             // 
             // labelProductName
@@ -171,20 +161,18 @@
             this.labelProductName.AutoSize = true;
             this.labelProductName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProductName.ForeColor = System.Drawing.Color.Black;
-            this.labelProductName.Location = new System.Drawing.Point(180, 173);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductName.Location = new System.Drawing.Point(155, 141);
             this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(104, 18);
+            this.labelProductName.Size = new System.Drawing.Size(88, 14);
             this.labelProductName.TabIndex = 2;
             this.labelProductName.Text = "Product name:";
             // 
             // textBoxProductID
             // 
             this.textBoxProductID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductID.Location = new System.Drawing.Point(116, 74);
-            this.textBoxProductID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxProductID.Location = new System.Drawing.Point(99, 60);
             this.textBoxProductID.Name = "textBoxProductID";
-            this.textBoxProductID.Size = new System.Drawing.Size(233, 30);
+            this.textBoxProductID.Size = new System.Drawing.Size(200, 26);
             this.textBoxProductID.TabIndex = 1;
             // 
             // labelProductID
@@ -192,10 +180,9 @@
             this.labelProductID.AutoSize = true;
             this.labelProductID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProductID.ForeColor = System.Drawing.Color.Black;
-            this.labelProductID.Location = new System.Drawing.Point(191, 49);
-            this.labelProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductID.Location = new System.Drawing.Point(164, 40);
             this.labelProductID.Name = "labelProductID";
-            this.labelProductID.Size = new System.Drawing.Size(83, 18);
+            this.labelProductID.Size = new System.Drawing.Size(70, 14);
             this.labelProductID.TabIndex = 0;
             this.labelProductID.Text = "Product ID:";
             // 
@@ -204,10 +191,9 @@
             this.buttonRemoveProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveProduct.Appearance.Options.UseFont = true;
             this.buttonRemoveProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveProduct.ImageOptions.Image")));
-            this.buttonRemoveProduct.Location = new System.Drawing.Point(731, 596);
-            this.buttonRemoveProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRemoveProduct.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveProduct.Name = "buttonRemoveProduct";
-            this.buttonRemoveProduct.Size = new System.Drawing.Size(174, 54);
+            this.buttonRemoveProduct.Size = new System.Drawing.Size(176, 44);
             this.buttonRemoveProduct.TabIndex = 10;
             this.buttonRemoveProduct.Text = "Remove";
             this.buttonRemoveProduct.Click += new System.EventHandler(this.buttonRemoveProduct_Click);
@@ -217,10 +203,9 @@
             this.buttonEditProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditProduct.Appearance.Options.UseFont = true;
             this.buttonEditProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditProduct.ImageOptions.Image")));
-            this.buttonEditProduct.Location = new System.Drawing.Point(373, 596);
-            this.buttonEditProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEditProduct.Location = new System.Drawing.Point(305, 484);
             this.buttonEditProduct.Name = "buttonEditProduct";
-            this.buttonEditProduct.Size = new System.Drawing.Size(174, 54);
+            this.buttonEditProduct.Size = new System.Drawing.Size(176, 44);
             this.buttonEditProduct.TabIndex = 9;
             this.buttonEditProduct.Text = "Edit";
             this.buttonEditProduct.Click += new System.EventHandler(this.buttonEditProduct_Click);
@@ -230,10 +215,9 @@
             this.buttonAddProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProduct.Appearance.Options.UseFont = true;
             this.buttonAddProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddProduct.ImageOptions.Image")));
-            this.buttonAddProduct.Location = new System.Drawing.Point(15, 596);
-            this.buttonAddProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddProduct.Location = new System.Drawing.Point(13, 484);
             this.buttonAddProduct.Name = "buttonAddProduct";
-            this.buttonAddProduct.Size = new System.Drawing.Size(174, 54);
+            this.buttonAddProduct.Size = new System.Drawing.Size(176, 44);
             this.buttonAddProduct.TabIndex = 7;
             this.buttonAddProduct.Tag = "<Null>";
             this.buttonAddProduct.Text = "Add";
@@ -246,11 +230,9 @@
             this.groupBox2.Controls.Add(this.labelProductIDFind);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox2.Location = new System.Drawing.Point(473, 5);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(400, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(445, 541);
+            this.groupBox2.Size = new System.Drawing.Size(381, 440);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find by Product ID";
@@ -260,21 +242,19 @@
             this.buttonFindProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindProduct.Appearance.Options.UseFont = true;
             this.buttonFindProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindProduct.ImageOptions.Image")));
-            this.buttonFindProduct.Location = new System.Drawing.Point(197, 118);
-            this.buttonFindProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFindProduct.Location = new System.Drawing.Point(169, 88);
             this.buttonFindProduct.Name = "buttonFindProduct";
-            this.buttonFindProduct.Size = new System.Drawing.Size(111, 43);
+            this.buttonFindProduct.Size = new System.Drawing.Size(95, 35);
             this.buttonFindProduct.TabIndex = 6;
             this.buttonFindProduct.Text = "Find";
             this.buttonFindProduct.Click += new System.EventHandler(this.buttonFindProduct_Click);
             // 
             // textBoxProductIDFind
             // 
-            this.textBoxProductIDFind.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductIDFind.Location = new System.Drawing.Point(129, 74);
-            this.textBoxProductIDFind.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxProductIDFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxProductIDFind.Location = new System.Drawing.Point(110, 57);
             this.textBoxProductIDFind.Name = "textBoxProductIDFind";
-            this.textBoxProductIDFind.Size = new System.Drawing.Size(247, 30);
+            this.textBoxProductIDFind.Size = new System.Drawing.Size(212, 26);
             this.textBoxProductIDFind.TabIndex = 5;
             // 
             // labelProductIDFind
@@ -282,10 +262,9 @@
             this.labelProductIDFind.AutoSize = true;
             this.labelProductIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProductIDFind.ForeColor = System.Drawing.Color.Black;
-            this.labelProductIDFind.Location = new System.Drawing.Point(211, 49);
-            this.labelProductIDFind.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProductIDFind.Location = new System.Drawing.Point(181, 40);
             this.labelProductIDFind.Name = "labelProductIDFind";
-            this.labelProductIDFind.Size = new System.Drawing.Size(83, 18);
+            this.labelProductIDFind.Size = new System.Drawing.Size(70, 14);
             this.labelProductIDFind.TabIndex = 0;
             this.labelProductIDFind.Text = "Product ID:";
             // 
@@ -295,10 +274,9 @@
             this.labelManageProductsMessage.AutoSize = true;
             this.labelManageProductsMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageProductsMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageProductsMessage.Location = new System.Drawing.Point(14, 666);
-            this.labelManageProductsMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelManageProductsMessage.Location = new System.Drawing.Point(12, 541);
             this.labelManageProductsMessage.Name = "labelManageProductsMessage";
-            this.labelManageProductsMessage.Size = new System.Drawing.Size(62, 24);
+            this.labelManageProductsMessage.Size = new System.Drawing.Size(49, 19);
             this.labelManageProductsMessage.TabIndex = 12;
             this.labelManageProductsMessage.Text = "****";
             this.labelManageProductsMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -306,9 +284,9 @@
             // 
             // FormManageProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 699);
+            this.ClientSize = new System.Drawing.Size(798, 568);
             this.Controls.Add(this.labelManageProductsMessage);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -316,7 +294,6 @@
             this.Controls.Add(this.buttonEditProduct);
             this.Controls.Add(this.buttonRemoveProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

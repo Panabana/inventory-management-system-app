@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageSuppliers));
             this.groupBoxSupplierNew = new System.Windows.Forms.GroupBox();
+            this.labelSupplierProduct = new System.Windows.Forms.Label();
+            this.buttonAddSupplierToProduct = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBoxSelectProductToAddSupplier = new System.Windows.Forms.ComboBox();
             this.textBoxSupplierAddress = new System.Windows.Forms.TextBox();
             this.labelSupplierAddress = new System.Windows.Forms.Label();
             this.textBoxSupplierPhone = new System.Windows.Forms.TextBox();
@@ -46,14 +49,15 @@
             this.buttonEditSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageSuppliersMessage = new System.Windows.Forms.Label();
-            this.comboBoxSelectProductToAddSupplier = new System.Windows.Forms.ComboBox();
-            this.buttonAddSupplierToProduct = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxSupplierNew.SuspendLayout();
             this.groupBoxSupplierFind.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSupplierNew
             // 
+            this.groupBoxSupplierNew.Controls.Add(this.labelSupplierProduct);
+            this.groupBoxSupplierNew.Controls.Add(this.buttonAddSupplierToProduct);
+            this.groupBoxSupplierNew.Controls.Add(this.comboBoxSelectProductToAddSupplier);
             this.groupBoxSupplierNew.Controls.Add(this.textBoxSupplierAddress);
             this.groupBoxSupplierNew.Controls.Add(this.labelSupplierAddress);
             this.groupBoxSupplierNew.Controls.Add(this.textBoxSupplierPhone);
@@ -64,92 +68,117 @@
             this.groupBoxSupplierNew.Controls.Add(this.labelSupplierID);
             this.groupBoxSupplierNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxSupplierNew.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxSupplierNew.Location = new System.Drawing.Point(18, 15);
-            this.groupBoxSupplierNew.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxSupplierNew.Location = new System.Drawing.Point(13, 4);
             this.groupBoxSupplierNew.Name = "groupBoxSupplierNew";
-            this.groupBoxSupplierNew.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxSupplierNew.Size = new System.Drawing.Size(780, 170);
+            this.groupBoxSupplierNew.Size = new System.Drawing.Size(381, 440);
             this.groupBoxSupplierNew.TabIndex = 1;
             this.groupBoxSupplierNew.TabStop = false;
             this.groupBoxSupplierNew.Text = "New supplier details";
             // 
+            // labelSupplierProduct
+            // 
+            this.labelSupplierProduct.AutoSize = true;
+            this.labelSupplierProduct.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierProduct.ForeColor = System.Drawing.Color.Black;
+            this.labelSupplierProduct.Location = new System.Drawing.Point(153, 308);
+            this.labelSupplierProduct.Name = "labelSupplierProduct";
+            this.labelSupplierProduct.Size = new System.Drawing.Size(92, 14);
+            this.labelSupplierProduct.TabIndex = 20;
+            this.labelSupplierProduct.Text = "Select Product:";
+            // 
+            // buttonAddSupplierToProduct
+            // 
+            this.buttonAddSupplierToProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddSupplierToProduct.Appearance.Options.UseFont = true;
+            this.buttonAddSupplierToProduct.Location = new System.Drawing.Point(136, 361);
+            this.buttonAddSupplierToProduct.Name = "buttonAddSupplierToProduct";
+            this.buttonAddSupplierToProduct.Size = new System.Drawing.Size(127, 44);
+            this.buttonAddSupplierToProduct.TabIndex = 19;
+            this.buttonAddSupplierToProduct.Text = "Add to Product";
+            this.buttonAddSupplierToProduct.Click += new System.EventHandler(this.buttonAddSupplierToProduct_Click);
+            // 
+            // comboBoxSelectProductToAddSupplier
+            // 
+            this.comboBoxSelectProductToAddSupplier.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxSelectProductToAddSupplier.FormattingEnabled = true;
+            this.comboBoxSelectProductToAddSupplier.Location = new System.Drawing.Point(129, 329);
+            this.comboBoxSelectProductToAddSupplier.Name = "comboBoxSelectProductToAddSupplier";
+            this.comboBoxSelectProductToAddSupplier.Size = new System.Drawing.Size(140, 26);
+            this.comboBoxSelectProductToAddSupplier.TabIndex = 17;
+            // 
             // textBoxSupplierAddress
             // 
-            this.textBoxSupplierAddress.Location = new System.Drawing.Point(530, 102);
-            this.textBoxSupplierAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSupplierAddress.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSupplierAddress.Location = new System.Drawing.Point(99, 209);
             this.textBoxSupplierAddress.Name = "textBoxSupplierAddress";
-            this.textBoxSupplierAddress.Size = new System.Drawing.Size(233, 30);
+            this.textBoxSupplierAddress.Size = new System.Drawing.Size(200, 26);
             this.textBoxSupplierAddress.TabIndex = 7;
             // 
             // labelSupplierAddress
             // 
             this.labelSupplierAddress.AutoSize = true;
-            this.labelSupplierAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSupplierAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelSupplierAddress.Location = new System.Drawing.Point(453, 110);
-            this.labelSupplierAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierAddress.ForeColor = System.Drawing.Color.Black;
+            this.labelSupplierAddress.Location = new System.Drawing.Point(172, 190);
             this.labelSupplierAddress.Name = "labelSupplierAddress";
-            this.labelSupplierAddress.Size = new System.Drawing.Size(73, 18);
+            this.labelSupplierAddress.Size = new System.Drawing.Size(54, 14);
             this.labelSupplierAddress.TabIndex = 6;
             this.labelSupplierAddress.Text = "Address:";
             // 
             // textBoxSupplierPhone
             // 
-            this.textBoxSupplierPhone.Location = new System.Drawing.Point(128, 102);
-            this.textBoxSupplierPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSupplierPhone.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSupplierPhone.Location = new System.Drawing.Point(99, 109);
             this.textBoxSupplierPhone.Name = "textBoxSupplierPhone";
-            this.textBoxSupplierPhone.Size = new System.Drawing.Size(233, 30);
+            this.textBoxSupplierPhone.Size = new System.Drawing.Size(200, 26);
             this.textBoxSupplierPhone.TabIndex = 5;
             // 
             // labelSupplierPhoneNumber
             // 
             this.labelSupplierPhoneNumber.AutoSize = true;
-            this.labelSupplierPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSupplierPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelSupplierPhoneNumber.Location = new System.Drawing.Point(4, 110);
-            this.labelSupplierPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierPhoneNumber.ForeColor = System.Drawing.Color.Black;
+            this.labelSupplierPhoneNumber.Location = new System.Drawing.Point(153, 90);
             this.labelSupplierPhoneNumber.Name = "labelSupplierPhoneNumber";
-            this.labelSupplierPhoneNumber.Size = new System.Drawing.Size(119, 18);
+            this.labelSupplierPhoneNumber.Size = new System.Drawing.Size(92, 14);
             this.labelSupplierPhoneNumber.TabIndex = 4;
             this.labelSupplierPhoneNumber.Text = "Phone number:";
             // 
             // textBoxSupplierName
             // 
-            this.textBoxSupplierName.Location = new System.Drawing.Point(530, 42);
-            this.textBoxSupplierName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSupplierName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSupplierName.Location = new System.Drawing.Point(99, 159);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
-            this.textBoxSupplierName.Size = new System.Drawing.Size(233, 30);
+            this.textBoxSupplierName.Size = new System.Drawing.Size(200, 26);
             this.textBoxSupplierName.TabIndex = 3;
             // 
             // labelSupplierName
             // 
             this.labelSupplierName.AutoSize = true;
-            this.labelSupplierName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSupplierName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelSupplierName.Location = new System.Drawing.Point(408, 49);
-            this.labelSupplierName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierName.ForeColor = System.Drawing.Color.Black;
+            this.labelSupplierName.Location = new System.Drawing.Point(155, 140);
             this.labelSupplierName.Name = "labelSupplierName";
-            this.labelSupplierName.Size = new System.Drawing.Size(120, 18);
+            this.labelSupplierName.Size = new System.Drawing.Size(88, 14);
             this.labelSupplierName.TabIndex = 2;
             this.labelSupplierName.Text = "Supplier name:";
             // 
             // textBoxSupplierID
             // 
-            this.textBoxSupplierID.Location = new System.Drawing.Point(128, 42);
-            this.textBoxSupplierID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSupplierID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSupplierID.Location = new System.Drawing.Point(99, 59);
             this.textBoxSupplierID.Name = "textBoxSupplierID";
-            this.textBoxSupplierID.Size = new System.Drawing.Size(233, 30);
+            this.textBoxSupplierID.Size = new System.Drawing.Size(200, 26);
             this.textBoxSupplierID.TabIndex = 1;
             // 
             // labelSupplierID
             // 
             this.labelSupplierID.AutoSize = true;
-            this.labelSupplierID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSupplierID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelSupplierID.Location = new System.Drawing.Point(29, 49);
-            this.labelSupplierID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierID.ForeColor = System.Drawing.Color.Black;
+            this.labelSupplierID.Location = new System.Drawing.Point(164, 40);
             this.labelSupplierID.Name = "labelSupplierID";
-            this.labelSupplierID.Size = new System.Drawing.Size(98, 18);
+            this.labelSupplierID.Size = new System.Drawing.Size(70, 14);
             this.labelSupplierID.TabIndex = 0;
             this.labelSupplierID.Text = "Supplier ID:";
             // 
@@ -160,11 +189,9 @@
             this.groupBoxSupplierFind.Controls.Add(this.labelSupplierIDFind);
             this.groupBoxSupplierFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxSupplierFind.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxSupplierFind.Location = new System.Drawing.Point(18, 206);
-            this.groupBoxSupplierFind.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxSupplierFind.Location = new System.Drawing.Point(400, 4);
             this.groupBoxSupplierFind.Name = "groupBoxSupplierFind";
-            this.groupBoxSupplierFind.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxSupplierFind.Size = new System.Drawing.Size(780, 114);
+            this.groupBoxSupplierFind.Size = new System.Drawing.Size(381, 440);
             this.groupBoxSupplierFind.TabIndex = 9;
             this.groupBoxSupplierFind.TabStop = false;
             this.groupBoxSupplierFind.Text = "Find a supplier";
@@ -174,31 +201,29 @@
             this.buttonFindSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindSupplier.Appearance.Options.UseFont = true;
             this.buttonFindSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindSupplier.ImageOptions.Image")));
-            this.buttonFindSupplier.Location = new System.Drawing.Point(513, 43);
-            this.buttonFindSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFindSupplier.Location = new System.Drawing.Point(173, 89);
             this.buttonFindSupplier.Name = "buttonFindSupplier";
-            this.buttonFindSupplier.Size = new System.Drawing.Size(111, 43);
+            this.buttonFindSupplier.Size = new System.Drawing.Size(95, 35);
             this.buttonFindSupplier.TabIndex = 6;
             this.buttonFindSupplier.Text = "Find";
             this.buttonFindSupplier.Click += new System.EventHandler(this.buttonFindSupplier_Click);
             // 
             // textBoxSupplierIdFind
             // 
-            this.textBoxSupplierIdFind.Location = new System.Drawing.Point(253, 48);
-            this.textBoxSupplierIdFind.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSupplierIdFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSupplierIdFind.Location = new System.Drawing.Point(114, 57);
             this.textBoxSupplierIdFind.Name = "textBoxSupplierIdFind";
-            this.textBoxSupplierIdFind.Size = new System.Drawing.Size(247, 30);
+            this.textBoxSupplierIdFind.Size = new System.Drawing.Size(212, 26);
             this.textBoxSupplierIdFind.TabIndex = 5;
             // 
             // labelSupplierIDFind
             // 
             this.labelSupplierIDFind.AutoSize = true;
-            this.labelSupplierIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelSupplierIDFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelSupplierIDFind.Location = new System.Drawing.Point(155, 55);
-            this.labelSupplierIDFind.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSupplierIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSupplierIDFind.ForeColor = System.Drawing.Color.Black;
+            this.labelSupplierIDFind.Location = new System.Drawing.Point(181, 40);
             this.labelSupplierIDFind.Name = "labelSupplierIDFind";
-            this.labelSupplierIDFind.Size = new System.Drawing.Size(98, 18);
+            this.labelSupplierIDFind.Size = new System.Drawing.Size(70, 14);
             this.labelSupplierIDFind.TabIndex = 0;
             this.labelSupplierIDFind.Text = "Supplier ID:";
             // 
@@ -207,10 +232,9 @@
             this.buttonRemoveSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveSupplier.Appearance.Options.UseFont = true;
             this.buttonRemoveSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveSupplier.ImageOptions.Image")));
-            this.buttonRemoveSupplier.Location = new System.Drawing.Point(731, 596);
-            this.buttonRemoveSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRemoveSupplier.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveSupplier.Name = "buttonRemoveSupplier";
-            this.buttonRemoveSupplier.Size = new System.Drawing.Size(174, 54);
+            this.buttonRemoveSupplier.Size = new System.Drawing.Size(176, 44);
             this.buttonRemoveSupplier.TabIndex = 14;
             this.buttonRemoveSupplier.Text = "Remove";
             this.buttonRemoveSupplier.Click += new System.EventHandler(this.buttonRemoveSupplier_Click);
@@ -220,10 +244,9 @@
             this.buttonEditSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditSupplier.Appearance.Options.UseFont = true;
             this.buttonEditSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditSupplier.ImageOptions.Image")));
-            this.buttonEditSupplier.Location = new System.Drawing.Point(373, 596);
-            this.buttonEditSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEditSupplier.Location = new System.Drawing.Point(305, 484);
             this.buttonEditSupplier.Name = "buttonEditSupplier";
-            this.buttonEditSupplier.Size = new System.Drawing.Size(174, 54);
+            this.buttonEditSupplier.Size = new System.Drawing.Size(176, 44);
             this.buttonEditSupplier.TabIndex = 13;
             this.buttonEditSupplier.Text = "Edit";
             this.buttonEditSupplier.Click += new System.EventHandler(this.buttonEditSupplier_Click);
@@ -233,10 +256,9 @@
             this.buttonAddSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddSupplier.Appearance.Options.UseFont = true;
             this.buttonAddSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddSupplier.ImageOptions.Image")));
-            this.buttonAddSupplier.Location = new System.Drawing.Point(15, 596);
-            this.buttonAddSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddSupplier.Location = new System.Drawing.Point(13, 484);
             this.buttonAddSupplier.Name = "buttonAddSupplier";
-            this.buttonAddSupplier.Size = new System.Drawing.Size(174, 54);
+            this.buttonAddSupplier.Size = new System.Drawing.Size(176, 44);
             this.buttonAddSupplier.TabIndex = 12;
             this.buttonAddSupplier.Text = "Add";
             this.buttonAddSupplier.Click += new System.EventHandler(this.buttonAddSupplier_Click);
@@ -246,50 +268,26 @@
             this.labelManageSuppliersMessage.AutoSize = true;
             this.labelManageSuppliersMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageSuppliersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(14, 666);
-            this.labelManageSuppliersMessage.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labelManageSuppliersMessage.Location = new System.Drawing.Point(12, 541);
+            this.labelManageSuppliersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelManageSuppliersMessage.Name = "labelManageSuppliersMessage";
-            this.labelManageSuppliersMessage.Size = new System.Drawing.Size(62, 24);
+            this.labelManageSuppliersMessage.Size = new System.Drawing.Size(49, 19);
             this.labelManageSuppliersMessage.TabIndex = 16;
             this.labelManageSuppliersMessage.Text = "****";
             this.labelManageSuppliersMessage.Visible = false;
             // 
-            // comboBoxSelectProductToAddSupplier
-            // 
-            this.comboBoxSelectProductToAddSupplier.FormattingEnabled = true;
-            this.comboBoxSelectProductToAddSupplier.Location = new System.Drawing.Point(594, 328);
-            this.comboBoxSelectProductToAddSupplier.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxSelectProductToAddSupplier.Name = "comboBoxSelectProductToAddSupplier";
-            this.comboBoxSelectProductToAddSupplier.Size = new System.Drawing.Size(163, 24);
-            this.comboBoxSelectProductToAddSupplier.TabIndex = 17;
-            // 
-            // buttonAddSupplierToProduct
-            // 
-            this.buttonAddSupplierToProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAddSupplierToProduct.Appearance.Options.UseFont = true;
-            this.buttonAddSupplierToProduct.Location = new System.Drawing.Point(612, 379);
-            this.buttonAddSupplierToProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAddSupplierToProduct.Name = "buttonAddSupplierToProduct";
-            this.buttonAddSupplierToProduct.Size = new System.Drawing.Size(124, 54);
-            this.buttonAddSupplierToProduct.TabIndex = 19;
-            this.buttonAddSupplierToProduct.Text = "Add to Product";
-            this.buttonAddSupplierToProduct.Click += new System.EventHandler(this.buttonAddSupplierToProduct_Click);
-            // 
             // FormManageSuppliers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 699);
-            this.Controls.Add(this.buttonAddSupplierToProduct);
-            this.Controls.Add(this.comboBoxSelectProductToAddSupplier);
+            this.ClientSize = new System.Drawing.Size(798, 568);
             this.Controls.Add(this.labelManageSuppliersMessage);
             this.Controls.Add(this.buttonRemoveSupplier);
             this.Controls.Add(this.buttonEditSupplier);
             this.Controls.Add(this.buttonAddSupplier);
-            this.Controls.Add(this.groupBoxSupplierFind);
             this.Controls.Add(this.groupBoxSupplierNew);
+            this.Controls.Add(this.groupBoxSupplierFind);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageSuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -324,5 +322,6 @@
         private Label labelManageSuppliersMessage;
         private ComboBox comboBoxSelectProductToAddSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonAddSupplierToProduct;
+        private Label labelSupplierProduct;
     }
 }

@@ -62,92 +62,86 @@
             this.groupBoxCustomerNew.Controls.Add(this.labelCustomerID);
             this.groupBoxCustomerNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxCustomerNew.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxCustomerNew.Location = new System.Drawing.Point(18, 15);
-            this.groupBoxCustomerNew.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxCustomerNew.Location = new System.Drawing.Point(13, 4);
             this.groupBoxCustomerNew.Name = "groupBoxCustomerNew";
-            this.groupBoxCustomerNew.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxCustomerNew.Size = new System.Drawing.Size(780, 170);
+            this.groupBoxCustomerNew.Size = new System.Drawing.Size(381, 440);
             this.groupBoxCustomerNew.TabIndex = 2;
             this.groupBoxCustomerNew.TabStop = false;
             this.groupBoxCustomerNew.Text = "New customer details";
             // 
             // textBoxCustomerAddress
             // 
-            this.textBoxCustomerAddress.Location = new System.Drawing.Point(530, 102);
-            this.textBoxCustomerAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCustomerAddress.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCustomerAddress.Location = new System.Drawing.Point(102, 209);
             this.textBoxCustomerAddress.Name = "textBoxCustomerAddress";
-            this.textBoxCustomerAddress.Size = new System.Drawing.Size(233, 30);
+            this.textBoxCustomerAddress.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerAddress.TabIndex = 7;
             // 
             // labelCustomerAddress
             // 
             this.labelCustomerAddress.AutoSize = true;
-            this.labelCustomerAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCustomerAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelCustomerAddress.Location = new System.Drawing.Point(453, 110);
-            this.labelCustomerAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerAddress.ForeColor = System.Drawing.Color.Black;
+            this.labelCustomerAddress.Location = new System.Drawing.Point(175, 190);
             this.labelCustomerAddress.Name = "labelCustomerAddress";
-            this.labelCustomerAddress.Size = new System.Drawing.Size(73, 18);
+            this.labelCustomerAddress.Size = new System.Drawing.Size(54, 14);
             this.labelCustomerAddress.TabIndex = 6;
             this.labelCustomerAddress.Text = "Address:";
             // 
             // textBoxCustomerPhone
             // 
-            this.textBoxCustomerPhone.Location = new System.Drawing.Point(128, 102);
-            this.textBoxCustomerPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCustomerPhone.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCustomerPhone.Location = new System.Drawing.Point(102, 109);
             this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
-            this.textBoxCustomerPhone.Size = new System.Drawing.Size(233, 30);
+            this.textBoxCustomerPhone.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerPhone.TabIndex = 5;
             // 
             // labelCustomerPhoneNumber
             // 
             this.labelCustomerPhoneNumber.AutoSize = true;
-            this.labelCustomerPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCustomerPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelCustomerPhoneNumber.Location = new System.Drawing.Point(4, 110);
-            this.labelCustomerPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerPhoneNumber.ForeColor = System.Drawing.Color.Black;
+            this.labelCustomerPhoneNumber.Location = new System.Drawing.Point(156, 90);
             this.labelCustomerPhoneNumber.Name = "labelCustomerPhoneNumber";
-            this.labelCustomerPhoneNumber.Size = new System.Drawing.Size(119, 18);
+            this.labelCustomerPhoneNumber.Size = new System.Drawing.Size(92, 14);
             this.labelCustomerPhoneNumber.TabIndex = 4;
             this.labelCustomerPhoneNumber.Text = "Phone number:";
             // 
             // textBoxCustomerName
             // 
-            this.textBoxCustomerName.Location = new System.Drawing.Point(530, 42);
-            this.textBoxCustomerName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCustomerName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCustomerName.Location = new System.Drawing.Point(102, 159);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(233, 30);
+            this.textBoxCustomerName.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerName.TabIndex = 3;
             // 
             // labelCustomerName
             // 
             this.labelCustomerName.AutoSize = true;
-            this.labelCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCustomerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelCustomerName.Location = new System.Drawing.Point(398, 49);
-            this.labelCustomerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerName.ForeColor = System.Drawing.Color.Black;
+            this.labelCustomerName.Location = new System.Drawing.Point(154, 140);
             this.labelCustomerName.Name = "labelCustomerName";
-            this.labelCustomerName.Size = new System.Drawing.Size(128, 18);
+            this.labelCustomerName.Size = new System.Drawing.Size(97, 14);
             this.labelCustomerName.TabIndex = 2;
             this.labelCustomerName.Text = "Customer name:";
             // 
             // textBoxCustomerId
             // 
-            this.textBoxCustomerId.Location = new System.Drawing.Point(128, 42);
-            this.textBoxCustomerId.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCustomerId.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCustomerId.Location = new System.Drawing.Point(102, 59);
             this.textBoxCustomerId.Name = "textBoxCustomerId";
-            this.textBoxCustomerId.Size = new System.Drawing.Size(233, 30);
+            this.textBoxCustomerId.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerId.TabIndex = 1;
             // 
             // labelCustomerID
             // 
             this.labelCustomerID.AutoSize = true;
-            this.labelCustomerID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelCustomerID.Location = new System.Drawing.Point(19, 49);
-            this.labelCustomerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerID.ForeColor = System.Drawing.Color.Black;
+            this.labelCustomerID.Location = new System.Drawing.Point(163, 40);
             this.labelCustomerID.Name = "labelCustomerID";
-            this.labelCustomerID.Size = new System.Drawing.Size(106, 18);
+            this.labelCustomerID.Size = new System.Drawing.Size(79, 14);
             this.labelCustomerID.TabIndex = 0;
             this.labelCustomerID.Text = "Customer ID:";
             // 
@@ -158,11 +152,9 @@
             this.groupBoxCustomerFind.Controls.Add(this.labelCustomerIDFind);
             this.groupBoxCustomerFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxCustomerFind.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxCustomerFind.Location = new System.Drawing.Point(18, 206);
-            this.groupBoxCustomerFind.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxCustomerFind.Location = new System.Drawing.Point(400, 4);
             this.groupBoxCustomerFind.Name = "groupBoxCustomerFind";
-            this.groupBoxCustomerFind.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxCustomerFind.Size = new System.Drawing.Size(780, 114);
+            this.groupBoxCustomerFind.Size = new System.Drawing.Size(381, 440);
             this.groupBoxCustomerFind.TabIndex = 10;
             this.groupBoxCustomerFind.TabStop = false;
             this.groupBoxCustomerFind.Text = "Find a customer";
@@ -172,31 +164,29 @@
             this.buttonFindCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindCustomer.Appearance.Options.UseFont = true;
             this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindCustomer.ImageOptions.Image")));
-            this.buttonFindCustomer.Location = new System.Drawing.Point(513, 43);
-            this.buttonFindCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFindCustomer.Location = new System.Drawing.Point(173, 91);
             this.buttonFindCustomer.Name = "buttonFindCustomer";
-            this.buttonFindCustomer.Size = new System.Drawing.Size(111, 43);
+            this.buttonFindCustomer.Size = new System.Drawing.Size(95, 35);
             this.buttonFindCustomer.TabIndex = 6;
             this.buttonFindCustomer.Text = "Find";
             this.buttonFindCustomer.Click += new System.EventHandler(this.buttonFindCustomer_Click);
             // 
             // textBoxCustomerIdFind
             // 
-            this.textBoxCustomerIdFind.Location = new System.Drawing.Point(253, 48);
-            this.textBoxCustomerIdFind.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCustomerIdFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCustomerIdFind.Location = new System.Drawing.Point(114, 59);
             this.textBoxCustomerIdFind.Name = "textBoxCustomerIdFind";
-            this.textBoxCustomerIdFind.Size = new System.Drawing.Size(247, 30);
+            this.textBoxCustomerIdFind.Size = new System.Drawing.Size(212, 26);
             this.textBoxCustomerIdFind.TabIndex = 5;
             // 
             // labelCustomerIDFind
             // 
             this.labelCustomerIDFind.AutoSize = true;
-            this.labelCustomerIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCustomerIDFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelCustomerIDFind.Location = new System.Drawing.Point(144, 55);
-            this.labelCustomerIDFind.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCustomerIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomerIDFind.ForeColor = System.Drawing.Color.Black;
+            this.labelCustomerIDFind.Location = new System.Drawing.Point(181, 40);
             this.labelCustomerIDFind.Name = "labelCustomerIDFind";
-            this.labelCustomerIDFind.Size = new System.Drawing.Size(106, 18);
+            this.labelCustomerIDFind.Size = new System.Drawing.Size(79, 14);
             this.labelCustomerIDFind.TabIndex = 0;
             this.labelCustomerIDFind.Text = "Customer ID:";
             // 
@@ -205,10 +195,9 @@
             this.buttonRemoveCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveCustomer.Appearance.Options.UseFont = true;
             this.buttonRemoveCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveCustomer.ImageOptions.Image")));
-            this.buttonRemoveCustomer.Location = new System.Drawing.Point(731, 596);
-            this.buttonRemoveCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRemoveCustomer.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveCustomer.Name = "buttonRemoveCustomer";
-            this.buttonRemoveCustomer.Size = new System.Drawing.Size(174, 54);
+            this.buttonRemoveCustomer.Size = new System.Drawing.Size(176, 44);
             this.buttonRemoveCustomer.TabIndex = 18;
             this.buttonRemoveCustomer.Text = "Remove";
             this.buttonRemoveCustomer.Click += new System.EventHandler(this.buttonRemoveCustomer_Click);
@@ -218,10 +207,9 @@
             this.buttonEditCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditCustomer.Appearance.Options.UseFont = true;
             this.buttonEditCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditCustomer.ImageOptions.Image")));
-            this.buttonEditCustomer.Location = new System.Drawing.Point(373, 596);
-            this.buttonEditCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEditCustomer.Location = new System.Drawing.Point(305, 484);
             this.buttonEditCustomer.Name = "buttonEditCustomer";
-            this.buttonEditCustomer.Size = new System.Drawing.Size(174, 54);
+            this.buttonEditCustomer.Size = new System.Drawing.Size(176, 44);
             this.buttonEditCustomer.TabIndex = 17;
             this.buttonEditCustomer.Text = "Edit";
             this.buttonEditCustomer.Click += new System.EventHandler(this.buttonEditCustomer_Click);
@@ -231,10 +219,9 @@
             this.buttonAddCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddCustomer.Appearance.Options.UseFont = true;
             this.buttonAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddCustomer.ImageOptions.Image")));
-            this.buttonAddCustomer.Location = new System.Drawing.Point(15, 596);
-            this.buttonAddCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddCustomer.Location = new System.Drawing.Point(13, 484);
             this.buttonAddCustomer.Name = "buttonAddCustomer";
-            this.buttonAddCustomer.Size = new System.Drawing.Size(174, 54);
+            this.buttonAddCustomer.Size = new System.Drawing.Size(176, 44);
             this.buttonAddCustomer.TabIndex = 16;
             this.buttonAddCustomer.Tag = "<Null>";
             this.buttonAddCustomer.Text = "Add";
@@ -243,21 +230,20 @@
             // labelManageCustomersMessage
             // 
             this.labelManageCustomersMessage.AutoSize = true;
-            this.labelManageCustomersMessage.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelManageCustomersMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageCustomersMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageCustomersMessage.Location = new System.Drawing.Point(14, 666);
-            this.labelManageCustomersMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelManageCustomersMessage.Location = new System.Drawing.Point(12, 541);
             this.labelManageCustomersMessage.Name = "labelManageCustomersMessage";
-            this.labelManageCustomersMessage.Size = new System.Drawing.Size(58, 23);
+            this.labelManageCustomersMessage.Size = new System.Drawing.Size(49, 19);
             this.labelManageCustomersMessage.TabIndex = 20;
             this.labelManageCustomersMessage.Text = "****";
             this.labelManageCustomersMessage.Visible = false;
             // 
             // FormManageCustomers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 699);
+            this.ClientSize = new System.Drawing.Size(798, 568);
             this.Controls.Add(this.labelManageCustomersMessage);
             this.Controls.Add(this.buttonRemoveCustomer);
             this.Controls.Add(this.buttonEditCustomer);
@@ -265,7 +251,6 @@
             this.Controls.Add(this.groupBoxCustomerFind);
             this.Controls.Add(this.groupBoxCustomerNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
