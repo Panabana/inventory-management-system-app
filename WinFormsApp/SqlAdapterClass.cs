@@ -37,8 +37,8 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewPurchaseGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT pp.PurchaseID , prod.ProductName AS Product, " +
-                                                "prod.ProductID, prod.Price, pp.Quantity FROM ProductPurchase pp " +
+            SqlCommand command = new SqlCommand("SELECT pp.PurchaseID AS 'Purchase ID' , prod.ProductName AS Product, " +
+                                                "prod.ProductID AS 'Product ID', prod.Price AS 'Price per', pp.Quantity FROM ProductPurchase pp " +
                                                 "JOIN Product prod ON pp.ProductID = prod.ProductID " +
                                                 "JOIN Purchase p ON pp.PurchaseID = p.PurchaseID");
             command.Connection = connection;
