@@ -533,6 +533,28 @@ namespace WinFormsApp
             return purchaseAdapter;
         }
 
+        public static SqlDataAdapter UpdatePurchaseAdapter(int purchaseId, int customerId, int employeeId, SqlConnection connection)
+        {
+            SqlDataAdapter updatePurchaseAdapter = new();
+            string selectQuery = "SELECT * FROM Purchase WHERE PurchaseID = @PurchaseID";
+            SqlCommand command = new(selectQuery, connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+
+            updatePurchaseAdapter.SelectCommand = command;
+
+            string updateQuery = "UPDATE Purchase SET CustomerID = @CustomerID, EmployeeID = @EmployeeID WHERE PurchaseID = @PurchaseID";
+            command = new(updateQuery, connection);
+
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            command.Parameters.AddWithValue("@CustomerID", customerId);
+            command.Parameters.AddWithValue("@EmployeeID", employeeId);
+
+            updatePurchaseAdapter.UpdateCommand = command;
+
+            return updatePurchaseAdapter;
+        }
+
         public static SqlDataAdapter DeletePurchaseAdapter(int purchaseId, SqlConnection connection)
         {
             SqlDataAdapter purchaseAdapter = new SqlDataAdapter();

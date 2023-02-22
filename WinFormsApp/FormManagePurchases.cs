@@ -132,7 +132,27 @@ namespace WinFormsApp
 
         private void buttonEditPurchase_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
+                int customerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
+                int empId = Convert.ToInt32(comboBoxPurchaseEmployeeName.SelectedValue);
 
+                _layer.UpdatePurchase(purchaseId, customerId, empId);
+
+                Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase updated!");
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please select the correct Customer and Employee");
+                }
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
+            }
         }
 
         private void buttonRemoveLinePurchase_Click(object sender, EventArgs e)
@@ -140,8 +160,8 @@ namespace WinFormsApp
             try
             {
                 int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
-                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value); //chatGPT
-                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["ProductID"].Value); //chatGPT
+                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value); //chatGPT
+                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Product ID"].Value); //chatGPT
 
                 //chatGPT
                 if(dataGridViewPurchase.SelectedRows.Count > 0)
