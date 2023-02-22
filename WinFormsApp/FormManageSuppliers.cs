@@ -25,7 +25,7 @@ namespace WinFormsApp
 
         private void PopulateProductSupplierComboBox() //med hjälp av ChatGPT
         {
-            DataSet ds = _layer.ViewProducts();
+            DataSet ds = _layer.ReadProduct();
             DataTable dt = ds.Tables[0];
 
             dt.Columns.Add("DisplayString", typeof(string));

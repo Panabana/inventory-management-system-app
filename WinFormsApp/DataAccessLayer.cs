@@ -393,102 +393,90 @@ namespace WinFormsApp
 
 
         // - Purchase -
-        public DataSet ViewPurchase()
+        public void AddPurchase(
+              int purchaseId
+            , int employeeId
+            , int customerId)
+
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.ViewAllPurchaseAdapter(connection))
+                using (SqlDataAdapter adapter = AdapterManager.PurchaseAdapter(connection))
                 {
+
                     DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
 
-                    adapter.Fill(dataSet, "Purchase");
+                    DataTable dataTablePurchase = new DataTable();
+                    DataTable PurchaseDataTable = dataSet.Tables["Table"];
 
-                    return dataSet;
-                }
-            }
-        }
-            
-        
-        public void InsertPurchase(int purchaseId, int customerId, int employeeId)
-        {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-            {
-                connection.Open();
+                    DataRow row = PurchaseDataTable.NewRow();
 
-                using (SqlDataAdapter adapter = SqlAdapterClass.InsertPurchaseAdapter(purchaseId, customerId, employeeId, connection))
-                {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Purchase");
-
-                    DataTable purchaseDataTable = new DataTable();
-                    purchaseDataTable = ds.Tables["Purchase"];
-
-                    DataRow row = purchaseDataTable.NewRow();
                     row["PurchaseID"] = purchaseId;
-                    row["CustomerID"] = customerId;
                     row["EmployeeID"] = employeeId;
+                    row["CustomerID"] = customerId;
 
-                    purchaseDataTable.Rows.Add(row);
-                    adapter.Update(purchaseDataTable);
+
+                    dataTablePurchase.Rows.Add(row);
+                    adapter.Update(dataSet);
                 }
             }
         }
-
-        public void UpdatePurchase(int purchaseId, int customerId, int employeeId)
+        public void DeletePurchase(int purchaseId)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdatePurchaseAdapter(purchaseId, customerId, employeeId, connection))
+                using (SqlDataAdapter adapter = AdapterManager.PurchaseAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Purchase");
+                    adapter.DeleteCommand.Parameters[0].Value = purchaseId;
 
-                    DataTable purchaseDataTable = new DataTable();
-                    purchaseDataTable = ds.Tables["Purchase"];
-
-                    DataRow[] rows = purchaseDataTable.Select("PurchaseID =" + purchaseId);
-                    if (rows.Length == 1)
-                    {
-                        rows[0]["CustomerID"] = customerId;
-                        rows[0]["EmployeeID"] = employeeId;
-                    }
-
-                    adapter.Update(purchaseDataTable);
+                    connection.Open();
+                    adapter.DeleteCommand.ExecuteNonQuery();
                 }
             }
         }
+        public void UpdatePurchase(
+            int purchaseId,
+            int employeeId,
+            int customerId)
 
-        public void DeletePurchase(int purchaseID)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter purchaseAdapter = SqlAdapterClass.DeletePurchaseAdapter(purchaseID, connection))
+                using (SqlDataAdapter adapter = AdapterManager.PurchaseAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    purchaseAdapter.Fill(ds, "Purchase");
+                    adapter.UpdateCommand.Parameters[0].Value = purchaseId;
+                    adapter.UpdateCommand.Parameters[1].Value = employeeId;
+                    adapter.UpdateCommand.Parameters[2].Value = customerId;
 
-                    DataTable purchaseDataTable = new DataTable();
-                    purchaseDataTable = ds.Tables["Purchase"];
-                    
-                    DataRow[] rows = purchaseDataTable.Select("PurchaseID = " + purchaseID.ToString());
-                    if (rows.Length > 0)
-                    {
-                        rows[0].Delete();
-                        purchaseAdapter.Update(purchaseDataTable);
-                    }
+
+                    connection.Open();
+                    adapter.UpdateCommand.ExecuteNonQuery();
+                }
+            }
+
+        }
+        public DataSet ReadPurchase()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.PurchaseAdapter(connection))
+                {
+                    DataSet productDataSet = new DataSet();
+                    adapter.Fill(productDataSet);
+                    return productDataSet;
                 }
             }
         }
-
         // - ProductPurchase -
 
         public void InsertProductPurchase(int purchaseID, int productID, int quantity)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
                 connection.Open();
 
-                using (SqlDataAdapter productPurchaseAdapter = SqlAdapterClass.InsertProductPurchaseAdapter(purchaseID, productID, quantity, connection))
+                using (SqlDataAdapter productPurchaseAdapter = AdapterManager.InsertProductPurchaseAdapter(purchaseID, productID, quantity, connection))
                 {
                     DataSet dataSet = new DataSet();
 
@@ -510,9 +498,9 @@ namespace WinFormsApp
 
         public void DeleteProductPurchase(int purchaseID, int productID)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter productPurchaseAdapter = SqlAdapterClass.DeleteProductPurchaseAdapter(purchaseID, productID, connection))
+                using (SqlDataAdapter productPurchaseAdapter = AdapterManager.DeleteProductPurchaseAdapter(purchaseID, productID, connection))
                 {
                     DataSet ds = new DataSet();
                     productPurchaseAdapter.Fill(ds, "ProductPurchase");
@@ -535,11 +523,11 @@ namespace WinFormsApp
         public void InsertSupplierProduct(int supplierID, int productID)
         {
 
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
                 connection.Open();
 
-                using (SqlDataAdapter supplierProductAdapter = SqlAdapterClass.InsertSupplierProductAdapter(supplierID, productID, connection))
+                using (SqlDataAdapter supplierProductAdapter = AdapterManager.InsertSupplierProductAdapter(supplierID, productID, connection))
                 {
                     DataSet dataSet = new DataSet();
 
@@ -560,9 +548,9 @@ namespace WinFormsApp
 
         public DataTable FindPurchase(int purchaseId, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.FindPurchaseAdapter(purchaseId, connection))
+                using (SqlDataAdapter adapter = AdapterManager.FindPurchaseAdapter(purchaseId, connection))
                 {
                     DataTable findPurchaseDataTable = new();
 
