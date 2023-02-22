@@ -138,7 +138,6 @@ namespace WinFormsApp
             return employeeAdapter;
         }
 
-
         public static SqlDataAdapter FindEmployeeAdapter(int empId, SqlConnection connection)
         {
             SqlDataAdapter empFindAdapter = new();
@@ -152,108 +151,43 @@ namespace WinFormsApp
         }
 
         // - SUPPLIER -
-        public static SqlDataAdapter ViewSupplierAdapter(SqlConnection connection)
+        public static SqlDataAdapter SupplierAdapter(SqlConnection connection)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter supplierAdapter = new SqlDataAdapter();
             SqlCommand command;
-            //Read/View all customers
+
             command = new SqlCommand("SELECT * FROM Supplier", connection);
-
             command.Connection = connection;
-            adapter.SelectCommand = command;
-            return adapter;
+            supplierAdapter.SelectCommand = command;
 
-        }
-
-        public static SqlDataAdapter InsertSupplierAdapter(int SupplierId, string SupplierName, string SupplierAddress, int PhoneNbr, SqlConnection connection)
-        {
-            SqlDataAdapter addSupplierAdapter = new SqlDataAdapter();
-            SqlCommand command;
-
-            //Select Supplier
             command = new SqlCommand(
-                "SELECT * " +
-                "FROM Supplier " +
-                "WHERE SupplierId = @SupplierId " +
-                "AND SupplierName = @SupplierName",
+                "INSERT INTO Supplier VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNumber)",
                 connection);
 
-            addSupplierAdapter.SelectCommand = command;
+            command.Parameters.Add("SupplierID", SqlDbType.Int, 10, "SupplierID");
+            command.Parameters.Add("SupplierName", SqlDbType.VarChar, 10, "SupplierName");
+            command.Parameters.Add("SupplierAddress", SqlDbType.VarChar, 10, "SupplierAddress");
+            command.Parameters.Add("PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
+            command.Connection = connection;
+            supplierAdapter.InsertCommand = command;
 
-            command.Parameters.AddWithValue("@SupplierId", SupplierId);
-            command.Parameters.AddWithValue("@SupplierName", SupplierName);
-            command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
+            command = new SqlCommand("DELETE FROM Supplier WHERE SupplierID = @SupplierID", connection);
+            command.Parameters.Add("SupplierID", SqlDbType.Int, 10, "SupplierID");
+            command.Connection = connection;
+            supplierAdapter.DeleteCommand = command;
 
-            //Insert Supplier
-            command = new SqlCommand("INSERT INTO Supplier (SupplierID, SupplierName, SupplierAddress,"
-                                    + "PhoneNumber) VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNumber)", connection);
+            command = new SqlCommand("UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID", connection);
 
-            //Add parameters with value
-            command.Parameters.AddWithValue("@SupplierId", SupplierId);
-            command.Parameters.AddWithValue("@SupplierName", SupplierName);
-            command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
+            command.Parameters.Add("@SupplierID", SqlDbType.Int, 10, "SupplierID");
+            command.Parameters.Add("@SupplierName", SqlDbType.VarChar, 10, "SupplierName");
+            command.Parameters.Add("@SupplierAddress", SqlDbType.VarChar, 10, "SupplierAddress");
+            command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
 
-            addSupplierAdapter.InsertCommand = command;
+            command.Connection = connection;
+            supplierAdapter.UpdateCommand = command;
 
-            string deleteSuppQuery = "DELETE FROM Supplier WHERE SupplierID = @SupplierID";
-            command = new SqlCommand(deleteSuppQuery, connection);
 
-            command.Parameters.AddWithValue("@SupplierID", SupplierId);
-            command.Parameters.AddWithValue("@SupplierName", SupplierName);
-            command.Parameters.AddWithValue("@SupplierAddress", SupplierAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", PhoneNbr);
-
-            addSupplierAdapter.DeleteCommand = command;
-
-            return addSupplierAdapter;
-        }
-
-        public static SqlDataAdapter UpdateSupplierAdapter(int suppId, string suppName, string suppAddress, int phoneNumber, SqlConnection connection)
-        {
-            SqlDataAdapter suppUpdateAdapter = new SqlDataAdapter();
-            string selectQuery = "SELECT * FROM Supplier WHERE SupplierId = @SupplierID";
-            SqlCommand command = new SqlCommand(selectQuery, connection);
-
-            command.Parameters.AddWithValue("@SupplierId", suppId);
-
-            suppUpdateAdapter.SelectCommand = command;
-
-            string updateQuery = "UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress, PhoneNumber = @PhoneNumber WHERE SupplierId = @SupplierId";
-            command = new SqlCommand(updateQuery, connection);
-
-            command.Parameters.AddWithValue("@SupplierId", suppId);
-            command.Parameters.AddWithValue("@SupplierName", suppName);
-            command.Parameters.AddWithValue("@SupplierAddress", suppAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-
-            suppUpdateAdapter.UpdateCommand = command;
-
-            return suppUpdateAdapter;
-        }
-
-        public static SqlDataAdapter DeleteSupplierAdapter(int suppId, SqlConnection connection)
-        {
-            connection = ConnectionHandler.GetDatabaseConnection();
-
-            SqlDataAdapter deleteSupplierAdapter = new SqlDataAdapter();
-
-            string selectQuery = "SELECT * FROM Supplier WHERE SupplierID = @SupplierID";
-
-            SqlCommand command = new SqlCommand(selectQuery, connection);
-
-            command.Parameters.AddWithValue("@SupplierID", suppId);
-            deleteSupplierAdapter.SelectCommand = command;
-
-            string deleteQuery = "DELETE FROM Supplier WHERE SupplierID = @SupplierID";
-
-            command = new SqlCommand(deleteQuery, connection);
-
-            command.Parameters.AddWithValue("@SupplierID", suppId);
-            deleteSupplierAdapter.DeleteCommand = command;
-
-            return deleteSupplierAdapter;
+            return supplierAdapter;
         }
 
         public static SqlDataAdapter FindSupplierAdapter(int supplierID, SqlConnection connection)

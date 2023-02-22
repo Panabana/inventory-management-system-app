@@ -207,98 +207,90 @@ namespace WinFormsApp
                 }
             }
         }
-        
+
 
         // - SUPPLIER -
-        public DataSet ViewSuppliers()
+        public void AddSupplier(
+            int supplierId
+            , string supplierName
+            , string supplierAddress
+            , int phoneNumber)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.ViewSupplierAdapter(connection))
+                using (SqlDataAdapter adapter = AdapterManager.SupplierAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
 
-                    adapter.Fill(ds, "Supplier");
-                    return ds;
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+
+                    DataTable dataTableSup = new DataTable();
+                    DataTable SupplierDataTable = dataSet.Tables["Table"];
+
+                    DataRow row = SupplierDataTable.NewRow();
+
+                    row["SupplierID"] = supplierId;
+                    row["SupplierName"] = supplierName;
+                    row["SupplierAddress"] = supplierAddress;
+                    row["PhoneNumber"] = phoneNumber;
+
+                    dataTableSup.Rows.Add(row);
+                    adapter.Update(dataSet);
                 }
             }
         }
-        public void InsertSupplier(int suppId, string suppName, string suppAddress, int phoneNbr, string connectionString)
+        public void DeleteSupplier(int supplierId)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter AddSupplierAdapter = SqlAdapterClass.InsertSupplierAdapter(suppId, suppName, suppAddress, phoneNbr, connection))
+                using (SqlDataAdapter adapter = AdapterManager.SupplierAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    AddSupplierAdapter.Fill(ds, "Supplier");
+                    adapter.DeleteCommand.Parameters[0].Value = supplierId;
 
-                    DataTable supplierDataTable = new DataTable();
-                    supplierDataTable = ds.Tables["Supplier"];
-                    
-                    DataRow row = supplierDataTable.NewRow();
-                    row["SupplierID"] = suppId;
-                    row["SupplierName"] = suppName;
-                    row["SupplierAddress"] = suppAddress;
-                    row["PhoneNumber"] = phoneNbr;
-
-                    supplierDataTable.Rows.Add(row);
-                    AddSupplierAdapter.Update(supplierDataTable);
+                    connection.Open();
+                    adapter.DeleteCommand.ExecuteNonQuery();
                 }
             }
         }
-
-        public void DeleteSupplier(int suppId, string connectionString)
+        public void UpdateSupplier(
+            int supplierId,
+            string supplierName,
+            string supplierAddress,
+            int phoneNumber)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter addSupplierAdapter = SqlAdapterClass.DeleteSupplierAdapter(suppId,connection))
+                using (SqlDataAdapter adapter = AdapterManager.SupplierAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    addSupplierAdapter.Fill(ds, "Supplier");
+                    adapter.UpdateCommand.Parameters[0].Value = supplierId;
+                    adapter.UpdateCommand.Parameters[1].Value = supplierName;
+                    adapter.UpdateCommand.Parameters[2].Value = supplierAddress;
+                    adapter.UpdateCommand.Parameters[3].Value = phoneNumber;
 
-                    DataTable supplierDataTable = new DataTable();
-                    supplierDataTable = ds.Tables["Supplier"];
-
-                    DataRow[] rows = supplierDataTable.Select("SupplierID = " + suppId.ToString());
-                    if (rows.Length > 0)
-                    {
-                        rows[0].Delete();
-                        addSupplierAdapter.Update(supplierDataTable);
-                    }
+                    connection.Open();
+                    adapter.UpdateCommand.ExecuteNonQuery();
                 }
             }
+
         }
-
-        public void UpdateSupplier(int suppId, string suppName, string suppAddress, int phoneNbr, string connectionString)
+        public DataSet ReadSupplier()
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateSupplierAdapter(suppId, suppName, suppAddress, phoneNbr,connection))
+                using (SqlDataAdapter adapter = AdapterManager.CustomerAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Supplier");
-
-                    DataTable suppDataTable = new DataTable();
-                    suppDataTable = ds.Tables["Supplier"];
-
-                    DataRow[] rows = suppDataTable.Select("SupplierID =" + suppId);
-                    if (rows.Length == 1)
-                    {
-                        rows[0]["SupplierName"] = suppName;
-                        rows[0]["SupplierAddress"] = suppAddress;
-                        rows[0]["PhoneNumber"] = phoneNbr;
-                    }
-
-                    adapter.Update(suppDataTable);
+                    DataSet customerDataSet = new DataSet();
+                    adapter.Fill(customerDataSet);
+                    return customerDataSet;
                 }
             }
         }
 
         public DataTable FindSupplier(int supplierID, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter findSupplierAdapter = SqlAdapterClass.FindSupplierAdapter(supplierID, connection))
+                using (SqlDataAdapter findSupplierAdapter = AdapterManager.FindSupplierAdapter(supplierID, connection))
                 {
                     DataTable findSupplierDataTable = new();
 
