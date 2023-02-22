@@ -213,12 +213,12 @@ namespace WinFormsApp
             productAdapter.SelectCommand = command;
 
             command = new SqlCommand(
-                "INSERT INTO Supplier VALUES (@ProductID, @ProductName, @Price)",
+                "INSERT INTO Product VALUES (@ProductID, @ProductName, @Price)",
                 connection);
 
-            command.Parameters.Add("ProductID", SqlDbType.Int, 10, "ProductID");
-            command.Parameters.Add("ProductName", SqlDbType.VarChar, 10, "ProductName");
-            command.Parameters.Add("Price", SqlDbType.Decimal, 10, "Price");
+            command.Parameters.Add("@ProductID", SqlDbType.Int, 10, "ProductID");
+            command.Parameters.Add("@ProductName", SqlDbType.VarChar, 10, "ProductName");
+            command.Parameters.Add("@Price", SqlDbType.Decimal, 10, "Price");
             command.Connection = connection;
             productAdapter.InsertCommand = command;
 
@@ -229,9 +229,9 @@ namespace WinFormsApp
 
             command = new SqlCommand("UPDATE Product SET ProductName = @ProductName, Price = @Price WHERE ProductID = @ProductID", connection);
 
-            command.Parameters.Add("@ProductID", SqlDbType.Int, 10, "ProductID");
-            command.Parameters.Add("@ProductName", SqlDbType.VarChar, 10, "ProductName");
-            command.Parameters.Add("@Price", SqlDbType.Decimal, 10, "Price");
+            command.Parameters.Add("ProductID", SqlDbType.Int, 10, "ProductID");
+            command.Parameters.Add("ProductName", SqlDbType.VarChar, 10, "ProductName");
+            command.Parameters.Add("Price", SqlDbType.Decimal, 10, "Price");
 
             command.Connection = connection;
             productAdapter.UpdateCommand = command;
@@ -239,109 +239,58 @@ namespace WinFormsApp
 
             return productAdapter;
         }
-
-        public static SqlDataAdapter FindProductAdapter(int productID, SqlConnection connection)
+        public static SqlDataAdapter FindProductAdapter(int productId, SqlConnection connection)
         {
-            SqlDataAdapter productFindAdapter = new();
+            SqlDataAdapter adapter = new();
             string query = "SELECT ProductID, ProductName, Price FROM Product WHERE ProductID = @ProductID";
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ProductID", productID);
-            productFindAdapter.SelectCommand = command;
-
-            return productFindAdapter;
-        }
-
-
-        // - PURCHASE -
-
-        public static SqlDataAdapter ViewAllPurchaseAdapter(SqlConnection connection)
-        {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command;
-            string query = "SELECT * FROM Purchase";
-
-            command = new(query, connection);
-
-            command.Connection = connection;
+            command.Parameters.AddWithValue("@ProductID", productId);
             adapter.SelectCommand = command;
+
             return adapter;
         }
-
-        public static SqlDataAdapter InsertPurchaseAdapter(int purchaseId, int customerId, int employeeId, SqlConnection connection)
+        //- PURCHASE -
+        public static SqlDataAdapter PurchaseAdapter(SqlConnection connection)
         {
             SqlDataAdapter purchaseAdapter = new SqlDataAdapter();
+            SqlCommand command;
 
-            SqlCommand command = new SqlCommand("SELECT * " +
-                                                "FROM Purchase " +
-                                                "WHERE PurchaseID = @PurchaseID " +
-                                                "AND CustomerID = @CustomerID " +
-                                                "AND EmployeeID = @EmployeeID", connection);
-
-            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
-            command.Parameters.AddWithValue("@CustomerID", customerId);
-            command.Parameters.AddWithValue("@EmployeeID", employeeId);
-
+            command = new SqlCommand("SELECT * FROM Purchase", connection);
+            command.Connection = connection;
             purchaseAdapter.SelectCommand = command;
 
-            command = new SqlCommand("Insert INTO Purchase (PurchaseID, CustomerID, EmployeeID) " +
-                                     "VALUES (@PurchaseID, @CustomerID, @EmployeeID)", connection);
+            command = new SqlCommand(
+                "INSERT INTO Purchase VALUES (@PurchaseID, @EmployeeID, @CustomerID)",
+                connection);
 
-            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
-            command.Parameters.AddWithValue("@CustomerID", customerId);
-            command.Parameters.AddWithValue("@EmployeeID", employeeId);
-
+            command.Parameters.Add("@PurchaseID", SqlDbType.Int, 10, "PurchaseID");
+            command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeID");
+            command.Parameters.Add("@CustomerID", SqlDbType.Int, 10, "CustomerID");
+            command.Connection = connection;
             purchaseAdapter.InsertCommand = command;
-            return purchaseAdapter;
-        }
 
-        public static SqlDataAdapter UpdatePurchaseAdapter(int purchaseId, int customerId, int employeeId, SqlConnection connection)
-        {
-            SqlDataAdapter updatePurchaseAdapter = new();
-            string selectQuery = "SELECT * FROM Purchase WHERE PurchaseID = @PurchaseID";
-            SqlCommand command = new(selectQuery, connection);
-
-            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
-
-            updatePurchaseAdapter.SelectCommand = command;
-
-            string updateQuery = "UPDATE Purchase SET CustomerID = @CustomerID, EmployeeID = @EmployeeID WHERE PurchaseID = @PurchaseID";
-            command = new(updateQuery, connection);
-
-            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
-            command.Parameters.AddWithValue("@CustomerID", customerId);
-            command.Parameters.AddWithValue("@EmployeeID", employeeId);
-
-            updatePurchaseAdapter.UpdateCommand = command;
-
-            return updatePurchaseAdapter;
-        }
-
-        public static SqlDataAdapter DeletePurchaseAdapter(int purchaseId, SqlConnection connection)
-        {
-            SqlDataAdapter purchaseAdapter = new SqlDataAdapter();
-
-            SqlCommand command = new SqlCommand("SELECT * " +
-                                                "FROM Purchase " +
-                                                "WHERE PurchaseID = @PurchaseID",
-                                                connection);
-
-            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
-            purchaseAdapter.SelectCommand = command;
-
-            command = new SqlCommand("DELETE " +
-                                     "FROM Purchase " +
-                                     "WHERE PurchaseID = @PurchaseID",
-                                     connection);
-
-            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            command = new SqlCommand("DELETE FROM Purchase WHERE PurchaseID = @PurchaseID", connection);
+            command.Parameters.Add("@PurchaseID", SqlDbType.Int, 10, "PurchaseID");
+            command.Connection = connection;
             purchaseAdapter.DeleteCommand = command;
 
+            command = new SqlCommand("UPDATE Purchase SET EmployeeID = @EmployeeID, CustomerID = @CustomerID WHERE PurchaseID = @PurchaseID", connection);
+
+            command.Parameters.Add("@PurchaseID", SqlDbType.Int, 10, "PurchaseID");
+            command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeId");
+            command.Parameters.Add("@CustomerID", SqlDbType.Decimal, 10, "CustomerID");
+
+            command.Connection = connection;
+            purchaseAdapter.UpdateCommand = command;
+
+
             return purchaseAdapter;
         }
+
         public static SqlDataAdapter FindPurchaseAdapter(int purchaseId, SqlConnection connection)
         {
-            SqlDataAdapter adapter= new();
+            SqlDataAdapter adapter = new();
             string query = "SELECT PurchaseID, EmployeeID, CustomerID FROM Purchase WHERE PurchaseID = @PurchaseID";
             SqlCommand command = new SqlCommand(query, connection);
 

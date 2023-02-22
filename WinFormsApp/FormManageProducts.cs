@@ -27,7 +27,7 @@ namespace WinFormsApp
 
         private void PopulatePurchaseComboBox() //med hjälp av ChatGPT
         {
-            DataSet ds = _layer.ViewPurchase();
+            DataSet ds = _layer.ReadPurchase();
             DataTable dt = ds.Tables[0];
             
             comboBoxSelectPurchaseToAddProduct.DataSource = dt;

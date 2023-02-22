@@ -35,7 +35,7 @@ namespace WinFormsApp
 
         private void PopulateEmpComboBox() //med hjälp av ChatGPT
         {
-            DataSet ds = _layer.ViewAllEmployees();
+            DataSet ds = _layer.ReadEmployee();
             DataTable dt = ds.Tables[0];
 
             dt.Columns.Add("DisplayString", typeof(string));
@@ -54,7 +54,7 @@ namespace WinFormsApp
 
         private void PopulateCustomerComboBox() //med hjälp av ChatGPT
         {
-            DataSet ds = _layer.ViewCustomers();
+            DataSet ds = _layer.ReadCustomer();
             DataTable dt = ds.Tables[0];
 
             dt.Columns.Add("DisplayString");
@@ -103,7 +103,7 @@ namespace WinFormsApp
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 // Utility.ClearTextBoxes(this);
-                _layer.InsertPurchase(purchaseId, purchaseCustomerId, purchaseEmployeeId);
+                _layer.AddPurchase(purchaseId, purchaseCustomerId, purchaseEmployeeId);
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
 
