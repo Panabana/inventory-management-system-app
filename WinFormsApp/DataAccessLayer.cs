@@ -15,217 +15,99 @@ namespace WinFormsApp
 
         public DataSet PopulatePurchaseGridView()
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.ViewPurchaseGrid(connection))
+                using (SqlDataAdapter adapter = AdapterManager.ViewPurchaseGrid(connection))
                 {
                     DataSet dataSet = new DataSet();
 
-                    adapter.Fill(dataSet, "Purchase");
+                    adapter.Fill(dataSet);
 
                     return dataSet;
                 }
             }
         }
 
-        // - EMPLOYEE -
-        public DataSet ViewAllEmployees()//string connectionString)
+        public void AddCustomer(
+            int customerId
+            , string customerName
+            , string customerAddress
+            , int phoneNumber)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter empAdapter = SqlAdapterClass.ViewAllEmployeeAdapter(connection))
+                using (SqlDataAdapter adapter = AdapterManager.CustomerAdapter(connection))
                 {
+
                     DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
 
-                    empAdapter.Fill(dataSet, "Employee");
+                    DataTable dataTableCust = new DataTable();
+                    DataTable CustomerDataTable = dataSet.Tables["Table"];
 
-                    return dataSet;
+                    DataRow row = CustomerDataTable.NewRow();
+
+                    row["CustomerID"] = customerId;
+                    row["CustomerName"] = customerName;
+                    row["CustomerAddress"] = customerAddress;
+                    row["PhoneNumber"] = phoneNumber;
+
+                    dataTableCust.Rows.Add(row);
+                    adapter.Update(dataSet);
                 }
             }
         }
-
-        public void InsertEmployee(int EmployeeID, string EmployeeName, string EmployeeAddress, int PhoneNumber, string connectionString)
+        public void DeleteCustomer(int customerId)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                connection.Open();
-
-                using (SqlDataAdapter empAdapter = SqlAdapterClass.InsertEmployeeAdapter(EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber, connection))
+                using (SqlDataAdapter adapter = AdapterManager.CustomerAdapter(connection))
                 {
-                    DataSet dataSet = new DataSet();
+                    adapter.DeleteCommand.Parameters[0].Value = customerId;
 
-                    empAdapter.Fill(dataSet, "Employee");
-
-                    DataTable empDataTable = dataSet.Tables["Employee"];
-
-                    DataRow row = empDataTable.NewRow();
-                    row["EmployeeID"] = EmployeeID;
-                    row["EmployeeName"] = EmployeeName;
-                    row["EmployeeAddress"] = EmployeeAddress;
-                    row["PhoneNumber"] = PhoneNumber;
-
-                    empDataTable.Rows.Add(row);
-                    empAdapter.Update(empDataTable);
-
+                    connection.Open();
+                    adapter.DeleteCommand.ExecuteNonQuery();
                 }
             }
         }
-
-        public void DeleteEmployee(int empId, string connectionString)
+        public void UpdateCustomer(
+            int customerId,
+            string customerName,
+            string customerAddress,
+            int phoneNumber)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                connection.Open();
-                
-                using (SqlDataAdapter adapter = SqlAdapterClass.DeleteEmployeeAdapter(empId, connection))
+                using (SqlDataAdapter adapter = AdapterManager.CustomerAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Employee");
+                    adapter.UpdateCommand.Parameters[0].Value = customerId;
+                    adapter.UpdateCommand.Parameters[1].Value = customerName;
+                    adapter.UpdateCommand.Parameters[2].Value = customerAddress;
+                    adapter.UpdateCommand.Parameters[3].Value = phoneNumber;
 
-                    DataTable empDataTable = new DataTable();
-                    empDataTable = ds.Tables["Employee"];
-
-                    DataRow[] rows = empDataTable.Select("EmployeeID =" + empId);
-                    if(rows.Length > 0)
-                    {
-                        rows[0].Delete();
-                        adapter.Update(empDataTable);
-                    }
+                    connection.Open();
+                    adapter.UpdateCommand.ExecuteNonQuery();
                 }
             }
-        }
 
-        public void UpdateEmployee(int empId, string empName, string empAddress, int phoneNbr, string connectionString)
+        }
+        public DataSet ReadCustomer()
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateEmployeeAdapter(empId, empName, empAddress, phoneNbr, connection))
+                using (SqlDataAdapter adapter = AdapterManager.CustomerAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Employee");
-
-                    DataTable empDataTable = new DataTable();
-                    empDataTable = ds.Tables["Employee"];
-
-                    DataRow[] rows = empDataTable.Select("EmployeeID =" + empId);
-                    if (rows.Length == 1)
-                    {
-                        rows[0]["EmployeeName"] = empName;
-                        rows[0]["EmployeeAddress"] = empAddress;
-                        rows[0]["PhoneNumber"] = phoneNbr;
-                    }
-
-                    adapter.Update(empDataTable);
+                    DataSet customerDataSet = new DataSet();
+                    adapter.Fill(customerDataSet);
+                    return customerDataSet;
                 }
             }
         }
-
-        public DataTable FindEmployee(int empID, string connectionString)
-        {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-            {
-                using (SqlDataAdapter findEmpAdapter = SqlAdapterClass.FindEmployeeAdapter(empID, connection))
-                {
-                    DataTable findEmpDataTable = new();
-
-                    findEmpAdapter.Fill(findEmpDataTable);
-                    return findEmpDataTable;
-                }
-            }
-        }
-        // - CUSTOMER -
-        public DataSet ViewCustomers()
-        {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-            {
-                using (SqlDataAdapter customerAdapter = SqlAdapterClass.ViewCustomerAdapter(connection))
-                {
-                    DataSet ds = new DataSet();
-
-                    customerAdapter.Fill(ds, "Customer");
-                    return ds;
-                }
-            }
-
-        }
-
-        public void InsertCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
-        {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-            {
-                using (SqlDataAdapter customerAdapter = SqlAdapterClass.InsertCustomerAdapter(custId,custName, custAddress,phoneNbr,connection))
-                { 
-                    DataSet ds = new DataSet();
-                    customerAdapter.Fill(ds, "Customer");
-
-                    DataTable customerDataTable = new DataTable();
-                    customerDataTable = ds.Tables["Customer"];
-
-                    DataRow row = customerDataTable.NewRow();
-                    row["CustomerID"] = custId;
-                    row["CustomerName"] = custName;
-                    row["CustomerAddress"] = custAddress;
-                    row["PhoneNumber"] = phoneNbr;
-
-                    customerDataTable.Rows.Add(row);
-                    customerAdapter.Update(customerDataTable);
-                }
-            }
-        }
-
-        public void DeleteCustomer(int custId, string connectionString)
-        {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-            {
-                using (SqlDataAdapter customerAdapter = SqlAdapterClass.DeleteCustomerAdapter(custId,connection))
-                {
-                    DataSet ds = new DataSet();
-                    customerAdapter.Fill(ds, "Customer");
-
-                    DataTable customerDataTable = new DataTable();
-                    customerDataTable = ds.Tables["Customer"];
-
-                    DataRow[] rows = customerDataTable.Select("CustomerID = " + custId.ToString());
-                    if (rows.Length > 0)
-                    {
-                        rows[0].Delete();
-                        customerAdapter.Update(customerDataTable);
-                    }
-                }
-            }
-        }
-
-
-        public void UpdateCustomer(int custId, string custName, string custAddress, int phoneNbr, string connectionString)
-        {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-            {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateCustomerAdapter(custId, custName, custAddress, phoneNbr,connection))
-                {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Customer");
-
-                    DataTable customerDataTable = new DataTable();
-                    customerDataTable = ds.Tables["Customer"];
-
-                    DataRow[] rows = customerDataTable.Select("CustomerID =" + custId);
-                    if (rows.Length == 1)
-                    {
-                        rows[0]["CustomerName"] = custName;
-                        rows[0]["CustomerAddress"] = custAddress;
-                        rows[0]["PhoneNumber"] = phoneNbr;
-                    }
-
-                    adapter.Update(customerDataTable);
-                }
-            }
-        }
-
         public DataTable FindCustomer(int customerId, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.FindCustomerAdapter(customerId, connection))
+                using (SqlDataAdapter adapter = AdapterManager.FindCustomerAdapter(customerId, connection))
                 {
                     DataTable findCustomerDataTable = new();
 
@@ -234,6 +116,98 @@ namespace WinFormsApp
                 }
             }
         }
+
+        // - EMPLOYEE -
+        public void AddEmployee(
+             int employeeId
+             , string employeeName
+             , string employeeAddress
+             , int phoneNumber)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.EmployeeAdapter(connection))
+                {
+
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+
+                    DataTable dataTableEmp = new DataTable();
+                    DataTable employeeDataTable = dataSet.Tables["Table"];
+
+                    DataRow row = employeeDataTable.NewRow();
+
+                    row["EmployeeID"] = employeeId;
+                    row["EmployeeName"] = employeeName;
+                    row["EmployeeAddress"] = employeeAddress;
+                    row["PhoneNumber"] = phoneNumber;
+
+                    dataTableEmp.Rows.Add(row);
+                    adapter.Update(dataSet);
+                }
+            }
+        }
+        public void DeleteEmployee(int employeeId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.EmployeeAdapter(connection))
+                {
+                    adapter.DeleteCommand.Parameters[0].Value = employeeId;
+
+                    connection.Open();
+                    adapter.DeleteCommand.ExecuteNonQuery();
+                }
+            }
+        }
+        public void UpdateEmployee(
+            int employeeId,
+            string employeeName,
+            string employeeAddress,
+            int phoneNumber)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.EmployeeAdapter(connection))
+                {
+                    adapter.UpdateCommand.Parameters[0].Value = employeeId;
+                    adapter.UpdateCommand.Parameters[1].Value = employeeName;
+                    adapter.UpdateCommand.Parameters[2].Value = employeeAddress;
+                    adapter.UpdateCommand.Parameters[3].Value = phoneNumber;
+
+                    connection.Open();
+                    adapter.UpdateCommand.ExecuteNonQuery();
+                }
+            }
+
+        }
+        public DataSet ReadEmployee()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.EmployeeAdapter(connection))
+                {
+                    DataSet employeeDataSet = new DataSet();
+                    adapter.Fill(employeeDataSet);
+                    return employeeDataSet;
+                }
+            }
+        }
+
+        public DataTable FindEmployee(int empID, string connectionString)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter findEmpAdapter = AdapterManager.FindEmployeeAdapter(empID, connection))
+                {
+                    DataTable findEmpDataTable = new();
+
+                    findEmpAdapter.Fill(findEmpDataTable);
+                    return findEmpDataTable;
+                }
+            }
+        }
+        
 
         // - SUPPLIER -
         public DataSet ViewSuppliers()

@@ -54,7 +54,7 @@ namespace WinFormsApp
                 int employeePhoneNumber = Convert.ToInt32(textBoxEmployeePhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                _layer.InsertEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber, connectionString); //osäker om rätt
+                _layer.AddEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
                 Utility.ClearTextBoxes(this);
             }
@@ -116,7 +116,7 @@ namespace WinFormsApp
                 int empPhoneNbr = Convert.ToInt32(textBoxEmployeePhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-                _layer.UpdateEmployee(empID, empName, empAddress, empPhoneNbr, connectionString);
+                _layer.UpdateEmployee(empID, empName, empAddress, empPhoneNbr);
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
                 Utility.ClearTextBoxes(this);
             }
@@ -152,7 +152,7 @@ namespace WinFormsApp
                 
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-                _layer.DeleteEmployee(employeeId, connectionString); //osäker om rätt
+                _layer.DeleteEmployee(employeeId); //osäker om rätt
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
                 Utility.ClearTextBoxes(this);
 
