@@ -479,6 +479,30 @@ namespace WinFormsApp
             }
         }
 
+        public void UpdatePurchase(int purchaseId, int customerId, int employeeId)
+        {
+            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = SqlAdapterClass.UpdatePurchaseAdapter(purchaseId, customerId, employeeId, connection))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds, "Purchase");
+
+                    DataTable purchaseDataTable = new DataTable();
+                    purchaseDataTable = ds.Tables["Purchase"];
+
+                    DataRow[] rows = purchaseDataTable.Select("PurchaseID =" + purchaseId);
+                    if (rows.Length == 1)
+                    {
+                        rows[0]["CustomerID"] = customerId;
+                        rows[0]["EmployeeID"] = employeeId;
+                    }
+
+                    adapter.Update(purchaseDataTable);
+                }
+            }
+        }
+
         public void DeletePurchase(int purchaseID)
         {
             using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
