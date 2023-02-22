@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,27 @@ namespace WinFormsApp
 
         private void barButtonManageProducts_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormManageProducts form = new FormManageProducts();
-            form.ShowDialog();
+            try
+            {
+                FormManageProducts form = new FormManageProducts();
+                form.ShowDialog();
+            }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong...");
+            }
         }
 
         private void barButtonManageEmployees_ItemClick(object sender, ItemClickEventArgs e)
@@ -44,14 +64,54 @@ namespace WinFormsApp
 
         private void barButtonManagePurchase_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormManagePurchases form = new FormManagePurchases();
-            form.ShowDialog();
+            try
+            {
+                FormManagePurchases form = new FormManagePurchases();
+                form.ShowDialog();
+            }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong...");
+            }
+
         }
 
         private void barButtonManageSuppliers_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormManageSuppliers form = new FormManageSuppliers();
-            form.ShowDialog();
+            try
+            {
+                FormManageSuppliers form = new FormManageSuppliers();
+                form.ShowDialog();
+            }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong...");
+            }
+
         }
     }
 }
