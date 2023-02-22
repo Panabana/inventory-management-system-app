@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp
 {
-    class SqlAdapterClass
+    class AdapterManager
     {
         internal class ConnectionHandler
         {
