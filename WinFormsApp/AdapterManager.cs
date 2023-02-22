@@ -99,116 +99,45 @@ namespace WinFormsApp
         }
 
         // - EMPLOYEE -
-
-        public static SqlDataAdapter ViewAllEmployeeAdapter(SqlConnection connection)
+        public static SqlDataAdapter EmployeeAdapter(SqlConnection connection)
         {
-            SqlDataAdapter empAdapter = new SqlDataAdapter();
+            SqlDataAdapter employeeAdapter = new SqlDataAdapter();
             SqlCommand command;
-            string viewEmployeesQuery = "SELECT * FROM Employee";
 
-            //Read all employees
-            command = new SqlCommand(viewEmployeesQuery, connection);
+            command = new SqlCommand("SELECT * FROM Employee", connection);
             command.Connection = connection;
-            empAdapter.SelectCommand = command;
+            employeeAdapter.SelectCommand = command;
 
-            return empAdapter;
-        }
-
-        public static SqlDataAdapter InsertEmployeeAdapter(int EmployeeID, string EmployeeName, string EmployeeAddress, int PhoneNumber, SqlConnection connection)
-        {
-            SqlDataAdapter addEmpAdapter = new SqlDataAdapter();
-
-            // Creates the SqlCommand for SqlDataAdapters's SelectCommand.
-            SqlCommand command = new SqlCommand(
-                "SELECT * " +
-                "FROM Employee " +
-                "WHERE EmployeeID = @EmployeeID " +
-                "AND EmployeeName = @EmployeeName",
-                connection);
-
-            // Add parameters with value
-            command.Parameters.AddWithValue("@EmployeeID", EmployeeID);
-            command.Parameters.AddWithValue("@EmployeeName", EmployeeName);
-            command.Parameters.AddWithValue("@EmployeeAddress", EmployeeAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
-
-            addEmpAdapter.SelectCommand = command;
-
-            // Creates the SqlCommand for SqlDataAdapters's InsertCommand.
             command = new SqlCommand(
-                "INSERT INTO Employee (EmployeeID, EmployeeName, EmployeeAddress, PhoneNumber) " +
-                "VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)",
+                "INSERT INTO Employee VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)",
                 connection);
 
-            // Add parameters with value
-            command.Parameters.AddWithValue("@EmployeeID", EmployeeID);
-            command.Parameters.AddWithValue("@EmployeeName", EmployeeName);
-            command.Parameters.AddWithValue("@EmployeeAddress", EmployeeAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+            command.Parameters.Add("EmployeeID", SqlDbType.Int, 10, "EmployeeID");
+            command.Parameters.Add("EmployeeName", SqlDbType.VarChar, 10, "EmployeeName");
+            command.Parameters.Add("EmployeeAddress", SqlDbType.VarChar, 10, "EmployeeAddress");
+            command.Parameters.Add("PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
+            command.Connection = connection;
+            employeeAdapter.InsertCommand = command;
 
-            addEmpAdapter.InsertCommand = command;
+            command = new SqlCommand("DELETE FROM Employee WHERE EmployeeID = @EmployeeID", connection);
+            command.Parameters.Add("EmployeeID", SqlDbType.Int, 10, "EmployeeID");
+            command.Connection = connection;
+            employeeAdapter.DeleteCommand = command;
 
-            // Create SqlCommand for SqlDataAdapter's DeleteCommand
-            string deleteEmpQuery = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
-            command = new SqlCommand(deleteEmpQuery, connection);
+            command = new SqlCommand("UPDATE Employee SET EmployeeName = @EmployeeName, EmployeeAddress = @EmployeeAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID", connection);
 
-            command.Parameters.AddWithValue("@EmployeeID", EmployeeID);
-            command.Parameters.AddWithValue("@EmployeeName", EmployeeName);
-            command.Parameters.AddWithValue("@EmployeeAddress", EmployeeAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+            command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeID");
+            command.Parameters.Add("@EmployeeName", SqlDbType.VarChar, 10, "EmployeeName");
+            command.Parameters.Add("@EmployeeAddress", SqlDbType.VarChar, 10, "EmployeeAddress");
+            command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
 
-            addEmpAdapter.DeleteCommand = command;
+            command.Connection = connection;
+            employeeAdapter.UpdateCommand = command;
 
-            return addEmpAdapter;
 
+            return employeeAdapter;
         }
 
-        public static SqlDataAdapter DeleteEmployeeAdapter(int empID, SqlConnection connection)
-        {
-            connection = ConnectionHandler.GetDatabaseConnection();
-
-            SqlDataAdapter deleteEmpAdapter = new SqlDataAdapter();
-
-            string selectQuery = "SELECT * FROM Employee WHERE EmployeeID = @EmployeeID";
-
-            SqlCommand command = new SqlCommand(selectQuery, connection);
-
-            command.Parameters.AddWithValue("@EmployeeID", empID);
-            deleteEmpAdapter.SelectCommand = command;
-
-            string deleteQuery = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
-
-            command = new SqlCommand(deleteQuery, connection);
-
-            command.Parameters.AddWithValue("@EmployeeID", empID);
-            deleteEmpAdapter.DeleteCommand = command;
-
-            return deleteEmpAdapter;
-        }
-
-        public static SqlDataAdapter UpdateEmployeeAdapter(int empID, string empName, string empAddress, int phoneNumber, SqlConnection connection)
-        {
-
-            SqlDataAdapter empUpdateAdapter = new SqlDataAdapter();
-            string selectQuery = "SELECT * FROM Employee WHERE EmployeeID = @EmployeeID";
-            SqlCommand command = new SqlCommand(selectQuery, connection);
-
-            command.Parameters.AddWithValue("@EmployeeID", empID);
-
-            empUpdateAdapter.SelectCommand = command;
-
-            string updateQuery = "UPDATE Employee SET EmployeeName = @EmployeeName, EmployeeAddress = @EmployeeAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID";
-            command = new SqlCommand(updateQuery, connection);
-
-            command.Parameters.AddWithValue("@EmployeeID", empID);
-            command.Parameters.AddWithValue("@EmployeeName", empName);
-            command.Parameters.AddWithValue("@EmployeeAddress", empAddress);
-            command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-
-            empUpdateAdapter.UpdateCommand = command;
-
-            return empUpdateAdapter;
-        }
 
         public static SqlDataAdapter FindEmployeeAdapter(int empId, SqlConnection connection)
         {
