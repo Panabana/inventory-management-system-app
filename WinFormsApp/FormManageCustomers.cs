@@ -55,22 +55,27 @@ namespace WinFormsApp
                 _layer.InsertCustomer(customerId, customerName, customerAddress, customerPhoneNumber, connectionString); //osäker om rätt
                 Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer added!");
+            }
+            catch (SqlException ex)
+            {
 
-
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+                if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManageCustomersMessage, "A customer with this ID already exists");
+                }
             }
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter the fields in the correct format");
             }
-
-            catch(SqlException ex)
-            {
-                if(ex.Number == 2627)
-                {
-                    Utility.LabelMessageFailure(labelManageCustomersMessage, "A customer with this ID already exists");
-                }
-            }
-
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
@@ -113,6 +118,17 @@ namespace WinFormsApp
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer edited!");
 
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+            }
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter the fields in the correct format");
@@ -133,6 +149,17 @@ namespace WinFormsApp
                 Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer deleted!");
 
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
             }
             catch (FormatException)
             {
@@ -167,6 +194,17 @@ namespace WinFormsApp
                 else
                 {
                     Utility.LabelMessageFailure(labelManageCustomersMessage, "Customer not found!");
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
                 }
             }
             catch (FormatException)
