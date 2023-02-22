@@ -58,19 +58,26 @@ namespace WinFormsApp
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
                 Utility.ClearTextBoxes(this);
             }
-            catch (FormatException)
-            {
-                Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter the fields in the correct format");
-            }
-
             catch (SqlException ex)
             {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
                 if (ex.Number == 2627)
                 {
                     Utility.LabelMessageFailure(labelManageEmployeesMessage, "A customer with this ID already exists");
-                }
+                }  
             }
-        
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter the fields in the correct format");
+            }                      
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
@@ -113,6 +120,18 @@ namespace WinFormsApp
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
                 Utility.ClearTextBoxes(this);
             }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+            }
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter the fields in the correct format");
@@ -137,6 +156,18 @@ namespace WinFormsApp
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
                 Utility.ClearTextBoxes(this);
 
+            }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
             }
             catch (FormatException)
             {
@@ -173,6 +204,18 @@ namespace WinFormsApp
                 else
                 {
                     Utility.LabelMessageFailure(labelManageEmployeesMessage, "Employee not found!");
+                }
+            }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
                 }
             }
             catch (FormatException)
