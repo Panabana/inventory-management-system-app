@@ -60,19 +60,19 @@ namespace WinFormsApp
                 "INSERT INTO Customer VALUES (@CustomerID, @CustomerName, @CustomerAddress, @PhoneNumber)",
                 connection);
 
-            command.Parameters.Add("CustomerID", SqlDbType.Int, 10, "CustomerID");
-            command.Parameters.Add("CustomerName", SqlDbType.VarChar, 10, "CustomerName");
-            command.Parameters.Add("CustomerAddress", SqlDbType.VarChar, 10, "CustomerAddress");
-            command.Parameters.Add("PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
+            command.Parameters.Add("@CustomerID", SqlDbType.Int, 10, "CustomerID");
+            command.Parameters.Add("@CustomerName", SqlDbType.VarChar, 10, "CustomerName");
+            command.Parameters.Add("@CustomerAddress", SqlDbType.VarChar, 10, "CustomerAddress");
+            command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
             command.Connection = connection;
             customerAdapter.InsertCommand = command;
 
             command = new SqlCommand("DELETE FROM Customer WHERE CustomerID = @CustomerID", connection);
-            command.Parameters.Add("CustomerID", SqlDbType.Int, 10, "CustomerID");
+            command.Parameters.Add("@CustomerID", SqlDbType.Int, 10, "CustomerID");
             command.Connection = connection;
             customerAdapter.DeleteCommand = command;
 
-            command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID", connection);
+            command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress, PhoneNumber = @PhoneNumber WHERE CustomerID = @CustomerID", connection);
 
             command.Parameters.Add("@CustomerID", SqlDbType.Int, 10, "CustomerID");
             command.Parameters.Add("@CustomerName", SqlDbType.VarChar, 10, "CustomerName");
@@ -112,15 +112,15 @@ namespace WinFormsApp
                 "INSERT INTO Employee VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)",
                 connection);
 
-            command.Parameters.Add("EmployeeID", SqlDbType.Int, 10, "EmployeeID");
-            command.Parameters.Add("EmployeeName", SqlDbType.VarChar, 10, "EmployeeName");
-            command.Parameters.Add("EmployeeAddress", SqlDbType.VarChar, 10, "EmployeeAddress");
-            command.Parameters.Add("PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
+            command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeID");
+            command.Parameters.Add("@EmployeeName", SqlDbType.VarChar, 10, "EmployeeName");
+            command.Parameters.Add("@EmployeeAddress", SqlDbType.VarChar, 10, "EmployeeAddress");
+            command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
             command.Connection = connection;
             employeeAdapter.InsertCommand = command;
 
             command = new SqlCommand("DELETE FROM Employee WHERE EmployeeID = @EmployeeID", connection);
-            command.Parameters.Add("EmployeeID", SqlDbType.Int, 10, "EmployeeID");
+            command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeID");
             command.Connection = connection;
             employeeAdapter.DeleteCommand = command;
 
@@ -164,15 +164,15 @@ namespace WinFormsApp
                 "INSERT INTO Supplier VALUES (@SupplierID, @SupplierName, @SupplierAddress, @PhoneNumber)",
                 connection);
 
-            command.Parameters.Add("SupplierID", SqlDbType.Int, 10, "SupplierID");
-            command.Parameters.Add("SupplierName", SqlDbType.VarChar, 10, "SupplierName");
-            command.Parameters.Add("SupplierAddress", SqlDbType.VarChar, 10, "SupplierAddress");
-            command.Parameters.Add("PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
+            command.Parameters.Add("@SupplierID", SqlDbType.Int, 10, "SupplierID");
+            command.Parameters.Add("@SupplierName", SqlDbType.VarChar, 10, "SupplierName");
+            command.Parameters.Add("@SupplierAddress", SqlDbType.VarChar, 10, "SupplierAddress");
+            command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
             command.Connection = connection;
             supplierAdapter.InsertCommand = command;
 
             command = new SqlCommand("DELETE FROM Supplier WHERE SupplierID = @SupplierID", connection);
-            command.Parameters.Add("SupplierID", SqlDbType.Int, 10, "SupplierID");
+            command.Parameters.Add("@SupplierID", SqlDbType.Int, 10, "SupplierID");
             command.Connection = connection;
             supplierAdapter.DeleteCommand = command;
 
@@ -223,15 +223,15 @@ namespace WinFormsApp
             productAdapter.InsertCommand = command;
 
             command = new SqlCommand("DELETE FROM Product WHERE ProductID = @ProductID", connection);
-            command.Parameters.Add("ProductID", SqlDbType.Int, 10, "ProductID");
+            command.Parameters.Add("@ProductID", SqlDbType.Int, 10, "ProductID");
             command.Connection = connection;
             productAdapter.DeleteCommand = command;
 
             command = new SqlCommand("UPDATE Product SET ProductName = @ProductName, Price = @Price WHERE ProductID = @ProductID", connection);
 
-            command.Parameters.Add("ProductID", SqlDbType.Int, 10, "ProductID");
-            command.Parameters.Add("ProductName", SqlDbType.VarChar, 10, "ProductName");
-            command.Parameters.Add("Price", SqlDbType.Decimal, 10, "Price");
+            command.Parameters.Add("@ProductID", SqlDbType.Int, 10, "ProductID");
+            command.Parameters.Add("@ProductName", SqlDbType.VarChar, 10, "ProductName");
+            command.Parameters.Add("@Price", SqlDbType.Decimal, 10, "Price");
 
             command.Connection = connection;
             productAdapter.UpdateCommand = command;
