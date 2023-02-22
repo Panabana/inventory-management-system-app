@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp
 {
-    class SqlAdapterClass
+    class AdapterManager
     {
         internal class ConnectionHandler
         {
@@ -33,6 +33,86 @@ namespace WinFormsApp
                 return connection;
             }
         }
+        public static SqlDataAdapter EmployeeAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter employeeAdapter = new SqlDataAdapter();
+            SqlCommand command;
+            //Read/View all employees
+            command = new SqlCommand("SELECT * FROM Employee", connection);
+
+            command.Connection = connection;
+            employeeAdapter.SelectCommand = command;
+
+            command = new SqlCommand(
+                "INSERT INTO Employee VALUES (@EmployeeID, @EmployeeName, @EmployeeAddress, @PhoneNumber)",
+                connection);
+
+            // Add parameters with value
+            command.Parameters.Add("EmployeeID", SqlDbType.Int,10, "EmployeeID");
+            command.Parameters.Add("EmployeeName", SqlDbType.VarChar, 10,"EmployeeName");
+            command.Parameters.Add("EmployeeAddress",SqlDbType.VarChar,10, "EmployeeAddress");
+            command.Parameters.Add("PhoneNumber",SqlDbType.Int, 10, "PhoneNumber");
+            command.Connection = connection;
+            employeeAdapter.InsertCommand = command;
+
+            command = new SqlCommand("DELETE FROM Employee WHERE EmployeeID = @EmployeeID", connection);
+            command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10,"EmployeeID");
+            command.Connection = connection;
+            employeeAdapter.DeleteCommand = command;
+
+            command = new SqlCommand("UPDATE Employee SET EmployeeName = @EmployeeName, EmployeeAddress = @EmployeeAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID", connection);
+  
+            command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeId");
+            command.Parameters.Add("@EmployeeName", SqlDbType.VarChar, 10, "EmployeeName");
+            command.Parameters.Add("@EmployeeAddress", SqlDbType.VarChar, 10, "EmployeeAddress");
+            command.Parameters.Add("@PhoneNumber", SqlDbType.Int,10, "PhoneNumber");
+
+            command.Connection = connection;
+            employeeAdapter.UpdateCommand = command;
+
+            return employeeAdapter;
+
+        }
+        
+        public static SqlDataAdapter CustomerAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter customerAdapter = new SqlDataAdapter();
+            SqlCommand command;
+
+            command = new SqlCommand("SELECT * FROM Customer", connection);
+            command.Connection = connection;
+            customerAdapter.SelectCommand = command;
+
+            command = new SqlCommand(
+                "INSERT INTO Customer VALUES (@CustomerID, @CustomerName, @CustomerAddress, @PhoneNumber)",
+                connection);
+
+            command.Parameters.Add("CustomerID", SqlDbType.Int, 10, "CustomerID");
+            command.Parameters.Add("CustomerName", SqlDbType.VarChar, 10, "CustomerName");
+            command.Parameters.Add("CustomerAddress", SqlDbType.VarChar, 10, "CustomerAddress");
+            command.Parameters.Add("PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
+            command.Connection = connection;
+            customerAdapter.InsertCommand = command;
+
+            command = new SqlCommand("DELETE FROM Customer WHERE CustomerID = @CustomerID", connection);
+            command.Parameters.Add("CustomerID", SqlDbType.Int, 10, "CustomerID");
+            command.Connection = connection;
+            customerAdapter.DeleteCommand = command;
+
+            command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID", connection);
+
+            command.Parameters.Add("@CustomerID", SqlDbType.Int, 10, "CustomerID");
+            command.Parameters.Add("@CustomerName", SqlDbType.VarChar, 10, "CustomerName");
+            command.Parameters.Add("@CustomerAddress", SqlDbType.VarChar, 10, "CustomerAddress");
+            command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
+
+            command.Connection = connection;
+            customerAdapter.UpdateCommand = command;
+
+
+            return customerAdapter;
+        }
+         
 
         public static SqlDataAdapter ViewPurchaseGrid(SqlConnection connection)
         {

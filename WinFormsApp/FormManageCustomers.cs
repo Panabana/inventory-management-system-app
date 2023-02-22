@@ -52,7 +52,7 @@ namespace WinFormsApp
                 string customerAddress = textBoxCustomerAddress.Text;
                 int customerPhoneNumber = Convert.ToInt32(textBoxCustomerPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-                _layer.InsertCustomer(customerId, customerName, customerAddress, customerPhoneNumber, connectionString); //osäker om rätt
+                _layer.AddCustomer(customerId, customerName, customerAddress, customerPhoneNumber); //osäker om rätt
                 Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer added!");
 
