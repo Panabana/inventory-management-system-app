@@ -72,7 +72,7 @@ namespace WinFormsApp
                 int phoneNbr = Convert.ToInt32(textBoxSupplierPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
                 
-                _layer.InsertSupplier(suppId, suppName, suppAddress, phoneNbr, connectionString); 
+                _layer.AddSupplier(suppId, suppName, suppAddress, phoneNbr); 
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added!");
                 Utility.ClearTextBoxes(this);
 
@@ -125,7 +125,7 @@ namespace WinFormsApp
                 string suppAddress = textBoxSupplierAddress.Text;
                 int phoneNumber = Convert.ToInt32(textBoxSupplierPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-                _layer.UpdateSupplier(suppId, suppName, suppAddress, phoneNumber, connectionString);
+                _layer.UpdateSupplier(suppId, suppName, suppAddress, phoneNumber);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier edited!");
                 Utility.ClearTextBoxes(this);
 
@@ -150,7 +150,7 @@ namespace WinFormsApp
 
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-                _layer.DeleteSupplier(suppId, connectionString);
+                _layer.DeleteSupplier(suppId);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier removed!");
                 Utility.ClearTextBoxes(this);
             }
