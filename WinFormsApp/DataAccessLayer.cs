@@ -52,7 +52,7 @@ namespace WinFormsApp
                     row["CustomerAddress"] = customerAddress;
                     row["PhoneNumber"] = phoneNumber;
 
-                    dataTableCust.Rows.Add(row);
+                    CustomerDataTable.Rows.Add(row);
                     adapter.Update(dataSet);
                 }
             }
@@ -142,7 +142,7 @@ namespace WinFormsApp
                     row["EmployeeAddress"] = employeeAddress;
                     row["PhoneNumber"] = phoneNumber;
 
-                    dataTableEmp.Rows.Add(row);
+                    employeeDataTable.Rows.Add(row);
                     adapter.Update(dataSet);
                 }
             }
@@ -225,16 +225,16 @@ namespace WinFormsApp
                     adapter.Fill(dataSet);
 
                     DataTable dataTableSup = new DataTable();
-                    DataTable SupplierDataTable = dataSet.Tables["Table"];
+                    DataTable supplierDataTable = dataSet.Tables["Table"];
 
-                    DataRow row = SupplierDataTable.NewRow();
+                    DataRow row = supplierDataTable.NewRow();
 
                     row["SupplierID"] = supplierId;
                     row["SupplierName"] = supplierName;
                     row["SupplierAddress"] = supplierAddress;
                     row["PhoneNumber"] = phoneNumber;
 
-                    dataTableSup.Rows.Add(row);
+                    supplierDataTable.Rows.Add(row);
                     adapter.Update(dataSet);
                 }
             }
@@ -316,16 +316,16 @@ namespace WinFormsApp
                     adapter.Fill(dataSet);
 
                     DataTable dataTableProd = new DataTable();
-                    DataTable ProductDataTable = dataSet.Tables["Table"];
+                    DataTable productDataTable = dataSet.Tables["Table"];
 
-                    DataRow row = ProductDataTable.NewRow();
+                    DataRow row = productDataTable.NewRow();
 
                     row["ProductID"] = productId;
                     row["ProductName"] =productName;
                     row["Price"] = price;
                    
 
-                    dataTableProd.Rows.Add(row);
+                    productDataTable.Rows.Add(row);
                     adapter.Update(dataSet);
                 }
             }
@@ -408,16 +408,16 @@ namespace WinFormsApp
                     adapter.Fill(dataSet);
 
                     DataTable dataTablePurchase = new DataTable();
-                    DataTable PurchaseDataTable = dataSet.Tables["Table"];
+                    DataTable purchaseDataTable = dataSet.Tables["Table"];
 
-                    DataRow row = PurchaseDataTable.NewRow();
+                    DataRow row = purchaseDataTable.NewRow();
 
                     row["PurchaseID"] = purchaseId;
                     row["EmployeeID"] = employeeId;
                     row["CustomerID"] = customerId;
 
 
-                    dataTablePurchase.Rows.Add(row);
+                    purchaseDataTable.Rows.Add(row);
                     adapter.Update(dataSet);
                 }
             }
