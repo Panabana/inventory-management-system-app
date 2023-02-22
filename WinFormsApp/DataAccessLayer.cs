@@ -301,98 +301,87 @@ namespace WinFormsApp
         }
 
         // - PRODUCT -
-        public DataSet ViewProducts()
+        public void AddProduct(
+            int productId
+            , string productName
+            , decimal price)
+            
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.ViewAllProductAdapter(connection))
+                using (SqlDataAdapter adapter = AdapterManager.ProductAdapter(connection))
                 {
+
                     DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
 
-                    adapter.Fill(dataSet, "Product");
+                    DataTable dataTableProd = new DataTable();
+                    DataTable ProductDataTable = dataSet.Tables["Table"];
 
-                    return dataSet;
-                }
-            }
-        }
+                    DataRow row = ProductDataTable.NewRow();
 
-        public void InsertProduct(int productId, string productName, int productPrice, string connectionString)
-        {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
-            {
-                connection.Open();
-
-                using (SqlDataAdapter adapter = SqlAdapterClass.InsertProductAdapter(productId, productName, productPrice, connection))
-                {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Product");
-
-                    DataTable productDataTable = new DataTable();
-                    productDataTable = ds.Tables["Product"];
-
-                    DataRow row = productDataTable.NewRow();
                     row["ProductID"] = productId;
-                    row["ProductName"] = productName;
-                    row["Price"] = productPrice;
+                    row["ProductName"] =productName;
+                    row["Price"] = price;
+                   
 
-                    productDataTable.Rows.Add(row);
-                    adapter.Update(productDataTable);
+                    dataTableProd.Rows.Add(row);
+                    adapter.Update(dataSet);
                 }
             }
         }
-
-        public void UpdateProduct(int productId, string productName, int productPrice, string connectionString)
+        public void DeleteProduct(int productId)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = SqlAdapterClass.UpdateProductAdapter(productId, productName, productPrice, connection))
+                using (SqlDataAdapter adapter = AdapterManager.ProductAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds, "Product");
+                    adapter.DeleteCommand.Parameters[0].Value = productId;
 
-                    DataTable productDataTable = new DataTable();
-                    productDataTable = ds.Tables["Product"];
-
-                    DataRow[] rows = productDataTable.Select("ProductID =" + productId);
-                    if (rows.Length == 1)
-                    {
-                        rows[0]["ProductName"] = productName;
-                        rows[0]["Price"] = productPrice;
-                    }
-
-                    adapter.Update(productDataTable);
+                    connection.Open();
+                    adapter.DeleteCommand.ExecuteNonQuery();
                 }
             }
         }
-
-        public void DeleteProduct(int productId, string connectionString)
+        public void UpdateProduct(
+            int productId,
+            string productName,
+            decimal price)
+            
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-
-                using (SqlDataAdapter productAdapter = SqlAdapterClass.DeleteProductAdapter(productId, connection))
+                using (SqlDataAdapter adapter = AdapterManager.ProductAdapter(connection))
                 {
-                    DataSet ds = new DataSet();
-                    productAdapter.Fill(ds, "Product");
+                    adapter.UpdateCommand.Parameters[0].Value = productId;
+                    adapter.UpdateCommand.Parameters[1].Value = productName;
+                    adapter.UpdateCommand.Parameters[2].Value = price;
+                    
 
-                    DataTable productDataTable = new DataTable();
-                    productDataTable = ds.Tables["Product"];
+                    connection.Open();
+                    adapter.UpdateCommand.ExecuteNonQuery();
+                }
+            }
 
-                    DataRow[] rows = productDataTable.Select("ProductID = " + productId.ToString());
-                    if (rows.Length > 0)
-                    {
-                        rows[0].Delete();
-                        productAdapter.Update(productDataTable);
-                    }
+        }
+        public DataSet ReadProduct()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ProductAdapter(connection))
+                {
+                    DataSet productDataSet = new DataSet();
+                    adapter.Fill(productDataSet);
+                    return productDataSet;
                 }
             }
         }
 
         public DataTable FindProduct(int productID, string connectionString)
         {
-            using (SqlConnection connection = SqlAdapterClass.ConnectionHandler.GetDatabaseConnection())
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter findProductAdapter = SqlAdapterClass.FindProductAdapter(productID, connection))
+                using (SqlDataAdapter findProductAdapter = AdapterManager.FindProductAdapter(productID, connection))
                 {
                     DataTable findProductDataTable = new();
 

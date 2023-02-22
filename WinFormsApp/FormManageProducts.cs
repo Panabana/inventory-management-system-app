@@ -61,7 +61,7 @@ namespace WinFormsApp
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
 
-                _layer.InsertProduct(productId, productName, productPrice, connectionString);
+                _layer.AddProduct(productId, productName, productPrice);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
                 Utility.ClearTextBoxes(this);
 
@@ -112,7 +112,7 @@ namespace WinFormsApp
                 int price = Convert.ToInt32(textBoxProductPrice.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                _layer.UpdateProduct(productID, productName, price, connectionString);
+                _layer.UpdateProduct(productID, productName, price);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product edited!");
                 Utility.ClearTextBoxes(this);
             }
@@ -138,7 +138,7 @@ namespace WinFormsApp
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
 
-                _layer.DeleteProduct(productId, connectionString);
+                _layer.DeleteProduct(productId);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product deleted!");
                 Utility.ClearTextBoxes(this);
 
