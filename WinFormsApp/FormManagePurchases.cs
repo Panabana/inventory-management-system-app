@@ -75,28 +75,6 @@ namespace WinFormsApp
         {
             try
             {
-                //if (string.IsNullOrEmpty(textBoxPurchaseId.Text))
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a valid ID!");
-                //    return;
-                //}
-                //if (string.IsNullOrEmpty(textBoxPurchaseCustomerId.Text))
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a valid customer ID!");
-                //    return;
-                //}
-                //if (string.IsNullOrEmpty(textBoxPurchaseDate.Text))
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a date!");
-                //    return;
-
-                //
-
-
-                //}
-
-
-
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
                 int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
                 int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.SelectedValue);
@@ -107,8 +85,9 @@ namespace WinFormsApp
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
 
-
             }
+
+            // (SELECT COUNT(*) FROM Purchase WHERE CustomerID = inserted.CustomerID) <= 5
 
             catch (SqlException ex)
             {
@@ -121,6 +100,14 @@ namespace WinFormsApp
                 {
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "This Purchase already exists!");
                 }
+                else
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error with database");
+                }
+            }
+            catch
+            {
+
             }
         }
 
