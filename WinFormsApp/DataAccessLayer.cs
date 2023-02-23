@@ -430,7 +430,6 @@ namespace WinFormsApp
             {
                 using (SqlDataAdapter adapter = AdapterManager.PurchaseAdapter(connection))
                 {
-
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet);
 
