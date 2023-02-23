@@ -300,15 +300,14 @@ namespace WinFormsApp
             return adapter;
         }
         
-        public static SqlDataAdapter CheckActivePurchaseAdapter(SqlConnection connection)
+        public static int CheckActivePurchaseAdapter(int purchaseCustomerId, SqlConnection connection)
         {
-            SqlDataAdapter adapter = new();
-            string query = "SELECT COUNT(*) AS row_count FROM Purchase WHERE CustomerID <= 5";
+            string query = "SELECT COUNT(*) AS row_count FROM Purchase WHERE CustomerID = @CustomerID"; // AND Active = 1
             SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CustomerID", purchaseCustomerId);
 
-            adapter.SelectCommand = command;
-
-            return adapter;
+            int result = (int)command.ExecuteScalar();
+            return result;
         }
 
         // - ProductPurchase -

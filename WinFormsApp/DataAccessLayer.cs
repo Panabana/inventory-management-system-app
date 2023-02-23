@@ -394,16 +394,14 @@ namespace WinFormsApp
 
         // - Purchase -
 
-        public DataSet CheckActivePurchases(int purchaseId)
+        public int CheckActivePurchases(int purchaseCustomerId)
         {
             using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
-                using (SqlDataAdapter adapter = AdapterManager.CheckActivePurchaseAdapter(connection))
-                {
-                    DataSet activePurchaseDataSet = new DataSet();
-                    adapter.Fill(activePurchaseDataSet);
-                    return activePurchaseDataSet;
-                }
+                connection.Open();
+                int result = AdapterManager.CheckActivePurchaseAdapter(purchaseCustomerId, connection);
+                connection.Close();
+                return result;
             }
         }
 

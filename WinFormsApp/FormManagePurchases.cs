@@ -71,27 +71,21 @@ namespace WinFormsApp
             comboBoxPurchaseCustomerName.ValueMember = "CustomerID";
         }
 
-        private int CheckActivePurchases(int purchaseId)
-        {
-            // SELECT COUNT(*) AS row_count FROM Purchase WHERE CustomerID = '2'
-            int amount = Convert.ToInt32(_layer.CheckActivePurchases(purchaseId));
-            return amount;
-        }
-
         private void buttonAddPurchase_Click(object sender, EventArgs e)
         {
             try
             {
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
-                // Checking business rule two first
-                int amountActive = CheckActivePurchases(purchaseId);
-                if (amountActive > 5)
+                int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
+
+                // BUSINESS RULE #2 CHECK - NO MORE THAN 5 ACTIVE PURCHASE ORDERS
+                int amountActive = _layer.CheckActivePurchases(purchaseCustomerId);
+                if (amountActive >= 5)
                 {
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "Customer has too many active purchase orders!");
                     return;
                 }
 
-                int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
                 int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.SelectedValue);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
@@ -114,10 +108,6 @@ namespace WinFormsApp
                 {
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "This Purchase already exists!");
                 }
-                //else if (amountActive >= 5)
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Customer has too many active purchase orders");
-                //}
                 else
                 {
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error with database");
