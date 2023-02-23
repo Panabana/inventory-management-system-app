@@ -293,8 +293,19 @@ namespace WinFormsApp
             SqlDataAdapter adapter = new();
             string query = "SELECT PurchaseID, EmployeeID, CustomerID FROM Purchase WHERE PurchaseID = @PurchaseID";
             SqlCommand command = new SqlCommand(query, connection);
-
+            
             command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            adapter.SelectCommand = command;
+
+            return adapter;
+        }
+        
+        public static SqlDataAdapter CheckActivePurchaseAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            string query = "SELECT COUNT(*) AS row_count FROM Purchase WHERE CustomerID <= 5";
+            SqlCommand command = new SqlCommand(query, connection);
+
             adapter.SelectCommand = command;
 
             return adapter;

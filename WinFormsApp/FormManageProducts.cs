@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.CodeParser;
+using DevExpress.XtraEditors;
 using DevExpress.XtraRichEdit.Layout.Engine;
 using System;
 using System.Collections.Generic;
@@ -215,19 +216,22 @@ namespace WinFormsApp
             }
             catch (SqlException ex)
             {
-                if(ex.Number == 2627)
+                if (ex.Number == 2627)
+                {
                     Utility.LabelMessageFailure(labelManageProductsMessage, "This product is already in this purchase!");
+                }
+                if (ex.Number == 547)
+                {
+                    Utility.LabelMessageFailure(labelManageProductsMessage, "The quantity amount cannot exceed 5");
+                }
             }
-
-        
             catch (FormatException)
             {
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please insert the quantity in the correct format!");
             }
-        
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageProductsMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManageProductsMessage, "Unknown error:" + ex.Message);
             }
         }
     }
