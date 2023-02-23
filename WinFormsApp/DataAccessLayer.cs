@@ -28,6 +28,21 @@ namespace WinFormsApp
             }
         }
 
+        public DataSet PopulatePurchaseGridViewFind(int purchaseId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewPurchaseGridFind(purchaseId, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
         public void AddCustomer(
             int customerId
             , string customerName
