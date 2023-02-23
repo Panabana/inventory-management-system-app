@@ -176,7 +176,7 @@ namespace WinFormsApp
             command.Connection = connection;
             supplierAdapter.DeleteCommand = command;
 
-            command = new SqlCommand("UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID", connection);
+            command = new SqlCommand("UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress, PhoneNumber = @PhoneNumber WHERE SupplierID = @SupplierID", connection);
 
             command.Parameters.Add("@SupplierID", SqlDbType.Int, 10, "SupplierID");
             command.Parameters.Add("@SupplierName", SqlDbType.VarChar, 10, "SupplierName");
