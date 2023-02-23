@@ -122,6 +122,14 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "This Purchase already exists!");
                 }
             }
+            catch (FormatException ex)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID!");
+            }
+            catch (Exception)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong!");
+            }
         }
 
 
