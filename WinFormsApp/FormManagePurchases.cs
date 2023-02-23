@@ -74,7 +74,7 @@ namespace WinFormsApp
         private int CheckActivePurchases(int purchaseId)
         {
             // SELECT COUNT(*) AS row_count FROM Purchase WHERE CustomerID = '2'
-            int amount = _layer.CheckActivePurchases(purchaseId);
+            int amount = Convert.ToInt32(_layer.CheckActivePurchases(purchaseId));
             return amount;
         }
 
