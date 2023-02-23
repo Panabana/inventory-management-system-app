@@ -46,6 +46,19 @@ namespace WinFormsApp
             return adapter;
         }
 
+        public static SqlDataAdapter ViewPurchaseGridFind(int purchaseId, SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT pp.PurchaseID AS 'Purchase ID' , prod.ProductName AS Product, " +
+                                                "prod.ProductID AS 'Product ID', prod.Price AS 'Price per', pp.Quantity FROM ProductPurchase pp " +
+                                                "JOIN Product prod ON pp.ProductID = prod.ProductID " +
+                                                "JOIN Purchase p ON pp.PurchaseID = p.PurchaseID WHERE pp.PurchaseID = @PurchaseID");
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
         // - CUSTOMER -
         public static SqlDataAdapter CustomerAdapter(SqlConnection connection)
         {
@@ -293,8 +306,19 @@ namespace WinFormsApp
             SqlDataAdapter adapter = new();
             string query = "SELECT PurchaseID, EmployeeID, CustomerID FROM Purchase WHERE PurchaseID = @PurchaseID";
             SqlCommand command = new SqlCommand(query, connection);
-
+            
             command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            adapter.SelectCommand = command;
+
+            return adapter;
+        }
+        
+        public static SqlDataAdapter CheckActivePurchaseAdapter(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            string query = "SELECT COUNT(*) AS row_count FROM Purchase WHERE CustomerID <= 5";
+            SqlCommand command = new SqlCommand(query, connection);
+
             adapter.SelectCommand = command;
 
             return adapter;

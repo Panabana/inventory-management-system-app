@@ -28,6 +28,21 @@ namespace WinFormsApp
             }
         }
 
+        public DataSet PopulatePurchaseGridViewFind(int purchaseId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewPurchaseGridFind(purchaseId, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
         public void AddCustomer(
             int customerId
             , string customerName
@@ -393,6 +408,20 @@ namespace WinFormsApp
 
 
         // - Purchase -
+
+        public DataSet CheckActivePurchases(int purchaseId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.CheckActivePurchaseAdapter(connection))
+                {
+                    DataSet activePurchaseDataSet = new DataSet();
+                    adapter.Fill(activePurchaseDataSet);
+                    return activePurchaseDataSet;
+                }
+            }
+        }
+
         public void AddPurchase(
               int purchaseId
             , int employeeId

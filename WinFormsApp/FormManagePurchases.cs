@@ -1,4 +1,5 @@
-﻿using DevExpress.Utils.About;
+﻿using DevExpress.Mvvm.Native;
+using DevExpress.Utils.About;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -71,33 +72,26 @@ namespace WinFormsApp
             comboBoxPurchaseCustomerName.ValueMember = "CustomerID";
         }
 
+        private int CheckActivePurchases(int purchaseId)
+        {
+            // SELECT COUNT(*) AS row_count FROM Purchase WHERE CustomerID = '2'
+            int amount = Convert.ToInt32(_layer.CheckActivePurchases(purchaseId));
+            return amount;
+        }
+
         private void buttonAddPurchase_Click(object sender, EventArgs e)
         {
             try
             {
-                //if (string.IsNullOrEmpty(textBoxPurchaseId.Text))
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a valid ID!");
-                //    return;
-                //}
-                //if (string.IsNullOrEmpty(textBoxPurchaseCustomerId.Text))
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a valid customer ID!");
-                //    return;
-                //}
-                //if (string.IsNullOrEmpty(textBoxPurchaseDate.Text))
-                //{
-                //    Utility.LabelMessageFailure(labelManagePurchaseMessage, "Please enter a date!");
-                //    return;
-
-                //
-
-
-                //}
-
-
-
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
+                // Checking business rule two first
+                int amountActive = CheckActivePurchases(purchaseId);
+                if (amountActive > 5)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Customer has too many active purchase orders!");
+                    return;
+                }
+
                 int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
                 int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.SelectedValue);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
@@ -107,8 +101,8 @@ namespace WinFormsApp
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
 
-
             }
+
 
             catch (SqlException ex)
             {
@@ -120,6 +114,14 @@ namespace WinFormsApp
                 else if (ex.Number == 2627)
                 {
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "This Purchase already exists!");
+                }
+                //else if (amountActive >= 5)
+                //{
+                //    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Customer has too many active purchase orders");
+                //}
+                else
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error with database");
                 }
             }
         }
@@ -208,12 +210,24 @@ namespace WinFormsApp
             
            try
                 {
-                    int purchaseId = Convert.ToInt32(textBoxPurchaseIDFind.Text);
+                
+                int purchaseId = Convert.ToInt32(textBoxPurchaseIDFind.Text);
                     string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
                     DataTable findPurchaseDataTable = new();
                     findPurchaseDataTable = _layer.FindPurchase(purchaseId, connectionString);
 
-                    if (findPurchaseDataTable.Rows.Count == 1)
+
+                
+                    DataSet ds = _layer.PopulatePurchaseGridViewFind(purchaseId);
+                    DataTable dt = ds.Tables[0];
+                    dataGridViewPurchase.DataSource = dt;
+                
+                
+                
+                    
+                
+
+                if (findPurchaseDataTable.Rows.Count == 1)
                     {
                         textBoxPurchaseID.Text = findPurchaseDataTable.Rows[0]["PurchaseID"].ToString();
                         comboBoxPurchaseCustomerName.Text = findPurchaseDataTable.Rows[0]["CustomerID"].ToString();
@@ -234,7 +248,10 @@ namespace WinFormsApp
 
                 catch (FormatException)
                 {
-                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
+                DataSet ds = _layer.PopulatePurchaseGridView();
+                DataTable dt = ds.Tables[0];
+                dataGridViewPurchase.DataSource = dt;
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
                 }
             
 
