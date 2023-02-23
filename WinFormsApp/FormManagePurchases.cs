@@ -88,10 +88,12 @@ namespace WinFormsApp
                 }
 
                 int purchaseEmployeeId = Convert.ToInt32(comboBoxPurchaseEmployeeName.SelectedValue);
-                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                
+                // COMMENTED OUT - connection is established in the 1st using inside .AddPurchase?
+                //string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
                 // Utility.ClearTextBoxes(this);
-                _layer.AddPurchase(purchaseId, purchaseCustomerId, purchaseEmployeeId);
+                _layer.AddPurchase(purchaseId, purchaseEmployeeId, purchaseCustomerId);
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
 
