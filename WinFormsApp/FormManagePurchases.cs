@@ -124,6 +124,14 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error with database");
                 }
             }
+            catch (FormatException ex)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID!");
+            }
+            catch (Exception)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong!");
+            }
         }
 
 
