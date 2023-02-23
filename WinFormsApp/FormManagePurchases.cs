@@ -1,4 +1,5 @@
-﻿using DevExpress.Utils.About;
+﻿using DevExpress.Mvvm.Native;
+using DevExpress.Utils.About;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -209,12 +210,24 @@ namespace WinFormsApp
             
            try
                 {
-                    int purchaseId = Convert.ToInt32(textBoxPurchaseIDFind.Text);
+                
+                int purchaseId = Convert.ToInt32(textBoxPurchaseIDFind.Text);
                     string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
                     DataTable findPurchaseDataTable = new();
                     findPurchaseDataTable = _layer.FindPurchase(purchaseId, connectionString);
 
-                    if (findPurchaseDataTable.Rows.Count == 1)
+
+                
+                    DataSet ds = _layer.PopulatePurchaseGridViewFind(purchaseId);
+                    DataTable dt = ds.Tables[0];
+                    dataGridViewPurchase.DataSource = dt;
+                
+                
+                
+                    
+                
+
+                if (findPurchaseDataTable.Rows.Count == 1)
                     {
                         textBoxPurchaseID.Text = findPurchaseDataTable.Rows[0]["PurchaseID"].ToString();
                         comboBoxPurchaseCustomerName.Text = findPurchaseDataTable.Rows[0]["CustomerID"].ToString();
@@ -235,7 +248,10 @@ namespace WinFormsApp
 
                 catch (FormatException)
                 {
-                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
+                DataSet ds = _layer.PopulatePurchaseGridView();
+                DataTable dt = ds.Tables[0];
+                dataGridViewPurchase.DataSource = dt;
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
                 }
             
 
