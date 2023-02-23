@@ -149,9 +149,13 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please select the correct Customer and Employee");
                 }
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID!");
+            }
+            catch (Exception)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong!");
             }
         }
 
@@ -182,24 +186,37 @@ namespace WinFormsApp
         {
             try
             {
-                int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
-                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value);
-                //Utility.ClearTextBoxes(this);
-
-                //ChatGPT
-                if (dataGridViewPurchase.SelectedRows.Count > 0)
+                if(textBoxPurchaseID.Text.IsEmptyOrSingle()) 
                 {
-                    dataGridViewPurchase.Rows.Remove(dataGridViewPurchase.SelectedRows[0]);
+                    int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
+                    int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value);
+                    //Utility.ClearTextBoxes(this);
+
+                    //ChatGPT
+                    if (dataGridViewPurchase.SelectedRows.Count > 0)
+                    {
+                        dataGridViewPurchase.Rows.Remove(dataGridViewPurchase.SelectedRows[0]);
+                        _layer.DeletePurchase(purchaseID);
+                    }
+
+
+                    Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
+                }
+                else if (!textBoxPurchaseID.Text.IsEmptyOrSingle())
+                {
+                    int purchaseID = Convert.ToInt32(textBoxPurchaseID.Text);
                     _layer.DeletePurchase(purchaseID);
+                    Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
                 }
 
-                
-                Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
-
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID!");
+            }
+            catch (Exception)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong!");
             }
         }
         
