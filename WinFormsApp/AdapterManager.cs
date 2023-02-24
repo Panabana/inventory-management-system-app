@@ -44,11 +44,34 @@ namespace WinFormsApp
             return adapter;
         }
 
+        public static SqlDataAdapter ViewPurchaseGridFind(int purchaseId, SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT pp.PurchaseID AS 'Purchase ID' , prod.ProductName AS Product, " +
+                                                "prod.ProductID AS 'Product ID', prod.Price AS 'Price per', pp.Quantity FROM ProductPurchase pp " +
+                                                "JOIN Product prod ON pp.ProductID = prod.ProductID " +
+                                                "JOIN Purchase p ON pp.PurchaseID = p.PurchaseID WHERE pp.PurchaseID = @PurchaseID");
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
         public static SqlDataAdapter ViewCustomerGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
             SqlCommand command = new SqlCommand("SELECT CustomerID, CustomerName, CustomerAddress, PhoneNumber FROM Customer");
             command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter ViewCustomerGridFind(int customerId, SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT * FROM Customer WHERE CustomerID = @CustomerID");
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@CustomerID", customerId);
             adapter.SelectCommand = command;
             return adapter;
         }
@@ -62,11 +85,31 @@ namespace WinFormsApp
             return adapter;
         }
 
+        public static SqlDataAdapter ViewEmployeeGridFind(int employeeId, SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT * FROM Employee WHERE EmployeeId = @EmployeeID");
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@EmployeeID", employeeId);
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
         public static SqlDataAdapter ViewProductGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
             SqlCommand command = new SqlCommand("SELECT * FROM Product");
             command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter ViewProductGridFind(int productId, SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT * FROM Product WHERE ProductId = @ProductID");
+            command.Connection = connection;
+            command.Parameters.AddWithValue("@ProductId", productId);
             adapter.SelectCommand = command;
             return adapter;
         }
@@ -80,19 +123,18 @@ namespace WinFormsApp
             return adapter;
         }
 
-
-        public static SqlDataAdapter ViewPurchaseGridFind(int purchaseId, SqlConnection connection)
+        public static SqlDataAdapter ViewSupplierGridFind(int supplierId, SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT pp.PurchaseID AS 'Purchase ID' , prod.ProductName AS Product, " +
-                                                "prod.ProductID AS 'Product ID', prod.Price AS 'Price per', pp.Quantity FROM ProductPurchase pp " +
-                                                "JOIN Product prod ON pp.ProductID = prod.ProductID " +
-                                                "JOIN Purchase p ON pp.PurchaseID = p.PurchaseID WHERE pp.PurchaseID = @PurchaseID");
+            SqlCommand command = new SqlCommand("SELECT * FROM Supplier WHERE SupplierId = @SupplierID");
             command.Connection = connection;
-            command.Parameters.AddWithValue("@PurchaseID", purchaseId);
+            command.Parameters.AddWithValue("@SupplierId", supplierId);
             adapter.SelectCommand = command;
             return adapter;
         }
+
+
+       
 
         // - CUSTOMER -
         public static SqlDataAdapter CustomerAdapter(SqlConnection connection)

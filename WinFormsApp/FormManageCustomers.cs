@@ -195,6 +195,11 @@ namespace WinFormsApp
                 DataTable findCustomerDataTable = new();
                 findCustomerDataTable = _layer.FindCustomer(customerId, connectionString);
 
+                DataSet ds = _layer.PopulateCustomerGridViewFind(customerId);
+                DataTable dt = ds.Tables[0];
+                DataGridViewCustomer.DataSource = dt;
+
+
                 if (findCustomerDataTable.Rows.Count == 1)
                 {
                     textBoxCustomerId.Text = findCustomerDataTable.Rows[0]["CustomerID"].ToString();

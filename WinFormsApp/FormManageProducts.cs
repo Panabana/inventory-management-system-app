@@ -1,4 +1,5 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.Pdf.Native.BouncyCastle.Ocsp;
 using DevExpress.XtraEditors;
 using DevExpress.XtraRichEdit.Layout.Engine;
 using System;
@@ -169,6 +170,10 @@ namespace WinFormsApp
 
                 DataTable findProductDataTable = new();
                 findProductDataTable = _layer.FindProduct(productID, connectionString);
+
+                DataSet ds = _layer.PopulateProductGridViewFind(productID);
+                DataTable dt = ds.Tables[0];
+                DataGridViewProduct.DataSource = dt;
 
                 if (findProductDataTable.Rows.Count == 1)
                 {
