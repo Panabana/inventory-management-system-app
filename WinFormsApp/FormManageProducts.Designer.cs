@@ -291,6 +291,7 @@
             this.DataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewProduct.Location = new System.Drawing.Point(400, 165);
             this.DataGridViewProduct.Name = "DataGridViewProduct";
+            this.DataGridViewProduct.ReadOnly = true;
             this.DataGridViewProduct.RowTemplate.Height = 25;
             this.DataGridViewProduct.Size = new System.Drawing.Size(443, 279);
             this.DataGridViewProduct.TabIndex = 13;

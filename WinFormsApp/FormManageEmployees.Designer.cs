@@ -260,6 +260,7 @@
             this.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewEmployee.Location = new System.Drawing.Point(190, 255);
             this.DataGridViewEmployee.Name = "DataGridViewEmployee";
+            this.DataGridViewEmployee.ReadOnly = true;
             this.DataGridViewEmployee.RowTemplate.Height = 25;
             this.DataGridViewEmployee.Size = new System.Drawing.Size(409, 222);
             this.DataGridViewEmployee.TabIndex = 25;
