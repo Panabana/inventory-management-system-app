@@ -287,9 +287,8 @@ namespace WinFormsApp
 
                 catch (FormatException)
                 {
-                DataSet ds = _layer.PopulatePurchaseGridView();
-                DataTable dt = ds.Tables[0];
-                dataGridViewPurchase.DataSource = dt;
+                this.PopulatePurchaseGridview();
+
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
                 }
             
@@ -311,9 +310,54 @@ namespace WinFormsApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAddProdcut_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrEmpty(comboBoxPurchaseId.Text))
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please select a purchase ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(comboBoxProduct.Text))
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a product ID!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBoxProductQuantity.Text))
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter the amount of this product!");
+                    return;
+                }
+                int purchaseId = Convert.ToInt32(comboBoxPurchaseId.Text);
+                int productId = Convert.ToInt32(comboBoxProduct.Text);
+                int quantity = Convert.ToInt32(textBoxProductQuantity.Text);
 
+                _layer.InsertProductPurchase(purchaseId, productId, quantity);
+                Utility.ClearTextBoxes(this);
+
+                Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Product added to purchase!");
+                this.PopulatePurchaseGridview();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "This product is already in this purchase!");
+                }
+                if (ex.Number == 547)
+                {
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "The quantity amount cannot exceed 5");
+                }
+            }
+            catch (FormatException)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please insert the quantity in the correct format!");
+            }
+            catch (Exception ex)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error:" + ex.Message);
+            }
         }
 
         private void comboBoxProductId_SelectedIndexChanged(object sender, EventArgs e)
