@@ -50,6 +50,7 @@ namespace WinFormsApp
         {
             try
             {
+
                 if (string.IsNullOrEmpty(textBoxProductID.Text))
                 {
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a valid ID!");
@@ -75,6 +76,8 @@ namespace WinFormsApp
                 _layer.AddProduct(productId, productName, productPrice);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
                 Utility.ClearTextBoxes(this);
+                this.PopulateProductGridview();
+
 
             }
             catch (FormatException)
