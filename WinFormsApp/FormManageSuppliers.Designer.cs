@@ -284,6 +284,7 @@
             this.DataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewSupplier.Location = new System.Drawing.Point(400, 145);
             this.DataGridViewSupplier.Name = "DataGridViewSupplier";
+            this.DataGridViewSupplier.ReadOnly = true;
             this.DataGridViewSupplier.RowTemplate.Height = 25;
             this.DataGridViewSupplier.Size = new System.Drawing.Size(432, 299);
             this.DataGridViewSupplier.TabIndex = 17;
