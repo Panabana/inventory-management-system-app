@@ -130,6 +130,7 @@
             this.comboBoxSelectPurchaseToAddProduct.Name = "comboBoxSelectPurchaseToAddProduct";
             this.comboBoxSelectPurchaseToAddProduct.Size = new System.Drawing.Size(140, 26);
             this.comboBoxSelectPurchaseToAddProduct.TabIndex = 14;
+            this.comboBoxSelectPurchaseToAddProduct.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged);
             // 
             // textBoxProductPrice
             // 

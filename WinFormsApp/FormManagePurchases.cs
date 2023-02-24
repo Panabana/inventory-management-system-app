@@ -25,6 +25,8 @@ namespace WinFormsApp
             this.PopulateEmpComboBox();
             this.PopulateCustomerComboBox();
             this.PopulatePurchaseGridview();
+            this.PopulatePurchaseComboBox();
+            this.PopulateProductComboBox();
         }
         private void PopulatePurchaseGridview()
         {
@@ -51,6 +53,26 @@ namespace WinFormsApp
             comboBoxPurchaseEmployeeName.DataSource = dt;
             comboBoxPurchaseEmployeeName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseEmployeeName.ValueMember = "EmployeeID";
+        }
+
+        private void PopulatePurchaseComboBox() //med hjälp av ChatGPT
+        {
+            DataSet ds = _layer.ReadPurchase();
+            DataTable dt = ds.Tables[0];
+
+            comboBoxPurchaseId.DataSource = dt;
+            comboBoxPurchaseId.DisplayMember = "PurchaseID";
+            comboBoxPurchaseId.ValueMember = "PurchaseID";
+        }
+
+        private void PopulateProductComboBox() //med hjälp av ChatGPT
+        {
+            DataSet ds = _layer.ReadProduct();
+            DataTable dt = ds.Tables[0];
+
+            comboBoxProduct.DataSource = dt;
+            comboBoxProduct.DisplayMember = "ProductID";
+            comboBoxProduct.ValueMember = "ProductID";
         }
 
         private void PopulateCustomerComboBox() //med hjälp av ChatGPT
@@ -275,6 +297,26 @@ namespace WinFormsApp
         }
 
         private void dataGridViewPurchase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxProductId_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
