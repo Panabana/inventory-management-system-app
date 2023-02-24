@@ -195,11 +195,17 @@ namespace WinFormsApp
         {
             try
             {
+
+                
                 int empId = Convert.ToInt32(textBoxEmployeeIdFind.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
                 DataTable findEmpDataTable = new();
                 findEmpDataTable = _layer.FindEmployee(empId, connectionString);
+
+                DataSet ds = _layer.PopulateEmployeeGridViewFind(empId);
+                DataTable dt = ds.Tables[0];
+                DataGridViewEmployee.DataSource = dt;
 
                 if (findEmpDataTable.Rows.Count == 1)
                 {

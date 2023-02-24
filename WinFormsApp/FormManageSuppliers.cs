@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Pdf.Native.BouncyCastle.Ocsp;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -186,6 +187,10 @@ namespace WinFormsApp
 
                 DataTable findSupplierDataTable = new();
                 findSupplierDataTable = _layer.FindSupplier(supplierID, connectionString);
+
+                DataSet ds = _layer.PopulateSupplierGridViewFind(supplierID);
+                DataTable dt = ds.Tables[0];
+                DataGridViewSupplier.DataSource = dt;
 
                 if (findSupplierDataTable.Rows.Count == 1)
                 {
