@@ -21,6 +21,15 @@ namespace WinFormsApp
         {
             _layer = new();
             InitializeComponent();
+            this.PopulateCustomerGridview();
+        }
+
+        private void PopulateCustomerGridview()
+        {
+            DataSet ds = _layer.PopulateCustomerGridView();
+            DataTable dt = ds.Tables[0];
+            DataGridViewCustomer.DataSource = dt;
+
         }
 
         private void buttonAddCustomer_Click(object sender, EventArgs e)
@@ -176,6 +185,10 @@ namespace WinFormsApp
         {
             try
             {
+
+
+
+                
                 int customerId = Convert.ToInt32(textBoxCustomerIdFind.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
@@ -215,6 +228,16 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormManageCustomers_Load(object sender, EventArgs e)
+        {
 
         }
     }

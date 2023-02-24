@@ -46,8 +46,10 @@
             this.buttonEditEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageEmployeesMessage = new System.Windows.Forms.Label();
+            this.DataGridViewEmployee = new System.Windows.Forms.DataGridView();
             this.groupBoxEmployeeNew.SuspendLayout();
             this.groupBoxEmployeeFind.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxEmployeeNew
@@ -66,7 +68,7 @@
             this.groupBoxEmployeeNew.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEmployeeNew.Name = "groupBoxEmployeeNew";
             this.groupBoxEmployeeNew.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxEmployeeNew.Size = new System.Drawing.Size(381, 440);
+            this.groupBoxEmployeeNew.Size = new System.Drawing.Size(381, 244);
             this.groupBoxEmployeeNew.TabIndex = 3;
             this.groupBoxEmployeeNew.TabStop = false;
             this.groupBoxEmployeeNew.Text = "New employee details";
@@ -162,7 +164,7 @@
             this.groupBoxEmployeeFind.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEmployeeFind.Name = "groupBoxEmployeeFind";
             this.groupBoxEmployeeFind.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxEmployeeFind.Size = new System.Drawing.Size(381, 440);
+            this.groupBoxEmployeeFind.Size = new System.Drawing.Size(381, 244);
             this.groupBoxEmployeeFind.TabIndex = 11;
             this.groupBoxEmployeeFind.TabStop = false;
             this.groupBoxEmployeeFind.Text = "Find an employee";
@@ -252,11 +254,23 @@
             this.labelManageEmployeesMessage.Text = "****";
             this.labelManageEmployeesMessage.Visible = false;
             // 
+            // DataGridViewEmployee
+            // 
+            this.DataGridViewEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewEmployee.Location = new System.Drawing.Point(190, 255);
+            this.DataGridViewEmployee.Name = "DataGridViewEmployee";
+            this.DataGridViewEmployee.RowTemplate.Height = 25;
+            this.DataGridViewEmployee.Size = new System.Drawing.Size(409, 222);
+            this.DataGridViewEmployee.TabIndex = 25;
+            this.DataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
+            // 
             // FormManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 568);
+            this.Controls.Add(this.DataGridViewEmployee);
             this.Controls.Add(this.labelManageEmployeesMessage);
             this.Controls.Add(this.buttonRemoveEmployee);
             this.Controls.Add(this.buttonEditEmployee);
@@ -273,6 +287,7 @@
             this.groupBoxEmployeeNew.PerformLayout();
             this.groupBoxEmployeeFind.ResumeLayout(false);
             this.groupBoxEmployeeFind.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,5 +312,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonEditEmployee;
         private DevExpress.XtraEditors.SimpleButton buttonAddEmployee;
         private Label labelManageEmployeesMessage;
+        private DataGridView DataGridViewEmployee;
     }
 }

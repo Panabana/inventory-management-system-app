@@ -51,8 +51,10 @@
             this.labelProductIDFind = new System.Windows.Forms.Label();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.labelManageProductsMessage = new System.Windows.Forms.Label();
+            this.DataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -232,7 +234,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(400, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 440);
+            this.groupBox2.Size = new System.Drawing.Size(381, 136);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find by Product ID";
@@ -282,11 +284,22 @@
             this.labelManageProductsMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelManageProductsMessage.Visible = false;
             // 
+            // DataGridViewProduct
+            // 
+            this.DataGridViewProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewProduct.Location = new System.Drawing.Point(400, 165);
+            this.DataGridViewProduct.Name = "DataGridViewProduct";
+            this.DataGridViewProduct.RowTemplate.Height = 25;
+            this.DataGridViewProduct.Size = new System.Drawing.Size(381, 279);
+            this.DataGridViewProduct.TabIndex = 13;
+            // 
             // FormManageProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 568);
+            this.Controls.Add(this.DataGridViewProduct);
             this.Controls.Add(this.labelManageProductsMessage);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -302,6 +315,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +344,6 @@
         private Label label2;
         private Label label1;
         private TextBox textBoxQuantity;
+        private DataGridView DataGridViewProduct;
     }
 }

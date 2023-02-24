@@ -49,8 +49,10 @@
             this.buttonEditSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddSupplier = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageSuppliersMessage = new System.Windows.Forms.Label();
+            this.DataGridViewSupplier = new System.Windows.Forms.DataGridView();
             this.groupBoxSupplierNew.SuspendLayout();
             this.groupBoxSupplierFind.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewSupplier)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxSupplierNew
@@ -191,7 +193,7 @@
             this.groupBoxSupplierFind.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxSupplierFind.Location = new System.Drawing.Point(400, 4);
             this.groupBoxSupplierFind.Name = "groupBoxSupplierFind";
-            this.groupBoxSupplierFind.Size = new System.Drawing.Size(381, 440);
+            this.groupBoxSupplierFind.Size = new System.Drawing.Size(381, 135);
             this.groupBoxSupplierFind.TabIndex = 9;
             this.groupBoxSupplierFind.TabStop = false;
             this.groupBoxSupplierFind.Text = "Find a supplier";
@@ -276,11 +278,22 @@
             this.labelManageSuppliersMessage.Text = "****";
             this.labelManageSuppliersMessage.Visible = false;
             // 
+            // DataGridViewSupplier
+            // 
+            this.DataGridViewSupplier.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewSupplier.Location = new System.Drawing.Point(400, 145);
+            this.DataGridViewSupplier.Name = "DataGridViewSupplier";
+            this.DataGridViewSupplier.RowTemplate.Height = 25;
+            this.DataGridViewSupplier.Size = new System.Drawing.Size(381, 299);
+            this.DataGridViewSupplier.TabIndex = 17;
+            // 
             // FormManageSuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 568);
+            this.Controls.Add(this.DataGridViewSupplier);
             this.Controls.Add(this.labelManageSuppliersMessage);
             this.Controls.Add(this.buttonRemoveSupplier);
             this.Controls.Add(this.buttonEditSupplier);
@@ -296,6 +309,7 @@
             this.groupBoxSupplierNew.PerformLayout();
             this.groupBoxSupplierFind.ResumeLayout(false);
             this.groupBoxSupplierFind.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +337,6 @@
         private ComboBox comboBoxSelectProductToAddSupplier;
         private DevExpress.XtraEditors.SimpleButton buttonAddSupplierToProduct;
         private Label labelSupplierProduct;
+        private DataGridView DataGridViewSupplier;
     }
 }

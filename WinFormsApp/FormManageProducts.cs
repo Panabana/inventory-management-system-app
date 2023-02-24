@@ -24,6 +24,15 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
             this.PopulatePurchaseComboBox();
+            this.PopulateProductGridview();
+        }
+
+        private void PopulateProductGridview()
+        {
+            DataSet ds = _layer.PopulateProductGridView();
+            DataTable dt = ds.Tables[0];
+            DataGridViewProduct.DataSource = dt;
+
         }
 
         private void PopulatePurchaseComboBox() //med hjälp av ChatGPT

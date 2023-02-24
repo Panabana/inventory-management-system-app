@@ -273,5 +273,10 @@ namespace WinFormsApp
             
 
         }
+
+        private void dataGridViewPurchase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
