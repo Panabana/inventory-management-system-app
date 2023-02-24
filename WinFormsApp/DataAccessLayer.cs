@@ -43,6 +43,67 @@ namespace WinFormsApp
             }
         }
 
+        public DataSet PopulateCustomerGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewCustomerGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateEmployeeGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewEmployeeGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateProductGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewProductGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateSupplierGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewSupplierGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+
         public void AddCustomer(
             int customerId
             , string customerName

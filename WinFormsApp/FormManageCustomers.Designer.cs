@@ -46,8 +46,10 @@
             this.buttonEditCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageCustomersMessage = new System.Windows.Forms.Label();
+            this.DataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.groupBoxCustomerNew.SuspendLayout();
             this.groupBoxCustomerFind.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCustomerNew
@@ -64,7 +66,7 @@
             this.groupBoxCustomerNew.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxCustomerNew.Location = new System.Drawing.Point(13, 4);
             this.groupBoxCustomerNew.Name = "groupBoxCustomerNew";
-            this.groupBoxCustomerNew.Size = new System.Drawing.Size(381, 440);
+            this.groupBoxCustomerNew.Size = new System.Drawing.Size(381, 251);
             this.groupBoxCustomerNew.TabIndex = 2;
             this.groupBoxCustomerNew.TabStop = false;
             this.groupBoxCustomerNew.Text = "New customer details";
@@ -154,7 +156,7 @@
             this.groupBoxCustomerFind.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxCustomerFind.Location = new System.Drawing.Point(400, 4);
             this.groupBoxCustomerFind.Name = "groupBoxCustomerFind";
-            this.groupBoxCustomerFind.Size = new System.Drawing.Size(381, 440);
+            this.groupBoxCustomerFind.Size = new System.Drawing.Size(381, 251);
             this.groupBoxCustomerFind.TabIndex = 10;
             this.groupBoxCustomerFind.TabStop = false;
             this.groupBoxCustomerFind.Text = "Find a customer";
@@ -239,11 +241,23 @@
             this.labelManageCustomersMessage.Text = "****";
             this.labelManageCustomersMessage.Visible = false;
             // 
+            // DataGridViewCustomer
+            // 
+            this.DataGridViewCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewCustomer.Location = new System.Drawing.Point(176, 261);
+            this.DataGridViewCustomer.Name = "DataGridViewCustomer";
+            this.DataGridViewCustomer.RowTemplate.Height = 25;
+            this.DataGridViewCustomer.Size = new System.Drawing.Size(437, 217);
+            this.DataGridViewCustomer.TabIndex = 21;
+            this.DataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // FormManageCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 568);
+            this.Controls.Add(this.DataGridViewCustomer);
             this.Controls.Add(this.labelManageCustomersMessage);
             this.Controls.Add(this.buttonRemoveCustomer);
             this.Controls.Add(this.buttonEditCustomer);
@@ -255,10 +269,12 @@
             this.Name = "FormManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Customers";
+            this.Load += new System.EventHandler(this.FormManageCustomers_Load);
             this.groupBoxCustomerNew.ResumeLayout(false);
             this.groupBoxCustomerNew.PerformLayout();
             this.groupBoxCustomerFind.ResumeLayout(false);
             this.groupBoxCustomerFind.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +299,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonEditCustomer;
         private DevExpress.XtraEditors.SimpleButton buttonAddCustomer;
         private Label labelManageCustomersMessage;
+        private DataGridView DataGridViewCustomer;
     }
 }

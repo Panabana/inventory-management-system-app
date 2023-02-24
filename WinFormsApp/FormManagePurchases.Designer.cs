@@ -206,6 +206,7 @@
             this.dataGridViewPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPurchase.Size = new System.Drawing.Size(763, 248);
             this.dataGridViewPurchase.TabIndex = 0;
+            this.dataGridViewPurchase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPurchase_CellContentClick);
             // 
             // buttonRemovePurchasePurchase
             // 

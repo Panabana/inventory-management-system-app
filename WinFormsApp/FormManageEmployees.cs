@@ -22,8 +22,17 @@ namespace WinFormsApp
         {
             _layer = new();
             InitializeComponent();
+            this.PopulateEmployeeGridview();
         }
-        
+
+        private void PopulateEmployeeGridview()
+        {
+            DataSet ds = _layer.PopulateEmployeeGridView();
+            DataTable dt = ds.Tables[0];
+            DataGridViewEmployee.DataSource = dt;
+
+        }
+
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
             try 
@@ -227,6 +236,11 @@ namespace WinFormsApp
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
 
             }
+
+        }
+
+        private void dataGridViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

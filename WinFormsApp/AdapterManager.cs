@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinFormsApp
 {
@@ -45,6 +46,43 @@ namespace WinFormsApp
             adapter.SelectCommand = command;
             return adapter;
         }
+
+        public static SqlDataAdapter ViewCustomerGrid(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT CustomerID, CustomerName, CustomerAddress, PhoneNumber FROM Customer");
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter ViewEmployeeGrid(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT * FROM Employee");
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter ViewProductGrid(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT * FROM Product");
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
+        public static SqlDataAdapter ViewSupplierGrid(SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new();
+            SqlCommand command = new SqlCommand("SELECT * FROM Supplier");
+            command.Connection = connection;
+            adapter.SelectCommand = command;
+            return adapter;
+        }
+
 
         public static SqlDataAdapter ViewPurchaseGridFind(int purchaseId, SqlConnection connection)
         {
