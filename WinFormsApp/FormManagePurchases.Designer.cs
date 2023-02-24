@@ -138,7 +138,7 @@
             this.groupBoxPurchaseFind.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxPurchaseFind.Location = new System.Drawing.Point(400, 4);
             this.groupBoxPurchaseFind.Name = "groupBoxPurchaseFind";
-            this.groupBoxPurchaseFind.Size = new System.Drawing.Size(381, 188);
+            this.groupBoxPurchaseFind.Size = new System.Drawing.Size(649, 188);
             this.groupBoxPurchaseFind.TabIndex = 11;
             this.groupBoxPurchaseFind.TabStop = false;
             this.groupBoxPurchaseFind.Text = "Find by Purchase ID";
@@ -182,7 +182,7 @@
             this.groupBoxPurchaseContents.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxPurchaseContents.Location = new System.Drawing.Point(9, 198);
             this.groupBoxPurchaseContents.Name = "groupBoxPurchaseContents";
-            this.groupBoxPurchaseContents.Size = new System.Drawing.Size(775, 280);
+            this.groupBoxPurchaseContents.Size = new System.Drawing.Size(1043, 280);
             this.groupBoxPurchaseContents.TabIndex = 12;
             this.groupBoxPurchaseContents.TabStop = false;
             this.groupBoxPurchaseContents.Text = "Purchase table";
@@ -204,7 +204,7 @@
             this.dataGridViewPurchase.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Blue;
             this.dataGridViewPurchase.RowTemplate.Height = 25;
             this.dataGridViewPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPurchase.Size = new System.Drawing.Size(763, 248);
+            this.dataGridViewPurchase.Size = new System.Drawing.Size(1031, 248);
             this.dataGridViewPurchase.TabIndex = 0;
             this.dataGridViewPurchase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPurchase_CellContentClick);
             // 
@@ -276,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 568);
+            this.ClientSize = new System.Drawing.Size(1058, 568);
             this.Controls.Add(this.buttonRemoveLinePurchase);
             this.Controls.Add(this.labelManagePurchasesMessage);
             this.Controls.Add(this.buttonRemovePurchasePurchase);
