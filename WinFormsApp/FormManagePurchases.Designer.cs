@@ -313,10 +313,11 @@
             // 
             // comboBoxPurchaseId
             // 
+            this.comboBoxPurchaseId.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPurchaseId.FormattingEnabled = true;
             this.comboBoxPurchaseId.Location = new System.Drawing.Point(21, 51);
             this.comboBoxPurchaseId.Name = "comboBoxPurchaseId";
-            this.comboBoxPurchaseId.Size = new System.Drawing.Size(104, 26);
+            this.comboBoxPurchaseId.Size = new System.Drawing.Size(104, 25);
             this.comboBoxPurchaseId.TabIndex = 5;
             this.comboBoxPurchaseId.SelectedIndexChanged += new System.EventHandler(this.comboBoxProductId_SelectedIndexChanged);
             // 
@@ -356,18 +357,20 @@
             // 
             // comboBoxProduct
             // 
+            this.comboBoxProduct.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxProduct.FormattingEnabled = true;
             this.comboBoxProduct.Location = new System.Drawing.Point(21, 94);
             this.comboBoxProduct.Name = "comboBoxProduct";
-            this.comboBoxProduct.Size = new System.Drawing.Size(104, 26);
+            this.comboBoxProduct.Size = new System.Drawing.Size(104, 25);
             this.comboBoxProduct.TabIndex = 1;
             this.comboBoxProduct.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBoxProductQuantity
             // 
+            this.textBoxProductQuantity.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxProductQuantity.Location = new System.Drawing.Point(21, 136);
             this.textBoxProductQuantity.Name = "textBoxProductQuantity";
-            this.textBoxProductQuantity.Size = new System.Drawing.Size(104, 26);
+            this.textBoxProductQuantity.Size = new System.Drawing.Size(104, 24);
             this.textBoxProductQuantity.TabIndex = 0;
             // 
             // FormManagePurchases

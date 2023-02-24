@@ -196,6 +196,7 @@ namespace WinFormsApp
 
             catch (FormatException)
             {
+                this.PopulateProductGridview();
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a Product ID to search for!");
             }
         }
@@ -250,6 +251,11 @@ namespace WinFormsApp
         }
 
         private void comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormManageProducts_Load(object sender, EventArgs e)
         {
 
         }
