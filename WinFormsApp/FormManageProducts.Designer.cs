@@ -130,6 +130,7 @@
             this.comboBoxSelectPurchaseToAddProduct.Name = "comboBoxSelectPurchaseToAddProduct";
             this.comboBoxSelectPurchaseToAddProduct.Size = new System.Drawing.Size(140, 26);
             this.comboBoxSelectPurchaseToAddProduct.TabIndex = 14;
+            this.comboBoxSelectPurchaseToAddProduct.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged);
             // 
             // textBoxProductPrice
             // 
@@ -234,7 +235,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBox2.Location = new System.Drawing.Point(400, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 136);
+            this.groupBox2.Size = new System.Drawing.Size(443, 136);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find by Product ID";
@@ -276,7 +277,7 @@
             this.labelManageProductsMessage.AutoSize = true;
             this.labelManageProductsMessage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelManageProductsMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelManageProductsMessage.Location = new System.Drawing.Point(12, 541);
+            this.labelManageProductsMessage.Location = new System.Drawing.Point(47, 541);
             this.labelManageProductsMessage.Name = "labelManageProductsMessage";
             this.labelManageProductsMessage.Size = new System.Drawing.Size(49, 19);
             this.labelManageProductsMessage.TabIndex = 12;
@@ -291,14 +292,14 @@
             this.DataGridViewProduct.Location = new System.Drawing.Point(400, 165);
             this.DataGridViewProduct.Name = "DataGridViewProduct";
             this.DataGridViewProduct.RowTemplate.Height = 25;
-            this.DataGridViewProduct.Size = new System.Drawing.Size(381, 279);
+            this.DataGridViewProduct.Size = new System.Drawing.Size(443, 279);
             this.DataGridViewProduct.TabIndex = 13;
             // 
             // FormManageProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 568);
+            this.ClientSize = new System.Drawing.Size(868, 568);
             this.Controls.Add(this.DataGridViewProduct);
             this.Controls.Add(this.labelManageProductsMessage);
             this.Controls.Add(this.groupBox2);
@@ -311,6 +312,7 @@
             this.Name = "FormManageProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Products";
+            this.Load += new System.EventHandler(this.FormManageProducts_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

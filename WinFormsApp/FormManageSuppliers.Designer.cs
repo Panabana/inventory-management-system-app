@@ -193,7 +193,7 @@
             this.groupBoxSupplierFind.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxSupplierFind.Location = new System.Drawing.Point(400, 4);
             this.groupBoxSupplierFind.Name = "groupBoxSupplierFind";
-            this.groupBoxSupplierFind.Size = new System.Drawing.Size(381, 135);
+            this.groupBoxSupplierFind.Size = new System.Drawing.Size(432, 135);
             this.groupBoxSupplierFind.TabIndex = 9;
             this.groupBoxSupplierFind.TabStop = false;
             this.groupBoxSupplierFind.Text = "Find a supplier";
@@ -203,7 +203,7 @@
             this.buttonFindSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindSupplier.Appearance.Options.UseFont = true;
             this.buttonFindSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindSupplier.ImageOptions.Image")));
-            this.buttonFindSupplier.Location = new System.Drawing.Point(173, 89);
+            this.buttonFindSupplier.Location = new System.Drawing.Point(70, 80);
             this.buttonFindSupplier.Name = "buttonFindSupplier";
             this.buttonFindSupplier.Size = new System.Drawing.Size(95, 35);
             this.buttonFindSupplier.TabIndex = 6;
@@ -213,7 +213,7 @@
             // textBoxSupplierIdFind
             // 
             this.textBoxSupplierIdFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxSupplierIdFind.Location = new System.Drawing.Point(114, 57);
+            this.textBoxSupplierIdFind.Location = new System.Drawing.Point(11, 48);
             this.textBoxSupplierIdFind.Name = "textBoxSupplierIdFind";
             this.textBoxSupplierIdFind.Size = new System.Drawing.Size(212, 26);
             this.textBoxSupplierIdFind.TabIndex = 5;
@@ -223,7 +223,7 @@
             this.labelSupplierIDFind.AutoSize = true;
             this.labelSupplierIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSupplierIDFind.ForeColor = System.Drawing.Color.Black;
-            this.labelSupplierIDFind.Location = new System.Drawing.Point(181, 40);
+            this.labelSupplierIDFind.Location = new System.Drawing.Point(78, 31);
             this.labelSupplierIDFind.Name = "labelSupplierIDFind";
             this.labelSupplierIDFind.Size = new System.Drawing.Size(70, 14);
             this.labelSupplierIDFind.TabIndex = 0;
@@ -285,14 +285,14 @@
             this.DataGridViewSupplier.Location = new System.Drawing.Point(400, 145);
             this.DataGridViewSupplier.Name = "DataGridViewSupplier";
             this.DataGridViewSupplier.RowTemplate.Height = 25;
-            this.DataGridViewSupplier.Size = new System.Drawing.Size(381, 299);
+            this.DataGridViewSupplier.Size = new System.Drawing.Size(432, 299);
             this.DataGridViewSupplier.TabIndex = 17;
             // 
             // FormManageSuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 568);
+            this.ClientSize = new System.Drawing.Size(849, 568);
             this.Controls.Add(this.DataGridViewSupplier);
             this.Controls.Add(this.labelManageSuppliersMessage);
             this.Controls.Add(this.buttonRemoveSupplier);

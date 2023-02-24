@@ -50,6 +50,7 @@ namespace WinFormsApp
         {
             try
             {
+
                 if (string.IsNullOrEmpty(textBoxProductID.Text))
                 {
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a valid ID!");
@@ -75,6 +76,8 @@ namespace WinFormsApp
                 _layer.AddProduct(productId, productName, productPrice);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
                 Utility.ClearTextBoxes(this);
+                this.PopulateProductGridview();
+
 
             }
             catch (FormatException)
@@ -196,6 +199,7 @@ namespace WinFormsApp
 
             catch (FormatException)
             {
+                this.PopulateProductGridview();
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a Product ID to search for!");
             }
         }
@@ -247,6 +251,16 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Unknown error:" + ex.Message);
             }
+        }
+
+        private void comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormManageProducts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
