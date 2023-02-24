@@ -74,8 +74,8 @@ namespace WinFormsApp
                 connection);
 
             command.Parameters.Add("@CustomerID", SqlDbType.Int, 10, "CustomerID");
-            command.Parameters.Add("@CustomerName", SqlDbType.VarChar, 10, "CustomerName");
-            command.Parameters.Add("@CustomerAddress", SqlDbType.VarChar, 10, "CustomerAddress");
+            command.Parameters.Add("@CustomerName", SqlDbType.VarChar, 30, "CustomerName");
+            command.Parameters.Add("@CustomerAddress", SqlDbType.VarChar, 30, "CustomerAddress");
             command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
             command.Connection = connection;
             customerAdapter.InsertCommand = command;
@@ -88,8 +88,8 @@ namespace WinFormsApp
             command = new SqlCommand("UPDATE Customer SET CustomerName = @CustomerName, CustomerAddress = @CustomerAddress, PhoneNumber = @PhoneNumber WHERE CustomerID = @CustomerID", connection);
 
             command.Parameters.Add("@CustomerID", SqlDbType.Int, 10, "CustomerID");
-            command.Parameters.Add("@CustomerName", SqlDbType.VarChar, 10, "CustomerName");
-            command.Parameters.Add("@CustomerAddress", SqlDbType.VarChar, 10, "CustomerAddress");
+            command.Parameters.Add("@CustomerName", SqlDbType.VarChar, 30, "CustomerName");
+            command.Parameters.Add("@CustomerAddress", SqlDbType.VarChar, 30, "CustomerAddress");
             command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
 
             command.Connection = connection;
@@ -126,8 +126,8 @@ namespace WinFormsApp
                 connection);
 
             command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeID");
-            command.Parameters.Add("@EmployeeName", SqlDbType.VarChar, 10, "EmployeeName");
-            command.Parameters.Add("@EmployeeAddress", SqlDbType.VarChar, 10, "EmployeeAddress");
+            command.Parameters.Add("@EmployeeName", SqlDbType.VarChar, 30, "EmployeeName");
+            command.Parameters.Add("@EmployeeAddress", SqlDbType.VarChar, 30, "EmployeeAddress");
             command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
             command.Connection = connection;
             employeeAdapter.InsertCommand = command;
@@ -140,8 +140,8 @@ namespace WinFormsApp
             command = new SqlCommand("UPDATE Employee SET EmployeeName = @EmployeeName, EmployeeAddress = @EmployeeAddress, PhoneNumber = @PhoneNumber WHERE EmployeeID = @EmployeeID", connection);
 
             command.Parameters.Add("@EmployeeID", SqlDbType.Int, 10, "EmployeeID");
-            command.Parameters.Add("@EmployeeName", SqlDbType.VarChar, 10, "EmployeeName");
-            command.Parameters.Add("@EmployeeAddress", SqlDbType.VarChar, 10, "EmployeeAddress");
+            command.Parameters.Add("@EmployeeName", SqlDbType.VarChar, 30, "EmployeeName");
+            command.Parameters.Add("@EmployeeAddress", SqlDbType.VarChar, 30, "EmployeeAddress");
             command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
 
             command.Connection = connection;
@@ -178,8 +178,8 @@ namespace WinFormsApp
                 connection);
 
             command.Parameters.Add("@SupplierID", SqlDbType.Int, 10, "SupplierID");
-            command.Parameters.Add("@SupplierName", SqlDbType.VarChar, 10, "SupplierName");
-            command.Parameters.Add("@SupplierAddress", SqlDbType.VarChar, 10, "SupplierAddress");
+            command.Parameters.Add("@SupplierName", SqlDbType.VarChar, 30, "SupplierName");
+            command.Parameters.Add("@SupplierAddress", SqlDbType.VarChar, 30, "SupplierAddress");
             command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
             command.Connection = connection;
             supplierAdapter.InsertCommand = command;
@@ -192,8 +192,8 @@ namespace WinFormsApp
             command = new SqlCommand("UPDATE Supplier SET SupplierName = @SupplierName, SupplierAddress = @SupplierAddress, PhoneNumber = @PhoneNumber WHERE SupplierID = @SupplierID", connection);
 
             command.Parameters.Add("@SupplierID", SqlDbType.Int, 10, "SupplierID");
-            command.Parameters.Add("@SupplierName", SqlDbType.VarChar, 10, "SupplierName");
-            command.Parameters.Add("@SupplierAddress", SqlDbType.VarChar, 10, "SupplierAddress");
+            command.Parameters.Add("@SupplierName", SqlDbType.VarChar, 30, "SupplierName");
+            command.Parameters.Add("@SupplierAddress", SqlDbType.VarChar, 30, "SupplierAddress");
             command.Parameters.Add("@PhoneNumber", SqlDbType.Int, 10, "PhoneNumber");
 
             command.Connection = connection;
@@ -230,7 +230,7 @@ namespace WinFormsApp
                 connection);
 
             command.Parameters.Add("@ProductID", SqlDbType.Int, 10, "ProductID");
-            command.Parameters.Add("@ProductName", SqlDbType.VarChar, 10, "ProductName");
+            command.Parameters.Add("@ProductName", SqlDbType.VarChar, 30, "ProductName");
             command.Parameters.Add("@Price", SqlDbType.Decimal, 10, "Price");
             command.Connection = connection;
             productAdapter.InsertCommand = command;
@@ -243,7 +243,7 @@ namespace WinFormsApp
             command = new SqlCommand("UPDATE Product SET ProductName = @ProductName, Price = @Price WHERE ProductID = @ProductID", connection);
 
             command.Parameters.Add("@ProductID", SqlDbType.Int, 10, "ProductID");
-            command.Parameters.Add("@ProductName", SqlDbType.VarChar, 10, "ProductName");
+            command.Parameters.Add("@ProductName", SqlDbType.VarChar, 30, "ProductName");
             command.Parameters.Add("@Price", SqlDbType.Decimal, 10, "Price");
 
             command.Connection = connection;
