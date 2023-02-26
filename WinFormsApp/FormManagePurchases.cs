@@ -186,8 +186,8 @@ namespace WinFormsApp
             try
             {
                 int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
-                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value); //chatGPT
-                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["ProductID"].Value); //chatGPT
+                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value); //chatGPT
+                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Product ID"].Value); //chatGPT
 
                 // chatGPT
                 if(dataGridViewPurchase.SelectedRows.Count > 0)
@@ -213,7 +213,7 @@ namespace WinFormsApp
                 if(string.IsNullOrEmpty(textBoxPurchaseID.Text))
                 {
                     int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
-                    int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value);
+                    int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value);
                     //Utility.ClearTextBoxes(this);
 
                     //ChatGPT
