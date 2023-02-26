@@ -22,15 +22,14 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
             this.PopulateProductSupplierComboBox();
-            this.PopulateSupplierGridview();
+            this.PopulateSupplierGridView();
         }
 
-        private void PopulateSupplierGridview()
+        private void PopulateSupplierGridView()
         {
             DataSet ds = _layer.PopulateSupplierGridView();
             DataTable dt = ds.Tables[0];
             DataGridViewSupplier.DataSource = dt;
-
         }
         private void PopulateProductSupplierComboBox() //med hjälp av ChatGPT
         {
@@ -84,7 +83,6 @@ namespace WinFormsApp
                 _layer.AddSupplier(suppId, suppName, suppAddress, phoneNbr); 
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added!");
                 Utility.ClearTextBoxes(this);
-
             }
             catch (FormatException)
             {
@@ -102,6 +100,8 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
             }
+
+            this.PopulateSupplierGridView();
         }
 
         private void buttonEditSupplier_Click(object sender, EventArgs e)
@@ -136,18 +136,17 @@ namespace WinFormsApp
                 _layer.UpdateSupplier(suppId, suppName, suppAddress, phoneNumber);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier edited!");
                 Utility.ClearTextBoxes(this);
-
             }
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the fields in the correct format!");
             }
-        
             catch (Exception)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Sorry, unknown error. Something went wrong!");
+            }
 
-            }  
+            this.PopulateSupplierGridView();
         }
         
         private void buttonRemoveSupplier_Click(object sender, EventArgs e)
@@ -165,12 +164,13 @@ namespace WinFormsApp
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the ID of the supplier you want to remove");
-
             }
             catch (Exception)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Sorry, unknown error. Something went wrong!");
             }
+
+            this.PopulateSupplierGridView();
         }
         
         private void buttonFindSupplier_Click(object sender, EventArgs e)
@@ -178,9 +178,7 @@ namespace WinFormsApp
             try
             {
                 int supplierID = Convert.ToInt32(textBoxSupplierIdFind.Text);
-
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
-
 
                 DataTable findSupplierDataTable = new();
                 findSupplierDataTable = _layer.FindSupplier(supplierID, connectionString);
@@ -202,21 +200,23 @@ namespace WinFormsApp
                 {
                     Utility.LabelMessageFailure(labelManageSuppliersMessage, "Supplier not found!");
                     Utility.ClearTextBoxes(this);
+                    this.PopulateSupplierGridView();
                 }
             }
             catch (NullReferenceException)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an ID number!");
+                this.PopulateSupplierGridView();
             }
-
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a Supplier ID to search for!");
-
+                this.PopulateSupplierGridView();
             }
             catch (Exception)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Sorry, unknown error. Something went wrong!");
+                this.PopulateSupplierGridView();
             }
         }
 
@@ -242,7 +242,6 @@ namespace WinFormsApp
                 _layer.InsertSupplierProduct(suppId, prodId);
                 Utility.LabelMessageSuccess(labelManageSuppliersMessage, "Supplier added to product!");
                 Utility.ClearTextBoxes(this);
-
             }
             catch (FormatException)
             {
@@ -260,6 +259,8 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
             }
+            
+            this.PopulateSupplierGridView();
         }
     }
 }
