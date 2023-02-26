@@ -118,7 +118,7 @@ namespace WinFormsApp
                 _layer.AddPurchase(purchaseId, purchaseEmployeeId, purchaseCustomerId);
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
-
+                this.PopulatePurchaseGridview();
             }
 
 

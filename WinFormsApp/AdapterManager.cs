@@ -397,7 +397,7 @@ namespace WinFormsApp
             return result;
         }
 
-        // - ProductPurchase -
+        // - PRODUCT_PURCHASE -
 
         public static SqlDataAdapter InsertProductPurchaseAdapter(int purchaseID, int productID, int quantity, SqlConnection connection)
         {

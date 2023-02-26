@@ -63,9 +63,10 @@ namespace WinFormsApp
                 int employeePhoneNumber = Convert.ToInt32(textBoxEmployeePhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                _layer.AddEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber); //osäker om rätt
+                _layer.AddEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber);
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
                 Utility.ClearTextBoxes(this);
+                this.PopulateEmployeeGridview();
             }
             catch (SqlException ex)
             {
@@ -128,6 +129,7 @@ namespace WinFormsApp
                 _layer.UpdateEmployee(empID, empName, empAddress, empPhoneNbr);
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
                 Utility.ClearTextBoxes(this);
+                this.PopulateEmployeeGridview();
             }
             catch (SqlException ex)
             {
@@ -161,10 +163,10 @@ namespace WinFormsApp
                 
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-                _layer.DeleteEmployee(employeeId); //osäker om rätt
+                _layer.DeleteEmployee(employeeId);
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
                 Utility.ClearTextBoxes(this);
-
+                this.PopulateEmployeeGridview();
             }
             catch (SqlException ex)
             {

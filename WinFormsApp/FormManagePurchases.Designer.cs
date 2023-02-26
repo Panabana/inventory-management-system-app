@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManagePurchases));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxPurchaseNew = new System.Windows.Forms.GroupBox();
             this.labelPurchaseEmployeeName = new System.Windows.Forms.Label();
             this.comboBoxPurchaseEmployeeName = new System.Windows.Forms.ComboBox();
@@ -145,9 +146,9 @@
             this.groupBoxPurchaseFind.Controls.Add(this.labelPurchaseIDFind);
             this.groupBoxPurchaseFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxPurchaseFind.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBoxPurchaseFind.Location = new System.Drawing.Point(627, 4);
+            this.groupBoxPurchaseFind.Location = new System.Drawing.Point(660, 4);
             this.groupBoxPurchaseFind.Name = "groupBoxPurchaseFind";
-            this.groupBoxPurchaseFind.Size = new System.Drawing.Size(422, 188);
+            this.groupBoxPurchaseFind.Size = new System.Drawing.Size(389, 188);
             this.groupBoxPurchaseFind.TabIndex = 11;
             this.groupBoxPurchaseFind.TabStop = false;
             this.groupBoxPurchaseFind.Text = "Find by Purchase ID";
@@ -200,8 +201,15 @@
             // dataGridViewPurchase
             // 
             this.dataGridViewPurchase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewPurchase.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewPurchase.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPurchase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPurchase.Location = new System.Drawing.Point(6, 25);
             this.dataGridViewPurchase.Name = "dataGridViewPurchase";
@@ -295,7 +303,7 @@
             this.groupBoxAddProduct.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxAddProduct.Location = new System.Drawing.Point(400, 4);
             this.groupBoxAddProduct.Name = "groupBoxAddProduct";
-            this.groupBoxAddProduct.Size = new System.Drawing.Size(221, 188);
+            this.groupBoxAddProduct.Size = new System.Drawing.Size(254, 188);
             this.groupBoxAddProduct.TabIndex = 26;
             this.groupBoxAddProduct.TabStop = false;
             this.groupBoxAddProduct.Text = "Add product to purchase";
@@ -306,7 +314,7 @@
             this.labelPurchaseIdProduct.AutoSize = true;
             this.labelPurchaseIdProduct.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelPurchaseIdProduct.ForeColor = System.Drawing.Color.Black;
-            this.labelPurchaseIdProduct.Location = new System.Drawing.Point(19, 35);
+            this.labelPurchaseIdProduct.Location = new System.Drawing.Point(20, 35);
             this.labelPurchaseIdProduct.Name = "labelPurchaseIdProduct";
             this.labelPurchaseIdProduct.Size = new System.Drawing.Size(69, 13);
             this.labelPurchaseIdProduct.TabIndex = 6;
@@ -316,7 +324,7 @@
             // 
             this.comboBoxPurchaseId.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPurchaseId.FormattingEnabled = true;
-            this.comboBoxPurchaseId.Location = new System.Drawing.Point(21, 51);
+            this.comboBoxPurchaseId.Location = new System.Drawing.Point(22, 51);
             this.comboBoxPurchaseId.Name = "comboBoxPurchaseId";
             this.comboBoxPurchaseId.Size = new System.Drawing.Size(104, 25);
             this.comboBoxPurchaseId.TabIndex = 5;
@@ -327,7 +335,7 @@
             this.buttonAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddProduct.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProduct.ForeColor = System.Drawing.Color.Black;
-            this.buttonAddProduct.Location = new System.Drawing.Point(136, 139);
+            this.buttonAddProduct.Location = new System.Drawing.Point(140, 95);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(79, 23);
             this.buttonAddProduct.TabIndex = 4;
@@ -340,7 +348,7 @@
             this.labelQuanity.AutoSize = true;
             this.labelQuanity.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelQuanity.ForeColor = System.Drawing.Color.Black;
-            this.labelQuanity.Location = new System.Drawing.Point(22, 122);
+            this.labelQuanity.Location = new System.Drawing.Point(23, 122);
             this.labelQuanity.Name = "labelQuanity";
             this.labelQuanity.Size = new System.Drawing.Size(53, 13);
             this.labelQuanity.TabIndex = 3;
@@ -351,7 +359,7 @@
             this.labelProduct.AutoSize = true;
             this.labelProduct.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProduct.ForeColor = System.Drawing.Color.Black;
-            this.labelProduct.Location = new System.Drawing.Point(22, 80);
+            this.labelProduct.Location = new System.Drawing.Point(23, 80);
             this.labelProduct.Name = "labelProduct";
             this.labelProduct.Size = new System.Drawing.Size(48, 13);
             this.labelProduct.TabIndex = 2;
@@ -361,7 +369,7 @@
             // 
             this.comboBoxProduct.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxProduct.FormattingEnabled = true;
-            this.comboBoxProduct.Location = new System.Drawing.Point(21, 94);
+            this.comboBoxProduct.Location = new System.Drawing.Point(22, 94);
             this.comboBoxProduct.Name = "comboBoxProduct";
             this.comboBoxProduct.Size = new System.Drawing.Size(104, 25);
             this.comboBoxProduct.TabIndex = 1;
@@ -370,7 +378,7 @@
             // textBoxProductQuantity
             // 
             this.textBoxProductQuantity.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductQuantity.Location = new System.Drawing.Point(21, 136);
+            this.textBoxProductQuantity.Location = new System.Drawing.Point(22, 136);
             this.textBoxProductQuantity.Name = "textBoxProductQuantity";
             this.textBoxProductQuantity.Size = new System.Drawing.Size(104, 24);
             this.textBoxProductQuantity.TabIndex = 0;

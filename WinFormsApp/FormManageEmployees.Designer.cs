@@ -71,7 +71,7 @@
             this.groupBoxEmployeeNew.Size = new System.Drawing.Size(381, 244);
             this.groupBoxEmployeeNew.TabIndex = 3;
             this.groupBoxEmployeeNew.TabStop = false;
-            this.groupBoxEmployeeNew.Text = "New employee details";
+            this.groupBoxEmployeeNew.Text = "Change employee details";
             // 
             // textBoxEmployeeAddress
             // 
@@ -147,11 +147,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(164, 40);
+            this.label1.Location = new System.Drawing.Point(120, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 14);
+            this.label1.Size = new System.Drawing.Size(169, 14);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Employee ID:";
+            this.label1.Text = "Add/remove an Employee ID:";
             // 
             // groupBoxEmployeeFind
             // 
@@ -260,13 +260,14 @@
             // 
             // DataGridViewEmployee
             // 
+            this.DataGridViewEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridViewEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewEmployee.Location = new System.Drawing.Point(190, 255);
+            this.DataGridViewEmployee.Location = new System.Drawing.Point(169, 254);
             this.DataGridViewEmployee.Name = "DataGridViewEmployee";
             this.DataGridViewEmployee.ReadOnly = true;
             this.DataGridViewEmployee.RowTemplate.Height = 25;
-            this.DataGridViewEmployee.Size = new System.Drawing.Size(409, 222);
+            this.DataGridViewEmployee.Size = new System.Drawing.Size(456, 217);
             this.DataGridViewEmployee.TabIndex = 25;
             this.DataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
             // 
