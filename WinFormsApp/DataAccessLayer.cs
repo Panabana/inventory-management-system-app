@@ -529,7 +529,7 @@ namespace WinFormsApp
         }
 
 
-        // - Purchase -
+        // - PURCHASE -
 
         public int CheckActivePurchases(int purchaseCustomerId)
         {
@@ -616,7 +616,7 @@ namespace WinFormsApp
                 }
             }
         }
-        // - ProductPurchase -
+        // - PRODUCT_PURCHASE -
 
         public void InsertProductPurchase(int purchaseID, int productID, int quantity)
         {

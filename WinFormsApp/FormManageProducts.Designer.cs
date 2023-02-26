@@ -77,7 +77,7 @@
             this.groupBox1.Size = new System.Drawing.Size(381, 440);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New product details";
+            this.groupBox1.Text = "Change product details";
             // 
             // label2
             // 
@@ -184,11 +184,11 @@
             this.labelProductID.AutoSize = true;
             this.labelProductID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProductID.ForeColor = System.Drawing.Color.Black;
-            this.labelProductID.Location = new System.Drawing.Point(164, 40);
+            this.labelProductID.Location = new System.Drawing.Point(123, 40);
             this.labelProductID.Name = "labelProductID";
-            this.labelProductID.Size = new System.Drawing.Size(70, 14);
+            this.labelProductID.Size = new System.Drawing.Size(152, 14);
             this.labelProductID.TabIndex = 0;
-            this.labelProductID.Text = "Product ID:";
+            this.labelProductID.Text = "Add/remove a Product ID:";
             // 
             // buttonRemoveProduct
             // 
