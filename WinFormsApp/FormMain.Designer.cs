@@ -135,7 +135,7 @@
             // 
             // barButtonManageProducts
             // 
-            this.barButtonManageProducts.Caption = "Manage products";
+            this.barButtonManageProducts.Caption = "Manage Products";
             this.barButtonManageProducts.Id = 4;
             this.barButtonManageProducts.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonManageProducts.ImageOptions.Image")));
             this.barButtonManageProducts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonManageProducts.ImageOptions.LargeImage")));
@@ -333,7 +333,7 @@
             // 
             // barButtonManagePurchase
             // 
-            this.barButtonManagePurchase.Caption = "Manage Purchase";
+            this.barButtonManagePurchase.Caption = "Manage Purchases";
             this.barButtonManagePurchase.Id = 14;
             this.barButtonManagePurchase.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonManagePurchase.ImageOptions.SvgImage")));
             this.barButtonManagePurchase.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
