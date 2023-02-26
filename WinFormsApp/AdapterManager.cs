@@ -101,7 +101,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewProductGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT p.ProductID, p.ProductName, p.Price, s.SupplierName " +
+            SqlCommand command = new SqlCommand("SELECT p.ProductID AS 'Product ID', p.ProductName AS 'Product name', p.Price, s.SupplierName AS 'Supplier name' " +
                                                 "FROM Product p LEFT JOIN ProductSupplier ps ON ps.ProductID = p.ProductID LEFT JOIN Supplier s ON s.SupplierID = ps.SupplierID");
             command.Connection = connection;
             adapter.SelectCommand = command;
@@ -111,7 +111,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewProductGridFind(int productId, SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT p.ProductID, p.ProductName, p.Price, s.SupplierName " +
+            SqlCommand command = new SqlCommand("SELECT p.ProductID AS 'Product ID', p.ProductName AS 'Product name', p.Price, s.SupplierName AS 'Supplier name' " +
                                                 "FROM Product p LEFT JOIN ProductSupplier ps ON ps.ProductID = p.ProductID LEFT JOIN Supplier s ON s.SupplierID = ps.SupplierID WHERE p.ProductId = @ProductId");
             command.Connection = connection;
             command.Parameters.AddWithValue("@ProductId", productId);
