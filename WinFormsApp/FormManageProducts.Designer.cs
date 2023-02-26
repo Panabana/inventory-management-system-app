@@ -131,7 +131,6 @@
             this.comboBoxSelectPurchaseToAddProduct.Name = "comboBoxSelectPurchaseToAddProduct";
             this.comboBoxSelectPurchaseToAddProduct.Size = new System.Drawing.Size(140, 26);
             this.comboBoxSelectPurchaseToAddProduct.TabIndex = 14;
-            this.comboBoxSelectPurchaseToAddProduct.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged);
             // 
             // textBoxProductPrice
             // 
@@ -319,7 +318,6 @@
             this.Name = "FormManageProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Products";
-            this.Load += new System.EventHandler(this.FormManageProducts_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

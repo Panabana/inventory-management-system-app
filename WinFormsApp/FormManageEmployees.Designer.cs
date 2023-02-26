@@ -269,7 +269,6 @@
             this.DataGridViewEmployee.RowTemplate.Height = 25;
             this.DataGridViewEmployee.Size = new System.Drawing.Size(456, 217);
             this.DataGridViewEmployee.TabIndex = 25;
-            this.DataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
             // 
             // FormManageEmployees
             // 

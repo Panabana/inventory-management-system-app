@@ -224,7 +224,6 @@
             this.dataGridViewPurchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPurchase.Size = new System.Drawing.Size(1031, 248);
             this.dataGridViewPurchase.TabIndex = 0;
-            this.dataGridViewPurchase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPurchase_CellContentClick);
             // 
             // buttonRemovePurchasePurchase
             // 
@@ -307,7 +306,6 @@
             this.groupBoxAddProduct.TabIndex = 26;
             this.groupBoxAddProduct.TabStop = false;
             this.groupBoxAddProduct.Text = "Add product to purchase";
-            this.groupBoxAddProduct.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // labelPurchaseIdProduct
             // 
@@ -328,7 +326,6 @@
             this.comboBoxPurchaseId.Name = "comboBoxPurchaseId";
             this.comboBoxPurchaseId.Size = new System.Drawing.Size(104, 25);
             this.comboBoxPurchaseId.TabIndex = 5;
-            this.comboBoxPurchaseId.SelectedIndexChanged += new System.EventHandler(this.comboBoxProductId_SelectedIndexChanged);
             // 
             // buttonAddProduct
             // 
@@ -373,7 +370,6 @@
             this.comboBoxProduct.Name = "comboBoxProduct";
             this.comboBoxProduct.Size = new System.Drawing.Size(104, 25);
             this.comboBoxProduct.TabIndex = 1;
-            this.comboBoxProduct.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBoxProductQuantity
             // 

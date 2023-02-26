@@ -237,6 +237,7 @@ namespace WinFormsApp
             }
             catch (FormatException)
             {
+                this.PopulateEmployeeGridview();
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, "Please enter a Employee ID to search for!");
             }
             catch (Exception ex)
@@ -244,11 +245,6 @@ namespace WinFormsApp
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
 
             }
-
-        }
-
-        private void dataGridViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }
