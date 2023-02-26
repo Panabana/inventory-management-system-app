@@ -76,6 +76,7 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a phone number!");
                     return;
                 }
+                
                 int suppId = Convert.ToInt32(textBoxSupplierID.Text);
                 string suppName = textBoxSupplierName.Text;
                 string suppAddress = textBoxSupplierAddress.Text;
@@ -101,7 +102,7 @@ namespace WinFormsApp
             }
             catch (Exception ex)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Unknown error: " + ex.Message);
                 Console.WriteLine(ex.Message);
             }
         }

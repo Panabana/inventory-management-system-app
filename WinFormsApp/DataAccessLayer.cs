@@ -345,19 +345,13 @@ namespace WinFormsApp
             }
         }
 
-
         // - SUPPLIER -
-        public void AddSupplier(
-            int supplierId
-            , string supplierName
-            , string supplierAddress
-            , int phoneNumber)
+        public void AddSupplier(int supplierId, string supplierName, string supplierAddress, int phoneNumber)
         {
             using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
             {
                 using (SqlDataAdapter adapter = AdapterManager.SupplierAdapter(connection))
                 {
-
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet);
 
