@@ -1,4 +1,5 @@
-﻿using DevExpress.Mvvm.Native;
+﻿using DevExpress.CodeParser;
+using DevExpress.Mvvm.Native;
 using DevExpress.Utils.About;
 using DevExpress.XtraEditors;
 using System;
@@ -28,15 +29,15 @@ namespace WinFormsApp
             this.PopulatePurchaseComboBox();
             this.PopulateProductComboBox();
         }
+        
         private void PopulatePurchaseGridview()
         {
             DataSet ds = _layer.PopulatePurchaseGridView();
             DataTable dt = ds.Tables[0];
             dataGridViewPurchase.DataSource = dt;
-
         }
 
-        private void PopulateEmpComboBox() //med hjälp av ChatGPT
+        private void PopulateEmpComboBox() // With help from ChatGPT
         {
             DataSet ds = _layer.ReadEmployee();
             DataTable dt = ds.Tables[0];
@@ -55,7 +56,7 @@ namespace WinFormsApp
             comboBoxPurchaseEmployeeName.ValueMember = "EmployeeID";
         }
 
-        private void PopulatePurchaseComboBox() //med hjälp av ChatGPT
+        private void PopulatePurchaseComboBox() // With help from ChatGPT
         {
             DataSet ds = _layer.ReadPurchase();
             DataTable dt = ds.Tables[0];
@@ -65,7 +66,7 @@ namespace WinFormsApp
             comboBoxPurchaseId.ValueMember = "PurchaseID";
         }
 
-        private void PopulateProductComboBox() //med hjälp av ChatGPT
+        private void PopulateProductComboBox() // With help from ChatGPT
         {
             DataSet ds = _layer.ReadProduct();
             DataTable dt = ds.Tables[0];
@@ -75,7 +76,7 @@ namespace WinFormsApp
             comboBoxProduct.ValueMember = "ProductID";
         }
 
-        private void PopulateCustomerComboBox() //med hjälp av ChatGPT
+        private void PopulateCustomerComboBox() // With help from ChatGPT
         {
             DataSet ds = _layer.ReadCustomer();
             DataTable dt = ds.Tables[0];
@@ -93,7 +94,7 @@ namespace WinFormsApp
             comboBoxPurchaseCustomerName.DisplayMember = "DisplayString"; //displayString
             comboBoxPurchaseCustomerName.ValueMember = "CustomerID";
         }
-
+        
         private void buttonAddPurchase_Click(object sender, EventArgs e)
         {
             try
@@ -101,7 +102,7 @@ namespace WinFormsApp
                 int purchaseId = Convert.ToInt32(textBoxPurchaseID.Text);
                 int purchaseCustomerId = Convert.ToInt32(comboBoxPurchaseCustomerName.SelectedValue);
 
-                // BUSINESS RULE #2 CHECK - NO MORE THAN 5 ACTIVE PURCHASE ORDERS
+                // BUSINESS RULE #2 CHECK - No more than 5 active purchase orders
                 int amountActive = _layer.CheckActivePurchases(purchaseCustomerId);
                 if (amountActive >= 5)
                 {
@@ -118,7 +119,6 @@ namespace WinFormsApp
                 _layer.AddPurchase(purchaseId, purchaseEmployeeId, purchaseCustomerId);
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "New Purchase Created!");
-                this.PopulatePurchaseGridview();
             }
 
 
@@ -146,8 +146,10 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong!");
             }
+            
+            this.PopulatePurchaseGridview();
         }
-        
+
         private void buttonEditPurchase_Click(object sender, EventArgs e)
         {
             try
@@ -175,6 +177,8 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong!");
             }
+            
+            this.PopulatePurchaseGridview();
         }
 
         private void buttonRemoveLinePurchase_Click(object sender, EventArgs e)
@@ -185,7 +189,7 @@ namespace WinFormsApp
                 int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value); //chatGPT
                 int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["ProductID"].Value); //chatGPT
 
-                //chatGPT
+                // chatGPT
                 if(dataGridViewPurchase.SelectedRows.Count > 0)
                 {
                     dataGridViewPurchase.Rows.Remove(dataGridViewPurchase.SelectedRows[0]);
@@ -198,6 +202,8 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong...");
             }
+            
+            this.PopulatePurchaseGridview();
         }
 
         private void buttonRemovePurchasePurchase_Click(object sender, EventArgs e)
@@ -234,54 +240,55 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong!");
             }
+
+            this.PopulatePurchaseGridview();
         }
         
         private void buttonFindPurchase_Click(object sender, EventArgs e)
         {
-            
            try
-                {
-                
+           {
                 int purchaseId = Convert.ToInt32(textBoxPurchaseIDFind.Text);
-                    string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
-                    DataTable findPurchaseDataTable = new();
-                    findPurchaseDataTable = _layer.FindPurchase(purchaseId, connectionString);
+                string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+                DataTable findPurchaseDataTable = new();
+                findPurchaseDataTable = _layer.FindPurchase(purchaseId, connectionString);
 
+                DataSet ds = _layer.PopulatePurchaseGridViewFind(purchaseId);
+                DataTable dt = ds.Tables[0];
+                dataGridViewPurchase.DataSource = dt;
+                
 
-                
-                    DataSet ds = _layer.PopulatePurchaseGridViewFind(purchaseId);
-                    DataTable dt = ds.Tables[0];
-                    dataGridViewPurchase.DataSource = dt;
-                
                 if (findPurchaseDataTable.Rows.Count == 1)
-                    {
-                        textBoxPurchaseID.Text = findPurchaseDataTable.Rows[0]["PurchaseID"].ToString();
-                        comboBoxPurchaseCustomerName.Text = findPurchaseDataTable.Rows[0]["CustomerID"].ToString();
-                        comboBoxPurchaseEmployeeName.Text = findPurchaseDataTable.Rows[0]["EmployeeID"].ToString();
-
-                        Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase found!");
-                    }
-                    else
-                    {
-                        Utility.LabelMessageFailure(labelManagePurchasesMessage, "Purchase does not exist!");
-                    }
-                }
-
-                catch (NullReferenceException ex)
                 {
-                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a Purchase ID!");
+                    textBoxPurchaseID.Text = findPurchaseDataTable.Rows[0]["PurchaseID"].ToString();
+                    comboBoxPurchaseCustomerName.Text = findPurchaseDataTable.Rows[0]["CustomerID"].ToString();
+                    comboBoxPurchaseEmployeeName.Text = findPurchaseDataTable.Rows[0]["EmployeeID"].ToString();
+
+                    Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase found!");
                 }
-
-                catch (FormatException)
+                else
                 {
-                this.PopulatePurchaseGridview();
+                    Utility.LabelMessageFailure(labelManagePurchasesMessage, "Purchase does not exist!");
+                }
+            }
 
+            catch (NullReferenceException)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a Purchase ID!");
+            }
+            catch (FormatException)
+            {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
-                }
-            
+            }
+            catch (Exception)
+            {
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error, something went wrong!");
+            }
 
+            this.PopulatePurchaseGridview();
         }
 
+        // --------------------------------------------------------------
         private void dataGridViewPurchase_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -296,6 +303,7 @@ namespace WinFormsApp
         {
 
         }
+        // --------------------------------------------------------------
 
         private void buttonAddProdcut_Click(object sender, EventArgs e)
         {
@@ -324,7 +332,6 @@ namespace WinFormsApp
                 Utility.ClearTextBoxes(this);
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Product added to purchase!");
-                this.PopulatePurchaseGridview();
             }
             catch (SqlException ex)
             {
@@ -345,6 +352,8 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error:" + ex.Message);
             }
+
+            this.PopulatePurchaseGridview();
         }
 
         private void comboBoxProductId_SelectedIndexChanged(object sender, EventArgs e)

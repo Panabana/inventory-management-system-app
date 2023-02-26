@@ -232,7 +232,7 @@
             this.buttonRemovePurchasePurchase.Appearance.Options.UseFont = true;
             this.buttonRemovePurchasePurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemovePurchasePurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemovePurchasePurchase.ImageOptions.Image")));
-            this.buttonRemovePurchasePurchase.Location = new System.Drawing.Point(627, 484);
+            this.buttonRemovePurchasePurchase.Location = new System.Drawing.Point(898, 484);
             this.buttonRemovePurchasePurchase.Name = "buttonRemovePurchasePurchase";
             this.buttonRemovePurchasePurchase.Size = new System.Drawing.Size(149, 44);
             this.buttonRemovePurchasePurchase.TabIndex = 22;
@@ -245,7 +245,7 @@
             this.buttonEditPurchase.Appearance.Options.UseFont = true;
             this.buttonEditPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditPurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditPurchase.ImageOptions.Image")));
-            this.buttonEditPurchase.Location = new System.Drawing.Point(218, 484);
+            this.buttonEditPurchase.Location = new System.Drawing.Point(308, 484);
             this.buttonEditPurchase.Name = "buttonEditPurchase";
             this.buttonEditPurchase.Size = new System.Drawing.Size(149, 44);
             this.buttonEditPurchase.TabIndex = 21;
@@ -283,7 +283,7 @@
             this.buttonRemoveLinePurchase.Appearance.Options.UseFont = true;
             this.buttonRemoveLinePurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveLinePurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveLinePurchase.ImageOptions.Image")));
-            this.buttonRemoveLinePurchase.Location = new System.Drawing.Point(423, 484);
+            this.buttonRemoveLinePurchase.Location = new System.Drawing.Point(603, 484);
             this.buttonRemoveLinePurchase.Name = "buttonRemoveLinePurchase";
             this.buttonRemoveLinePurchase.Size = new System.Drawing.Size(149, 44);
             this.buttonRemoveLinePurchase.TabIndex = 25;
