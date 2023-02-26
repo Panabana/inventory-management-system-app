@@ -44,7 +44,7 @@ namespace WinFormsApp
                     MessageBox.Show("Failed to login ...");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Something went wrong...");
             }
@@ -52,14 +52,51 @@ namespace WinFormsApp
 
         private void barButtonManageEmployees_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormManageEmployees form = new FormManageEmployees();
-            form.ShowDialog();
+            try
+            {
+               FormManageEmployees form = new FormManageEmployees();
+               form.ShowDialog(); 
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong...");
+            }
         }
 
         private void barButtonManageCustomers_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormManageCustomers form = new FormManageCustomers();
-            form.ShowDialog();
+            try
+            {
+                FormManageCustomers form = new FormManageCustomers();
+                form.ShowDialog();
+            }
+            catch (SqlException ex)
+            {
+
+                if (ex.Number == 0)
+                {
+                    MessageBox.Show("No connection ...");
+                }
+                if (ex.Number == 18456)
+                {
+                    MessageBox.Show("Failed to login ...");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong...");
+            }
         }
 
         private void barButtonManagePurchase_ItemClick(object sender, ItemClickEventArgs e)
@@ -81,7 +118,7 @@ namespace WinFormsApp
                     MessageBox.Show("Failed to login ...");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Something went wrong...");
             }
@@ -107,7 +144,7 @@ namespace WinFormsApp
                     MessageBox.Show("Failed to login ...");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Something went wrong...");
             }

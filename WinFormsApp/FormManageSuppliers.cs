@@ -99,10 +99,9 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManageSuppliersMessage, "A supplier with this ID already exists!");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
-                Console.WriteLine(ex.Message);
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
             }
         }
 
@@ -145,10 +144,10 @@ namespace WinFormsApp
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the fields in the correct format!");
             }
         
-            catch (Exception ex)
+            catch (Exception)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
-               
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
+
             }  
         }
         
@@ -169,10 +168,9 @@ namespace WinFormsApp
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter the ID of the supplier you want to remove");
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
-                Console.WriteLine(ex.Message);
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
             }
         }
         
@@ -207,7 +205,7 @@ namespace WinFormsApp
                     Utility.ClearTextBoxes(this);
                 }
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter an ID number!");
             }
@@ -216,6 +214,10 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageSuppliersMessage, "Please enter a Supplier ID to search for!");
 
+            }
+            catch (Exception)
+            {
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
             }
         }
 
@@ -255,9 +257,9 @@ namespace WinFormsApp
                     Utility.LabelMessageFailure(labelManageSuppliersMessage, "A supplier with this ID already exists!");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Utility.LabelMessageFailure(labelManageSuppliersMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManageSuppliersMessage, "Something went wrong!");
             }
         }
     }
