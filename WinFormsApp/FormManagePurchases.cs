@@ -290,24 +290,6 @@ namespace WinFormsApp
             }
 
         }
-
-        // --------------------------------------------------------------
-        private void dataGridViewPurchase_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        // --------------------------------------------------------------
-
         private void buttonAddProdcut_Click(object sender, EventArgs e)
         {
             try
@@ -357,11 +339,6 @@ namespace WinFormsApp
             }
 
             this.PopulatePurchaseGridview();
-        }
-
-        private void comboBoxProductId_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
