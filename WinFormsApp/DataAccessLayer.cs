@@ -43,6 +43,128 @@ namespace WinFormsApp
             }
         }
 
+        public DataSet PopulateCustomerGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewCustomerGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateCustomerGridViewFind(int customerId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewCustomerGridFind(customerId, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateEmployeeGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewEmployeeGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateEmployeeGridViewFind(int employeeId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewEmployeeGridFind(employeeId, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateProductGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewProductGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateProductGridViewFind(int productId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewProductGridFind(productId, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+
+        public DataSet PopulateSupplierGridView()
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewSupplierGrid(connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+        public DataSet PopulateSupplierGridViewFind(int supplierId)
+        {
+            using (SqlConnection connection = AdapterManager.ConnectionHandler.GetDatabaseConnection())
+            {
+                using (SqlDataAdapter adapter = AdapterManager.ViewSupplierGridFind(supplierId, connection))
+                {
+                    DataSet dataSet = new DataSet();
+
+                    adapter.Fill(dataSet);
+
+                    return dataSet;
+                }
+            }
+        }
+
+
         public void AddCustomer(
             int customerId
             , string customerName
@@ -407,7 +529,7 @@ namespace WinFormsApp
         }
 
 
-        // - Purchase -
+        // - PURCHASE -
 
         public int CheckActivePurchases(int purchaseCustomerId)
         {
@@ -494,7 +616,7 @@ namespace WinFormsApp
                 }
             }
         }
-        // - ProductPurchase -
+        // - PRODUCT_PURCHASE -
 
         public void InsertProductPurchase(int purchaseID, int productID, int quantity)
         {

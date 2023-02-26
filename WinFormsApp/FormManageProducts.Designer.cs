@@ -51,8 +51,10 @@
             this.labelProductIDFind = new System.Windows.Forms.Label();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.labelManageProductsMessage = new System.Windows.Forms.Label();
+            this.DataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,7 +77,7 @@
             this.groupBox1.Size = new System.Drawing.Size(381, 440);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New product details";
+            this.groupBox1.Text = "Change product details";
             // 
             // label2
             // 
@@ -110,6 +112,7 @@
             // buttonAddProductToPurchase
             // 
             this.buttonAddProductToPurchase.BackColor = System.Drawing.Color.White;
+            this.buttonAddProductToPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddProductToPurchase.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProductToPurchase.ForeColor = System.Drawing.Color.Black;
             this.buttonAddProductToPurchase.Location = new System.Drawing.Point(136, 361);
@@ -128,6 +131,7 @@
             this.comboBoxSelectPurchaseToAddProduct.Name = "comboBoxSelectPurchaseToAddProduct";
             this.comboBoxSelectPurchaseToAddProduct.Size = new System.Drawing.Size(140, 26);
             this.comboBoxSelectPurchaseToAddProduct.TabIndex = 14;
+            this.comboBoxSelectPurchaseToAddProduct.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged);
             // 
             // textBoxProductPrice
             // 
@@ -180,18 +184,19 @@
             this.labelProductID.AutoSize = true;
             this.labelProductID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProductID.ForeColor = System.Drawing.Color.Black;
-            this.labelProductID.Location = new System.Drawing.Point(164, 40);
+            this.labelProductID.Location = new System.Drawing.Point(123, 40);
             this.labelProductID.Name = "labelProductID";
-            this.labelProductID.Size = new System.Drawing.Size(70, 14);
+            this.labelProductID.Size = new System.Drawing.Size(152, 14);
             this.labelProductID.TabIndex = 0;
-            this.labelProductID.Text = "Product ID:";
+            this.labelProductID.Text = "Add/remove a Product ID:";
             // 
             // buttonRemoveProduct
             // 
             this.buttonRemoveProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveProduct.Appearance.Options.UseFont = true;
+            this.buttonRemoveProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveProduct.ImageOptions.Image")));
-            this.buttonRemoveProduct.Location = new System.Drawing.Point(597, 484);
+            this.buttonRemoveProduct.Location = new System.Drawing.Point(679, 484);
             this.buttonRemoveProduct.Name = "buttonRemoveProduct";
             this.buttonRemoveProduct.Size = new System.Drawing.Size(176, 44);
             this.buttonRemoveProduct.TabIndex = 10;
@@ -202,8 +207,9 @@
             // 
             this.buttonEditProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditProduct.Appearance.Options.UseFont = true;
+            this.buttonEditProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditProduct.ImageOptions.Image")));
-            this.buttonEditProduct.Location = new System.Drawing.Point(305, 484);
+            this.buttonEditProduct.Location = new System.Drawing.Point(346, 484);
             this.buttonEditProduct.Name = "buttonEditProduct";
             this.buttonEditProduct.Size = new System.Drawing.Size(176, 44);
             this.buttonEditProduct.TabIndex = 9;
@@ -214,6 +220,7 @@
             // 
             this.buttonAddProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProduct.Appearance.Options.UseFont = true;
+            this.buttonAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddProduct.ImageOptions.Image")));
             this.buttonAddProduct.Location = new System.Drawing.Point(13, 484);
             this.buttonAddProduct.Name = "buttonAddProduct";
@@ -230,9 +237,9 @@
             this.groupBox2.Controls.Add(this.labelProductIDFind);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox2.Location = new System.Drawing.Point(400, 4);
+            this.groupBox2.Location = new System.Drawing.Point(424, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 440);
+            this.groupBox2.Size = new System.Drawing.Size(432, 153);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Find by Product ID";
@@ -241,8 +248,9 @@
             // 
             this.buttonFindProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindProduct.Appearance.Options.UseFont = true;
+            this.buttonFindProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindProduct.ImageOptions.Image")));
-            this.buttonFindProduct.Location = new System.Drawing.Point(169, 88);
+            this.buttonFindProduct.Location = new System.Drawing.Point(179, 104);
             this.buttonFindProduct.Name = "buttonFindProduct";
             this.buttonFindProduct.Size = new System.Drawing.Size(95, 35);
             this.buttonFindProduct.TabIndex = 6;
@@ -252,7 +260,7 @@
             // textBoxProductIDFind
             // 
             this.textBoxProductIDFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductIDFind.Location = new System.Drawing.Point(110, 57);
+            this.textBoxProductIDFind.Location = new System.Drawing.Point(120, 66);
             this.textBoxProductIDFind.Name = "textBoxProductIDFind";
             this.textBoxProductIDFind.Size = new System.Drawing.Size(212, 26);
             this.textBoxProductIDFind.TabIndex = 5;
@@ -262,7 +270,7 @@
             this.labelProductIDFind.AutoSize = true;
             this.labelProductIDFind.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelProductIDFind.ForeColor = System.Drawing.Color.Black;
-            this.labelProductIDFind.Location = new System.Drawing.Point(181, 40);
+            this.labelProductIDFind.Location = new System.Drawing.Point(191, 40);
             this.labelProductIDFind.Name = "labelProductIDFind";
             this.labelProductIDFind.Size = new System.Drawing.Size(70, 14);
             this.labelProductIDFind.TabIndex = 0;
@@ -282,11 +290,24 @@
             this.labelManageProductsMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelManageProductsMessage.Visible = false;
             // 
+            // DataGridViewProduct
+            // 
+            this.DataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewProduct.Location = new System.Drawing.Point(424, 177);
+            this.DataGridViewProduct.Name = "DataGridViewProduct";
+            this.DataGridViewProduct.ReadOnly = true;
+            this.DataGridViewProduct.RowTemplate.Height = 25;
+            this.DataGridViewProduct.Size = new System.Drawing.Size(432, 267);
+            this.DataGridViewProduct.TabIndex = 13;
+            // 
             // FormManageProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 568);
+            this.ClientSize = new System.Drawing.Size(868, 568);
+            this.Controls.Add(this.DataGridViewProduct);
             this.Controls.Add(this.labelManageProductsMessage);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -298,10 +319,12 @@
             this.Name = "FormManageProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Products";
+            this.Load += new System.EventHandler(this.FormManageProducts_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +353,6 @@
         private Label label2;
         private Label label1;
         private TextBox textBoxQuantity;
+        private DataGridView DataGridViewProduct;
     }
 }

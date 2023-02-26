@@ -46,8 +46,10 @@
             this.buttonEditEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAddEmployee = new DevExpress.XtraEditors.SimpleButton();
             this.labelManageEmployeesMessage = new System.Windows.Forms.Label();
+            this.DataGridViewEmployee = new System.Windows.Forms.DataGridView();
             this.groupBoxEmployeeNew.SuspendLayout();
             this.groupBoxEmployeeFind.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxEmployeeNew
@@ -66,10 +68,10 @@
             this.groupBoxEmployeeNew.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEmployeeNew.Name = "groupBoxEmployeeNew";
             this.groupBoxEmployeeNew.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxEmployeeNew.Size = new System.Drawing.Size(381, 440);
+            this.groupBoxEmployeeNew.Size = new System.Drawing.Size(381, 244);
             this.groupBoxEmployeeNew.TabIndex = 3;
             this.groupBoxEmployeeNew.TabStop = false;
-            this.groupBoxEmployeeNew.Text = "New employee details";
+            this.groupBoxEmployeeNew.Text = "Change employee details";
             // 
             // textBoxEmployeeAddress
             // 
@@ -145,11 +147,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(164, 40);
+            this.label1.Location = new System.Drawing.Point(120, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 14);
+            this.label1.Size = new System.Drawing.Size(169, 14);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Employee ID:";
+            this.label1.Text = "Add/remove an Employee ID:";
             // 
             // groupBoxEmployeeFind
             // 
@@ -162,7 +164,7 @@
             this.groupBoxEmployeeFind.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEmployeeFind.Name = "groupBoxEmployeeFind";
             this.groupBoxEmployeeFind.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxEmployeeFind.Size = new System.Drawing.Size(381, 440);
+            this.groupBoxEmployeeFind.Size = new System.Drawing.Size(381, 244);
             this.groupBoxEmployeeFind.TabIndex = 11;
             this.groupBoxEmployeeFind.TabStop = false;
             this.groupBoxEmployeeFind.Text = "Find an employee";
@@ -171,6 +173,7 @@
             // 
             this.buttonFindEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindEmployee.Appearance.Options.UseFont = true;
+            this.buttonFindEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindEmployee.ImageOptions.Image")));
             this.buttonFindEmployee.Location = new System.Drawing.Point(174, 99);
             this.buttonFindEmployee.Margin = new System.Windows.Forms.Padding(4);
@@ -204,6 +207,7 @@
             // 
             this.buttonRemoveEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveEmployee.Appearance.Options.UseFont = true;
+            this.buttonRemoveEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveEmployee.ImageOptions.Image")));
             this.buttonRemoveEmployee.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveEmployee.Margin = new System.Windows.Forms.Padding(4);
@@ -217,6 +221,7 @@
             // 
             this.buttonEditEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditEmployee.Appearance.Options.UseFont = true;
+            this.buttonEditEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditEmployee.ImageOptions.Image")));
             this.buttonEditEmployee.Location = new System.Drawing.Point(305, 484);
             this.buttonEditEmployee.Margin = new System.Windows.Forms.Padding(4);
@@ -230,6 +235,7 @@
             // 
             this.buttonAddEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddEmployee.Appearance.Options.UseFont = true;
+            this.buttonAddEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddEmployee.ImageOptions.Image")));
             this.buttonAddEmployee.Location = new System.Drawing.Point(13, 484);
             this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(4);
@@ -252,11 +258,25 @@
             this.labelManageEmployeesMessage.Text = "****";
             this.labelManageEmployeesMessage.Visible = false;
             // 
+            // DataGridViewEmployee
+            // 
+            this.DataGridViewEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewEmployee.Location = new System.Drawing.Point(169, 254);
+            this.DataGridViewEmployee.Name = "DataGridViewEmployee";
+            this.DataGridViewEmployee.ReadOnly = true;
+            this.DataGridViewEmployee.RowTemplate.Height = 25;
+            this.DataGridViewEmployee.Size = new System.Drawing.Size(456, 217);
+            this.DataGridViewEmployee.TabIndex = 25;
+            this.DataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
+            // 
             // FormManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 568);
+            this.Controls.Add(this.DataGridViewEmployee);
             this.Controls.Add(this.labelManageEmployeesMessage);
             this.Controls.Add(this.buttonRemoveEmployee);
             this.Controls.Add(this.buttonEditEmployee);
@@ -273,6 +293,7 @@
             this.groupBoxEmployeeNew.PerformLayout();
             this.groupBoxEmployeeFind.ResumeLayout(false);
             this.groupBoxEmployeeFind.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,5 +318,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonEditEmployee;
         private DevExpress.XtraEditors.SimpleButton buttonAddEmployee;
         private Label labelManageEmployeesMessage;
+        private DataGridView DataGridViewEmployee;
     }
 }

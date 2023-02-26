@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Pdf.Native.BouncyCastle.Ocsp;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,15 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
             this.PopulateProductSupplierComboBox();
+            this.PopulateSupplierGridview();
+        }
+
+        private void PopulateSupplierGridview()
+        {
+            DataSet ds = _layer.PopulateSupplierGridView();
+            DataTable dt = ds.Tables[0];
+            DataGridViewSupplier.DataSource = dt;
+
         }
 
         private void PopulateProductSupplierComboBox() //med hjälp av ChatGPT
@@ -177,6 +187,10 @@ namespace WinFormsApp
 
                 DataTable findSupplierDataTable = new();
                 findSupplierDataTable = _layer.FindSupplier(supplierID, connectionString);
+
+                DataSet ds = _layer.PopulateSupplierGridViewFind(supplierID);
+                DataTable dt = ds.Tables[0];
+                DataGridViewSupplier.DataSource = dt;
 
                 if (findSupplierDataTable.Rows.Count == 1)
                 {

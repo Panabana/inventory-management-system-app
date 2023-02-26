@@ -21,6 +21,15 @@ namespace WinFormsApp
         {
             _layer = new();
             InitializeComponent();
+            this.PopulateCustomerGridview();
+        }
+
+        private void PopulateCustomerGridview()
+        {
+            DataSet ds = _layer.PopulateCustomerGridView();
+            DataTable dt = ds.Tables[0];
+            DataGridViewCustomer.DataSource = dt;
+
         }
 
         private void buttonAddCustomer_Click(object sender, EventArgs e)
@@ -52,9 +61,10 @@ namespace WinFormsApp
                 string customerAddress = textBoxCustomerAddress.Text;
                 int customerPhoneNumber = Convert.ToInt32(textBoxCustomerPhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-                _layer.AddCustomer(customerId, customerName, customerAddress, customerPhoneNumber); //osäker om rätt
+                _layer.AddCustomer(customerId, customerName, customerAddress, customerPhoneNumber);
                 Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer added!");
+                this.PopulateCustomerGridview();
             }
             catch (SqlException ex)
             {
@@ -116,7 +126,7 @@ namespace WinFormsApp
                 _layer.UpdateCustomer(customerId, customerName, customerAddress, customerPhoneNumber);
                 Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer edited!");
-
+                this.PopulateCustomerGridview();
             }
             catch (SqlException ex)
             {
@@ -148,7 +158,7 @@ namespace WinFormsApp
                 _layer.DeleteCustomer(customerId);
                 Utility.ClearTextBoxes(this);
                 Utility.LabelMessageSuccess(labelManageCustomersMessage, "Customer deleted!");
-
+                this.PopulateCustomerGridview();
             }
             catch (SqlException ex)
             {
@@ -176,11 +186,20 @@ namespace WinFormsApp
         {
             try
             {
+
+
+
+                
                 int customerId = Convert.ToInt32(textBoxCustomerIdFind.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
                 DataTable findCustomerDataTable = new();
                 findCustomerDataTable = _layer.FindCustomer(customerId, connectionString);
+
+                DataSet ds = _layer.PopulateCustomerGridViewFind(customerId);
+                DataTable dt = ds.Tables[0];
+                DataGridViewCustomer.DataSource = dt;
+
 
                 if (findCustomerDataTable.Rows.Count == 1)
                 {
@@ -215,6 +234,16 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormManageCustomers_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.Pdf.Native.BouncyCastle.Ocsp;
 using DevExpress.XtraEditors;
 using DevExpress.XtraRichEdit.Layout.Engine;
 using System;
@@ -24,6 +25,15 @@ namespace WinFormsApp
             _layer = new();
             InitializeComponent();
             this.PopulatePurchaseComboBox();
+            this.PopulateProductGridview();
+        }
+
+        private void PopulateProductGridview()
+        {
+            DataSet ds = _layer.PopulateProductGridView();
+            DataTable dt = ds.Tables[0];
+            DataGridViewProduct.DataSource = dt;
+
         }
 
         private void PopulatePurchaseComboBox() //med hjälp av ChatGPT
@@ -40,6 +50,7 @@ namespace WinFormsApp
         {
             try
             {
+
                 if (string.IsNullOrEmpty(textBoxProductID.Text))
                 {
                     Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a valid ID!");
@@ -65,6 +76,8 @@ namespace WinFormsApp
                 _layer.AddProduct(productId, productName, productPrice);
                 Utility.LabelMessageSuccess(labelManageProductsMessage, "Product added!");
                 Utility.ClearTextBoxes(this);
+                this.PopulateProductGridview();
+
 
             }
             catch (FormatException)
@@ -161,6 +174,10 @@ namespace WinFormsApp
                 DataTable findProductDataTable = new();
                 findProductDataTable = _layer.FindProduct(productID, connectionString);
 
+                DataSet ds = _layer.PopulateProductGridViewFind(productID);
+                DataTable dt = ds.Tables[0];
+                DataGridViewProduct.DataSource = dt;
+
                 if (findProductDataTable.Rows.Count == 1)
                 {
                     textBoxProductID.Text = findProductDataTable.Rows[0]["ProductID"].ToString();
@@ -182,6 +199,7 @@ namespace WinFormsApp
 
             catch (FormatException)
             {
+                this.PopulateProductGridview();
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Please enter a Product ID to search for!");
             }
         }
@@ -233,6 +251,16 @@ namespace WinFormsApp
             {
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Unknown error:" + ex.Message);
             }
+        }
+
+        private void comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormManageProducts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

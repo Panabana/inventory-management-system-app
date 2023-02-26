@@ -22,8 +22,17 @@ namespace WinFormsApp
         {
             _layer = new();
             InitializeComponent();
+            this.PopulateEmployeeGridview();
         }
-        
+
+        private void PopulateEmployeeGridview()
+        {
+            DataSet ds = _layer.PopulateEmployeeGridView();
+            DataTable dt = ds.Tables[0];
+            DataGridViewEmployee.DataSource = dt;
+
+        }
+
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
             try 
@@ -54,9 +63,10 @@ namespace WinFormsApp
                 int employeePhoneNumber = Convert.ToInt32(textBoxEmployeePhone.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
 
-                _layer.AddEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber); //osäker om rätt
+                _layer.AddEmployee(employeeId, employeeName, employeeAddress, employeePhoneNumber);
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee added!");
                 Utility.ClearTextBoxes(this);
+                this.PopulateEmployeeGridview();
             }
             catch (SqlException ex)
             {
@@ -119,6 +129,7 @@ namespace WinFormsApp
                 _layer.UpdateEmployee(empID, empName, empAddress, empPhoneNbr);
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee edited!");
                 Utility.ClearTextBoxes(this);
+                this.PopulateEmployeeGridview();
             }
             catch (SqlException ex)
             {
@@ -152,10 +163,10 @@ namespace WinFormsApp
                 
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-                _layer.DeleteEmployee(employeeId); //osäker om rätt
+                _layer.DeleteEmployee(employeeId);
                 Utility.LabelMessageSuccess(labelManageEmployeesMessage, "Employee removed!");
                 Utility.ClearTextBoxes(this);
-
+                this.PopulateEmployeeGridview();
             }
             catch (SqlException ex)
             {
@@ -186,11 +197,17 @@ namespace WinFormsApp
         {
             try
             {
+
+                
                 int empId = Convert.ToInt32(textBoxEmployeeIdFind.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
                 DataTable findEmpDataTable = new();
                 findEmpDataTable = _layer.FindEmployee(empId, connectionString);
+
+                DataSet ds = _layer.PopulateEmployeeGridViewFind(empId);
+                DataTable dt = ds.Tables[0];
+                DataGridViewEmployee.DataSource = dt;
 
                 if (findEmpDataTable.Rows.Count == 1)
                 {
@@ -227,6 +244,11 @@ namespace WinFormsApp
                 Utility.LabelMessageFailure(labelManageEmployeesMessage, ex.Message);
 
             }
+
+        }
+
+        private void dataGridViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
