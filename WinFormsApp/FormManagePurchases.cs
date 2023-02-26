@@ -186,8 +186,8 @@ namespace WinFormsApp
             try
             {
                 int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
-                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value); //chatGPT
-                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Product ID"].Value); //chatGPT
+                int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value); //chatGPT
+                int productID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["ProductID"].Value); //chatGPT
 
                 // chatGPT
                 if(dataGridViewPurchase.SelectedRows.Count > 0)
@@ -198,9 +198,9 @@ namespace WinFormsApp
 
                 Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Product removed from purchase order!");
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                Utility.LabelMessageFailure(labelManagePurchasesMessage, ex.Message);
+                Utility.LabelMessageFailure(labelManagePurchasesMessage, "Something went wrong...");
             }
             
             this.PopulatePurchaseGridview();
@@ -210,10 +210,10 @@ namespace WinFormsApp
         {
             try
             {
-                if(textBoxPurchaseID.Text.IsEmptyOrSingle()) 
+                if(string.IsNullOrEmpty(textBoxPurchaseID.Text))
                 {
                     int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
-                    int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value);
+                    int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value);
                     //Utility.ClearTextBoxes(this);
 
                     //ChatGPT
@@ -223,16 +223,14 @@ namespace WinFormsApp
                         _layer.DeletePurchase(purchaseID);
                     }
 
-
                     Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
                 }
-                else if (!textBoxPurchaseID.Text.IsEmptyOrSingle())
+                if (!string.IsNullOrEmpty(textBoxPurchaseID.Text))
                 {
                     int purchaseID = Convert.ToInt32(textBoxPurchaseID.Text);
                     _layer.DeletePurchase(purchaseID);
                     Utility.LabelMessageSuccess(labelManagePurchasesMessage, "Purchase deleted!");
                 }
-
             }
             catch (FormatException)
             {
@@ -259,6 +257,7 @@ namespace WinFormsApp
                 DataTable dt = ds.Tables[0];
                 dataGridViewPurchase.DataSource = dt;
                 
+
                 if (findPurchaseDataTable.Rows.Count == 1)
                 {
                     textBoxPurchaseID.Text = findPurchaseDataTable.Rows[0]["PurchaseID"].ToString();
