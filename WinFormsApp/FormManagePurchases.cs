@@ -213,7 +213,7 @@ namespace WinFormsApp
                 if(string.IsNullOrEmpty(textBoxPurchaseID.Text))
                 {
                     int selectedRowIndex = dataGridViewPurchase.CurrentRow.Index; //med hjälp av chatGPT
-                    int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["PurchaseID"].Value);
+                    int purchaseID = Convert.ToInt32(dataGridViewPurchase.Rows[selectedRowIndex].Cells["Purchase ID"].Value);
                     //Utility.ClearTextBoxes(this);
 
                     //ChatGPT
