@@ -193,6 +193,7 @@
             // 
             this.buttonRemoveProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveProduct.Appearance.Options.UseFont = true;
+            this.buttonRemoveProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveProduct.ImageOptions.Image")));
             this.buttonRemoveProduct.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveProduct.Name = "buttonRemoveProduct";
@@ -205,6 +206,7 @@
             // 
             this.buttonEditProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditProduct.Appearance.Options.UseFont = true;
+            this.buttonEditProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditProduct.ImageOptions.Image")));
             this.buttonEditProduct.Location = new System.Drawing.Point(305, 484);
             this.buttonEditProduct.Name = "buttonEditProduct";
@@ -217,6 +219,7 @@
             // 
             this.buttonAddProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProduct.Appearance.Options.UseFont = true;
+            this.buttonAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddProduct.ImageOptions.Image")));
             this.buttonAddProduct.Location = new System.Drawing.Point(13, 484);
             this.buttonAddProduct.Name = "buttonAddProduct";
@@ -244,6 +247,7 @@
             // 
             this.buttonFindProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindProduct.Appearance.Options.UseFont = true;
+            this.buttonFindProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindProduct.ImageOptions.Image")));
             this.buttonFindProduct.Location = new System.Drawing.Point(169, 88);
             this.buttonFindProduct.Name = "buttonFindProduct";

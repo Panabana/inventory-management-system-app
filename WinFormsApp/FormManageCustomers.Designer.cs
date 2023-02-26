@@ -165,6 +165,7 @@
             // 
             this.buttonFindCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindCustomer.Appearance.Options.UseFont = true;
+            this.buttonFindCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindCustomer.ImageOptions.Image")));
             this.buttonFindCustomer.Location = new System.Drawing.Point(173, 91);
             this.buttonFindCustomer.Name = "buttonFindCustomer";
@@ -196,6 +197,7 @@
             // 
             this.buttonRemoveCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveCustomer.Appearance.Options.UseFont = true;
+            this.buttonRemoveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveCustomer.ImageOptions.Image")));
             this.buttonRemoveCustomer.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveCustomer.Name = "buttonRemoveCustomer";
@@ -208,6 +210,7 @@
             // 
             this.buttonEditCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditCustomer.Appearance.Options.UseFont = true;
+            this.buttonEditCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditCustomer.ImageOptions.Image")));
             this.buttonEditCustomer.Location = new System.Drawing.Point(305, 484);
             this.buttonEditCustomer.Name = "buttonEditCustomer";
@@ -220,6 +223,7 @@
             // 
             this.buttonAddCustomer.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddCustomer.Appearance.Options.UseFont = true;
+            this.buttonAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddCustomer.ImageOptions.Image")));
             this.buttonAddCustomer.Location = new System.Drawing.Point(13, 484);
             this.buttonAddCustomer.Name = "buttonAddCustomer";
