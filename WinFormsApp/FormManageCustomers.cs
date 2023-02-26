@@ -186,10 +186,6 @@ namespace WinFormsApp
         {
             try
             {
-
-
-
-                
                 int customerId = Convert.ToInt32(textBoxCustomerIdFind.Text);
                 string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
@@ -228,22 +224,13 @@ namespace WinFormsApp
             }
             catch (FormatException)
             {
+                this.PopulateCustomerGridview();
                 Utility.LabelMessageFailure(labelManageCustomersMessage, "Please enter a Customer ID to search for!");
             }
             catch (Exception ex)
             {
                 Utility.LabelMessageFailure(labelManageCustomersMessage, ex.Message);
             }
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FormManageCustomers_Load(object sender, EventArgs e)
-        {
 
         }
     }

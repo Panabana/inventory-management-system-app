@@ -256,7 +256,6 @@
             this.DataGridViewCustomer.RowTemplate.Height = 25;
             this.DataGridViewCustomer.Size = new System.Drawing.Size(456, 217);
             this.DataGridViewCustomer.TabIndex = 21;
-            this.DataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FormManageCustomers
             // 
@@ -275,7 +274,6 @@
             this.Name = "FormManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Customers";
-            this.Load += new System.EventHandler(this.FormManageCustomers_Load);
             this.groupBoxCustomerNew.ResumeLayout(false);
             this.groupBoxCustomerNew.PerformLayout();
             this.groupBoxCustomerFind.ResumeLayout(false);
