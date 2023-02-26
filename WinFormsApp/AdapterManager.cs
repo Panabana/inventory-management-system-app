@@ -114,7 +114,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewSupplierGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT * FROM Supplier");
+            SqlCommand command = new SqlCommand("SELECT SupplierID AS 'Supplier ID', SupplierName AS 'Name', SupplierAddress AS 'Address', PhoneNumber AS 'Phone number' FROM Supplier");
             command.Connection = connection;
             adapter.SelectCommand = command;
             return adapter;
@@ -123,7 +123,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewSupplierGridFind(int supplierId, SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT * FROM Supplier WHERE SupplierId = @SupplierID");
+            SqlCommand command = new SqlCommand("SELECT SupplierID AS 'Supplier ID', SupplierName AS 'Name', SupplierAddress AS 'Address', PhoneNumber AS 'Phone number' FROM Supplier WHERE SupplierId = @SupplierID");
             command.Connection = connection;
             command.Parameters.AddWithValue("@SupplierId", supplierId);
             adapter.SelectCommand = command;
