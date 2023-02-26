@@ -112,6 +112,7 @@
             // buttonAddProductToPurchase
             // 
             this.buttonAddProductToPurchase.BackColor = System.Drawing.Color.White;
+            this.buttonAddProductToPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddProductToPurchase.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProductToPurchase.ForeColor = System.Drawing.Color.Black;
             this.buttonAddProductToPurchase.Location = new System.Drawing.Point(136, 361);
