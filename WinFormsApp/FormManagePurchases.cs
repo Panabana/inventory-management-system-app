@@ -269,23 +269,26 @@ namespace WinFormsApp
                 else
                 {
                     Utility.LabelMessageFailure(labelManagePurchasesMessage, "Purchase does not exist!");
+                    this.PopulatePurchaseGridview();
                 }
             }
 
             catch (NullReferenceException)
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a Purchase ID!");
+                this.PopulatePurchaseGridview();
             }
             catch (FormatException)
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Please enter a valid ID to search for!");
+                this.PopulatePurchaseGridview();
             }
             catch (Exception)
             {
                 Utility.LabelMessageFailure(labelManagePurchasesMessage, "Unknown error, something went wrong!");
+                this.PopulatePurchaseGridview();
             }
 
-            this.PopulatePurchaseGridview();
         }
 
         // --------------------------------------------------------------
