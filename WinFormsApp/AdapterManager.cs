@@ -59,7 +59,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewCustomerGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT CustomerID, CustomerName, CustomerAddress, PhoneNumber " +
+            SqlCommand command = new SqlCommand("SELECT CustomerID AS 'Customer ID', CustomerName AS 'Name', CustomerAddress AS 'Address', PhoneNumber AS 'Phone number' " +
                                                 "FROM Customer");
             command.Connection = connection;
             adapter.SelectCommand = command;
@@ -69,7 +69,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewCustomerGridFind(int customerId, SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT * " +
+            SqlCommand command = new SqlCommand("SELECT CustomerID AS 'Customer ID', CustomerName AS 'Name', CustomerAddress AS 'Address', PhoneNumber AS 'Phone number' " +
                                                 "FROM Customer WHERE CustomerID = @CustomerID");
             command.Connection = connection;
             command.Parameters.AddWithValue("@CustomerID", customerId);
@@ -80,7 +80,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewEmployeeGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT * " +
+            SqlCommand command = new SqlCommand("SELECT EmployeeID AS 'Employee ID', EmployeeName AS 'Name', EmployeeAddress AS 'Address', PhoneNumber AS 'Phone number' " +
                                                 "FROM Employee");
             command.Connection = connection;
             adapter.SelectCommand = command;
@@ -90,7 +90,7 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewEmployeeGridFind(int employeeId, SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT * " +
+            SqlCommand command = new SqlCommand("SELECT EmployeeID AS 'Employee ID', EmployeeName AS 'Name', EmployeeAddress AS 'Address', PhoneNumber AS 'Phone number' " +
                                                 "FROM Employee WHERE EmployeeId = @EmployeeID");
             command.Connection = connection;
             command.Parameters.AddWithValue("@EmployeeID", employeeId);
