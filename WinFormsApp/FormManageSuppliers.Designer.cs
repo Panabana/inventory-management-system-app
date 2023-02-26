@@ -92,6 +92,7 @@
             // 
             this.buttonAddSupplierToProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddSupplierToProduct.Appearance.Options.UseFont = true;
+            this.buttonAddSupplierToProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddSupplierToProduct.Location = new System.Drawing.Point(136, 361);
             this.buttonAddSupplierToProduct.Name = "buttonAddSupplierToProduct";
             this.buttonAddSupplierToProduct.Size = new System.Drawing.Size(127, 44);
@@ -202,6 +203,7 @@
             // 
             this.buttonFindSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindSupplier.Appearance.Options.UseFont = true;
+            this.buttonFindSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindSupplier.ImageOptions.Image")));
             this.buttonFindSupplier.Location = new System.Drawing.Point(70, 80);
             this.buttonFindSupplier.Name = "buttonFindSupplier";
@@ -233,6 +235,7 @@
             // 
             this.buttonRemoveSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveSupplier.Appearance.Options.UseFont = true;
+            this.buttonRemoveSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveSupplier.ImageOptions.Image")));
             this.buttonRemoveSupplier.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveSupplier.Name = "buttonRemoveSupplier";
@@ -245,6 +248,7 @@
             // 
             this.buttonEditSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditSupplier.Appearance.Options.UseFont = true;
+            this.buttonEditSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditSupplier.ImageOptions.Image")));
             this.buttonEditSupplier.Location = new System.Drawing.Point(305, 484);
             this.buttonEditSupplier.Name = "buttonEditSupplier";
@@ -257,6 +261,7 @@
             // 
             this.buttonAddSupplier.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddSupplier.Appearance.Options.UseFont = true;
+            this.buttonAddSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddSupplier.ImageOptions.Image")));
             this.buttonAddSupplier.Location = new System.Drawing.Point(13, 484);
             this.buttonAddSupplier.Name = "buttonAddSupplier";

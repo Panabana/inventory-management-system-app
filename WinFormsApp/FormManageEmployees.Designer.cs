@@ -173,6 +173,7 @@
             // 
             this.buttonFindEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindEmployee.Appearance.Options.UseFont = true;
+            this.buttonFindEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindEmployee.ImageOptions.Image")));
             this.buttonFindEmployee.Location = new System.Drawing.Point(174, 99);
             this.buttonFindEmployee.Margin = new System.Windows.Forms.Padding(4);
@@ -206,6 +207,7 @@
             // 
             this.buttonRemoveEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRemoveEmployee.Appearance.Options.UseFont = true;
+            this.buttonRemoveEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemoveEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonRemoveEmployee.ImageOptions.Image")));
             this.buttonRemoveEmployee.Location = new System.Drawing.Point(597, 484);
             this.buttonRemoveEmployee.Margin = new System.Windows.Forms.Padding(4);
@@ -219,6 +221,7 @@
             // 
             this.buttonEditEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonEditEmployee.Appearance.Options.UseFont = true;
+            this.buttonEditEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonEditEmployee.ImageOptions.Image")));
             this.buttonEditEmployee.Location = new System.Drawing.Point(305, 484);
             this.buttonEditEmployee.Margin = new System.Windows.Forms.Padding(4);
@@ -232,6 +235,7 @@
             // 
             this.buttonAddEmployee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddEmployee.Appearance.Options.UseFont = true;
+            this.buttonAddEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddEmployee.ImageOptions.Image")));
             this.buttonAddEmployee.Location = new System.Drawing.Point(13, 484);
             this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(4);

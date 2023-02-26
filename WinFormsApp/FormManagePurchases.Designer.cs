@@ -156,6 +156,7 @@
             // 
             this.buttonFindPurchase.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonFindPurchase.Appearance.Options.UseFont = true;
+            this.buttonFindPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindPurchase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindPurchase.ImageOptions.Image")));
             this.buttonFindPurchase.Location = new System.Drawing.Point(227, 76);
             this.buttonFindPurchase.Name = "buttonFindPurchase";
@@ -323,6 +324,7 @@
             // 
             // buttonAddProduct
             // 
+            this.buttonAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddProduct.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonAddProduct.ForeColor = System.Drawing.Color.Black;
             this.buttonAddProduct.Location = new System.Drawing.Point(136, 139);
