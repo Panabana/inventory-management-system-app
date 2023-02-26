@@ -31,6 +31,7 @@ namespace WinFormsApp
             DataTable dt = ds.Tables[0];
             DataGridViewSupplier.DataSource = dt;
         }
+
         private void PopulateProductSupplierComboBox() //med hjälp av ChatGPT
         {
             DataSet ds = _layer.ReadProduct();

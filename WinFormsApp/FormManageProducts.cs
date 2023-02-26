@@ -252,5 +252,15 @@ namespace WinFormsApp
                 Utility.LabelMessageFailure(labelManageProductsMessage, "Unknown error:" + ex.Message);
             }
         }
+
+        private void comboBoxSelectPurchaseToAddProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormManageProducts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

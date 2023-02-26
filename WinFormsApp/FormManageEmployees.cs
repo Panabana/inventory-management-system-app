@@ -246,5 +246,10 @@ namespace WinFormsApp
             }
 
         }
+
+        private void dataGridViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
