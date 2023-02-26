@@ -59,7 +59,8 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewCustomerGrid(SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT CustomerID, CustomerName, CustomerAddress, PhoneNumber FROM Customer");
+            SqlCommand command = new SqlCommand("SELECT CustomerID, CustomerName, CustomerAddress, PhoneNumber " +
+                                                "FROM Customer");
             command.Connection = connection;
             adapter.SelectCommand = command;
             return adapter;
@@ -68,7 +69,8 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewCustomerGridFind(int customerId, SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT * FROM Customer WHERE CustomerID = @CustomerID");
+            SqlCommand command = new SqlCommand("SELECT * " +
+                                                "FROM Customer WHERE CustomerID = @CustomerID");
             command.Connection = connection;
             command.Parameters.AddWithValue("@CustomerID", customerId);
             adapter.SelectCommand = command;
@@ -130,15 +132,13 @@ namespace WinFormsApp
         public static SqlDataAdapter ViewSupplierGridFind(int supplierId, SqlConnection connection)
         {
             SqlDataAdapter adapter = new();
-            SqlCommand command = new SqlCommand("SELECT SupplierID AS 'Supplier ID', SupplierName AS 'Name', SupplierAddress AS 'Address', PhoneNumber AS 'Phone number' FROM Supplier WHERE SupplierId = @SupplierID");
+            SqlCommand command = new SqlCommand("SELECT SupplierID AS 'Supplier ID', SupplierName AS 'Name', SupplierAddress AS 'Address', PhoneNumber AS 'Phone number' " +
+                                                "FROM Supplier WHERE SupplierId = @SupplierID");
             command.Connection = connection;
             command.Parameters.AddWithValue("@SupplierId", supplierId);
             adapter.SelectCommand = command;
             return adapter;
         }
-
-
-       
 
         // - CUSTOMER -
         public static SqlDataAdapter CustomerAdapter(SqlConnection connection)
