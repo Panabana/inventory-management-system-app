@@ -66,7 +66,7 @@
             this.groupBoxCustomerNew.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxCustomerNew.Location = new System.Drawing.Point(13, 4);
             this.groupBoxCustomerNew.Name = "groupBoxCustomerNew";
-            this.groupBoxCustomerNew.Size = new System.Drawing.Size(381, 251);
+            this.groupBoxCustomerNew.Size = new System.Drawing.Size(381, 244);
             this.groupBoxCustomerNew.TabIndex = 2;
             this.groupBoxCustomerNew.TabStop = false;
             this.groupBoxCustomerNew.Text = "New customer details";
@@ -74,7 +74,7 @@
             // textBoxCustomerAddress
             // 
             this.textBoxCustomerAddress.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCustomerAddress.Location = new System.Drawing.Point(102, 209);
+            this.textBoxCustomerAddress.Location = new System.Drawing.Point(103, 209);
             this.textBoxCustomerAddress.Name = "textBoxCustomerAddress";
             this.textBoxCustomerAddress.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerAddress.TabIndex = 7;
@@ -84,7 +84,7 @@
             this.labelCustomerAddress.AutoSize = true;
             this.labelCustomerAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCustomerAddress.ForeColor = System.Drawing.Color.Black;
-            this.labelCustomerAddress.Location = new System.Drawing.Point(175, 190);
+            this.labelCustomerAddress.Location = new System.Drawing.Point(176, 190);
             this.labelCustomerAddress.Name = "labelCustomerAddress";
             this.labelCustomerAddress.Size = new System.Drawing.Size(54, 14);
             this.labelCustomerAddress.TabIndex = 6;
@@ -93,7 +93,7 @@
             // textBoxCustomerPhone
             // 
             this.textBoxCustomerPhone.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCustomerPhone.Location = new System.Drawing.Point(102, 109);
+            this.textBoxCustomerPhone.Location = new System.Drawing.Point(103, 109);
             this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
             this.textBoxCustomerPhone.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerPhone.TabIndex = 5;
@@ -103,7 +103,7 @@
             this.labelCustomerPhoneNumber.AutoSize = true;
             this.labelCustomerPhoneNumber.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCustomerPhoneNumber.ForeColor = System.Drawing.Color.Black;
-            this.labelCustomerPhoneNumber.Location = new System.Drawing.Point(156, 90);
+            this.labelCustomerPhoneNumber.Location = new System.Drawing.Point(157, 90);
             this.labelCustomerPhoneNumber.Name = "labelCustomerPhoneNumber";
             this.labelCustomerPhoneNumber.Size = new System.Drawing.Size(92, 14);
             this.labelCustomerPhoneNumber.TabIndex = 4;
@@ -112,7 +112,7 @@
             // textBoxCustomerName
             // 
             this.textBoxCustomerName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCustomerName.Location = new System.Drawing.Point(102, 159);
+            this.textBoxCustomerName.Location = new System.Drawing.Point(103, 159);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
             this.textBoxCustomerName.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerName.TabIndex = 3;
@@ -122,7 +122,7 @@
             this.labelCustomerName.AutoSize = true;
             this.labelCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.labelCustomerName.Location = new System.Drawing.Point(154, 140);
+            this.labelCustomerName.Location = new System.Drawing.Point(155, 140);
             this.labelCustomerName.Name = "labelCustomerName";
             this.labelCustomerName.Size = new System.Drawing.Size(97, 14);
             this.labelCustomerName.TabIndex = 2;
@@ -131,7 +131,7 @@
             // textBoxCustomerId
             // 
             this.textBoxCustomerId.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCustomerId.Location = new System.Drawing.Point(102, 59);
+            this.textBoxCustomerId.Location = new System.Drawing.Point(103, 59);
             this.textBoxCustomerId.Name = "textBoxCustomerId";
             this.textBoxCustomerId.Size = new System.Drawing.Size(200, 26);
             this.textBoxCustomerId.TabIndex = 1;
@@ -141,7 +141,7 @@
             this.labelCustomerID.AutoSize = true;
             this.labelCustomerID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCustomerID.ForeColor = System.Drawing.Color.Black;
-            this.labelCustomerID.Location = new System.Drawing.Point(163, 40);
+            this.labelCustomerID.Location = new System.Drawing.Point(164, 40);
             this.labelCustomerID.Name = "labelCustomerID";
             this.labelCustomerID.Size = new System.Drawing.Size(79, 14);
             this.labelCustomerID.TabIndex = 0;
@@ -156,7 +156,7 @@
             this.groupBoxCustomerFind.ForeColor = System.Drawing.Color.DarkBlue;
             this.groupBoxCustomerFind.Location = new System.Drawing.Point(400, 4);
             this.groupBoxCustomerFind.Name = "groupBoxCustomerFind";
-            this.groupBoxCustomerFind.Size = new System.Drawing.Size(381, 251);
+            this.groupBoxCustomerFind.Size = new System.Drawing.Size(381, 244);
             this.groupBoxCustomerFind.TabIndex = 10;
             this.groupBoxCustomerFind.TabStop = false;
             this.groupBoxCustomerFind.Text = "Find a customer";
@@ -167,7 +167,7 @@
             this.buttonFindCustomer.Appearance.Options.UseFont = true;
             this.buttonFindCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFindCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonFindCustomer.ImageOptions.Image")));
-            this.buttonFindCustomer.Location = new System.Drawing.Point(173, 91);
+            this.buttonFindCustomer.Location = new System.Drawing.Point(173, 98);
             this.buttonFindCustomer.Name = "buttonFindCustomer";
             this.buttonFindCustomer.Size = new System.Drawing.Size(95, 35);
             this.buttonFindCustomer.TabIndex = 6;
@@ -177,7 +177,7 @@
             // textBoxCustomerIdFind
             // 
             this.textBoxCustomerIdFind.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCustomerIdFind.Location = new System.Drawing.Point(114, 59);
+            this.textBoxCustomerIdFind.Location = new System.Drawing.Point(114, 63);
             this.textBoxCustomerIdFind.Name = "textBoxCustomerIdFind";
             this.textBoxCustomerIdFind.Size = new System.Drawing.Size(212, 26);
             this.textBoxCustomerIdFind.TabIndex = 5;
@@ -247,13 +247,14 @@
             // 
             // DataGridViewCustomer
             // 
+            this.DataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridViewCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewCustomer.Location = new System.Drawing.Point(176, 261);
+            this.DataGridViewCustomer.Location = new System.Drawing.Point(169, 254);
             this.DataGridViewCustomer.Name = "DataGridViewCustomer";
             this.DataGridViewCustomer.ReadOnly = true;
             this.DataGridViewCustomer.RowTemplate.Height = 25;
-            this.DataGridViewCustomer.Size = new System.Drawing.Size(437, 217);
+            this.DataGridViewCustomer.Size = new System.Drawing.Size(456, 217);
             this.DataGridViewCustomer.TabIndex = 21;
             this.DataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

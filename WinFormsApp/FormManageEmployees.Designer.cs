@@ -260,13 +260,14 @@
             // 
             // DataGridViewEmployee
             // 
+            this.DataGridViewEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridViewEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewEmployee.Location = new System.Drawing.Point(190, 255);
+            this.DataGridViewEmployee.Location = new System.Drawing.Point(169, 254);
             this.DataGridViewEmployee.Name = "DataGridViewEmployee";
             this.DataGridViewEmployee.ReadOnly = true;
             this.DataGridViewEmployee.RowTemplate.Height = 25;
-            this.DataGridViewEmployee.Size = new System.Drawing.Size(409, 222);
+            this.DataGridViewEmployee.Size = new System.Drawing.Size(456, 217);
             this.DataGridViewEmployee.TabIndex = 25;
             this.DataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
             // 
