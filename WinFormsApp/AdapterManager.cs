@@ -25,7 +25,7 @@ namespace WinFormsApp
             public static SqlConnection GetDatabaseConnection()
             {
                 string connectionString = ConfigurationManager.ConnectionStrings
-                    ["Test"].ConnectionString;
+                    ["InventoryManagementSystem"].ConnectionString;
 
                 SqlConnectionStringBuilder builder = new(connectionString);
 
